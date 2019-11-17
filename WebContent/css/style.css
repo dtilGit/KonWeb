@@ -1,0 +1,275 @@
+@CHARSET "UTF-8";
+body{
+	border-color: #a1a1a3;
+	border-width: 1px;
+	border-style: solid;
+	
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: Bradley Hand ITC;
+}
+
+h1 {
+	color: #777;
+	text-decoration: none;
+	font-family: Bradley Hand ITC;
+	font-size: 30px;
+}
+
+h2{
+	font-size: 20px;
+	float: left;
+}
+
+header{
+	padding: 10px;
+	height: 150px;
+}
+
+
+#registr {
+	padding: 50px;
+	margin: 0 auto;
+	border: 3px solid #6E6E6E;
+}
+
+
+#anmelden {
+	background-color: #424242;
+	color: white;
+	padding: 14px 20px;
+	margin: 5px 0;
+	border: none;
+	width: 100%;
+}
+
+#registr_button {
+	background-color: #424242;
+	color: white;
+	padding: 14x 20x;
+	margin-top: 5px 0;
+	border: none;
+	width: 100%;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=number] {
+	width: 100%
+}
+
+#mainlogo{
+	height: 100px;
+	width: 100px;
+	float: left;
+	margin-right: 50px;
+}
+
+
+#logo {
+	height: 100px;
+	width: 100px;
+	float: left;
+}
+
+#navi ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	color: white;
+}
+
+#navi ul li{
+	background-color:  #424242;
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid white;
+	float: left;
+	color: white;
+	text-align: center;
+	font-size: 19px;
+}
+
+#navi ul li:hover {
+	background-color: #6E6E6E;
+	color: white;
+}
+
+#navi ul ul{
+	display: none;
+}
+
+#navi ul li:hover > ul{
+	display: block;
+}
+
+#suche{
+	height:30px;
+	width: 150px;
+	float: left;
+	margin-left: 50px;
+}
+#suchleiste{
+	height:30px;
+}
+
+#meinkonto{
+	float: left;
+	margin-left: 50px;
+	width: 50px;
+	height: 50px;
+}
+
+#warenkorb{
+	float: left;
+	margin-left: 50px;
+	width: 50px;
+	height: 50px;
+}
+
+section {
+	width: 800px;
+	height: auto;
+	float: left;
+	
+}
+
+figcaption{
+	text-align: center;
+}
+
+
+#modelbilderrechts{
+	float: right;
+	margin-top: 20px;
+}
+
+#modelbilderlinks{
+	float: right;
+	margin-top: 20px;
+}
+
+.intro{
+	height: 10s0px;
+	width: 800px;
+}
+
+.markenbereich{
+	border: 5px solid #dadada;
+	
+	float: left;
+	height: 250px;
+	width: 800px;
+}
+
+
+.angebot{
+	float: right;
+	height: 200px;
+	width: 250px;
+
+}
+
+.halfsectionleft{
+	height: 900px;
+	width: 400px;
+	float: left;
+}
+
+.halfsectionright{
+	height: 900px;
+	width: 400px;
+	float:right;
+}
+
+#impressumpart{
+	width: 400px;
+	float: center;
+	margin-left: 50px;
+}
+
+
+
+aside {
+	width: 350px;
+	height: 900px;
+	float: right;
+	
+}
+
+	
+
+footer {
+	height: 100px;
+	clear: both;
+}
+
+
+
+#servicehotline{
+	height: 100px;
+	width: 400px;
+	float: left;
+	
+}
+
+#impressumlink{
+	height: 100px;
+	width: 350px;
+	float: right;
+	font-size: 15px;
+}
+
+@font-face { 
+	font-family: 'Bradley Hand ITC';
+	src: url("../⁨css/bradhitc.ttf") format("truetype");
+}
+
+
+/* .payment-checkouts{ */
+/* 	position: relative; */
+/* 	display: block; */
+/* 	box-sizing: border-box; */
+	
+/* } */
+
+.to-cash{
+	cursor: pointer;
+	display: inline-block;
+	align-content: center;
+	background-color: rgb(0,0,0);
+	color: #fff;
+	width: 100%;
+	
+}
+
+/* was macht das?*/ 
+#navi_login ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	color: white;
+}
+
+#navi_login ul li{
+	/*background-color:  #ffffff;*/
+	width: 150px;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid white;
+	float: left;
+	color: white;
+	text-align: center;
+	font-size: 19px;
+}
+
+#navi_login ul ul{
+	display: none;
+}
+
+#navi_login ul li:hover > ul{
+	display: block;
+}
+
+
+
