@@ -30,7 +30,7 @@ public class artikel_bean {
 	public String getArtikelbezeichnung() {
 		return artikel_bezeichnung;
 	}
-	public void setArtikelbezeichnung(String bezeichnung) {
+	public void setArtikelbezeichnung(String artikel_bezeichnung) {
 		this.artikel_bezeichnung = artikel_bezeichnung;
 	}
 	
