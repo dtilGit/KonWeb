@@ -37,7 +37,7 @@ public class Registrservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("=== in get ==");
-		// this.doPost(request,response);}
+		// this.doPost(request,response);}zgtvzgvzu
 		doGet(request, response);
 	}
 
