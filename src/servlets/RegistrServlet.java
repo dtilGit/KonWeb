@@ -65,7 +65,6 @@ public class RegistrServlet extends HttpServlet {
 		// beim Login vom Admin unterschieden werden kann
 		regform.setAdmin(0);
 
-		// Überprüfung der E-Mail
 		try (Connection con = ds.getConnection();
 				PreparedStatement psmt = con.prepareStatement("SELECT * FROM thidb.kunde WHERE email = ?")) {
 			psmt.setString(1, regform.getEmail());
@@ -105,7 +104,6 @@ public class RegistrServlet extends HttpServlet {
 						dispatcher = request.getRequestDispatcher("user/registrierung_antwort.jsp");
 						dispatcher.forward(request, response);
 
-						// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
 						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
 							while (rs2.next()) {
 								regform.setId(rs.getInt(1));
