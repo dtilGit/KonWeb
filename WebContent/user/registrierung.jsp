@@ -102,7 +102,7 @@
 					<input type=text id="hausnummer" name="hausnummer" size="5" maxlength="10">
 					
 					<label for="postleitzahl">Postleitzahl</label>  
-					<input type="text" id="postleitzahl" size="5" maxlength="40" name="postleitzahl" >
+					<input type="text" id="postleitzahl" size="5" minlength="5" maxlength="5" name="postleitzahl" >
 	
 					<label for="ort">Ort</label>
 					<input type="text" id="ort" name="ort" size="30" maxlength="40" >

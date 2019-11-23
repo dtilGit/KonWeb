@@ -30,6 +30,8 @@ public class artikel_bean {
 	public String getArtikelbezeichnung() {
 		return artikel_bezeichnung;
 	}
+	
+	//�nderung von artikel
 	public void setArtikelbezeichnung(String artikel_bezeichnung) {
 		this.artikel_bezeichnung = artikel_bezeichnung;
 	}

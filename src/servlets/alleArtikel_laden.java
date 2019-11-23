@@ -56,7 +56,7 @@ public class alleArtikel_laden extends HttpServlet {
 
 					int art_id = rs.getInt("artikel_id");
 					art_bean.setArtikel_id(art_id);
-
+					//änderung von artikelbezeichnung 
 					String art_bez = rs.getString("artikelbezeichnung");
 					art_bean.setArtikelbezeichnung(art_bez);
 

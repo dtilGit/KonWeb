@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="${pageContext.request.requestURI}"/>
 <title>Fehlermeldung</title>
 </head>
 <body>

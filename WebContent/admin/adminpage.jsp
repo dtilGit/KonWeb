@@ -6,6 +6,7 @@
 <meta charset="utf-8">
 <title>Adminpage</title>
 <link rel="stylesheet" href="styleV2.css" type="text/css">
+<base href="${pageContext.request.requestURI}"/>
 
 </head>
 
@@ -77,10 +78,10 @@ Lager:
 		 <button type="button" id="lager_erhoehen" onClick="document.getElementById('lager_befuellen').style.display='inline';">Lagerbestand erhöhen</button>
 		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_hinzufuegen').style.display='inline';">neuen Artikel hinzufügen</button>
 		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_hinzufuegen').style.display='inline';">Kategorie hinzufügen</button>
-		 <form action="/tods/alleKategorien_laden" method="post" enctype="multipart/form-data">
+		 <form action="../alleKategorien_laden" method="post" enctype="multipart/form-data">
 		 <button type="submit" id="kategorien_laden">Kategorien laden</button>
 		 </form>
-		  <form action="/tods/alleArtikel_laden" method="post" enctype="multipart/form-data">
+		  <form action="../alleArtikel_laden" method="post" enctype="multipart/form-data">
 		 <button type="submit" id="artikel_laden">Artikel laden</button>
 		 </form>
 		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_loeschen').style.display='inline';">Kategorien löschen</button>
@@ -93,7 +94,7 @@ Lager:
 	
 	
 	<!--neuen Artikel hinzufügen -->
-	<form method="post" enctype="multipart/form-data" action="/tods/artikel_hinzufuegen">
+	<form method="post" enctype="multipart/form-data" action="../artikel_hinzufuegen">
 	<table id="artikel_hinzufuegen" style="display: none">
 	<thead>
                 <tr>
@@ -154,7 +155,7 @@ Lager:
 	
 	
 	<!--Neue Kategorie hinzufügen-->
-	<form action="/tods/kategorie_hinzufuegen" method="get" enctype="multipart/form-data">
+	<form action="../kategorie_hinzufuegen" method="get" enctype="multipart/form-data">
 	<table id="kategorie_hinzufuegen" style="display: none">
 	<thead>
                 <tr>
@@ -187,7 +188,7 @@ Lager:
 	</div>
 	
 	<!--Kategorie löschen-->
-	<form action="/tods/kategorie_loeschen" method="get" enctype="multipart/form-data">
+	<form action="../kategorie_loeschen" method="get" enctype="multipart/form-data">
 	<table id="kategorie_loeschen" style="display: none">
 	<thead>
                 <tr>
@@ -222,7 +223,7 @@ Lager:
 	</div>
 	<div>
 	<!-- Artikel löschen -->
-	<form action="/tods/artikel_loeschen" method="get" enctype="multipart/form-data">
+	<form action="../artikel_loeschen" method="get" enctype="multipart/form-data">
 	<table id="artikel_loeschen" style="display: none">
 	<thead>
 		<tr>

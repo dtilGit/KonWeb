@@ -8,7 +8,8 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Login</title> //
+<base href="${pageContext.request.requestURI}"/>
+<title>Login</title> 
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
@@ -63,7 +64,7 @@
 	<section>
 
 
-		<form action="/tods/Loginservlet" method="post" id="login">
+		<form action="../Loginservlet" method="post" id="login">
 			<div id="registr">
 
 				<label for="email"> E-Mail </label> <input type="email" name="email"
