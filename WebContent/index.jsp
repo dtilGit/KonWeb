@@ -9,13 +9,79 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="${pageContext.request.requestURI}" />
-<link rel="stylesheet" type="text/css" href="/tods/css/style.css" />
-<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> <!-- muss glaube ich ins Stylesheet hab noch nicht ganz rausgefunden wie es die Schrift ändert  -->
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> muss glaube ich ins Stylesheet hab noch nicht ganz rausgefunden wie es die Schrift ändert  -->
 
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
-	<%@ include file="/jspf/header.jspf"%>
+	<!-- David Häusler -->
+	<header>
+		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
+		<div id="mainlogo">
+			<a href="homepage.html"><img id="logo"
+				src="img/tods_bestcaps_logo.jpg" alt="Logo"></a>
+		</div>
+
+
+		<div class="dropdown-navi men">
+			<button class="dropbtn">Männer</button>
+			<!-- <button class="dropdown-content">Beanies</button> -->
+			<!-- 				<button>Caps</button> -->
+		</div>
+
+
+
+		<div class="dropdown-navi woman">
+			<button class="dropbtn">Frauen</button>
+			<!-- 	<div class="dropdown-content"> -->
+			<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
+			<!-- 			href="user/woman_caps.html">Caps</a> -->
+		</div>
+
+
+
+
+		<!-- 			<ul> -->
+		<!-- 				<li>Männer -->
+		<!-- 					<ul> -->
+		<!-- 						<li><a href="user/man_beanies.html">Beanies</a></li> -->
+		<!-- 						<li><a href="user/man_caps.html">Caps</a></li> -->
+		<!-- 					</ul> -->
+		<!-- 				</li> -->
+		<!-- 				<li>Frauen -->
+		<!-- 					<ul> -->
+		<!-- 						<li><a href="user/woman_beanies.html">Beanies</a></li> -->
+		<!-- 						<li><a href="user/woman_caps.html">Caps</a></li> -->
+		<!-- 					</ul> -->
+		<!-- 				</li> -->
+		<!-- 				<li>Hot Sales</li> -->
+		<!-- 			</ul> -->
+
+
+
+
+		<div id="suche">
+			<br> <label for="suchleiste"></label> <input type="search"
+				id="suchleiste" placeholder="Suche...">
+		</div>
+
+
+
+		<div>
+			<a href="login.html"><img id="meinkonto" src="img/mein_konto.png"
+				alt="meinKontoLogo"></a>
+		</div>
+
+		<div>
+			<a href="warenkorb.html"><img id="warenkorb"
+				src="img/warenkorb.png" alt="warenkorbLogo"></a>
+		</div>
+
+
+	</header>
+
+
 
 	<div id="flexarea">
 		<section>

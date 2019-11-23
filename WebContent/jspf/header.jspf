@@ -3,7 +3,7 @@
 		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 		<div id="mainlogo">
 			<a href="homepage.html"><img id="logo"
-				src="img/tods_bestcaps_logo.jpg" alt="Logo"></a>
+				src="../img/tods_bestcaps_logo.jpg" alt="Logo"></a>
 		</div>
 
 
@@ -52,13 +52,13 @@
 
 
 		<div>
-			<a href="login.html"><img id="meinkonto" src="img/mein_konto.png"
+			<a href="login.html"><img id="meinkonto" src="../img/mein_konto.png"
 				alt="meinKontoLogo"></a>
 		</div>
 
 		<div>
 			<a href="warenkorb.html"><img id="warenkorb"
-				src="img/warenkorb.png" alt="warenkorbLogo"></a>
+				src="../img/warenkorb.png" alt="warenkorbLogo"></a>
 		</div>
 
 

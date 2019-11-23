@@ -5,12 +5,13 @@
 <head>
 <meta charset="utf-8">
 <title>Adminpage</title>
-<link rel="stylesheet" href="styleV2.css" type="text/css">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <base href="${pageContext.request.requestURI}"/>
 
 </head>
 
 <body>
+<%@ include file="/../jspf/header.jspf"%>
 
 <div id="wrapper">
 <!-- Seitengröße der Webseite festlegen mit width in stylesheet-->
