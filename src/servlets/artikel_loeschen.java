@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.kategorie_bean;
+import beans.artikel_bean;
 
 /**
  * Servlet implementation class kategorie_loeschen
  */
-@WebServlet("/kategorie_loeschen")
-public class kategorie_loeschen extends HttpServlet {
+@WebServlet("/artikel_loeschen")
+public class artikel_loeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -28,7 +28,7 @@ public class kategorie_loeschen extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public kategorie_loeschen() {
+    public artikel_loeschen() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,15 +40,15 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		request.setCharacterEncoding("UTF-8");	
 		
-		kategorie_bean form = new kategorie_bean();
-		int i = Integer.parseInt(request.getParameter("alleKategorienLaden"));
-		form.setKategorie_id(i); // parse Int
+		artikel_bean art_bean = new artikel_bean();
+		int i = Integer.parseInt(request.getParameter("alleArtikelLaden"));
+		art_bean.setArtikel_id(i); // parse Int
 		
 		
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.kategorie WHERE kategorie_id = ?")){
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.artikel WHERE artikel_id = ?")){
 			
-			pstmt.setInt(1, form.getKategorie_id());
+			pstmt.setInt(1, art_bean.getArtikel_id());
 			pstmt.executeUpdate();
 		
 		}
@@ -58,7 +58,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		}
 		
 	
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_sucess.jsp");
+	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/artikel_geloescht.jsp");
 	dispatcher.forward(request, response);		
 }
 	/**

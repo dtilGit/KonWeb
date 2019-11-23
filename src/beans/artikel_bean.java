@@ -12,7 +12,7 @@ public class artikel_bean {
 	private Integer kategorie_id; 
 	private Integer lagerbestand;
 	private byte[] bild; 
-	private String filename; 
+	private String bildname; 
 	
 
 	public artikel_bean() {
@@ -63,12 +63,12 @@ public class artikel_bean {
 		this.bild = bild;
 	}
 
-	public String getFilename() {
-		return filename;
+	public String getBildname() {
+		return bildname;
 	}
 
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setBildname(String bildname) {
+		this.bildname = bildname;
 	}
 	
 }

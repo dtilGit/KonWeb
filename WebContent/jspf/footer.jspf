@@ -1,0 +1,17 @@
+<!--David Häusler-->
+<div class="footer">
+	<footer>
+		<div id="servicehotline">
+			
+			<h1>TOD's BestCap</h1>
+			<p>Du hast ein Problem?<br>Unsere Service Hotline 24/7 kostenlos für dich erreichbar:</p>
+			<a href="tel:09131123987654">09131/123987654</a>
+		</div>
+
+		<div id="impressumlink">
+			<a href="impressum.html">Impressum</a>
+		</div>
+		</br>
+
+	</footer>
+</div>

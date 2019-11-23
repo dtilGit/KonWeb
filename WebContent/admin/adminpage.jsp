@@ -75,133 +75,87 @@ Lager:
 		<!--DB bearbeiten Buttons-->				
 		<div id="adminpagebutton">	
 		 <button type="button" id="lager_erhoehen" onClick="document.getElementById('lager_befuellen').style.display='inline';">Lagerbestand erhöhen</button>
-		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_hinzufügen').style.display='inline';">neuen Artikel hinzufügen</button>
-		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_hinzufügen').style.display='inline';">Kategorie hinzufügen</button>
-		 <form action="/test-war/alleKategorien_laden" method="post" enctype="multipart/form-data">
+		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_hinzufuegen').style.display='inline';">neuen Artikel hinzufügen</button>
+		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_hinzufuegen').style.display='inline';">Kategorie hinzufügen</button>
+		 <form action="/tods/alleKategorien_laden" method="post" enctype="multipart/form-data">
 		 <button type="submit" id="kategorien_laden">Kategorien laden</button>
 		 </form>
+		  <form action="/tods/alleArtikel_laden" method="post" enctype="multipart/form-data">
+		 <button type="submit" id="artikel_laden">Artikel laden</button>
+		 </form>
 		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_loeschen').style.display='inline';">Kategorien löschen</button>
-		 <button type="submit" name="loeschen">löschen</button>
-		 <button type="submit" name="bearbeiten">bearbeiten</button>
+		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_loeschen').style.display='inline';">Artikel löschen</button>
 		</div>
     
 	
 	<!--Pop ups-->
 	<div id="admintabellen_popups">
 	
-	<!--Lagerbestand erhohen-->
-	<form method="post" enctype="multipart/form-data" action="/?/?">
-	<table id="lager_befuellen" style="display: none">
-	
-	<thead>
-                <tr>
-                    <th>Artikelbezeichnung</th>		
-					<th>Anzahl</th>	
-					<th></th>					
-                </tr>
-    </thead>
-	<tbody>
-					<tr>
-	                <td>
-					<label for="artikelgruppen_dropdown"> 	<!--Dropdown aller Artikelgruppen -->	
-					<select required>
-					<option>hier alle produkte</option> 
-					<option>Adidas Allblack</option>
-					<option>Nike Tripple White</option>
-					<option>...</option>
-					</select>
-					</label> 
-					</td>
-					
-					<td><label for="artikel_anzahl"> 
-                    <input type="number"
-                        id="artikel_anzahl" name="artikel_anzahl"
-                        placeholder="z.b. 30" required>
-                        </label> 
-                    </td>
-					
-					<td>
-					<button type="submit" name="speichern">speichern</button>
-					<button type="reset" name="abbrechen" onClick="document.getElementById('lager_befuellen').style.display='none';">abbrechen</button>
-					</td>
-					</tr>
-	<tbody>
-	</table>
-	</form>
 	
 	<!--neuen Artikel hinzufügen -->
-	<form method="post" enctype="multipart/form-data" action="/?/?">
-	<table id="artikel_hinzufügen" style="display: none"><!--Style element in html ok? -->
+	<form method="post" enctype="multipart/form-data" action="/tods/artikel_hinzufuegen">
+	<table id="artikel_hinzufuegen" style="display: none">
 	<thead>
                 <tr>
                     <th>Artikelbezeichnung</th>
                     <th>Preis(€)</th>
+                    <th>Kategorie</th>
 					<th>Bild</th>
 					<th>Lagerbestand</th>
-					<th>Geschlecht</th>
 					<th>Kategorie</th>
 					<th></th>
                 </tr>
     </thead>
 	<tbody>	
 	<tr>
-					<td><label for="artikel_bezeichnung">
-                    <input type="text"
-                        id="artikel_bezeichnung" name="artikel_bezeichnung" maxlength="15"
-                        placeholder="Bezeichnung des Artikels" required> <!--size muss in css definiert werden -->
-                    </label>
-                    </td>
+					<td>            
+					<input type="text" name="art_bez" maxlength="15"
+                     placeholder="Bezeichnung des Artikels" required>
+					</td>
 					
                         
-                    <td><label for="artikel_preis">
+                    <td>
 					<input type="number"
                         id="preis" name="preis" min="0.01"
                         max="1000.00" placeholder="z.B. 15,99" step= "0.01" required>
-                    </label>
 					</td>
 					
-					<td><label for="artikel_image">
+					
+					<td>
+					<select name="alleKategorienLaden" required>
+    				<c:forEach items="${alleKategorien}" var="kategorien">
+   					<option name="kategorie_bez_geschlecht" value="${kategorien.kategorie_id}">
+   					 <c:out value="${kategorien.kategoriebezeichnung}"/>,
+   					 <c:out value="${kategorien.geschlecht}" />
+   					 </option>
+   					 </c:forEach>
+					</select>
+					</td>
+					<td>
+								<div>
+									<label for="bild">Bild hochladen:</label> <input
+										type="file" name="bild" id="bild" accept="image/*" required>
+										<button type="submit" name="upload">Bild Upload</button>
+								</div>
+					</td>
+								<!--  <td>
 					<input type="file" name="image" id="artikel_image" accept=".jpg, .jpeg, .png, .JPG, .JPEG, .PNG" required>	
 					<button type="submit" name="upload">upload</button>
-					</label>
-					</td>
-					
-					<td><label for="artikel_bestand"> 
-					<input type="number"
-                        id="artikel_bestand" name="artikel_bestand" min="0.00"
-                        max="1000.00" placeholder="z.B. 20" step= "0.01" required>
-                    </label>
-					</td>
-	
-					<td><label for="kategorie_geschlecht">
-					<select required>
-					<option>Männlich</option>
-					<option>Weiblich</option>
-					</label> 					
-					</select></td>
-					
-					<td><label for="kategorie_bezeichnung"> 
-					<select required>
-					<option>Cap</option><!--muss noch flexibel aus DB geholt werden abhängig von gewählten geschlecht alle holen-->
-					<option>Beanie</option>
-					<option>...</option>
-					<option></option>
-					</label>
-					</select></td>
+					</td>-->
 					
 					<td>
 					<button type="submit" name="speichern">speichern</button>
-					<button type="reset" name="abbrechen" onClick="document.getElementById('artikel_hinzufügen').style.display='none';">abbrechen</button>
+					<button type="reset" name="abbrechen" onClick="document.getElementById('artikel_hinzufuegen').style.display='none';">abbrechen</button>
 					</td>
 					</tr>
-	<tbody>
+	</tbody>
 	</table>
 	</form>
 	
 	
 	<!--Neue Kategorie hinzufügen-->
-	<form action="/test-war/kategorie_hinzufuegen" method="get" enctype="multipart/form-data">
-	<table id="kategorie_hinzufügen" style="display: none">
+	<form action="/tods/kategorie_hinzufuegen" method="get" enctype="multipart/form-data">
+	<table id="kategorie_hinzufuegen" style="display: none">
 	<thead>
                 <tr>
                     <th>Kategorie-Bezeichnung</th>
@@ -224,7 +178,7 @@ Lager:
 					</td>
 					<td>
 					<button type="submit" name="speichern">speichern</button>
-					<button type="reset" name="abbrechen" onClick="document.getElementById('kategorie_hinzufügen').style.display='none';">abbrechen</button>
+					<button type="reset" name="abbrechen" onClick="document.getElementById('kategorie_hinzufuegen').style.display='none';">abbrechen</button>
 					</td>
 	</tr>
 	<tbody>
@@ -233,7 +187,7 @@ Lager:
 	</div>
 	
 	<!--Kategorie löschen-->
-	<form action="/test-war/kategorie_loeschen" method="get" enctype="multipart/form-data">
+	<form action="/tods/kategorie_loeschen" method="get" enctype="multipart/form-data">
 	<table id="kategorie_loeschen" style="display: none">
 	<thead>
                 <tr>
@@ -263,6 +217,38 @@ Lager:
 	</td>
 	</tr>
 	<tbody>
+	</table>
+	</form>
+	</div>
+	<div>
+	<!-- Artikel löschen -->
+	<form action="/tods/artikel_loeschen" method="get" enctype="multipart/form-data">
+	<table id="artikel_loeschen" style="display: none">
+	<thead>
+		<tr>
+			<th> Artikel ID, Artikelbezeichnung </th>
+			<th> Aus DB loeschen </th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+	<td>
+	<select name="alleArtikelLaden">
+    <c:forEach items="${alleArtikel}" var="artikel">
+   		 <option name="artikel_id_bez" value="${artikel.artikel_id}">
+   		 <c:out value="${artikel.artikel_id}"/>,
+   		 <c:out value="${artikel.artikelbezeichnung}" />
+   		 </option>
+   		 </c:forEach>
+	</select>
+	</td>
+	<td>
+	<button type="submit" name="loeschen">löschen</button>
+	
+	<button type="reset" name="abbrechen" onClick="document.getElementById('artikel_loeschen').style.display='none';">abbrechen</button>
+	</td>
+	</tr>
+	</tbody>
 	</table>
 	</form>
 	</div>

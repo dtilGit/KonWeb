@@ -50,32 +50,28 @@ public class kategorie_hinzufuegen extends HttpServlet {
 		
 	//	HttpSession session = request.getSession();
 		
-		kategorie_bean form = new kategorie_bean();
-		form.setKategoriebezeichnung(request.getParameter("kategorie_bezeichnung"));
-		form.setGeschlecht(request.getParameter("kategorie_geschlecht"));
-		//System.out.println("nach form");
+		kategorie_bean kat_bean = new kategorie_bean();
+		kat_bean.setKategoriebezeichnung(request.getParameter("kategorie_bezeichnung"));
+		kat_bean.setGeschlecht(request.getParameter("kategorie_geschlecht"));
 		
 		String[] generatedKeys = new String[] {"kategorie_id"};
 		
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("INSERT INTO thidb.kategorie (kategoriebezeichnung, geschlecht) VALUES (?, ?)", generatedKeys)){
 			
-			pstmt.setString(1, form.getKategoriebezeichnung());
-			pstmt.setString(2, form.getGeschlecht());
+			pstmt.setString(1, kat_bean.getKategoriebezeichnung());
+			pstmt.setString(2, kat_bean.getGeschlecht());
 			pstmt.executeUpdate();
 			
 		try (ResultSet rs = pstmt.getGeneratedKeys()){
 			while (rs.next()) {
-				form.setKategorie_id(rs.getInt(1));
+				kat_bean.setKategorie_id(rs.getInt(1));
 			}
 		}
 		}
 	catch (Exception ex) {
 		throw new ServletException(ex.getMessage());
 		}
-		System.out.println("nach datenbank");
-	// Scope "Request"
-	//request.setAttribute("form", form);
 	
 	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_sucess.jsp");
 	dispatcher.forward(request, response);		

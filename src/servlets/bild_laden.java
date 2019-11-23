@@ -26,7 +26,7 @@ public class bild_laden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
-@Resource(lookup="jdbc/MyTHIPool")
+@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 private DataSource ds;
 
 

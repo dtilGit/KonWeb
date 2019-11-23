@@ -1,18 +1,18 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page errorPage="fehlerausgabe.jsp" %> 
+<%@ page errorPage="fehlerausgabe.jsp"%>
 
 <!DOCTYPE html>
 <html lang="de">
 
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Login</title> //
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
-<header>
+	<%--<header>
 
 <div id="mainLogo">
 	<a href="homepage.html"><img id="logo" src="../img/tods_bestcaps_logo.jpg" alt= "Logo"></a>
@@ -57,40 +57,48 @@
 <a href="warenkorb.html"><img id="warenkorb" src="../img/warenkorb.png" alt= "warenkorbLogo"></a>
 </div>
 
-</header>
- 
-<h1> Login </h1>
-<section>
-  
-	
-	<form action="/tods/loginservlet" method="post" id="login">
+</header>--%>
+
+	<h1>Login</h1>
+	<section>
+
+
+		<form action="/tods/Loginservlet" method="post" id="login">
 			<div id="registr">
-				
-				<label for="username"> E-Mail </label>
-				<input type="email" name="email" id="email" size="25" maxlength="30" placeholder="Deine E-Mail" required>
-				
-				<label for="passwort"> Passwort </label>
-				<input type="password" name="passwort" id="passwort" size="25" maxlength="40" placeholder="Dein Passwort" required>
+
+				<label for="email"> E-Mail </label> <input type="email" name="email"
+					id="email" size="25" maxlength="30" placeholder="Deine E-Mail"
+					required> <label for="passwort"> Passwort </label> <input
+					type="password" name="passwort" id="passwort" size="25"
+					maxlength="40" placeholder="Dein Passwort" required>
 			</div>
-	<div id="anmelden">
-	<button type="submit"id="anmelden"> Anmelden </button> </div>
-	</form>
-		<p> Noch nicht registriert? Dann klicke <a href="registrierung.html"> hier</a> </p>
-	
-</section>
+			<div id="anmelden">
+				<button type="submit" id="anmelden">Anmelden</button>
+			</div>
+		</form>
+		<p>
+			Noch nicht registriert? Zur Registrierung <a href="registrierung.jsp">
+				hier</a>
+		</p>
+
+	</section>
 
 
-<footer>
-<div id= "servicehotline">
-<p>Du hast ein Problem?<br> Unsere Service Hotline 24/7 kostenlos für dich erreichbar:</p>
-<p>09131/123987654</p>
-</div>
+	<footer>
+		<div id="servicehotline">
+			<p>
+				Du hast ein Problem?<br> Unsere Service Hotline 24/7 kostenlos
+				für dich erreichbar:
+			</p>
+			<p>09131/123987654</p>
+		</div>
 
-<div id="impressumlink">
-<p>anderweitig Kontakt findest du im:<p>
-<a href="impressum.html">Impressum</a>
-</div>
+		<div id="impressumlink">
+			<p>anderweitig Kontakt findest du im:
+			<p>
+				<a href="impressum.html">Impressum</a>
+		</div>
 
-</footer>
+	</footer>
 </body>
 </html>

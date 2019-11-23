@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
-<header>
+<%--<header>
 <!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 <div id="mainLogo">
 	<a href="homepage.html"><img id="logo" src="../img/tods_bestcaps_logo.jpg" alt= "Logo"></a>
@@ -58,7 +58,7 @@
 <a href="warenkorb.html"><img id="warenkorb" src="../img/warenkorb.png" alt= "warenkorbLogo"></a>
 </div>
 
-</header>
+</header>--%>
 
 <head>
 <meta charset="UTF-8">
@@ -69,7 +69,7 @@
 	<h1> Registrierung ist erfolgt!</h1>
 	<h2> Hallo ! Du hast dich erfolgreich bei Tods registriert. Viel Spaß beim Shoppen!</h2>
 	
-	<p> Hier geht's zur Anmeldung >> <a href="login.html"> LOGIN </a> 
+	<p> Hier geht's zur Anmeldung >> <a href="/user/login.jsp"> LOGIN </a> 
 	
 	<footer>
 <div id= "servicehotline">

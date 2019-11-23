@@ -1,19 +1,14 @@
 @CHARSET "UTF-8";
 body{
-	border-color: #a1a1a3;
-	border-width: 1px;
-	border-style: solid;
-	
-	width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
-	font-family: Bradley Hand ITC;
+	margin-left: 10%;
+	margin-right: 10%;
+	font-family: 'Montserrat';
 }
 
 h1 {
 	color: #777;
 	text-decoration: none;
-	font-family: Bradley Hand ITC;
+	font-family: 'Montserrat';
 	font-size: 30px;
 }
 
@@ -22,39 +17,31 @@ h2{
 	float: left;
 }
 
+a {
+	font-family: 'Montserrat';
+	color: #424242;
+}
+
+a:hover {
+	color: #6e6e6e;
+}
+
+button,
+input {
+	font-family: 'Montserrat';
+	
+}
+
 header{
 	padding: 10px;
-	height: 150px;
-}
+	height: 120px;
+	width: 80%;
 
-
-#registr {
-	padding: 50px;
-	margin: 0 auto;
-	border: 3px solid #6E6E6E;
-}
-
-
-#anmelden {
-	background-color: #424242;
-	color: white;
-	padding: 14px 20px;
-	margin: 5px 0;
-	border: none;
-	width: 100%;
-}
-
-#registr_button {
-	background-color: #424242;
-	color: white;
-	padding: 14x 20x;
-	margin-top: 5px 0;
-	border: none;
-	width: 100%;
-}
-
-input[type=text], input[type=password], input[type=email], input[type=number] {
-	width: 100%
+	background-color: #FFF;
+	position: fixed; /* Header bleibt beim scrollen stehen */
+	top: 0;  /* Header fängt ganz oben an */
+	z-index: 999; /*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
+	border-bottom: 1px solid #424242;
 }
 
 #mainlogo{
@@ -62,6 +49,7 @@ input[type=text], input[type=password], input[type=email], input[type=number] {
 	width: 100px;
 	float: left;
 	margin-right: 50px;
+	margin-top: 25px;
 }
 
 
@@ -71,66 +59,108 @@ input[type=text], input[type=password], input[type=email], input[type=number] {
 	float: left;
 }
 
-#navi ul{
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
-	color: white;
+
+
+.dropbtn {
+  background-color: #424242;
+  color: white;
+  padding: 16px;
+  font-size: 19px;
+  border: 1px solid white;
+  width:100px
 }
 
-#navi ul li{
-	background-color:  #424242;
-	width: 150px;
-	height: 50px;
-	line-height: 50px;
-	border: 1px solid white;
-	float: left;
-	color: white;
-	text-align: center;
-	font-size: 19px;
+/* Positioniern */
+.dropdown-navi {
+  position: fixed;
+  display: inline-block;
+  margin-top: 45px;
 }
 
-#navi ul li:hover {
-	background-color: #6E6E6E;
-	color: white;
+/* Kästchen mit den Unterpunkten */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #6e6e6e;
+  min-width: 100px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-#navi ul ul{
-	display: none;
+
+.dropdown-navi.woman {
+	margin-left: 110px;
 }
 
-#navi ul li:hover > ul{
-	display: block;
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-#suche{
-	height:30px;
-	width: 150px;
-	float: left;
-	margin-left: 50px;
+.dropdown-content a  {
+	background-color: #424242;
 }
+
+/* Unterpunkte werden beim hover hellgrau */
+.dropdown-content a:hover {background-color: #6E6E6E;}
+
+/* Beim hover content anzeigen */
+.dropdown-navi:hover .dropdown-content {display: block;}
+
+/* Großer Button beim hover in hellgrau */
+.dropdown-navi:hover .dropbtn {background-color: #6E6E6E;}
+
+
+
 #suchleiste{
-	height:30px;
+	
+	float: left;
+	margin-left: 260px;
+	margin-top: 40px;
+	
+	border: 2px solid #999;
+	border-radius: 0.5em;;
+	font-size: 20px;
+	width: 8em;
+	transition: width 0.5s ease-in-out;
+  	
 }
+
+/*#suchleiste:focus{
+	font-size: 24px;
+  	width: 20%;
+}*/
+
+
 
 #meinkonto{
 	float: left;
 	margin-left: 50px;
+	margin-top: 30px;
+	
+	float: right;
 	width: 50px;
 	height: 50px;
 }
 
 #warenkorb{
-	float: left;
 	margin-left: 50px;
+	/*margin-right: 100px;*/
+	margin-top: 30px;
+	
+	float: right;
 	width: 50px;
 	height: 50px;
 }
 
 section {
 	width: 800px;
-	height: auto;
+	height: 900px;
 	float: left;
+	margin-top: 200px; /*wird benötigt damit content erst unter header beginnt*/
 	
 }
 
@@ -191,18 +221,22 @@ figcaption{
 
 
 aside {
-	width: 350px;
 	height: 900px;
 	float: right;
+	margin-top: 200px; /*wird benötigt damit content erst unter header beginnt*/
 	
 }
 
 	
 
 footer {
-	height: 100px;
 	clear: both;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid #dddddd;
+	height: 150px;
 }
+
 
 
 
@@ -214,15 +248,14 @@ footer {
 }
 
 #impressumlink{
-	height: 100px;
-	width: 350px;
+	text-align: middle;
 	float: right;
 	font-size: 15px;
 }
 
 @font-face { 
-	font-family: 'Bradley Hand ITC';
-	src: url("../⁨css/bradhitc.ttf") format("truetype");
+	font-family: ''Montserrat'';
+	src: url("../⁨css/'Montserrat'.ttf") format("truetype");
 }
 
 
@@ -243,33 +276,22 @@ footer {
 	
 }
 
-/* was macht das?*/ 
-#navi_login ul{
-	list-style: none;
-	padding: 0px;
-	margin: 0px;
-	color: white;
-}
-
-#navi_login ul li{
-	/*background-color:  #ffffff;*/
-	width: 150px;
-	height: 50px;
-	line-height: 50px;
-	border: 1px solid white;
+#beanie_cart{
+	border: 2px groove #999;
 	float: left;
+	margin: 50px;
+}
+
+#letzte_zeile{
+	border-bottom: 2px groove #999;
+  background-color: lightgrey;
+}
+
+tr.border_top td{
+	border-top: 2px groove #999;
+}
+
+#kreditsubmit{
+	background-color: #424242;
 	color: white;
-	text-align: center;
-	font-size: 19px;
 }
-
-#navi_login ul ul{
-	display: none;
-}
-
-#navi_login ul li:hover > ul{
-	display: block;
-}
-
-
-

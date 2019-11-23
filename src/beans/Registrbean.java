@@ -2,10 +2,11 @@ package beans;
 
 import java.io.Serializable;
 
-public class registrbean
+public class Registrbean
 implements Serializable {
 		private static final long serialVersionUID = 1L; 
     	private int id;
+    	private int status;
     	private String geschlecht;
     	private String titel;
     	private String nachname;
@@ -24,12 +25,23 @@ implements Serializable {
     		this.fehlermeldung = fehlermeldung;
     	}
     	
+    	public String getFehlermeldung(){
+    		return this.fehlermeldung;
+    	}
     	public void setAdmin (int admin){
     		this.admin = admin;
     	}
     	
     	public int getAdmin(){
     		return this.admin;
+    	}
+    	
+    	public void setStatus (int status){
+    		this.status = status;
+    	}
+    	
+    	public int getStatus(){
+    		return this.status;
     	}
     	
     	public void setId(int id) {

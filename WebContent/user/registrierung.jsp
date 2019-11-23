@@ -7,10 +7,10 @@
 <!-- Basis für reltive Verweise festlegen,  -->
 <base href="${pageContext.request.requestURI}"/>
 <title>Registrierung</title>
-<link rel="stylesheet" href="../css/style.css" type="text/css">
+<%--<link rel="stylesheet" href="../css/style.css" type="text/css">--%>
 </head>
 <body>
-<header>
+<%-- <header>
 <!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 <div id="mainLogo">
 	<a href="homepage.html"><img id="logo" src="../img/tods_bestcaps_logo.jpg" alt= "Logo"></a>
@@ -59,10 +59,10 @@
 </div>
 
 
-</header>
+</header>--%>
 
 		<section>
-		<form action="/tods/registrservlet" id="registrierung" method="post">
+		<form action="../Registrservlet" id="registrierung" method="post">
 		<h1>Registrierung</h1>
 		
 		<div id="registr">
@@ -102,7 +102,7 @@
 					<input type=text id="hausnummer" name="hausnummer" size="5" maxlength="10">
 					
 					<label for="postleitzahl">Postleitzahl</label>  
-					<input type="text" id="postleitzahl" name="postleitzahl" >
+					<input type="text" id="postleitzahl" size="5" maxlength="40" name="postleitzahl" >
 	
 					<label for="ort">Ort</label>
 					<input type="text" id="ort" name="ort" size="30" maxlength="40" >
