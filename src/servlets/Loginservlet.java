@@ -26,7 +26,7 @@ import javax.sql.DataSource;
 public class Loginservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
+    @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource datasource;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -48,7 +48,7 @@ public class Loginservlet extends HttpServlet {
 		RequestDispatcher disp;
 		Registrbean login = checkUser(email, request, response);
 
-		// PasswortÃ¼berprÃ¼fung
+		// Passwortüberprüfung
 		if (passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in if ===");
 			login.setStatus(1);
@@ -66,7 +66,7 @@ public class Loginservlet extends HttpServlet {
 		}
 	}
 
-	// ÃœberprÃ¼fung, der login-Daten auf "Bereits registriert ja/nein?
+	// Überprüfung, der login-Daten auf "Bereits registriert ja/nein?
 	// Und ggf. Speicherung der Daten in die loginbean --> loginuser
 	private Registrbean checkUser(String email, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
@@ -74,7 +74,7 @@ public class Loginservlet extends HttpServlet {
 		Registrbean loginuser = new Registrbean();
 		System.out.println("=== in checkUser ===");
 		RequestDispatcher disp;
-		// ÃœberprÃ¼fung, ob bereits registriert
+		// Überprüfung, ob bereits registriert
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstm = con.prepareStatement("Select * FROM thidb.kunde WHERE email = ?")) {
 			pstm.setString(1, email);

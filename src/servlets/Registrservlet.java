@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-
+import beans.Registrbean;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,15 +20,14 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import beans.Registrbean;
-
 //Servlet-Annotation: 
 @WebServlet("/Registrservlet")
 
 public class Registrservlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
+    @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
+
 	private DataSource ds;
 
 	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
@@ -37,6 +36,7 @@ public class Registrservlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("=== in get ==");
+		// this.doPost(request,response);}
 		doGet(request, response);
 	}
 
@@ -65,7 +65,7 @@ public class Registrservlet extends HttpServlet {
 		// beim Login vom Admin unterschieden werden kann
 		regform.setAdmin(0);
 
-		// Überprüfung der E-Mail
+		// �berpr�fung der E-Mail
 		try (Connection con = ds.getConnection();
 				PreparedStatement psmt = con.prepareStatement("SELECT * FROM thidb.kunde WHERE email = ?")) {
 			psmt.setString(1, regform.getEmail());
@@ -85,7 +85,7 @@ public class Registrservlet extends HttpServlet {
 
 						System.out.println("=== in try insert ==");
 
-						// Zugriff Ã¼ber Klasse java.sql.PreparedStatement
+						// Zugriff über Klasse java.sql.PreparedStatement
 						pstmt2.setString(1, regform.getGeschlecht());
 						pstmt2.setString(2, regform.getTitel());
 						pstmt2.setString(3, regform.getNachname());
@@ -105,7 +105,7 @@ public class Registrservlet extends HttpServlet {
 						dispatcher = request.getRequestDispatcher("user/registrierung_antwort.jsp");
 						dispatcher.forward(request, response);
 
-						// Generierte(n) Schlüssel auslesen (funktioniert nur mit PreparedStatement)
+						// Generierte(n) Schl�ssel auslesen (funktioniert nur mit PreparedStatement)
 						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
 							while (rs2.next()) {
 								regform.setId(rs.getInt(1));
