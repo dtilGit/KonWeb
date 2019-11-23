@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.artikel_bean;
+import beans.ArtikelBean;
 
 /**
  * Servlet implementation class kategorie_loeschen
  */
-@WebServlet("/artikel_loeschen")
-public class artikel_loeschen extends HttpServlet {
+@WebServlet("/ArtikelLoeschen")
+public class ArtikelLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -28,7 +28,7 @@ public class artikel_loeschen extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public artikel_loeschen() {
+    public ArtikelLoeschen() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,7 +40,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		request.setCharacterEncoding("UTF-8");	
 		
-		artikel_bean art_bean = new artikel_bean();
+		ArtikelBean art_bean = new ArtikelBean();
 		int i = Integer.parseInt(request.getParameter("alleArtikelLaden"));
 		art_bean.setArtikel_id(i); // parse Int
 		

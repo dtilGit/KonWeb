@@ -14,13 +14,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.kategorie_bean;
+import beans.KategorieBean;
 
 /**
  * Servlet implementation class kategorie_loeschen
  */
-@WebServlet("/kategorie_loeschen")
-public class kategorie_loeschen extends HttpServlet {
+@WebServlet("/KategorieLoeschen")
+public class KategorieLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -28,7 +28,7 @@ public class kategorie_loeschen extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public kategorie_loeschen() {
+    public KategorieLoeschen() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,7 +40,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		request.setCharacterEncoding("UTF-8");	
 		
-		kategorie_bean form = new kategorie_bean();
+		KategorieBean form = new KategorieBean();
 		int i = Integer.parseInt(request.getParameter("alleKategorienLaden"));
 		form.setKategorie_id(i); // parse Int
 		

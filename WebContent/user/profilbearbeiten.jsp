@@ -5,14 +5,29 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-UTF-8)">
+
 <base href="${pageContext.request.requestURI}"/>
+
 <title>Profildaten bearbeiten</title>
 </head>
 
 <body>
 	<h1>Profildaten bearbeiten</h1>
-
-	<form action="../Profilbearbeiten" id="profilbearbeiten" method="post">
+	
+	<h2>Deine aktuellen Daten</h2>
+			<p>Geschlecht: ${login.geschlecht}</p>
+			<p>Titel: ${login.titel}</p>
+			<p>Nachname: ${login.nachname}</p>
+			<p>Vorname: ${login.vorname}</p>
+			<%--<p>E-Mail: ${login.email}</p> --%>
+			<p>Strasse: ${login.strasse}</p>
+			<p>Hausnummer: ${login.hausnummer}</p>
+			<p>Postleitzahl: ${login.postleitzahl}</p>
+			<p>Ort: ${login.ort}</p>
+			<p>Land: ${login.land}</p>
+			
+	<p> Hier kannst du keine Änderungen eingeben:</p>
+	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post">
 		<div>
 			<p>
 				<label for="geschlecht"></label> <label for="geschlecht">Herr</label>
@@ -37,14 +52,6 @@
 				
 			<label for="vorname">Vorname</label> <input type="text" id="vorname"
 				name="vorname" size="25" maxlength="40" placeholder="Max" required>
-				
-			<label for="email">E-Mail</label> <input type="email" id="email"
-				name="email" size="25" maxlength="40" placeholder="max.mustermann@web.de" required> 
-				
-			<label for="passwort">Passwort</label> <input type="password"
-				name="passwort" id="passwort" size="25" maxlength="40"
-				title="10 Zeichen, GroÃ- und Kleinbuchstaben, Zahlen"
-				pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(10,)" required> 
 				
 			<label for="strasse">Strasse</label> <input type="text" id="strasse"
 				name="strasse" size="30" maxlength="40"> 

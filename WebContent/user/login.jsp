@@ -81,7 +81,7 @@
 			Noch nicht registriert? Zur Registrierung <a href="registrierung.jsp">
 				hier</a>
 		</p>
-
+ 
 	</section>
 
 

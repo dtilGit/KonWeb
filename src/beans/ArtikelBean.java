@@ -3,7 +3,7 @@ package beans;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class artikel_bean {
+public class ArtikelBean {
 	private static final long serialVersionUID = 1L;
 	
 	private Integer artikel_id; 
@@ -15,7 +15,7 @@ public class artikel_bean {
 	private String bildname; 
 	
 
-	public artikel_bean() {
+	public ArtikelBean() {
 		// TODO Auto-generated constructor stub
 	}
 

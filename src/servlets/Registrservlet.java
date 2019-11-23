@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import beans.Registrbean;
+import beans.RegistrBean;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -21,14 +21,13 @@ import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
 //Servlet-Annotation: 
-@WebServlet("/Registrservlet")
+@WebServlet("/RegistrServlet")
 
-public class Registrservlet extends HttpServlet {
+public class RegistrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
-
-	private DataSource ds;
+	DataSource ds;
 
 	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
 	// this URL", wenn diese Methode fehlt?
@@ -45,7 +44,7 @@ public class Registrservlet extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8"); // In diesem Format erwartet das Servlet jetzt die Formulardaten
 		// System.out.println("vor bean");
-		Registrbean regform = new Registrbean();
+		RegistrBean regform = new RegistrBean();
 		RequestDispatcher dispatcher;
 
 		HttpSession session = request.getSession();

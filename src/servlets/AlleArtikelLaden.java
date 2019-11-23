@@ -18,13 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.artikel_bean;
+import beans.ArtikelBean;
 
 /**
  * Servlet implementation class alleArtikel_laden
  */
-@WebServlet("/alleArtikel_laden")
-public class alleArtikel_laden extends HttpServlet {
+@WebServlet("/alleArtikelLaden")
+public class AlleArtikelLaden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -32,7 +32,7 @@ public class alleArtikel_laden extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public alleArtikel_laden() {
+    public AlleArtikelLaden() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,7 +43,7 @@ public class alleArtikel_laden extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<artikel_bean> alleArtikel = new ArrayList<artikel_bean>();
+		List<ArtikelBean> alleArtikel = new ArrayList<ArtikelBean>();
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.artikel")) {
@@ -52,7 +52,7 @@ public class alleArtikel_laden extends HttpServlet {
 
 				while (rs.next()) {
 
-					artikel_bean art_bean = new artikel_bean();
+					ArtikelBean art_bean = new ArtikelBean();
 
 					int art_id = rs.getInt("artikel_id");
 					art_bean.setArtikel_id(art_id);

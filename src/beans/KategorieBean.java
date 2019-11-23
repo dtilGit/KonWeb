@@ -1,6 +1,6 @@
 package beans;
 
-public class kategorie_bean {
+public class KategorieBean {
 	private static final long serialVersionUID = 1L;
 	private int kategorie_id;
 	private String kategoriebezeichnung;

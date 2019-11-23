@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import beans.Registrbean;
+import beans.RegistrBean;
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
 
 import javax.annotation.Resource;
@@ -23,7 +23,7 @@ import javax.sql.DataSource;
 
 @WebServlet("/Loginservlet")
 
-public class Loginservlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -46,7 +46,7 @@ public class Loginservlet extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		RequestDispatcher disp;
-		Registrbean login = checkUser(email, request, response);
+		RegistrBean login = checkUser(email, request, response);
 
 		// Passwortüberprüfung
 		if (passwort.equals(login.getPasswort())) {
@@ -68,10 +68,10 @@ public class Loginservlet extends HttpServlet {
 
 	// Überprüfung, der login-Daten auf "Bereits registriert ja/nein?
 	// Und ggf. Speicherung der Daten in die loginbean --> loginuser
-	private Registrbean checkUser(String email, HttpServletRequest request, HttpServletResponse response)
+	private RegistrBean checkUser(String email, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
 
-		Registrbean loginuser = new Registrbean();
+		RegistrBean loginuser = new RegistrBean();
 		System.out.println("=== in checkUser ===");
 		RequestDispatcher disp;
 		// Überprüfung, ob bereits registriert

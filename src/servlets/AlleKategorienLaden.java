@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
-import beans.kategorie_bean;
+import beans.KategorieBean;
 
 /**
  * Servlet implementation class alleKategorien_laden
  */
-@WebServlet("/alleKategorien_laden")
-public class alleKategorien_laden extends HttpServlet {
+@WebServlet("/AlleKategorienLaden")
+public class AlleKategorienLaden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -30,7 +30,7 @@ public class alleKategorien_laden extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public alleKategorien_laden() {
+    public AlleKategorienLaden() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,7 +40,7 @@ public class alleKategorien_laden extends HttpServlet {
 	 */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<kategorie_bean> alleKategorien = new ArrayList<kategorie_bean>();
+		List<KategorieBean> alleKategorien = new ArrayList<KategorieBean>();
 		
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.kategorie")) {
@@ -49,7 +49,7 @@ public class alleKategorien_laden extends HttpServlet {
 					
 						while (rs.next()) {
 							
-							kategorie_bean kat_bean = new kategorie_bean();
+							KategorieBean kat_bean = new KategorieBean();
 							
 							int kat_id = rs.getInt("kategorie_id");
 							kat_bean.setKategorie_id(kat_id);

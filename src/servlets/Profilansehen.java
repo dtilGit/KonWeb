@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Profilansehen
  */
-@WebServlet("/Profilansehen")
-public class Profilansehen extends HttpServlet {
+@WebServlet("/ProfilAnsehen")
+public class ProfilAnsehen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 

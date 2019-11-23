@@ -25,16 +25,16 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
-import beans.kategorie_bean;
+import beans.KategorieBean;
 
-@WebServlet("/kategorie_hinzufuegen")
+@WebServlet("/KategorieHinzufuegen")
 @MultipartConfig(
         maxFileSize=2024*2024*5,
         maxRequestSize=2024*2024*5*5, 
         location= "/tmp",
         fileSizeThreshold=2024*2024)
 
-public class kategorie_hinzufuegen extends HttpServlet {
+public class KategorieHinzufuegen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -50,7 +50,7 @@ public class kategorie_hinzufuegen extends HttpServlet {
 		
 	//	HttpSession session = request.getSession();
 		
-		kategorie_bean kat_bean = new kategorie_bean();
+		KategorieBean kat_bean = new KategorieBean();
 		kat_bean.setKategoriebezeichnung(request.getParameter("kategorie_bezeichnung"));
 		kat_bean.setGeschlecht(request.getParameter("kategorie_geschlecht"));
 		

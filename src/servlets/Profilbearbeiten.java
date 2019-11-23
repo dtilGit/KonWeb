@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import beans.Registrbean;
+import beans.RegistrBean;
 
 /**
  * Servlet implementation class Profilbearbeiten
  */
-@WebServlet("/Profilbearbeiten")
-public class Profilbearbeiten extends HttpServlet {
+@WebServlet("/ProfilBearbeiten")
+public class ProfilBearbeiten extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestDispatcher disp; 
 	
@@ -36,19 +36,20 @@ public class Profilbearbeiten extends HttpServlet {
 		//die Änderungseingaben in "request" speichern
 		request.setCharacterEncoding("UTF-8");
 		
-		Registrbean profiledit = new Registrbean();
+		RegistrBean profiledit = new RegistrBean();
 		HttpSession session = request.getSession();
 		
-		Registrbean kunde = (Registrbean)session.getAttribute("login"); 
+		RegistrBean kunde = (RegistrBean)session.getAttribute("login"); 
 		int id = kunde.getId();
 		
 		String geschlecht = request.getParameter("geschlecht");
 		String titel = request.getParameter("titel");
 		String nachname  = request.getParameter("nachname");
 		String vorname  = request.getParameter("vorname");
-		String email  = request.getParameter("email");
+		//String email  = request.getParameter("email");
 		String strasse  = request.getParameter("strasse");
 		String hausnummer  = request.getParameter("hausnummer");
+		String postleitzahl = request.getParameter("postleitzahl");
 		String ort  = request.getParameter("ort");
 		String land  = request.getParameter("land");
 		
@@ -57,25 +58,28 @@ public class Profilbearbeiten extends HttpServlet {
 		profiledit.setTitel(titel);
 		profiledit.setNachname(nachname);
 		profiledit.setVorname(vorname);
-		profiledit.setEmail(email);
+		//profiledit.setEmail(email);
 		profiledit.setStrasse(strasse);
 		profiledit.setHausnummer(hausnummer);
 		profiledit.setOrt(ort);
+		profiledit.setPostleitzahl(postleitzahl);
 		profiledit.setLand(land);
 		profiledit.setId(id);
 		
 		//Statusüberprüfung -> Eingelogt oder nicht ??? Notwendig oder nicht?
 		
 		try (Connection con = datasource.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("UPDATE kunde SET geschlecht =?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, ort=?, land=? WHERE id=?")){
+			PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht = COALESCE(NULLIF(?, ''), geschlecht), titel = COALESCE(NULLIF(?, ''),titel), nachname = COALESCE(NULLIF(?, ''), nachname),vorname = COALESCE(NULLIF(?, ''),vorname), strasse = COALESCE(NULLIF(?, ''), strasse), hausnummer = COALESCE(NULLIF(?, ''), hausnummer), postleitzahl = COALESCE(NULLIF(?, ''),postleitzahl), ort=COALESCE (NULLIF (?, ''), ort), land= COALESCE (NULLIF?, ''), land) WHERE id=?")){
 				pstmt.setString(1, profiledit.getGeschlecht());
 				pstmt.setString(2, profiledit.getTitel());
 				pstmt.setString(3, profiledit.getNachname());
 				pstmt.setString(4, profiledit.getVorname());
 				pstmt.setString(5, profiledit.getStrasse());
 				pstmt.setString(6, profiledit.getHausnummer());
-				pstmt.setString(7, profiledit.getOrt());
-				pstmt.setString(8, profiledit.getLand());
+				pstmt.setString(7, profiledit.getPostleitzahl());
+				pstmt.setString(8, profiledit.getOrt());
+				pstmt.setString(9, profiledit.getPostleitzahl());
+				pstmt.setString(10, profiledit.getLand());
 				pstmt.executeUpdate();
 				
 		} catch (SQLException e) {

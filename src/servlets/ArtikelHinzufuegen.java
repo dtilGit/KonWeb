@@ -24,19 +24,19 @@ import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
-import beans.artikel_bean;
+import beans.ArtikelBean;
 
 /**
  * Servlet implementation class ArtikelHinzufuegen
  */
-@WebServlet("/artikel_hinzufuegen")
+@WebServlet("/ArtikelHinzufuegen")
 @MultipartConfig(
         maxFileSize=1024*1024*5,
         maxRequestSize=1024*1024*5*5, 
         location= "/tmp",
         fileSizeThreshold=1024*1024)
 
-public class artikel_hinzufuegen extends HttpServlet {
+public class ArtikelHinzufuegen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -50,7 +50,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		request.setCharacterEncoding("UTF-8");	
 		
-		artikel_bean art_bean = new artikel_bean();
+		ArtikelBean art_bean = new ArtikelBean();
 		//änderung von artikelbezeichnung
 		art_bean.setArtikelbezeichnung(request.getParameter("art_bez"));
 		BigDecimal preis = new BigDecimal (request.getParameter("preis"));

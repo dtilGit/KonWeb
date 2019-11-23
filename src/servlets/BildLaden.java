@@ -21,8 +21,8 @@ import javax.sql.DataSource;
 
 //Servlet zum Auslesen der Bilder aus der DB
 
-@WebServlet("/bild_laden")
-public class bild_laden extends HttpServlet {
+@WebServlet("/BildLaden")
+public class BildLaden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
@@ -30,7 +30,7 @@ public class bild_laden extends HttpServlet {
 private DataSource ds;
 
 
-public bild_laden() {
+public BildLaden() {
  super();
 
 }
