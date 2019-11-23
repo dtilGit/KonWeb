@@ -51,6 +51,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		request.setCharacterEncoding("UTF-8");	
 		
 		artikel_bean art_bean = new artikel_bean();
+		//änderung von artikelbezeichnung
 		art_bean.setArtikelbezeichnung(request.getParameter("art_bez"));
 		BigDecimal preis = new BigDecimal (request.getParameter("preis"));
 		art_bean.setPreis(preis);

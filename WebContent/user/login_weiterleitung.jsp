@@ -5,6 +5,7 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ">
+<base href="${pageContext.request.requestURI}"/>
 <title>Login</title>
 </head>
 <body>
@@ -12,8 +13,8 @@
 	<c:choose>
 		<c:when test="${login.admin == 0}">
 			<h2>
-				<b>Das Login war erfolgreich!</b><b>Hallo ${login.vorname}
-					${login.nachname} !</b> <a href="/tods/user/profilansehen.jsp">Ihr
+				<b>Login war erfolgreich!</b><b>Hallo ${login.vorname}
+					${login.nachname} !</b> <a href="profilansehen.jsp">Ihr
 					Profil</a>
 			</h2>
 		</c:when>
@@ -25,7 +26,7 @@
 			<br>
 			<b>Hier zur Adminverwaltung</b>
 
-			<form style="display: inline" action="/tods/admin/adminpage.jsp">
+			<form style="display: inline" action="../admin/adminpage.jsp">
 				<button>Zur Verwaltung der Webseiteninhalte</button>
 
 			</form>

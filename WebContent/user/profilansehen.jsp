@@ -5,6 +5,7 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-UTF-8)">
+<base href="${pageContext.request.requestURI}"/>
 <title>Ihr Profil</title>
 </head>
 
@@ -18,7 +19,7 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 		<c:when test="${login.status == 0}">
 			<h2>
 				<b>Um Ihr Profil ansehen zu können, müssten Sie angemeldet sein!
-				</b> <a href="/tods/user/login.jsp"> Zum LOGIN</a>
+				</b> <a href="login.jsp"> Zum LOGIN</a>
 			</h2>
 		</c:when>
 
@@ -34,7 +35,7 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 			<p>Ort: ${login.ort}</p>
 			<p>Land: ${login.land}</p>
 
-			<form style="display: inline" action="/tods/user/profilbearbeiten.jsp">
+			<form style="display: inline" action="profilbearbeiten.jsp">
 				<button>Profil bearbeiten</button>
 
 			</form>

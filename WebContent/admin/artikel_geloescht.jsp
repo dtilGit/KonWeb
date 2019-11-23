@@ -5,13 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="${pageContext.request.requestURI}"/>
 <title>Artikel gelöscht!</title>
 </head>
 <body>
 <%-- 	<%@ include file="/jspf/header.jspf"%> --%>
 	<div id="artikelgeloescht">
 		<h2>Der angegebene Artikel wurde gelöscht!</h2>
-		<em>Gelöschte Artikel ID: </em>${art_bean.artikel_id} <br>
+		<%--<p>Gelöschte Artikel ID: </p>${alleArtikel.artikel_id} <br>--%>
 		<form style="display: inline" action="admin/adminpage.jsp"
 			method="get">
 			Zurück zur Adminseite:

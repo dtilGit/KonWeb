@@ -5,6 +5,7 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-UTF-8)">
+<base href="${pageContext.request.requestURI}"/>
 <title>Profildaten bearbeiten</title>
 </head>
 

@@ -59,6 +59,7 @@ public class Registrservlet extends HttpServlet {
 		regform.setPasswort(request.getParameter("passwort"));
 		regform.setStrasse(request.getParameter("strasse"));
 		regform.setHausnummer(request.getParameter("hausnummer"));
+		regform.setPostleitzahl(request.getParameter ("postleitzahl"));
 		regform.setOrt(request.getParameter("ort"));
 		regform.setLand(request.getParameter("land"));
 		// Admin-Wert auf Null setzen, damit jeder "normale" Kunde durch diesen Wert
@@ -115,7 +116,7 @@ public class Registrservlet extends HttpServlet {
 				} else if (rs.next()) {
 					System.out.println("=== in elseif ===");
 					regform.setEmail(null);
-					dispatcher = request.getRequestDispatcher("user/fehlerEmail.jsp");
+					dispatcher = request.getRequestDispatcher("/user/fehlerEmail.jsp");
 					dispatcher.forward(request, response);
 				}
 			} catch (Exception ex) {
