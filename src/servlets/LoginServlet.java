@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-@WebServlet("/Loginservlet")
+@WebServlet("/LoginServlet")
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -95,6 +95,7 @@ public class LoginServlet extends HttpServlet {
 					loginuser.setOrt(rs.getString("ort"));
 					loginuser.setLand(rs.getString("land"));
 					loginuser.setEmail(rs.getString("email"));
+					loginuser.setId(rs.getInt("kunde_id"));
 					// Status==1 bedeutet, dass der Kunde eingeloggt ist.
 					loginuser.setStatus(rs.getInt(1));
 

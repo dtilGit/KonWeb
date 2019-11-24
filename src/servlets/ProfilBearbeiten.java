@@ -29,18 +29,23 @@ public class ProfilBearbeiten extends HttpServlet {
 	DataSource datasource;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
+		System.out.println("===in deGet===");
 		doPost(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//die Änderungseingaben in "request" speichern
+		System.out.println("===in duPost===");
 		request.setCharacterEncoding("UTF-8");
 		
-		RegistrBean profiledit = new RegistrBean();
 		HttpSession session = request.getSession();
+		RegistrBean profiledit = new RegistrBean();
 		
+		//geändert von login
 		RegistrBean kunde = (RegistrBean)session.getAttribute("login"); 
-		int id = kunde.getId();
+		
+		
+		int kunden_id = kunde.getId();
 		
 		String geschlecht = request.getParameter("geschlecht");
 		String titel = request.getParameter("titel");
@@ -64,12 +69,14 @@ public class ProfilBearbeiten extends HttpServlet {
 		profiledit.setOrt(ort);
 		profiledit.setPostleitzahl(postleitzahl);
 		profiledit.setLand(land);
-		profiledit.setId(id);
+		profiledit.setId(kunden_id);
 		
 		//Statusüberprüfung -> Eingelogt oder nicht ??? Notwendig oder nicht?
 		
 		try (Connection con = datasource.getConnection();
-			PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht = COALESCE(NULLIF(?, ''), geschlecht), titel = COALESCE(NULLIF(?, ''),titel), nachname = COALESCE(NULLIF(?, ''), nachname),vorname = COALESCE(NULLIF(?, ''),vorname), strasse = COALESCE(NULLIF(?, ''), strasse), hausnummer = COALESCE(NULLIF(?, ''), hausnummer), postleitzahl = COALESCE(NULLIF(?, ''),postleitzahl), ort=COALESCE (NULLIF (?, ''), ort), land= COALESCE (NULLIF?, ''), land) WHERE id=?")){
+				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=? WHERE kunde_id=?")){
+			//PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht = COALESCE(NULLIF(?, ''), geschlecht), titel = COALESCE(NULLIF(?, ''),titel), nachname = COALESCE(NULLIF(?, ''), nachname),vorname = COALESCE(NULLIF(?, ''),vorname), strasse = COALESCE(NULLIF(?, ''), strasse), hausnummer = COALESCE(NULLIF(?, ''), hausnummer), postleitzahl = COALESCE(NULLIF(?, ''),postleitzahl), ort=COALESCE (NULLIF (?, ''), ort), land= COALESCE (NULLIF?, ''), land) WHERE id=?")){
+			System.out.println("===in Try===");	
 				pstmt.setString(1, profiledit.getGeschlecht());
 				pstmt.setString(2, profiledit.getTitel());
 				pstmt.setString(3, profiledit.getNachname());
@@ -78,10 +85,10 @@ public class ProfilBearbeiten extends HttpServlet {
 				pstmt.setString(6, profiledit.getHausnummer());
 				pstmt.setString(7, profiledit.getPostleitzahl());
 				pstmt.setString(8, profiledit.getOrt());
-				pstmt.setString(9, profiledit.getPostleitzahl());
-				pstmt.setString(10, profiledit.getLand());
+				pstmt.setString(9, profiledit.getLand());
+				pstmt.setInt(10, profiledit.getId());
 				pstmt.executeUpdate();
-				
+				//request.setAttribute("profiledit", profiledit);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,7 +96,8 @@ public class ProfilBearbeiten extends HttpServlet {
 		
 		request.setAttribute("profiledit", profiledit);
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/profilansehen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
+		System.out.println("===in dispatcher===");	
 		dispatcher.forward(request, response);
 	}
 
