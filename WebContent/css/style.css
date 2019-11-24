@@ -15,6 +15,7 @@ h1 {
 h2{
 	font-size: 20px;
 	float: left;
+	line-break: strict;
 }
 
 a {
@@ -158,7 +159,7 @@ header{
 
 section {
 	width: 800px;
-	height: 900px;
+	height: 1100px;
 	float: left;
 	margin-top: 200px; /*wird benötigt damit content erst unter header beginnt*/
 	
