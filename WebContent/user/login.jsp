@@ -64,7 +64,7 @@
 	<section>
 
 
-		<form action="../Loginservlet" method="post" id="login">
+		<form action="../LoginServlet" method="post" id="login">
 			<div id="registr">
 
 				<label for="email"> E-Mail </label> <input type="email" name="email"

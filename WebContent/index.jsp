@@ -25,9 +25,11 @@
 
 
 		<div class="dropdown-navi men">
-			<button type="submit" action="/servlets/KategorienMaenner" class="dropbtn">Männer</button>
+			<form  action="../KategorienMaenner" method="post">
+			<button type="submit" class="dropbtn">Männer</button>
 			<!-- <button class="dropdown-content">Beanies</button> -->
 			<!-- 				<button>Caps</button> -->
+			</form>
 		</div>
 
 
