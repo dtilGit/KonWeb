@@ -2,23 +2,24 @@
 body{
 	margin-left: 10%;
 	margin-right: 10%;
-	font-family: 'Courier New';
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
 h1 {
 	color: #777;
 	text-decoration: none;
-	font-family: 'Montserrat';
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	font-size: 30px;
 }
 
 h2{
 	font-size: 20px;
 	float: left;
+	
 }
 
 a {
-	font-family: 'Montserrat';
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	color: #424242;
 }
 
@@ -28,7 +29,7 @@ a:hover {
 
 button,
 input {
-	font-family: 'Montserrat';
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	
 }
 
@@ -189,19 +190,17 @@ main {
 
 }
 
-.flex-container {
-    display: flex;
-}
+/* .flex-container { */
+/*     display: flex; */
+/* } */
 
-.flex-item {
-    flex: auto;
-    margin: .5em;
-    padding: .5em;
-}
+/* .flex-item { */
+/*     flex: auto; */
+/*     margin: .5em; */
+/*     padding: .5em; */
+/* } */
 
-.flex-item ul {
-	display: none;
-}
+
 
 .markenbereich{
 	border: 5px solid #dadada;
@@ -254,6 +253,7 @@ footer {
 	padding-bottom: 20px;
 	border-top: 1px solid #dddddd;
 	height: 150px;
+	z-index: 999;
 }
 
 
@@ -273,8 +273,8 @@ footer {
 }
 
 @font-face { 
-	font-family: ''Montserrat'';
-	src: url("../⁨css/'Montserrat'.ttf") format("truetype");
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	
 }
 
 
