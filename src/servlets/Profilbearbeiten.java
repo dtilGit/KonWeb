@@ -96,7 +96,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		
 		request.setAttribute("profiledit", profiledit);
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
 		System.out.println("===in dispatcher===");	
 		dispatcher.forward(request, response);
 	}
