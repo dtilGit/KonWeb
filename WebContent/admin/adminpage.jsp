@@ -261,18 +261,7 @@ Lager:
 <aside>
 Aside
 </aside>-->
+<%@ include file="/../jspf/footer.jspf"%>
 
-<footer>
-<div id= "ServiceHotline">
-<p>Du hast ein Problem?<br> Unsere Service Hotline 24/7 kostenlos für dich erreichbar:</p>
-<p>09131/123987654</p>
-</div>
-
-<div id="impressumLink">
-<p>anderweitig Kontakt findest du im:<p>
-<a href="Impressum.html">Impressum</a>
-</div>
-
-</footer>
 </body>
 </html>

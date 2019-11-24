@@ -144,6 +144,21 @@
 		</figure>
 	</aside>
 	</div>
-	<%@ include file="/jspf/footer.jspf"%>
+	<div class="footer">
+	<footer>
+		<div id="servicehotline">
+			
+			<h1>TOD's BestCap</h1>
+			<p>Du hast ein Problem?<br>Unsere Service Hotline 24/7 kostenlos für dich erreichbar:</p>
+			<a href="tel:09131123987654">09131/123987654</a>
+		</div>
+
+		<div id="impressumlink">
+			<a href="user/impressum.jsp">Impressum</a>
+		</div>
+		</br>
+
+	</footer>
+</div>
 </body>
 </html>
