@@ -23,7 +23,7 @@ How to: kurze Beschreibung zum Bearbeiten<br><br><br>
 Lager:
 </div>
 
-    <form id="alleArtikel_laden" method="post" enctype="multipart/form-data" action="/servlets/alleartikel_laden">
+    <form id="AlleArtikelLaden" method="post" enctype="multipart/form-data" action="/servlets/AlleArtikelLaden">
         <table id="artikeltabelle">
 		
             <thead>
@@ -77,16 +77,16 @@ Lager:
 		<!--DB bearbeiten Buttons-->				
 		<div id="adminpagebutton">	
 		 <button type="button" id="lager_erhoehen" onClick="document.getElementById('lager_befuellen').style.display='inline';">Lagerbestand erhöhen</button>
-		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_hinzufuegen').style.display='inline';">neuen Artikel hinzufügen</button>
-		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_hinzufuegen').style.display='inline';">Kategorie hinzufügen</button>
-		 <form action="../alleKategorien_laden" method="post" enctype="multipart/form-data">
+		 <button type="button" id="neuer_artikel" onClick="document.getElementById('ArtikelHinzufuegen').style.display='inline';">neuen Artikel hinzufügen</button>
+		 <button type="button" id="neue_kategorie" onClick="document.getElementById('KategorieHinzufuegen').style.display='inline';">Kategorie hinzufügen</button>
+		 <form action="../AlleKategorienLaden" method="post" enctype="multipart/form-data">
 		 <button type="submit" id="kategorien_laden">Kategorien laden</button>
 		 </form>
-		  <form action="../alleArtikel_laden" method="post" enctype="multipart/form-data">
+		  <form action="../AlleArtikelLaden" method="post" enctype="multipart/form-data">
 		 <button type="submit" id="artikel_laden">Artikel laden</button>
 		 </form>
-		 <button type="button" id="neue_kategorie" onClick="document.getElementById('kategorie_loeschen').style.display='inline';">Kategorien löschen</button>
-		 <button type="button" id="neuer_artikel" onClick="document.getElementById('artikel_loeschen').style.display='inline';">Artikel löschen</button>
+		 <button type="button" id="neue_kategorie" onClick="document.getElementById('KategorieLoeschen').style.display='inline';">Kategorien löschen</button>
+		 <button type="button" id="neuer_artikel" onClick="document.getElementById('ArtikelLoeschen').style.display='inline';">Artikel löschen</button>
 		</div>
     
 	
@@ -95,8 +95,8 @@ Lager:
 	
 	
 	<!--neuen Artikel hinzufügen -->
-	<form method="post" enctype="multipart/form-data" action="../artikel_hinzufuegen">
-	<table id="artikel_hinzufuegen" style="display: none">
+	<form method="post" enctype="multipart/form-data" action="../ArtikelHinzufuegen">
+	<table id="ArtikelHinzufuegen" style="display: none">
 	<thead>
                 <tr>
                     <th>Artikelbezeichnung</th>
@@ -147,7 +147,7 @@ Lager:
 					
 					<td>
 					<button type="submit" name="speichern">speichern</button>
-					<button type="reset" name="abbrechen" onClick="document.getElementById('artikel_hinzufuegen').style.display='none';">abbrechen</button>
+					<button type="reset" name="abbrechen" onClick="document.getElementById('ArtikelHinzufuegen').style.display='none';">abbrechen</button>
 					</td>
 					</tr>
 	</tbody>
@@ -156,8 +156,8 @@ Lager:
 	
 	
 	<!--Neue Kategorie hinzufügen-->
-	<form action="../kategorie_hinzufuegen" method="get" enctype="multipart/form-data">
-	<table id="kategorie_hinzufuegen" style="display: none">
+	<form action="../KategorieHinzufuegen" method="get" enctype="multipart/form-data">
+	<table id="KategorieHinzufuegen" style="display: none">
 	<thead>
                 <tr>
                     <th>Kategorie-Bezeichnung</th>
@@ -180,7 +180,7 @@ Lager:
 					</td>
 					<td>
 					<button type="submit" name="speichern">speichern</button>
-					<button type="reset" name="abbrechen" onClick="document.getElementById('kategorie_hinzufuegen').style.display='none';">abbrechen</button>
+					<button type="reset" name="abbrechen" onClick="document.getElementById('KategorieHinzufuegen').style.display='none';">abbrechen</button>
 					</td>
 	</tr>
 	<tbody>
@@ -189,8 +189,8 @@ Lager:
 	</div>
 	
 	<!--Kategorie löschen-->
-	<form action="../kategorie_loeschen" method="get" enctype="multipart/form-data">
-	<table id="kategorie_loeschen" style="display: none">
+	<form action="../KategorieLoeschen" method="get" enctype="multipart/form-data">
+	<table id="KategorieLoeschen" style="display: none">
 	<thead>
                 <tr>
                 	<th>Laden Button</th>
@@ -215,7 +215,7 @@ Lager:
 	<td>
 	<button type="submit" name="loeschen">löschen</button>
 	
-	<button type="reset" name="abbrechen" onClick="document.getElementById('kategorie_loeschen').style.display='none';">abbrechen</button>
+	<button type="reset" name="abbrechen" onClick="document.getElementById('KategorieLoeschen').style.display='none';">abbrechen</button>
 	</td>
 	</tr>
 	<tbody>
@@ -224,8 +224,8 @@ Lager:
 	</div>
 	<div>
 	<!-- Artikel löschen -->
-	<form action="../artikel_loeschen" method="get" enctype="multipart/form-data">
-	<table id="artikel_loeschen" style="display: none">
+	<form action="../ArtikelLoeschen" method="get" enctype="multipart/form-data">
+	<table id="ArtikelLoeschen" style="display: none">
 	<thead>
 		<tr>
 			<th> Artikel ID, Artikelbezeichnung </th>
@@ -247,7 +247,7 @@ Lager:
 	<td>
 	<button type="submit" name="loeschen">löschen</button>
 	
-	<button type="reset" name="abbrechen" onClick="document.getElementById('artikel_loeschen').style.display='none';">abbrechen</button>
+	<button type="reset" name="abbrechen" onClick="document.getElementById('ArtikelLoeschen').style.display='none';">abbrechen</button>
 	</td>
 	</tr>
 	</tbody>
@@ -261,18 +261,7 @@ Lager:
 <aside>
 Aside
 </aside>-->
+<%@ include file="/../jspf/footer.jspf"%>
 
-<footer>
-<div id= "ServiceHotline">
-<p>Du hast ein Problem?<br> Unsere Service Hotline 24/7 kostenlos für dich erreichbar:</p>
-<p>09131/123987654</p>
-</div>
-
-<div id="impressumLink">
-<p>anderweitig Kontakt findest du im:<p>
-<a href="Impressum.html">Impressum</a>
-</div>
-
-</footer>
 </body>
 </html>

@@ -69,7 +69,7 @@ public class AlleKategorienLaden extends HttpServlet {
 					throw new ServletException(ex.getMessage());
 				}
 		request.setAttribute("alleKategorien", alleKategorien);
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("../admin/adminpage.jsp");
 		dispatcher.forward(request, response);
 	}
 

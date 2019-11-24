@@ -23,7 +23,7 @@ import beans.ArtikelBean;
 /**
  * Servlet implementation class alleArtikel_laden
  */
-@WebServlet("/alleArtikelLaden")
+@WebServlet("/AlleArtikelLaden")
 public class AlleArtikelLaden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
@@ -56,7 +56,7 @@ public class AlleArtikelLaden extends HttpServlet {
 
 					int art_id = rs.getInt("artikel_id");
 					art_bean.setArtikel_id(art_id);
-					//änderung von artikelbezeichnung 
+					//ï¿½nderung von artikelbezeichnung 
 					String art_bez = rs.getString("artikelbezeichnung");
 					art_bean.setArtikelbezeichnung(art_bez);
 
