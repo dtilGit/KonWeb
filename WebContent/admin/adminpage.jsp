@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="UTF-8"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <title>Adminpage</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
-<base href="${pageContext.request.requestURI}"/>
+<base href="${pageContext.request.requestURI}" />
 
 </head>
 
 <body>
-<%@ include file="/../jspf/header.jspf"%>
+	<%@ include file="/../jspf/header.jspf"%>
 
 <section>
 <div class= "intro">
@@ -235,16 +235,15 @@ Kategorie löschen
 	<tbody>
 	</table>
 	</form>
-	
-	
 
-</section>
 
-<!--Aside hier ausgeblendet da artikelhinzufügen tabelle reingeht 
+	</section>
+
+	<!--Aside hier ausgeblendet da artikelhinzufügen tabelle reingeht 
 <aside>
 Aside
 </aside>-->
-<%@ include file="/../jspf/footer.jspf"%>
+	<%@ include file="/../jspf/footer.jspf"%>
 
 </body>
 </html>
