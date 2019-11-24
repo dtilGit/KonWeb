@@ -48,7 +48,7 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher disp;
 		RegistrBean login = checkUser(email, request, response);
 
-		// Passwortüberprüfung
+		// Passwortï¿½berprï¿½fung
 		if (passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in if ===");
 			login.setStatus(1);
@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
 		}
 	}
 
-	// Überprüfung, der login-Daten auf "Bereits registriert ja/nein?
+	// ï¿½berprï¿½fung, der login-Daten auf "Bereits registriert ja/nein?
 	// Und ggf. Speicherung der Daten in die loginbean --> loginuser
 	private RegistrBean checkUser(String email, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 		RegistrBean loginuser = new RegistrBean();
 		System.out.println("=== in checkUser ===");
 		RequestDispatcher disp;
-		// Überprüfung, ob bereits registriert
+		// ï¿½berprï¿½fung, ob bereits registriert
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstm = con.prepareStatement("Select * FROM thidb.kunde WHERE email = ?")) {
 			pstm.setString(1, email);

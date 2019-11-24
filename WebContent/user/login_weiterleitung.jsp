@@ -14,8 +14,10 @@
 		<c:when test="${login.admin == 0}">
 			<h2>
 				<b>Login war erfolgreich!</b><b>Hallo ${login.vorname}
-					${login.nachname} !</b> <a href="profilansehen.jsp">Ihr
-					Profil</a>
+				<%--änderung davor: profilansehen.jsp --%>
+					${login.nachname} !</b> <form action="../ProfilAnsehen" method="post"> <button type="submit"> Ihr
+					Profil</button></form>
+					<%--a href="../ProfilAnsehen"> --%>
 			</h2>
 		</c:when>
 

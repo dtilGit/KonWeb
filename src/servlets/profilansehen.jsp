@@ -24,16 +24,16 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 		</c:when>
 
 		<c:when test="${login.status == 1}">
-			<p>Geschlecht: ${login.geschlecht}</p>
-			<p>Titel: ${login.titel}</p>
-			<p>Nachname: ${login.nachname}</p>
-			<p>Vorname: ${login.vorname}</p>
-			<p>E-Mail: ${login.email}</p>
-			<p>Strasse: ${login.strasse}</p>
-			<p>Hausnummer: ${login.hausnummer}</p>
-			<p>Postleitzahl: ${login.postleitzahl}</p>
-			<p>Ort: ${login.ort}</p>
-			<p>Land: ${login.land}</p>
+			<p>Geschlecht: ${profillesen.geschlecht}</p>
+			<p>Titel: ${profillesen.titel}</p>
+			<p>Nachname: ${profillesen.nachname}</p>
+			<p>Vorname: ${profillesen.vorname}</p>
+			<p>E-Mail: ${profillesen.email}</p>
+			<p>Strasse: ${profillesen.strasse}</p>
+			<p>Hausnummer: ${profillesen.hausnummer}</p>
+			<p>Postleitzahl: ${profillesen.postleitzahl}</p>
+			<p>Ort: ${profillesen.ort}</p>
+			<p>Land: ${profillesen.land}</p>
 
 			<form style="display: inline" action="profilbearbeiten.jsp">
 				<button>Profil bearbeiten</button>

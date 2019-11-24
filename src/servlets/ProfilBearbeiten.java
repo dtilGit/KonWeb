@@ -34,14 +34,14 @@ public class ProfilBearbeiten extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//die Änderungseingaben in "request" speichern
+		//die ï¿½nderungseingaben in "request" speichern
 		System.out.println("===in duPost===");
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
 		RegistrBean profiledit = new RegistrBean();
 		
-		//geändert von login
+		//geï¿½ndert von login
 		RegistrBean kunde = (RegistrBean)session.getAttribute("login"); 
 		
 		
@@ -71,7 +71,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		profiledit.setLand(land);
 		profiledit.setId(kunden_id);
 		
-		//Statusüberprüfung -> Eingelogt oder nicht ??? Notwendig oder nicht?
+		//Statusï¿½berprï¿½fung -> Eingelogt oder nicht ??? Notwendig oder nicht?
 		
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=? WHERE kunde_id=?")){
@@ -96,7 +96,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		
 		request.setAttribute("profiledit", profiledit);
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
 		System.out.println("===in dispatcher===");	
 		dispatcher.forward(request, response);
 	}
