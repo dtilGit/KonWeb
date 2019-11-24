@@ -50,7 +50,7 @@ Artikelübericht anzeigen
    		 	<td>${artikel.artikel_id}</td>
    		 	<td>${artikel.artikelbezeichnung}</td>
    		 	<td>${artikel.preis}</td>
-   		 	<td>${artikel.bild}</td>
+   		 	<td><img src="${artikel.bild}"></td>
 			</tr>
 			</c:forEach> 
 					<td><button type="reset" name="abbrechen" onClick="document.getElementById('artikeluebersicht').style.display='none';">abbrechen</button>
