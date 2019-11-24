@@ -8,8 +8,8 @@
 
 <head>
 <meta charset="UTF-8">
-<base href="${pageContext.request.requestURI}"/>
-<title>Login</title> 
+<base href="${pageContext.request.requestURI}" />
+<title>Login</title>
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
@@ -81,7 +81,7 @@
 			Noch nicht registriert? Zur Registrierung <a href="registrierung.jsp">
 				hier</a>
 		</p>
- 
+
 	</section>
 
 
