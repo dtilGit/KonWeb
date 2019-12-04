@@ -1,3 +1,4 @@
+<%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -5,13 +6,13 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-UTF-8)">
-<base href="${pageContext.request.requestURI}"/>
+<base href="${pageContext.request.requestURI}" />
 <title>Ihr Profil</title>
 </head>
 
 <body>
 
-<h1>Ihr Profil</h1>
+	<h1>Ihr Profil</h1>
 	<%--Überprüfung, ob angemeldet oder nicht, ist nicht notwendig, da diese bereits in der Navigation vorhanden ist 
 SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH IST, ODER EINE ÜBERPRÜFUNG NOTWENDIIG IST--%>
 
@@ -38,6 +39,10 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 			<form style="display: inline" action="profilbearbeiten.jsp">
 				<button>Profil bearbeiten</button>
 
+			</form>
+
+			<form style="display: inline" action="../LogoutServlet">
+				<button>Logout</button>
 			</form>
 
 		</c:when>

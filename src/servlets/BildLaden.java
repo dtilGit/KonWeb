@@ -44,12 +44,12 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 	}
 	
 	request.setCharacterEncoding("UTF-8");	
-	Integer idartikel = Integer.valueOf(request.getParameter("artikel_id"));
+	Integer artikel_id = Integer.valueOf(request.getParameter("artikel_id"));
 	
-	// DB-Zugriff
+	// fast vollständig aus dem JDBC-Script übernommen
 	try (Connection con = ds.getConnection();
-		 PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM artikel WHERE artikel_id = ?" )) {
-	pstmt.setLong(1, idartikel);
+		 PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM thidb.artikel WHERE artikel_id = ?" )) {
+	pstmt.setLong(1, artikel_id);
 		try (ResultSet rs = pstmt.executeQuery()) {
 		
 			if (rs != null && rs.next()) {

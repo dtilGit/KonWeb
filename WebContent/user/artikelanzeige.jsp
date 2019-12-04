@@ -25,18 +25,18 @@ media="screen and (min-width:960px)">
 		
 			<th>Bezeichnung</th>
 			<th>Preis</th>
-			<!-- <th>Bild</th>-->
+			<th>Bild</th>
 			<th></th>
 			
 		</tr>
 		<!-- Auswahl durch Klick des Users legt fest: Geschlecht-> Kategorie. Davon abhängig sind die angezeigten Artikel -->
 		
-		<c:forEach var="artikelauswahl" items="${artikelauswahl}" varStatus="status">
+		<c:forEach var="artikelauswahl" items="${artikelUser}" varStatus="status">
 			<tr>
-				
+			
 				<td>${artikelauswahl.bezeichnung}</td>
 				<td>${artikelauswahl.preis} €</td>
-				<!-- <td><img  src="../bild_laden ? idArtikel=${artikelauswahl.idArtikel}" alt="bild_laden" ></td>-->
+				<td><img  src="../BildLaden?artikel_id=${artikelauswahl.artikel_id}" alt="bild_laden" ></td>
 				<td>
 			</tr>
 		</c:forEach>
