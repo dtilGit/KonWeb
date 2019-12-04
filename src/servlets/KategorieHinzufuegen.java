@@ -69,6 +69,8 @@ public class KategorieHinzufuegen extends HttpServlet {
 			}
 		}
 		}
+		
+	
 	catch (Exception ex) {
 		throw new ServletException(ex.getMessage());
 		}

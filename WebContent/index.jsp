@@ -29,8 +29,10 @@
 				enctype="multipart/form-data">
 				<button type="submit" class="dropbtn">Männer</button>
 			</form>
+
 			<!-- <button class="dropdown-content">Beanies</button> -->
 			<!-- 				<button>Caps</button> -->
+			</form>
 		</div>
 
 
