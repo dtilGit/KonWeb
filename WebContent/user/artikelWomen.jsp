@@ -10,16 +10,15 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<title>Männer Artikel</title>
+<title>Frauen Artikel</title>
 </head>
 <body>
-	<h1>Männer Artikel</h1>
+	<h1>Frauen Artikel</h1>
 	<%--Zuerst die Kategorien anzeigen, dann die jeweilgien Artikel --%>
 
-	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
-
+	<c:forEach var="kategorieWomen" items="${anzeige.kategorie}">
 		<!--  Änderung: Onklick funktioniert nur wenn IDs in button und table unterschiedlich sind!! -->
-		<button type="button" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
+		<button type="button" id="artikelAnzeigen_1">${kategorieWomen.kategoriebezeichnung}</button>
 		<!-- 			onClick="document.getElementById('artikelAnzeigen').style.display='inline';"> -->
 		<!-- 		<table id="artikelAnzeigen" style="display: none"> -->
 		<table id="artikelAnzeigen">
@@ -35,7 +34,7 @@
 				<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
 					<c:choose>
 						<c:when
-							test="${artikelkategorie.kategorie_id == kategorieMen.kategorie_id}">
+							test="${artikelkategorie.kategorie_id == kategorieWomen.kategorie_id}">
 							<tr>
 								<td>${artikelkategorie.kategorie_id}</td>
 								<td>${artikelkategorie.artikelbezeichnung}</td>
@@ -44,9 +43,8 @@
 									<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 									<input type="hidden" name="art_id" value="${artikelkategorie.artikel_id}" />
 									</form></td>
-								
 								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td>
-								
+								>
 							</tr>
 						</c:when>
 						<%-- 						<c:otherwise> Keine Artikel unter dieser Kategorie vorhanden! </c:otherwise> --%>
@@ -57,7 +55,6 @@
 
 		</table>
 	</c:forEach>
->>>>>>> ee8680e134de9248ac2229e2ac20f2425441e77d
 
 
 
