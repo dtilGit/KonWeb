@@ -35,11 +35,11 @@ public class KategorienLadenMen extends HttpServlet {
 		List<ArtikelBean> ArtikelKategorie = new ArrayList<ArtikelBean>();
 
 		try (Connection con = ds.getConnection();
-				// warum erscheint ein Fehler, wenn man "Männlich" schreibt? WHERE
-				// geschlecht=Männlich
+				// warum erscheint ein Fehler, wenn man "Mï¿½nnlich" schreibt? WHERE
+				// geschlecht=Mï¿½nnlich
 				// vllt einfache Klammern?
 				PreparedStatement pstmt = con
-						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Männlich'")) {
+						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Mï¿½nnlich'")) {
 			System.out.println("=== try  ===");
 			try (ResultSet rs = pstmt.executeQuery()) {
 
@@ -58,26 +58,26 @@ public class KategorienLadenMen extends HttpServlet {
 
 					KategorienMen.add(kat_bean);
 
-					try (Connection con2 = ds.getConnection();
-							PreparedStatement pstmt2 = con2
-									.prepareStatement("SELECT * FROM thidb.artikel WHERE kategorie LIKE ?")) {
-						pstmt2.setInt(1, kat_bean.getKategorie_id());
-						System.out.println("===bischt du da????===");
-						try (ResultSet rs2 = pstmt2.executeQuery()) {
-							while (rs2.next()) {
-								System.out.println("===bischt du au wirklich da????===");
-								ArtikelBean artikel = new ArtikelBean();
-
-								String art_bezeichnung = rs2.getString("artikelbezeichnung");
-								artikel.setArtikelbezeichnung(art_bezeichnung);
-
-								BigDecimal preis = BigDecimal.valueOf(rs2.getLong("preis"));
-								artikel.setPreis(preis);
-
-								ArtikelKategorie.add(artikel);
-							}
-						}
-					}
+//					try (Connection con2 = ds.getConnection();
+//							PreparedStatement pstmt2 = con2
+//									.prepareStatement("SELECT * FROM thidb.artikel WHERE kategorie LIKE ?")) {
+//						pstmt2.setInt(1, kat_bean.getKategorie_id());
+//						System.out.println("===bischt du da????===");
+//						try (ResultSet rs2 = pstmt2.executeQuery()) {
+//							while (rs2.next()) {
+//								System.out.println("===bischt du au wirklich da????===");
+//								ArtikelBean artikel = new ArtikelBean();
+//
+//								String art_bezeichnung = rs2.getString("artikelbezeichnung");
+//								artikel.setArtikelbezeichnung(art_bezeichnung);
+//
+//								BigDecimal preis = BigDecimal.valueOf(rs2.getLong("preis"));
+//								artikel.setPreis(preis);
+//
+//								ArtikelKategorie.add(artikel);
+//							}
+//						}
+//					}
 				}
 
 			}
@@ -86,7 +86,7 @@ public class KategorienLadenMen extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		AnzeigeBean anzeige = new AnzeigeBean();
-		anzeige.setArtikel(ArtikelKategorie);
+		//anzeige.setArtikel(ArtikelKategorie);
 		anzeige.setKategorie(KategorienMen);
 
 		request.setAttribute("anzeige", anzeige);

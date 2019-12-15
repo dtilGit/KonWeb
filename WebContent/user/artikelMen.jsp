@@ -20,11 +20,11 @@
 		</td>
 	</c:forEach>
 	
-	<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
-		<td>${artikelkategorie.artikelbezeichnung}</td>
-		<td>${artikelkategorie.preis)Euro}</td>
+<%-- 	<c:forEach var="artikelkategorie" items="${anzeige.artikel}"> --%>
+<%-- 		<td>${artikelkategorie.artikelbezeichnung}</td> --%>
+<%-- 		<td>${artikelkategorie.preis)Euro}</td> --%>
 		
-	</c:forEach>
+<%-- 	</c:forEach> --%>
 
 </body>
 </html>
