@@ -25,7 +25,7 @@
 
 
 		<div class="dropdown-navi men">
-			<form action="KategorienLadenMen" method="get"
+			<form action="KatArtLadenMen" method="get"
 				enctype="multipart/form-data">
 				<button type="submit" class="dropbtn">Männer</button>
 			</form>
@@ -38,7 +38,11 @@
 
 
 		<div class="dropdown-navi woman">
-			<button class="dropbtn">Frauen</button>
+			<form action="KatArtLadenWomen" method="get"
+				enctype="multipart/form-data">
+				<button type="submit" class="dropbtn">Frauen</button>
+			</form>
+
 			<!-- 	<div class="dropdown-content"> -->
 			<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
 			<!-- 			href="user/woman_caps.html">Caps</a> -->
