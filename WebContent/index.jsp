@@ -12,6 +12,8 @@
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> muss glaube ich ins Stylesheet hab noch nicht ganz rausgefunden wie es die Schrift ändert  -->
 
+<script type="text/javascript" src="js/script.js"></script>
+
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
@@ -19,7 +21,7 @@
 	<header>
 		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 		<div id="mainlogo">
-			<a href="homepage.html"><img id="logo"
+			<a href="index.jsp"><img id="logo"
 				src="img/tods_bestcaps_logo.jpg" alt="Logo"></a>
 		</div>
 
@@ -32,7 +34,6 @@
 
 			<!-- <button class="dropdown-content">Beanies</button> -->
 			<!-- 				<button>Caps</button> -->
-			</form>
 		</div>
 
 
@@ -74,7 +75,7 @@
 			<br> <label for="suchleiste"></label>
 			<form action="SucheServlet" method="get">
 				<input type="search" name="artikelbezeichnung" id="suchleiste"
-					placeholder="Suche nach Lieblingsartikel...">
+					placeholder="Suche deinen Liebling...">
 			</form>
 		</div>
 
@@ -94,69 +95,59 @@
 	</header>
 
 
+    <div id="slider">
+        <figure>
 
-	<div id="flexarea">
-		<section>
-			<div class="intro">
-				<p>Seit 20 Jahren gehen wir, die Geschäftsführer von
-					TODsBestCaps, unserer Leidenschaft nach und vertreiben weltweit
-					unsere Kopfbedeckungen</p>
-				<p>Qualität und Service stehen bei uns an oberster Stelle! Aus
-					diesem Grund sind wir auch seit 5 Jahren Marktführer im Cap Segment</p>
-				<p>Doch wir sind noch lange nicht satt! Jeden Tag suchen wir
-					nach den neuesten Mützen Trends und geben sie hier für EUCH zum
-					Besten.</p>
-				Noch nicht überzeugt? Dann überzeug dich selbst und durchstöber
-				unsere Webpage, wir haben für Jedermann (und Frau :)) etwas im
-				Angebot<br>
-			</div>
+            <img src="img/capbanner.jpg">
+            <img src="img/capbanner-2.jpg">
+            <img src="img/capbanner-3.jpg">
+            <img src="img/capbanner-4.jpg">
 
-			<div id="modelbilderrechts">
-				<figure>
-					<a href="man_caps.html"><img src="img/cap_modelman.jpg"
-						alt="CapMann" width="100px"></a>
-					<figcaption>
-						<a href="man_caps.html">Männer Caps</a>
-					</figcaption>
-				</figure>
-				<figure>
-					<a href="woman_caps.html"><img src="img/cap_modelwoman.jpg"
-						alt="CapFrau" width="100px"></a>
-					<figcaption>
-						<a href="woman_caps.html">Frauen Caps</a>
-					</figcaption>
-				</figure>
-			</div>
+        </figure>
+    </div>
 
-			<div id="modelbilderlinks">
-				<figure>
-					<a href="man_beanies.html"><img src="img/beanie_modelman.jpg"
-						alt="BeanieMan" width="100px"></a>
-					<figcaption>
-						<a href="man_beanies.html">Männer Beanies</a>
-					</figcaption>
-				</figure>
-				<figure>
-					<a href="woman_beanies.html"><img
-						src="img/beanie_modelwoman.jpg" alt="BeanieFrau" width="100px"></a>
-					<figcaption>
-						<a href="woman_beanies.html">Frauen Beanies</a>
-					</figcaption>
-				</figure>
-			</div>
-		</section>
+	
+	
+
+	
+<section>
+	
+	<div class="spalten">
+	
+	<h1>Das sind wir!</h1>
+		<div class="spalte-1">
+			Seit 20 Jahren gehen wir, die Geschäftsführer von TODsBestCaps, unserer Leidenschaft nach und vertreiben weltweit unsere Kopfbedeckungen
+		</div>		
+					
+		<div class="spalte-2">
+			Qualität und Service stehen bei uns an oberster Stelle! Aus diesem Grund sind wir auch seit 5 Jahren Marktführer im Cap Segment
+			Doch wir sind noch lange nicht satt! Jeden Tag suchen wir nach den neuesten Mützen Trends und geben sie hier für EUCH zum Besten.
+		</div>
+
+		<div class="spalte-3">
+			Noch nicht überzeugt? Dann überzeug dich selbst und durchstöber unsere Webpage, wir haben für Jedermann (und Frau :)) etwas im Angebot
+		</div>
+	</div>
+	
+</section>
+
+
 
 		<aside>
-			Brandheiße Angebote findest unter
-			<figure>
-				<a href="hotsales.html"><img src="img/fire.jpg" alt="Fire"
-					width="200px"></a>
-				<figcaption>
-					<a href="user/hotsales.html">HotSales</a>
-				</figcaption>
-			</figure>
+			<h1>Achtung</h1>
+			
+			<h3>Versandoptionen:</h3>
+			<div>Wir liefern unsere Pakete mit hermes und DHL.</div>
+						
+			<h3>Lieferbedingungen:</h3>
+			<div>Sie können ab einem Einkaufswert von 60€ Versankostenfrei bestellen.</div>
+			
 		</aside>
-	</div>
+	
+	
+	
+	
+	
 	<div class="footer">
 		<footer>
 			<div id="servicehotline">

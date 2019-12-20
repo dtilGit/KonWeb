@@ -3,6 +3,7 @@
 body{
 	margin-left: 10%;
 	margin-right: 10%;
+	margin-top: 200px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
@@ -11,6 +12,7 @@ h1 {
 	text-decoration: none;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 	font-size: 30px;
+	text-transform: uppercase;
 }
 
 h2{
@@ -27,10 +29,17 @@ a:hover {
 	color: #6e6e6e;
 }
 
-button,
 input {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	
+}
+
+button {
+	background-color: #424242;
+    color: white;
+    padding: 16px;
+    font-size: 19px;
+    border: 1px solid white;
+    width: 100px;
 }
 
 header{
@@ -50,7 +59,7 @@ header{
 	width: 100px;
 	float: left;
 	margin-right: 50px;
-	margin-top: 25px;
+	margin-top: 10px;
 }
 
 
@@ -75,7 +84,7 @@ header{
 .dropdown-navi {
   position: fixed;
   display: inline-block;
-  margin-top: 45px;
+  margin-top: 30px;
 }
 
 /* Kästchen mit den Unterpunkten */
@@ -120,14 +129,16 @@ header{
 	
 	float: left;
 	margin-left: 260px;
-	margin-top: 40px;
+	margin-top: 20px;
 	
 	border: 2px solid #999;
 	border-radius: 0.5em;;
-	font-size: 20px;
-	width: 8em;
+	font-size: 12px;
+	width: 15em;
 	transition: width 0.5s ease-in-out;
+	height: 35px;
   	
+  	padding: 5px;
 }
 
 /*#suchleiste:focus{
@@ -140,7 +151,7 @@ header{
 #meinkonto{
 	float: left;
 	margin-left: 50px;
-	margin-top: 30px;
+	margin-top: 20px;
 	
 	float: right;
 	width: 50px;
@@ -150,7 +161,7 @@ header{
 #warenkorb{
 	margin-left: 50px;
 	/*margin-right: 100px;*/
-	margin-top: 30px;
+	margin-top: 20px;
 	
 	float: right;
 	width: 50px;
@@ -159,10 +170,9 @@ header{
 
 section {
 	width: 800px;
-	height: 1100px;
 	float: left;
-	margin-top: 200px; /*wird benötigt damit content erst unter header beginnt*/
-	
+	margin-top: 50px; 
+	margin-bottom: 80px;
 }
 
 figcaption{
@@ -180,15 +190,33 @@ figcaption{
 	margin-top: 20px;
 }
 
-.intro{
-	height: 100px;
-	width: 800px;
-}
+
 
 main {
     min-height: 100px;
 
 }
+
+
+/*Spalten auf der Startseite*/
+.spalte-1 {
+	width: 30%;
+	margin-right: 10px;
+	float: left;
+}
+
+.spalte-2 {
+	width: 30%;
+	margin-right: 10px;
+	float: left;
+}
+
+.spalte-3 {
+	width: 30%;
+	margin-right: 10px;
+	float: left;
+}
+
 
 /* .flex-container { */
 /*     display: flex; */
@@ -199,6 +227,72 @@ main {
 /*     margin: .5em; */
 /*     padding: .5em; */
 /* } */
+
+/*Slider*/
+@keyframes slider {
+
+    0% {
+        left: 0;
+    }
+
+    20% {
+        left: 0;
+    }
+
+    25% {
+        left: -100%;
+    }
+
+    45% {
+        left: -100%;
+    }
+
+    50% {
+        left: -200%;
+    }
+
+    70% {
+        left: -200%;
+    }
+
+    75% {
+        left: -300%;
+    }
+
+    95% {
+        left: -300%;
+    }
+
+    100% {
+        left: -400%;
+    }
+    
+}
+
+
+
+#slider {
+    overflow: hidden;
+}
+
+#slider figure img {
+    width: 20%;
+    float: left;
+}
+
+
+#slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0px;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 20s slider infinite;
+}
+
+
+
 
 
 
@@ -239,11 +333,15 @@ main {
 
 
 aside {
-	height: 900px;
 	float: right;
-	margin-top: 200px; /*wird benötigt damit content erst unter header beginnt*/
+	width: 25%;
+	margin-top: 50px;
+	background-color: #dddddd;
+	
+	padding: 0px 5px 30px 5px;
 	
 }
+
 
 	
 

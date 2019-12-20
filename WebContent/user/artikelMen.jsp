@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ include file="../jspf/header.jspf"%>
 
 <title>Männer Artikel</title>
 </head>
@@ -17,6 +20,7 @@
 	<%--Zuerst die Kategorien anzeigen, dann die jeweilgien Artikel --%>
 
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
+
 		<!--  Änderung: Onklick funktioniert nur wenn IDs in button und table unterschiedlich sind!! -->
 		<button type="button" id="artikelAnzeigen_1" onClick="document.getElementById('artikelAnzeigen').style.display='inline';">${kategorieMen.kategoriebezeichnung}</button>
 		
@@ -61,6 +65,7 @@
 
 
 
+
 	<%-- 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}"> --%>
 
 	<%-- 			<td>${artikelkategorie.artikelbezeichnung}</td> --%>
@@ -68,7 +73,7 @@
 	<%-- 	</c:forEach> --%>
 
 
-
+ <%@ include file="/../jspf/footer.jspf" %>
 </body>
 </html>
 

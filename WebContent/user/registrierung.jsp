@@ -4,11 +4,17 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<!-- Basis für reltive Verweise festlegen,  -->
-<base href="${pageContext.request.requestURI}"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<base href="${pageContext.request.requestURI}" />
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ include file="/../jspf/header.jspf"%>
+
 <title>Registrierung</title>
-<%--<link rel="stylesheet" href="../css/style.css" type="text/css">--%>
+</head>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>
 <body>
 <%-- <header>
@@ -122,17 +128,6 @@
 				
 	</section>
 	
-<footer>
-<div id= "servicehotline">
-<p>Du hast ein Problem?<br> Unsere Service Hotline 24/7 kostenlos fÃ¼r dich erreichbar:</p>
-<p>09131/123987654</p>
-</div>
-
-<div id="impressumlink">
-<p>anderweitig Kontakt findest du im:<p>
-<a href="impressum.html">Impressum</a>
-</div>
-
-</footer>
+ <%@ include file="/../jspf/footer.jspf" %>
 </body>
 </html>

@@ -101,7 +101,7 @@ public class RegistrServlet extends HttpServlet {
 
 						System.out.println("=== in try insert ==");
 
-						dispatcher = request.getRequestDispatcher("user/registrierung_antwort.jsp");
+						dispatcher = request.getRequestDispatcher("../user/registrierung_antwort.jsp");
 						dispatcher.forward(request, response);
 
 						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
