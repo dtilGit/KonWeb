@@ -291,8 +291,10 @@ main {
     animation: 20s slider infinite;
 }
 
-
-
+.bild{
+	width: 100%;
+	height: auto; 
+}
 
 
 

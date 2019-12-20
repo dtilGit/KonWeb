@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ include file="../jspf/header.jspf"%>
 
 <title>Frauen Artikel</title>
 </head>
@@ -36,6 +39,7 @@
 						<c:when
 							test="${artikelkategorie.kategorie_id == kategorieWomen.kategorie_id}">
 							<tr>
+								<td><img class="bild" src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" width="200" height="250"></td>
 								<td>${artikelkategorie.kategorie_id}</td>
 								<td>${artikelkategorie.artikelbezeichnung}</td>
 								<td>${artikelkategorie.preis}</td>
@@ -43,8 +47,7 @@
 									<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 									<input type="hidden" name="art_id" value="${artikelkategorie.artikel_id}" />
 									</form></td>
-								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td>
-								>
+							
 							</tr>
 						</c:when>
 						<%-- 						<c:otherwise> Keine Artikel unter dieser Kategorie vorhanden! </c:otherwise> --%>
