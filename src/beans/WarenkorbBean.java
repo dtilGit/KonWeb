@@ -1,61 +1,43 @@
 //Veronika Tschemodanov
 package beans;
 
+import java.math.BigDecimal;
+import java.util.LinkedList;
+
 public class WarenkorbBean {
 
-	private int wk_id;
-	private int kunde_id;
-	private int artikel_id;
-	private double summe;
-	private int anzahl;
-	private double ges_preis;
-
-	public int getWk_id() {
-		return wk_id;
+	private BigDecimal ges_preis;
+	private Integer wk_groessse;
+	private LinkedList<WarenkorbArtikel> warenkorbList;
+	
+	//evtl. nicht notwendig
+	public WarenkorbBean() {
+		warenkorbList = new LinkedList<WarenkorbArtikel>();
 	}
-
-	public void setWk_id(int wk_id) {
-		this.wk_id = wk_id;
+	
+	//was ist die Shopping_ID??
+	public WarenkorbBean(BigDecimal ges_preis, Integer wk_groesse, Integer shopping_ID, LinkedList<WarenkorbArtikel> warenkorb) {
+		this.ges_preis=ges_preis;
+		this.wk_groessse=wk_groesse;
+		warenkorbList = warenkorb;
 	}
-
-	public int getKunde_id() {
-		return kunde_id;
+	
+	public WarenkorbBean (LinkedList <WarenkorbArtikel> warenkorbList) {
+		this.warenkorbList= warenkorbList;
 	}
-
-	public void setKunde_id(int kunde_id) {
-		this.kunde_id = kunde_id;
+	
+	public LinkedList<WarenkorbArtikel> getWarenkorbList(){
+		return warenkorbList;
 	}
-
-	public int getArtikel_id() {
-		return artikel_id;
+	
+	public void setWarenkorbList(LinkedList<WarenkorbArtikel> warenkorbList) {
+		this.warenkorbList=warenkorbList;
 	}
-
-	public void setArtikel_id(int artikel_id) {
-		this.artikel_id = artikel_id;
+	
+	public BigDecimal getGes_preis() {
+		ges_preis=0.0;
+		
+		
 	}
-
-	public int getAnzahl() {
-		return anzahl;
-	}
-
-	public void setAnzahl(int anzahl) {
-		this.anzahl = anzahl;
-	}
-
-	public double getSumme() {
-		return summe;
-	}
-
-	public void setSumme(double summe) {
-		this.summe = summe;
-	}
-
-	public double getGes_preis() {
-		return ges_preis;
-	}
-
-	public void setGes_preis(double ges_preis) {
-		this.ges_preis = ges_preis;
-	}
-
 }
+	
