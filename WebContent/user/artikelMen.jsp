@@ -5,10 +5,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%@ include file="../jspf/header.jspf"%>
 
 <title>Männer Artikel</title>
 </head>
@@ -57,7 +60,7 @@
 
 		</table>
 	</c:forEach>
->>>>>>> ee8680e134de9248ac2229e2ac20f2425441e77d
+
 
 
 
@@ -68,7 +71,7 @@
 	<%-- 	</c:forEach> --%>
 
 
-
+ <%@ include file="/../jspf/footer.jspf" %>
 </body>
 </html>
 

@@ -8,7 +8,11 @@
 
 
 		<div class="dropdown-navi men">
-			<button class="dropbtn">Männer</button>
+			<form action="KatArtLadenMen" method="get"
+				enctype="multipart/form-data">
+				<button type="submit" class="dropbtn">Männer</button>
+			</form>
+
 			<!-- <button class="dropdown-content">Beanies</button> -->
 			<!-- 				<button>Caps</button> -->
 		</div>
@@ -16,7 +20,11 @@
 
 
 		<div class="dropdown-navi woman">
-			<button class="dropbtn">Frauen</button>
+			<form action="KatArtLadenWomen" method="get"
+				enctype="multipart/form-data">
+				<button type="submit" class="dropbtn">Frauen</button>
+			</form>
+
 			<!-- 	<div class="dropdown-content"> -->
 			<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
 			<!-- 			href="user/woman_caps.html">Caps</a> -->
@@ -45,8 +53,11 @@
 
 
 		<div id="suche">
-			<br> <label for="suchleiste"></label> <input type="search"
-				id="suchleiste" placeholder="Suche...">
+			<br> <label for="suchleiste"></label>
+			<form action="SucheServlet" method="get">
+				<input type="search" name="artikelbezeichnung" id="suchleiste"
+					placeholder="Suche deinen Liebling...">
+			</form>
 		</div>
 
 
@@ -63,4 +74,5 @@
 
 
 	</header>
+
 
