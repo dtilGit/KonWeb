@@ -44,7 +44,6 @@
 									<input type="hidden" name="art_id" value="${artikelkategorie.artikel_id}" />
 									</form></td>
 								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td> 
-								>
 							</tr>
 						</c:when>
 						<%-- 						<c:otherwise> Keine Artikel unter dieser Kategorie vorhanden! </c:otherwise> --%>
