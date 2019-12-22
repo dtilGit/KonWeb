@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +23,12 @@ import javax.sql.DataSource;
 //Servlet zum Auslesen der Bilder aus der DB
 
 @WebServlet("/BildLaden")
+@MultipartConfig(
+		maxFileSize = 1024 * 1024 * 5,
+		maxRequestSize = 1024 * 1024 * 5 * 5,
+		location = "/tmp",
+		fileSizeThreshold = 1024 * 1024
+)
 public class BildLaden extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
