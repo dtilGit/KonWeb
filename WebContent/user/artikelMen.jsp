@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
@@ -28,8 +28,10 @@
 		<table id="artikelAnzeigen">
 			<thead>
 				<tr>
+					<th>Atrikel</th>
 					<th>Artikelbezeichnung</th>
 					<th>Preis(€)</th>
+					<th></th>
 					<!--<th>Bild</th> -->
 				</tr>
 			</thead>
@@ -40,15 +42,15 @@
 						<c:when
 							test="${artikelkategorie.kategorie_id == kategorieMen.kategorie_id}">
 							<tr>
-								<td>${artikelkategorie.kategorie_id}</td>
+<%-- 								<td>${artikelkategorie.kategorie_id}</td> --%>
+								<td><img class="bild" src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" width="200" height="250"></td>
 								<td>${artikelkategorie.artikelbezeichnung}</td>
 								<td>${artikelkategorie.preis}</td>
-								<td> <form action="../ZumWarenkorbHinzufuegen" method="get"> 
+								<td id="add-cart"> <form action="../ZumWarenkorbHinzufuegen" method="get"> 
 									<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 									<input type="hidden" name="art_id" value="${artikelkategorie.artikel_id}" />
 									</form></td>
 								
-								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td>
 								
 							</tr>
 						</c:when>
