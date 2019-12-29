@@ -100,7 +100,7 @@ public class KatArtLadenMen extends HttpServlet {
 		anzeige.setKategorie(KategorienMen);
 
 		request.setAttribute("anzeige", anzeige);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/user/artikelMen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/artikelMen.jsp");
 		dispatcher.forward(request, response);
 	}
 

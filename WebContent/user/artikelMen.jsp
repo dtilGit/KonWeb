@@ -22,10 +22,12 @@
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
 
 		<!--  Änderung: Onklick funktioniert nur wenn IDs in button und table unterschiedlich sind!! -->
-		<button type="button" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
+		<button type="button" id="artikelAnzeigen_1" onClick="document.getElementById('artikelAnzeigen').style.display='inline';">${kategorieMen.kategoriebezeichnung}</button>
+		
 		<!-- 			onClick="document.getElementById('artikelAnzeigen').style.display='inline';"> -->
 		<!-- 		<table id="artikelAnzeigen" style="display: none"> -->
-		<table id="artikelAnzeigen">
+		
+		<table id="artikelAnzeigen" style="display: none">
 			<thead>
 				<tr>
 					<th>Atrikel</th>
@@ -50,9 +52,10 @@
 									<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 									<input type="hidden" name="art_id" value="${artikelkategorie.artikel_id}" />
 									</form></td>
-								
-								
-							</tr>
+
+<%-- 								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td> --%>
+
+	</tr>
 						</c:when>
 						<%-- 						<c:otherwise> Keine Artikel unter dieser Kategorie vorhanden! </c:otherwise> --%>
 					</c:choose>
