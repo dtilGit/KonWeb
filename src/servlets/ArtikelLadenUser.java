@@ -49,7 +49,7 @@ public class ArtikelLadenUser extends HttpServlet {
 					String art_bez = rs.getString("artikelbezeichnung");
 					art_bean.setArtikelbezeichnung(art_bez);
 
-					BigDecimal preis = BigDecimal.valueOf(rs.getLong("preis"));
+					Double preis = Double.valueOf(rs.getLong("preis"));
 					art_bean.setPreis(preis);
 
 					int art_kategorie = rs.getInt("kategorie");

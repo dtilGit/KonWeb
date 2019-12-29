@@ -58,7 +58,7 @@ public class SucheServlet extends HttpServlet {
 			pstmt.setString(1, artikelbezeichnung);
 			
 			try (ResultSet rs = pstmt.executeQuery()) {
-				if (rs.next()) {
+				while (rs.next()) {
 					System.out.println("=== in if===");
 					ArtikelBean artikelbean = new ArtikelBean();
 
@@ -71,7 +71,7 @@ public class SucheServlet extends HttpServlet {
 					String artikelbez = rs.getString("artikelbezeichnung");
 					artikelbean.setArtikelbezeichnung(artikelbez);
 
-					BigDecimal preis = BigDecimal.valueOf(rs.getLong("preis"));
+					Double preis = Double.valueOf(rs.getLong("preis"));
 					artikelbean.setPreis(preis);
 
 					Integer kategorie = rs.getInt("kategorie");
@@ -82,14 +82,6 @@ public class SucheServlet extends HttpServlet {
 
 					artikel.add(artikelbean);
 				}
-				//Die Überprüfung findet in artikelsuche.jsp statt, wo die entweder die richtigen Ergebnisse oder  
-				//die Meldung, dass die Artikel nicht gefunden werden können
-				
-				/*else if (!rs.next()){
-					System.out.println("=== in else if===");
-					dispatcher=request.getRequestDispatcher("jsp/artikelsucheNegativ.jsp");
-					dispatcher.forward(request, response);
-				}*/
 			}
 
 		} catch (Exception ex) {

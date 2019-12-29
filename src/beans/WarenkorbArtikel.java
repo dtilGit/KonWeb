@@ -11,7 +11,7 @@ public class WarenkorbArtikel {
 	private String wk_size;
 	private ArtikelBean wk_artikel;
 	private Integer wk_art_anzahl;
-	private BigDecimal wk_ges_preis; 
+	private Double wk_art_preis; 
 	
 	
 	public Integer getWk_art_anzahl() {
@@ -34,15 +34,15 @@ public class WarenkorbArtikel {
 	public Integer getMenge() {
 		return wk_art_anzahl;
 	}
-	public BigDecimal getWk_ges_preis() {
-		this.wk_ges_preis = getWk_art_anzahl() * wk_artikel.getPreis();
-		return this.wk_ges_preis;
+	public Double getWk_art_preis() {
+		this.wk_art_preis = getWk_art_anzahl() * wk_artikel.getPreis();
+		return this.wk_art_preis;
 	}
 	
-	public void setWk_ges_preis(BigDecimal wk_ges_preis) {
-		this.wk_ges_preis=
+	public void setWk_art_preis(Double wk_ges_preis) {
+		this.wk_art_preis=getWk_art_anzahl() * wk_artikel.getPreis();
 	}
-	public String wk_size() {
+	public String getWk_size() {
 		return wk_size;
 	}
 	

@@ -24,8 +24,8 @@ import beans.KategorieBean;
 import jdk.nashorn.internal.ir.RuntimeNode.Request;
 import beans.AnzeigeBean;
 
-@WebServlet("/KatArtLadenWomen")
-public class KatArtLadenWomen extends HttpServlet {
+@WebServlet("/KatLadenWomen")
+public class KatLadenWomen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
@@ -33,19 +33,17 @@ public class KatArtLadenWomen extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		List<KategorieBean> KategorienWomen = new ArrayList<KategorieBean>();
-		// List<ArtikelBean> ArtikeListe = new ArrayList<ArtikelBean>();
-		
+		List<KategorieBean> KategorienWomen = new ArrayList<KategorieBean>();		
 		
 		//Ausgeben der Kategorien
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
 						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Weiblich'")) {
-			System.out.println("=== try  ===");
+			
 			try (ResultSet rs = pstmt.executeQuery()) {
 				
 				while (rs.next()) {
-					System.out.println("=== try while  ===");
+					
 					KategorieBean kat_bean = new KategorieBean();
 					
 					Integer kat_id = rs.getInt("kategorie_id");
@@ -56,8 +54,7 @@ public class KatArtLadenWomen extends HttpServlet {
 					
 					KategorienWomen.add(kat_bean);
 					
-					System.out.println("listenausgabe");
-					KategorienWomen.forEach(e -> System.out.println(e.getKategoriebezeichnung()));
+					//KategorienWomen.forEach(e -> System.out.println(e.getKategoriebezeichnung()));
 					
 				}
 			}
@@ -66,7 +63,8 @@ public class KatArtLadenWomen extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		
-		//Damit keine weitere JSP erstellt werden muss. 
+		//AnzeigeBean in diesem Servlet dazu notwenig, damit keine weitere "artikelWomen.jsp" erstellt werden muss. 
+		//Der Aufruf der Werte ist  
 		AnzeigeBean anzeige = new AnzeigeBean();
 		anzeige.setKategorie(KategorienWomen);
 

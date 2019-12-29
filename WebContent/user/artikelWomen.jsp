@@ -34,20 +34,20 @@
 
 	<c:forEach var="kategorieWomen" items="${anzeige.kategorie}">
 
-		<form id="suche" action="../Suche" method="POST">
+		<form id="suche" action="../ArtikelLadenWomen" method="POST">
 			<button type="submit" id="artikelAnzeigen_1" >${kategorieWomen.kategoriebezeichnung}</button>
 			<input name ="kategorie_id" type="hidden" value="${kategorieWomen.kategorie_id }"></input>
 		</form>
 									<!-- 			onClick="document.getElementById('artikelAnzeigen').style.display='inline';"> -->
 									<!-- 		<table id="artikelAnzeigen" style="display: none"> -->
 		
-		<table id="artikelAnzeigen">
-			<thead>
-				<tr>
-					<th>Artikelbezeichnung</th>
-					<th>Preis(€)</th>
-					<!--<th>Bild</th> --> 
-				</tr>
-			</thead>
-		</table>
+<!-- 		<table id="artikelAnzeigen"> -->
+<!-- 			<thead> -->
+<!-- 				<tr> -->
+<!-- 					<th>Artikelbezeichnung</th> -->
+<!-- 					<th>Preis(€)</th> -->
+<!-- 					<th>Bild</th>  -->
+<!-- 				</tr> -->
+<!-- 			</thead> -->
+<!-- 		</table> -->
 	</c:forEach>

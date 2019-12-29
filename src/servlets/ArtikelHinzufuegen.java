@@ -53,7 +53,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		ArtikelBean art_bean = new ArtikelBean();
 		//änderung von artikelbezeichnung
 		art_bean.setArtikelbezeichnung(request.getParameter("art_bez"));
-		BigDecimal preis = new BigDecimal (request.getParameter("preis"));
+		Double preis = new Double (request.getParameter("preis"));
 		art_bean.setPreis(preis);
 		int kat_id = Integer.parseInt(request.getParameter("alleKategorienLaden"));
 		art_bean.setKategorie_id(kat_id);
@@ -84,7 +84,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			PreparedStatement pstmt = con.prepareStatement("INSERT INTO thidb.artikel (artikelbezeichnung, preis, kategorie, bildname, bild) VALUES (?, ?, ?, ?, ?)", generatedKeys)){
 			
 			pstmt.setString(1, art_bean.getArtikelbezeichnung());
-			pstmt.setBigDecimal(2, art_bean.getPreis());
+			pstmt.setDouble(2, art_bean.getPreis());
 			pstmt.setInt(3,art_bean.getKategorie_id());
 			pstmt.setString(4, art_bean.getBildname());
 			pstmt.setBytes(5, art_bean.getBild());
