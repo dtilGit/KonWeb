@@ -35,15 +35,15 @@ public class RegistrServlet extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	DataSource ds;
 
-	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
-	// this URL", wenn diese Methode fehlt?
-	// trotzdem, dass die doPost-Methode verwendet werden soll
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("=== in get ==");
-		// this.doPost(request,response);}
-		doGet(request, response);
-	}
+//	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
+//	// this URL", wenn diese Methode fehlt?
+//	// trotzdem, dass die doPost-Methode verwendet werden soll
+//	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+//			throws ServletException, IOException {
+//		System.out.println("=== in get ==");
+//		// this.doPost(request,response);}
+//		doPost(request, response);
+//	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

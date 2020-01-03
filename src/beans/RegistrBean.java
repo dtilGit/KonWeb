@@ -6,7 +6,6 @@ import java.io.Serializable;
 public class RegistrBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private int status;
 	private String geschlecht;
 	private String titel;
 	private String nachname;
@@ -38,14 +37,6 @@ public class RegistrBean implements Serializable {
 
 	public int getAdmin() {
 		return this.admin;
-	}
-
-	public void setStatus(int status) {
-		this.status = status;
-	}
-
-	public int getStatus() {
-		return this.status;
 	}
 
 	public int getId() {

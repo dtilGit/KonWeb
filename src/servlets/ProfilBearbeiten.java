@@ -125,7 +125,7 @@ public class ProfilBearbeiten extends HttpServlet {
 				pstmt.setBytes(11, profiledit.getBild());
 				pstmt.setInt(12, profiledit.getId());
 				pstmt.executeUpdate();
-				//request.setAttribute("profiledit", profiledit);
+				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -133,7 +133,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		
 		request.setAttribute("login", kunde);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("user/profilansehen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/profilansehen.jsp");
 		dispatcher.forward(request, response);
 	}
 
