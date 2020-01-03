@@ -46,7 +46,10 @@ public class ProfilBearbeiten extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
+
+		//ge�ndert von login
 		RegistrBean kunde = (RegistrBean)session.getAttribute("login"); 
+
 		RegistrBean profiledit = new RegistrBean();
 		
 		String geschlecht = request.getParameter("geschlecht");
@@ -127,7 +130,7 @@ public class ProfilBearbeiten extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("login", kunde);
+		request.setAttribute("login", profiledit);
 		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/profilansehen.jsp");
 		dispatcher.forward(request, response);

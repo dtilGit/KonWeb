@@ -48,7 +48,7 @@
 					<option value="">Kein Titel</option>
 					<option value="Dr.">Dr.</option>
 					<option value="Prof.">Prof.</option>
-					<option value="Prof Dr.">Prof. Dr.</option>
+					<option value="Prof. Dr.">Prof. Dr.</option>
 				</select>
 			</p>
 
