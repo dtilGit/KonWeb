@@ -18,7 +18,7 @@
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Frauen Artikel</h1>
 
-	
+
 	<c:forEach var="kategorieWomen" items="${anzeige.kategorie}">
 
 		<form id="suche" action="../ArtikelLadenWomen" method="POST">
@@ -26,22 +26,30 @@
 			<input name="kategorie_id" type="hidden"
 				value="${kategorieWomen.kategorie_id }"></input>
 		</form>
-
+		
 	</c:forEach>
 
 	<table>
 		<!-- 	id="artikelAnzeigen" -->
-	<thead>
-		<tr>
-			<th>Artikelbezeichnung</th>
-			<th>Preis(€)</th>
-			<th>Bild</th>
-			<th></th>
-		</tr>
-	</thead>
+		<!-- 		<thead> -->
+		<!-- 			<tr> -->
+		<!-- 				<th>Artikelbezeichnung</th> -->
+		<!-- 				<th>Preis(€)</th> -->
+		<!-- 				<th>Bild</th> -->
+		<!-- 				<th></th> -->
+		<!-- 			</tr> -->
+		<!-- 		</thead> -->
 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
+			<thead>
 			<tr>
-<%-- 				<td>${artikelkategorie.kategorie_id}</td> --%>
+				<th>Artikelbezeichnung</th>
+				<th>Preis(€)</th>
+				<th>Bild</th>
+				<th></th>
+			</tr>
+		</thead>
+			<tr>
+				<%-- 				<td>${artikelkategorie.kategorie_id}</td> --%>
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>
 				<td><img
@@ -61,6 +69,6 @@
 		</c:forEach>
 	</table>
 
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

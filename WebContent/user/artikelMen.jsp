@@ -29,7 +29,10 @@
 
 	<table>
 		<!-- 	id="artikelAnzeigen" -->
-	<thead>
+	
+	
+		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
+		<thead>
 		<tr>
 			<th>Artikelbezeichnung</th>
 			<th>Preis(€)</th>
@@ -37,8 +40,6 @@
 			<th></th>
 		</tr>
 	</thead>
-	
-		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
 			<tr>
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>

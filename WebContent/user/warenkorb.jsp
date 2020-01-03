@@ -88,11 +88,7 @@
 <aside>
 
 	<div class="cart-actions">
-		<div>
-			<form>
-				<button type="submit" value="Zur Kasse">Zur Kasse</button>
-			</form>
-		</div>
+		
 		<div class="bestelluebersicht">
 			<h1>Bestellübersicht:</h1>
 
@@ -100,7 +96,7 @@
 			<table style="width: 100%">
 
 				<tr>
-					<td>Produkte (Anzahl)</td>
+					<td>Produkte (Anzahl der Produkte im Warenkorb)</td>
 				</tr>
 
 				<tr>
@@ -115,6 +111,11 @@
 
 			</table>
 
+		</div>
+		<div>
+			<form>
+				<button type="submit" value="Zur Kasse">Zur Kasse</button>
+			</form>
 		</div>
 	</div>
 
