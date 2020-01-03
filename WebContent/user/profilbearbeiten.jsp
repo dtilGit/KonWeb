@@ -1,7 +1,7 @@
 <%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="fehlerausgabe.jsp"%>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
@@ -18,23 +18,23 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Profildaten bearbeiten</h1>
-	
+
 	<p>
 	<h2>Deine aktuellen Daten</h2>
 	</p>
-			<p>Geschlecht: ${login.geschlecht}</p>
-			<p>Titel: ${login.titel}</p>
-			<p>Nachname: ${login.nachname}</p>
-			<p>Vorname: ${login.vorname}</p>
-			<%--<p>E-Mail: ${login.email}</p> --%>
-			<p>Strasse: ${login.strasse}</p>
-			<p>Hausnummer: ${login.hausnummer}</p>
-			<p>Postleitzahl: ${login.postleitzahl}</p>
-			<p>Ort: ${login.ort}</p>
-			<p>Land: ${login.land}</p>
-			
-	<h2> Hier kannst du deine Änderungen eingeben:</h2>
-	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post">
+	<p>Geschlecht: ${login.geschlecht}</p>
+	<p>Titel: ${login.titel}</p>
+	<p>Nachname: ${login.nachname}</p>
+	<p>Vorname: ${login.vorname}</p>
+	<%--<p>E-Mail: ${login.email}</p> --%>
+	<p>Strasse: ${login.strasse}</p>
+	<p>Hausnummer: ${login.hausnummer}</p>
+	<p>Postleitzahl: ${login.postleitzahl}</p>
+	<p>Ort: ${login.ort}</p>
+	<p>Land: ${login.land}</p>
+
+	<h2>Hier kannst du deine Änderungen eingeben:</h2>
+	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post" enctype="multipart/form-data">
 		<div>
 			<p>
 				<label for="geschlecht"></label> <label for="geschlecht">Herr</label>
@@ -52,28 +52,40 @@
 				</select>
 			</p>
 
-
-			<label for="nachname">Nachname</label> <input type="text"
-				id="nachname" name="nachname" size="25" maxlength="40"
-				placeholder="${login.nachname}" required> 
-				
-			<label for="vorname">Vorname</label> <input type="text" id="vorname"
-				name="vorname" size="25" maxlength="40" placeholder="Max" required>
-				
-			<label for="strasse">Strasse</label> <input type="text" id="strasse"
-				name="strasse" size="30" maxlength="40"> 
-				
-			<label for="hausnummer"> Hausnummer</label> <input type=text
-				id="hausnummer" name="hausnummer" size="5" maxlength="10"> 
-				
-			<label for="postleitzahl">Postleitzahl</label> <input type="text"
-				id="postleitzahl" size="5" maxlength="40" name="postleitzahl">
-
-			<label for="ort">Ort</label> <input type="text" id="ort" name="ort"
-				size="30" maxlength="40"> 
-				
-			<label for="land">Land</label> <input type="text" id="land" name="land" size="30" maxlength="40">
-
+			<p>
+				<label for="nachname">Nachname</label> <input type="text"
+					id="nachname" name="nachname" size="25" maxlength="40"
+					placeholder="${login.nachname}" required>
+			</p>
+			<p>
+				<label for="vorname">Vorname</label> <input type="text" id="vorname"
+					name="vorname" size="25" maxlength="40" placeholder="Max" required>
+			</p>
+			<p>
+				<label for="strasse">Strasse</label> <input type="text" id="strasse"
+					name="strasse" size="30" maxlength="40">
+			</p>
+			<p>
+				<label for="hausnummer"> Hausnummer</label> <input type=text
+					id="hausnummer" name="hausnummer" size="5" maxlength="10">
+			</p>
+			<p>
+				<label for="postleitzahl">Postleitzahl</label> <input type="text"
+					id="postleitzahl" size="5" maxlength="40" name="postleitzahl">
+			</p>
+			<p>
+				<label for="ort">Ort</label> <input type="text" id="ort" name="ort"
+					size="30" maxlength="40">
+			</p>
+			<p>
+				<label for="land">Land</label> <input type="text" id="land"
+					name="land" size="30" maxlength="40">
+			</p>
+			<p>
+				<label for="profilBild"> Profilbild hochladen</label> <input
+					type="file" name="profilBild" id="profilBild" accept="image/*">
+				<label for="profilBild"></label>
+			</p>
 		</div>
 		<p>
 			<button type="submit" name="profiledit_submit" id="profiledit_submit">

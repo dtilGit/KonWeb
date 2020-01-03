@@ -71,6 +71,7 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 			//pruefen.setWk_size(art_Anzahl);
 			wk_artikel.add(pruefen);
 		}
+		int ges_anzahl;
 		request.setAttribute("ges_preis", warenkorbB.getGes_preis());
 
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/warenkorb.jsp");

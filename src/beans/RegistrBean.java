@@ -21,6 +21,8 @@ public class RegistrBean implements Serializable {
 	private int admin;
 	private WarenkorbBean warenkorb;
 	private String fehlermeldung;
+	private byte[] bild; 
+	private String bildname; 
 
 	public void setFehlermeldung(String fehlermeldung) {
 		this.fehlermeldung = fehlermeldung;
@@ -148,5 +150,20 @@ public class RegistrBean implements Serializable {
 
 	public void setLand(String land) {
 		this.land = land;
+	}
+	public byte[] getBild() {
+		return bild;
+	}
+
+	public void setBild(byte[] bild) {
+		this.bild = bild;
+	}
+
+	public String getBildname() {
+		return bildname;
+	}
+
+	public void setBildname(String bildname) {
+		this.bildname = bildname;
 	}
 }

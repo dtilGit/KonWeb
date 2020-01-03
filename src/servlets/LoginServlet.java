@@ -97,6 +97,8 @@ public class LoginServlet extends HttpServlet {
 					loginuser.setLand(rs.getString("land"));
 					loginuser.setEmail(rs.getString("email"));
 					loginuser.setId(rs.getInt("kunde_id"));
+					loginuser.setBildname(rs.getString("bildname"));
+					loginuser.setBild(rs.getBytes("bild"));
 					// Status==1 bedeutet, dass der Kunde eingeloggt ist.
 					loginuser.setStatus(rs.getInt(1));
 

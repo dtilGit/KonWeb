@@ -1,7 +1,9 @@
 //Veronika Tschemodanov
 package servlets;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,20 +15,24 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
 //Servlet-Annotation: 
 @WebServlet("/RegistrServlet")
+@MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5
+		* 5, location = "/tmp", fileSizeThreshold = 1024 * 1024)
 
 public class RegistrServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    @Resource(lookup="java:jboss/datasources/MySqlThidbDS")
+	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	DataSource ds;
 
 	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
@@ -58,12 +64,32 @@ public class RegistrServlet extends HttpServlet {
 		regform.setPasswort(request.getParameter("passwort"));
 		regform.setStrasse(request.getParameter("strasse"));
 		regform.setHausnummer(request.getParameter("hausnummer"));
-		regform.setPostleitzahl(request.getParameter ("postleitzahl"));
+		regform.setPostleitzahl(request.getParameter("postleitzahl"));
 		regform.setOrt(request.getParameter("ort"));
 		regform.setLand(request.getParameter("land"));
 		// Admin-Wert auf Null setzen, damit jeder "normale" Kunde durch diesen Wert
 		// beim Login vom Admin unterschieden werden kann
 		regform.setAdmin(0);
+		Part filepart = request.getPart("profilBild");
+		String contenttype = filepart.getContentType();
+		regform.setBildname(filepart.getSubmittedFileName());
+
+		try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); InputStream in = filepart.getInputStream()) {
+			int i = 0;
+			while ((i = in.read()) != -1) {
+				baos.write(i);
+			}
+			if (contenttype.equalsIgnoreCase("image/png") || contenttype.equalsIgnoreCase("image/jpg")
+					|| contenttype.equalsIgnoreCase("image/jpeg")) {
+
+				regform.setBild(baos.toByteArray());
+				baos.flush();
+			} else {
+				regform.setBild(null);
+			}
+		} catch (IOException ex) {
+			throw new ServletException(ex.getMessage());
+		}
 
 		try (Connection con = ds.getConnection();
 				PreparedStatement psmt = con.prepareStatement("SELECT * FROM thidb.kunde WHERE email = ?")) {
@@ -79,7 +105,7 @@ public class RegistrServlet extends HttpServlet {
 
 					try (Connection con2 = ds.getConnection();
 							PreparedStatement pstmt2 = con2.prepareStatement(
-									"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+									"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin, bildname, bild ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
 									generatedKeys)) {
 
 						System.out.println("=== in try insert ==");
@@ -97,6 +123,8 @@ public class RegistrServlet extends HttpServlet {
 						pstmt2.setString(10, regform.getOrt());
 						pstmt2.setString(11, regform.getLand());
 						pstmt2.setInt(12, regform.getAdmin());
+						pstmt2.setString(13, regform.getBildname());
+						pstmt2.setBytes(14, regform.getBild());
 						pstmt2.executeUpdate();
 
 						System.out.println("=== in try insert ==");
@@ -127,6 +155,6 @@ public class RegistrServlet extends HttpServlet {
 			System.out.println("=== in exception stacktrace ==");
 			e.printStackTrace();
 		}
-	} 
+	}
 
 }

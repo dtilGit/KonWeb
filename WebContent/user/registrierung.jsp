@@ -17,7 +17,7 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<section>
-		<form action="../RegistrServlet" id="registrierung" method="post">
+		<form action="../RegistrServlet" id="registrierung" method="post" enctype="multipart/form-data">
 			<h1>Registrierung</h1>
 
 			<div id="registr">
@@ -82,6 +82,11 @@
 					<p>
 						<label for="land">Land:</label> <input type="text" id="landreg"
 							name="land" size="30" maxlength="40">
+					</p>
+					<p>
+						<label for="profilBild"> Profilbild hochladen</label>
+						<input type="file" name="profilBild" id="profilBild" accept="image/*">
+						<label for="profilBild"></label>
 					</p>
 				</fieldset>
 			</div>

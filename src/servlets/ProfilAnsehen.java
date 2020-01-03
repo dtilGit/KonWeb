@@ -1,7 +1,9 @@
 //Veronika Tschemodanov
 package servlets;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
 import beans.RegistrBean;
@@ -40,7 +43,7 @@ public class ProfilAnsehen extends HttpServlet {
 				PreparedStatement pstmt = con.prepareStatement("Select * From thidb.kunde where kunde_id=?")){
 					pstmt.setInt(1, id);
 					try (ResultSet rs = pstmt.executeQuery()){
-						if (rs.next()) {
+						while (rs.next()) {
 							profillesen.setGeschlecht(rs.getString("geschlecht"));
 							profillesen.setTitel(rs.getString("titel"));
 							profillesen.setNachname(rs.getString("nachname"));
@@ -50,6 +53,8 @@ public class ProfilAnsehen extends HttpServlet {
 							profillesen.setPostleitzahl(rs.getString("postleitzahl"));
 							profillesen.setOrt(rs.getString("ort"));
 							profillesen.setLand(rs.getString("land"));
+							profillesen.setBildname(rs.getString("bildname"));
+							profillesen.setBild(rs.getBytes("bild"));
 						}
 					}catch (Exception ex) {
 						throw new ServletException (ex.getMessage());

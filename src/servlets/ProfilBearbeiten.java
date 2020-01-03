@@ -1,7 +1,9 @@
 //Veronika Tschemodanov
 package servlets;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -9,11 +11,13 @@ import java.sql.SQLException;
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
 import beans.RegistrBean;
@@ -22,6 +26,8 @@ import beans.RegistrBean;
  * Servlet implementation class Profilbearbeiten
  */
 @WebServlet("/ProfilBearbeiten")
+@MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5
+* 5, location = "/tmp", fileSizeThreshold = 1024 * 1024)
 public class ProfilBearbeiten extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	RequestDispatcher disp; 
@@ -49,33 +55,61 @@ public class ProfilBearbeiten extends HttpServlet {
 		int kunden_id = kunde.getId();
 		
 		String geschlecht = request.getParameter("geschlecht");
-		String titel = request.getParameter("titel");
-		String nachname  = request.getParameter("nachname");
-		String vorname  = request.getParameter("vorname");
-		//String email  = request.getParameter("email");
-		String strasse  = request.getParameter("strasse");
-		String hausnummer  = request.getParameter("hausnummer");
-		String postleitzahl = request.getParameter("postleitzahl");
-		String ort  = request.getParameter("ort");
-		String land  = request.getParameter("land");
-		
-	
 		profiledit.setGeschlecht(geschlecht);
+		
+		String titel = request.getParameter("titel");
 		profiledit.setTitel(titel);
+		
+		String nachname  = request.getParameter("nachname");
 		profiledit.setNachname(nachname);
+		
+		String vorname  = request.getParameter("vorname");
 		profiledit.setVorname(vorname);
-		//profiledit.setEmail(email);
+		
+		String strasse  = request.getParameter("strasse");
 		profiledit.setStrasse(strasse);
+		
+		String hausnummer  = request.getParameter("hausnummer");
 		profiledit.setHausnummer(hausnummer);
-		profiledit.setOrt(ort);
+		
+		String postleitzahl = request.getParameter("postleitzahl");
 		profiledit.setPostleitzahl(postleitzahl);
+		
+		String ort  = request.getParameter("ort");
+		profiledit.setOrt(ort);
+		
+		String land  = request.getParameter("land");
 		profiledit.setLand(land);
+		
 		profiledit.setId(kunden_id);
+		
+		Part filepart = request.getPart("profilBild");
+		String contenttype = filepart.getContentType();
+		
+		profiledit.setBildname(filepart.getSubmittedFileName());
+		
+		try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); InputStream in = filepart.getInputStream()) {
+			int i = 0;
+			while ((i = in.read()) != -1) {
+				baos.write(i);
+			}if (contenttype.equalsIgnoreCase("image/png") || contenttype.equalsIgnoreCase("image/jpg")
+					|| contenttype.equalsIgnoreCase("image/jpeg")) {
+
+				profiledit.setBild(baos.toByteArray());
+				baos.flush();
+			} else {
+				profiledit.setBild(null);
+			}
+			profiledit.setBild(baos.toByteArray());
+			baos.flush();
+		} catch (IOException ex) {
+			throw new ServletException(ex.getMessage());
+		}
 		
 		//Status�berpr�fung -> Eingelogt oder nicht ??? Notwendig oder nicht?
 		
 		try (Connection con = datasource.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=? WHERE kunde_id=?")){
+				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=?, bildname=?, bild=? WHERE kunde_id=?")){
 			//PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht = COALESCE(NULLIF(?, ''), geschlecht), titel = COALESCE(NULLIF(?, ''),titel), nachname = COALESCE(NULLIF(?, ''), nachname),vorname = COALESCE(NULLIF(?, ''),vorname), strasse = COALESCE(NULLIF(?, ''), strasse), hausnummer = COALESCE(NULLIF(?, ''), hausnummer), postleitzahl = COALESCE(NULLIF(?, ''),postleitzahl), ort=COALESCE (NULLIF (?, ''), ort), land= COALESCE (NULLIF?, ''), land) WHERE id=?")){
 			System.out.println("===in Try===");	
 				pstmt.setString(1, profiledit.getGeschlecht());
@@ -87,7 +121,9 @@ public class ProfilBearbeiten extends HttpServlet {
 				pstmt.setString(7, profiledit.getPostleitzahl());
 				pstmt.setString(8, profiledit.getOrt());
 				pstmt.setString(9, profiledit.getLand());
-				pstmt.setInt(10, profiledit.getId());
+				pstmt.setString(10, profiledit.getBildname());
+				pstmt.setBytes(11, profiledit.getBild());
+				pstmt.setInt(12, profiledit.getId());
 				pstmt.executeUpdate();
 				//request.setAttribute("profiledit", profiledit);
 		} catch (SQLException e) {
@@ -95,10 +131,9 @@ public class ProfilBearbeiten extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		request.setAttribute("profiledit", profiledit);
+		request.setAttribute("login", kunde);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("ProfilAnsehen");
-		System.out.println("===in dispatcher===");	
+		RequestDispatcher dispatcher = request.getRequestDispatcher("user/profilansehen.jsp");
 		dispatcher.forward(request, response);
 	}
 
