@@ -151,20 +151,29 @@
 
 	<div class="footer">
 		<footer>
-			<div id="servicehotline">
+			<div class="footer-left">
+			<h1>TOD's BestCap</h1>
+			<p>Unser Service 24/7:</p>
+		
+			<a href="tel:09131123987654">
+				<img class="small-icon" src="img/telefon.png"></img>
+				09131/123987654
+			</a>
+			
+			<br/>
+			<a href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
+				<img class="small-icon" src="img/mail.png"></img>
+				info@todsbestcaps.de
+			</a>
+		</div>
 
-				<h1>TOD's BestCap</h1>
-				<p>
-					Du hast ein Problem?<br>Unsere Service Hotline 24/7 kostenlos
-					für dich erreichbar:
-				</p>
-				<a href="tel:09131123987654">09131/123987654</a>
-			</div>
 
+		<div class="footer-right">
 			<div id="impressumlink">
 				<a href="user/impressum.jsp">Impressum</a>
 			</div>
-			<br/>
+		
+		</div>
 
 		</footer>
 	</div>

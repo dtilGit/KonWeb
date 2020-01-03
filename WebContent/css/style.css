@@ -249,15 +249,6 @@ figcaption {
 	text-align: center;
 }
 
-#modelbilderrechts {
-	float: right;
-	margin-top: 20px;
-}
-
-#modelbilderlinks {
-	float: right;
-	margin-top: 20px;
-}
 
 main {
 	min-height: 100px;
@@ -333,7 +324,7 @@ main {
 }
 
 
- #slider figure {
+#slider figure {
     position: relative;
     width: 500%;
     margin: 0px;
@@ -405,21 +396,25 @@ footer {
 	padding-bottom: 20px;
 	margin-top: 20px;
 	border-top: 1px solid #dddddd;
-	height: 150px;
+	height: 200px;
 	z-index: 999;
 }
 
-#servicehotline {
-	height: 100px;
-	width: 400px;
-	float: left;
+#impressumlink {
+	font-size: 15px;
+	margin-top: 95px;
 }
 
-#impressumlink {
-	float: right;
-	font-size: 15px;
-	margin-top: 85px;
+.footer-left {
+	float:left;
+	height: 100px;
+	width: 400px;
 }
+
+.footer-right {
+	float: right;
+}
+
 
 @font-face {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -469,4 +464,23 @@ th {
 	text-align: left;
 	color: #fff;
 	padding: 5px;
+}
+
+/*Kategorie Buttons im Design eines Registers*/
+form#kategorie {
+	display: inline;
+}
+
+form#kategorie button{
+	margin-bottom: 10px;
+}
+
+
+
+
+.small-icon {
+	width: auto;
+	height: 40px;
+	vertical-align: middle;
+	margin-right: 5px;
 }

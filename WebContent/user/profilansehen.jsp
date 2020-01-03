@@ -30,6 +30,10 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 		</c:when>
 
 		<c:when test="${not empty sessionScope.login}">
+			<p>
+				<img src="../ProfilbildLaden?kunde_id=${login.id}"
+					class="bild" alt="bild_laden" width="200" height="250">
+			</p>
 			<p>Geschlecht: ${login.geschlecht}</p>
 			<p>Titel: ${login.titel}</p>
 			<p>Nachname: ${login.nachname}</p>
@@ -39,18 +43,19 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 			<p>Postleitzahl: ${login.postleitzahl}</p>
 			<p>Ort: ${login.ort}</p>
 			<p>Land: ${login.land}</p>
-			<p>Bild: <img src="../ProfilbildLaden?kunde_id=${login.id}" class="bild" alt="bild_laden" width="200" height="250"></p>
-			
+
+
 
 			<form style="display: inline" action="profilbearbeiten.jsp">
 				<button>Profil bearbeiten</button>
 
 			</form>
 
-			<form style="display: inline" action="../AccountLoeschen" method="post">
+			<form style="display: inline" action="../AccountLoeschen"
+				method="post">
 				<button>Account löschen</button>
 			</form>
-			
+
 			<form style="display: inline" action="../LogoutServlet">
 				<button>Logout</button>
 			</form>
