@@ -7,8 +7,8 @@
 <html lang="de">
 
 <head>
-<meta charset="UTF-8">
-<base href="${pageContext.request.requestURI}" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ">
+<base href="${pageContext.request.requestURI}"/>
 <title>Login</title>
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 </head>

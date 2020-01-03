@@ -2,7 +2,7 @@
 
 body{
 	margin-left: 10%;
-	margin-right: 10%;
+	margin-right: 124px;
 	margin-top: 200px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
@@ -34,6 +34,14 @@ input {
 }
 
 button {
+	background-color: #424242;
+    color: white;
+    padding: 16px;
+    font-size: 19px;
+    border: 1px solid white;
+}
+
+button#nav {
 	background-color: #424242;
     color: white;
     padding: 16px;
@@ -292,7 +300,7 @@ main {
 }
 
 .bild{
-	width: 100%;
+	width: 200px;
 	height: auto; 
 }
 
@@ -414,3 +422,24 @@ tr.border_top td{
 	background-color: #424242;
 	color: white;
 }
+
+#add-cart {
+	text-align: center;
+}
+
+/*Artikel in Tabelle geordnet anzeigen*/
+table {
+	width: 100%;
+}
+
+thead {
+	background-color: #424242;
+}
+
+th {
+	text-align: left;
+	color: #fff;
+	padding: 5px;
+}
+
+

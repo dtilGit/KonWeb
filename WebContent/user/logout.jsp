@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<base href="${pageContext.request.requestURI}" />
+
 <title> Logout </title>
 </head>
 <body>

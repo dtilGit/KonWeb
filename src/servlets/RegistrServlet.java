@@ -113,7 +113,7 @@ public class RegistrServlet extends HttpServlet {
 				} else if (rs.next()) {
 					System.out.println("=== in elseif ===");
 					regform.setEmail(null);
-					dispatcher = request.getRequestDispatcher("/user/fehlerEmail.jsp");
+					dispatcher = request.getRequestDispatcher("../user/fehlerEmail.jsp");
 					dispatcher.forward(request, response);
 				}
 			} catch (Exception ex) {

@@ -29,7 +29,7 @@
 		<div class="dropdown-navi men">
 			<form action="KatLadenMen" method="get"
 				enctype="multipart/form-data">
-				<button type="submit" class="dropbtn">Männer</button>
+				<button id="nav" type="submit" class="dropbtn">Männer</button>
 			</form>
 
 			<!-- <button class="dropdown-content">Beanies</button> -->
@@ -41,7 +41,7 @@
 		<div class="dropdown-navi woman">
 			<form action="KatLadenWomen" method="get"
 				enctype="multipart/form-data">
-				<button type="submit" class="dropbtn">Frauen</button>
+				<button id="nav" type="submit" class="dropbtn">Frauen</button>
 			</form>
 
 			<!-- 	<div class="dropdown-content"> -->

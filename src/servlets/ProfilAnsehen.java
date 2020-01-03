@@ -60,7 +60,7 @@ public class ProfilAnsehen extends HttpServlet {
 					e.printStackTrace();
 				}
 		
-		request.setAttribute("profillesen", profillesen);
+		request.setAttribute("login", profillesen);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/user/profilansehen.jsp");
 		dispatcher.forward(request, response);

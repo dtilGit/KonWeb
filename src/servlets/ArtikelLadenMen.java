@@ -65,7 +65,7 @@ public class ArtikelLadenMen extends HttpServlet {
 				PreparedStatement pstmt = con.prepareStatement("Select * From thidb.artikel where kategorie LIKE ?")) {
 
 			pstmt.setInt(1, art_kategorie);
-
+			System.out.println("in loadArtikel");
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while (rs.next()) {
 					//System.out.println("=== in if===");
@@ -102,8 +102,8 @@ public class ArtikelLadenMen extends HttpServlet {
 		List<KategorieBean> menKategorien = new ArrayList<>();
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
-						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Männlich'")) {
-			
+						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Herren'")) {
+			System.out.println("in loadKategorien");
 			try (ResultSet rs = pstmt.executeQuery()) {
 
 				while (rs.next()) {

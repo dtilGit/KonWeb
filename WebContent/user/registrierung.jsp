@@ -5,8 +5,9 @@
 <html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
@@ -69,7 +70,7 @@
 </header>--%>
 
 		<section>
-		<form action="../Registrservlet" id="registrierung" method="post">
+		<form action="../RegistrServlet" id="registrierung" method="post">
 		<h1>Registrierung</h1>
 		
 		<div id="registr">

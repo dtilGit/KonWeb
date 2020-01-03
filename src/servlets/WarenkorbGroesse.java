@@ -27,27 +27,27 @@ public class WarenkorbGroesse extends HttpServlet {
 		response.setContentType("UTF-8");
 
 		HttpSession session = request.getSession();
-		WarenkorbBean warenkorb = (WarenkorbBean) session.getAttribute("warenkorb");
-		RegistrBean kunde = (RegistrBean) session.getAttribute("kunde");
+		WarenkorbBean warenkorb = (WarenkorbBean) session.getAttribute("warenkorbB");
+		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
 		// was kommt an der Stelle in die ""??
-		Integer artikel_ID = (Integer.valueOf(request.getParameter("artikel_id")));
+		Integer artikel_ID = (Integer.valueOf(request.getParameter("art_id")));
 		ArtikelBean artikel = new ArtikelBean();
 		artikel.setArtikel_id(artikel_ID);
-		String groesse = request.getParameter("groesse");
+		//String groesse = request.getParameter("groesse");
 
 		for (int i = 0; i < warenkorb.getWarenkorbList().size(); i++) {
 			WarenkorbArtikel wk = warenkorb.getWarenkorbList().get(i);
-			if (wk.getWk_artikel().getArtikel_id() == artikel.getArtikel_id() && wk.getWk_size().equals(groesse)) {
-				wk.setWk_art_anzahl(Integer.valueOf(request.getParameter("user/warenkorb.jsp")));
+			if (wk.getWk_artikel().getArtikel_id() == artikel.getArtikel_id()) {
+				wk.setWk_art_anzahl(Integer.valueOf(request.getParameter("menge")));
 			}
 		}
-		session.setAttribute("warenkorb", warenkorb);
+		session.setAttribute("warenkorbB", warenkorb);
 		if(kunde !=null) {
 			kunde.setWarenkorb(warenkorb);
-			session.setAttribute("kunde", kunde);
+			session.setAttribute("login", kunde);
 		}
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/warenkorb.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
 	

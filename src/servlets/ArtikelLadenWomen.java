@@ -58,8 +58,7 @@ public class ArtikelLadenWomen extends HttpServlet {
 
 	// Fast eins zu eins aus dem JDBC-Script, S. 19 übernommen
 	private List<ArtikelBean> loadArtikel(Integer art_kategorie) throws ServletException {
-//		art_kategorie = (art_kategorie == null || art_kategorie == "") ? "%"
-//				: "%" + art_kategorie + "%";
+
 		List<ArtikelBean> artikel = new ArrayList<ArtikelBean>();
 
 		try (Connection con = ds.getConnection();

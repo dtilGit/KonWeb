@@ -34,14 +34,14 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 		response.setContentType("UTF-8");
 		HttpSession session = request.getSession();
 
-		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorb");
+		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 
 		String artikelbezeichnung = request.getParameter("artikelbezeichnung");
 		Double preis = Double.valueOf(request.getParameter("preis"));
 		ArtikelBean artB = new ArtikelBean(artikelbezeichnung, preis);
 
-		artB.setArtikel_id(Integer.valueOf(request.getParameter("artikel_id")));
-		String art_Anzahl = request.getParameter("art_Anzahl");
+		artB.setArtikel_id(Integer.valueOf(request.getParameter("art_id")));
+		//String art_Anzahl = request.getParameter("art_Anzahl");
 
 		if (warenkorbB == null) {
 			warenkorbB = new WarenkorbBean();
@@ -51,7 +51,7 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 		session.setAttribute("warenkorbB", warenkorbB);
 		LinkedList<WarenkorbArtikel> wk_artikel = warenkorbB.getWarenkorbList();
 
-		boolean neu;
+		boolean neu = true;
 		for (int i = 0; i < wk_artikel.size(); i++) {
 			WarenkorbArtikel art_pruefen;
 			art_pruefen = wk_artikel.get(i);
@@ -62,13 +62,13 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 			}
 		}
 		if (neu = true) {
-			Integer art_id = Integer.valueOf(request.getParameter("artikel_id"));
+			Integer art_id = Integer.valueOf(request.getParameter("art_id"));
 			ArtikelBean artikel = artikelLaden(art_id);
 
 			WarenkorbArtikel pruefen = new WarenkorbArtikel(artikel);
-			// Was passier hier??
+			// Anzahl wird auf 1 gesetzt, wenn noch kein Artikel im WK 
 			pruefen.setWk_art_anzahl(1);
-			pruefen.setWk_size(art_Anzahl);
+			//pruefen.setWk_size(art_Anzahl);
 			wk_artikel.add(pruefen);
 		}
 		request.setAttribute("ges_preis", warenkorbB.getGes_preis());
