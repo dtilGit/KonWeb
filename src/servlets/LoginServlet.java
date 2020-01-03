@@ -52,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 		// Passwort�berpr�fung
 		if (passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in if ===");
-			login.setStatus(1);
+			//login.setStatus(1);
 			session.setAttribute("login", login);
 			// System.out.println(login.getNachname());
 			disp = request.getRequestDispatcher("user/login_weiterleitung.jsp");
@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 
 		} else if (!passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in else if ===");
-			login.setStatus(0);
+			//login.setStatus(0);
 			// login.setFehlermeldung("Passwort ist nicht korrekt");
 			disp = request.getRequestDispatcher("user/login_PWFalsch.jsp");
 			disp.forward(request, response);
@@ -100,7 +100,7 @@ public class LoginServlet extends HttpServlet {
 					loginuser.setBildname(rs.getString("bildname"));
 					loginuser.setBild(rs.getBytes("bild"));
 					// Status==1 bedeutet, dass der Kunde eingeloggt ist.
-					loginuser.setStatus(rs.getInt(1));
+//					loginuser.setStatus(rs.getInt(1));
 
 				} else if (!rs.next()) {
 					System.out.println("=== in else if rs.next ===");

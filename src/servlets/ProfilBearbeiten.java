@@ -46,13 +46,8 @@ public class ProfilBearbeiten extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
-		RegistrBean profiledit = new RegistrBean();
-		
-		//ge�ndert von login
 		RegistrBean kunde = (RegistrBean)session.getAttribute("login"); 
-		
-		
-		int kunden_id = kunde.getId();
+		RegistrBean profiledit = new RegistrBean();
 		
 		String geschlecht = request.getParameter("geschlecht");
 		profiledit.setGeschlecht(geschlecht);
@@ -81,6 +76,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		String land  = request.getParameter("land");
 		profiledit.setLand(land);
 		
+		int kunden_id = kunde.getId();
 		profiledit.setId(kunden_id);
 		
 		Part filepart = request.getPart("profilBild");
@@ -125,7 +121,7 @@ public class ProfilBearbeiten extends HttpServlet {
 				pstmt.setBytes(11, profiledit.getBild());
 				pstmt.setInt(12, profiledit.getId());
 				pstmt.executeUpdate();
-				
+				System.out.println("===in con===");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -55,6 +55,7 @@ public class ProfilAnsehen extends HttpServlet {
 							profillesen.setLand(rs.getString("land"));
 							profillesen.setBildname(rs.getString("bildname"));
 							profillesen.setBild(rs.getBytes("bild"));
+							System.out.println("===in con Profil ansehen===");
 						}
 					}catch (Exception ex) {
 						throw new ServletException (ex.getMessage());
@@ -67,7 +68,7 @@ public class ProfilAnsehen extends HttpServlet {
 		
 		request.setAttribute("login", profillesen);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/user/profilansehen.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/profilansehen.jsp");
 		dispatcher.forward(request, response);
 	}
 
