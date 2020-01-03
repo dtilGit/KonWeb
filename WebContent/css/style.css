@@ -1,6 +1,6 @@
 @CHARSET "UTF-8";
 
-body{
+body {
 	margin-left: 10%;
 	margin-right: 124px;
 	margin-top: 200px;
@@ -15,10 +15,16 @@ h1 {
 	text-transform: uppercase;
 }
 
-h2{
+h2 {
 	font-size: 20px;
-	float: left;
+	text-decoration: none;
+
 }
+
+h2:after {
+            content: "\A";
+            white-space: pre;
+        }
 
 a {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -27,42 +33,53 @@ a {
 
 a:hover {
 	color: #6e6e6e;
+	cursor: pointer;
 }
 
 input {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
+ul.flex-container, li.flex-container{
+	list-style: none;
+}
+
 button {
 	background-color: #424242;
-    color: white;
-    padding: 16px;
-    font-size: 19px;
-    border: 1px solid white;
+	color: white;
+	padding: 16px;
+	font-size: 19px;
+	border: 1px solid white;
+	cursor: pointer;
+}
+
+button#nav:hover {
+	background-color: #6E6E6E;
 }
 
 button#nav {
 	background-color: #424242;
-    color: white;
-    padding: 16px;
-    font-size: 19px;
-    border: 1px solid white;
-    width: 100px;
+	color: white;
+	padding: 16px;
+	font-size: 19px;
+	border: 1px solid white;
+	width: 100px;
+	cursor: pointer;
 }
 
-header{
+header {
 	padding: 10px;
 	height: 120px;
 	width: 80%;
-
 	background-color: #FFF;
 	position: fixed; /* Header bleibt beim scrollen stehen */
-	top: 0;  /* Header fängt ganz oben an */
-	z-index: 999; /*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
+	top: 0; /* Header fängt ganz oben an */
+	z-index: 999;
+	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
 	border-bottom: 1px solid #424242;
 }
 
-#mainlogo{
+#mainlogo {
 	height: 100px;
 	width: 100px;
 	float: left;
@@ -70,141 +87,181 @@ header{
 	margin-top: 10px;
 }
 
-
 #logo {
 	height: 100px;
 	width: 100px;
 	float: left;
 }
 
+.woman, .men {
+	position: fixed;
+	display: inline-block;
+	margin-top: 30px;
+}
 
+.woman {
+	margin-left: 110px;
+}
 
+/*Formatierung Männer und Frauen Button*/
 .dropbtn {
-  background-color: #424242;
-  color: white;
-  padding: 16px;
-  font-size: 19px;
-  border: 1px solid white;
-  width:100px
+	background-color: #424242;
+	color: white;
+	padding: 16px;
+	font-size: 19px;
+	border: 1px solid white;
+	width: 100px
 }
 
 /* Positioniern */
 .dropdown-navi {
-  position: fixed;
-  display: inline-block;
-  margin-top: 30px;
+	display: inline-block;
+	float: right;
 }
-
 /* Kästchen mit den Unterpunkten */
 .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #6e6e6e;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-
-.dropdown-navi.woman {
-	margin-left: 110px;
+	display: none;
+	position: absolute;
+	background-color: #6e6e6e;
+	min-width: 100px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
 }
 
-.dropdown-content a  {
+.dropdown-content a {
 	background-color: #424242;
 }
 
 /* Unterpunkte werden beim hover hellgrau */
-.dropdown-content a:hover {background-color: #6E6E6E;}
+.dropdown-content a:hover {
+	background-color: #6E6E6E;
+	cursor: pointer;
+}
 
 /* Beim hover content anzeigen */
-.dropdown-navi:hover .dropdown-content {display: block;}
+.dropdown-navi:hover .dropdown-content {
+	display: block;
+	cursor: pointer;
+}
 
 /* Großer Button beim hover in hellgrau */
-.dropdown-navi:hover .dropbtn {background-color: #6E6E6E;}
+.dropdown-navi:hover .dropbtn {
+	background-color: #6E6E6E;
+	cursor: pointer;
+}
 
+#meinkonto:hover .dropdown-content {
+	display: block;
+	cursor: pointer;
+}
 
-
-#suchleiste{
-	
+#suchleiste {
 	float: left;
 	margin-left: 260px;
 	margin-top: 20px;
-	
 	border: 2px solid #999;
-	border-radius: 0.5em;;
+	border-radius: 0.5em;
 	font-size: 12px;
 	width: 15em;
 	transition: width 0.5s ease-in-out;
 	height: 35px;
-  	
-  	padding: 5px;
+	padding: 5px;
 }
 
+#email {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin-left: 40px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	width: 15em;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#passwort {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	width: 15em;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #strassereg,
+	#hausnrreg, #plzreg, #ortreg, #landreg {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin-left: 20px;
+	margin-bottom: 5px;
+	font-size: 12px;
+	width: 15em;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
 /*#suchleiste:focus{
 	font-size: 24px;
   	width: 20%;
 }*/
 
-
-
-#meinkonto{
-	float: left;
-	margin-left: 50px;
-	margin-top: 20px;
-	
-	float: right;
+#icon {
 	width: 50px;
 	height: 50px;
+	margin-top: 15px;
 }
 
-#warenkorb{
-	margin-left: 50px;
-	/*margin-right: 100px;*/
-	margin-top: 20px;
-	
-	float: right;
-	width: 50px;
-	height: 50px;
+.profil {
+	margin-left: 40px;
+	background-color: #fff;
+	border: none;
+	padding: 0px;
+}
+
+.warenkorb {
+	margin-left: 420px;
+	display: inline-block;
 }
 
 section {
 	width: 800px;
 	float: left;
-	margin-top: 50px; 
+	margin-top: 50px;
 	margin-bottom: 80px;
 }
 
-figcaption{
+figcaption {
 	text-align: center;
 }
 
-
-#modelbilderrechts{
+#modelbilderrechts {
 	float: right;
 	margin-top: 20px;
 }
 
-#modelbilderlinks{
+#modelbilderlinks {
 	float: right;
 	margin-top: 20px;
 }
-
-
 
 main {
-    min-height: 100px;
-
+	min-height: 100px;
 }
-
 
 /*Spalten auf der Startseite*/
 .spalte-1 {
@@ -224,7 +281,6 @@ main {
 	margin-right: 10px;
 	float: left;
 }
-
 
 /* .flex-container { */
 /*     display: flex; */
@@ -274,151 +330,132 @@ main {
     100% {
         left: -400%;
     }
-    
 }
 
 
-
-#slider {
-    overflow: hidden;
-}
-
-#slider figure img {
-    width: 20%;
-    float: left;
-}
-
-
-#slider figure {
+ #slider figure {
     position: relative;
     width: 500%;
     margin: 0px;
     left: 0;
     text-align: left;
     font-size: 0;
-    animation: 20s slider infinite;
+    animation: 16s slider infinite;
 }
 
-.bild{
+
+#slider {
+	overflow: hidden;
+}
+
+#slider figure img {
+	width: 20%;
+	float: left;
+}
+
+
+
+.bild {
 	width: 200px;
-	height: auto; 
+	height: auto;
 }
 
-
-
-.markenbereich{
+.markenbereich {
 	border: 5px solid #dadada;
-	
 	float: left;
 	height: 250px;
 	width: 800px;
 }
 
-
-.angebot{
+.angebot {
 	float: right;
 	height: 200px;
 	width: 250px;
-
 }
 
-.halfsectionleft{
+.halfsectionleft {
 	height: 900px;
 	width: 400px;
 	float: left;
 }
 
-.halfsectionright{
+.halfsectionright {
 	height: 900px;
 	width: 400px;
-	float:right;
+	float: right;
 }
 
-#impressumpart{
+#impressumpart {
 	width: 400px;
 	float: center;
 	margin-left: 50px;
 }
-
-
 
 aside {
 	float: right;
 	width: 25%;
 	margin-top: 50px;
 	background-color: #dddddd;
-	
 	padding: 0px 5px 30px 5px;
-	
 }
-
-
-	
 
 footer {
 	clear: both;
 	padding-top: 20px;
 	padding-bottom: 20px;
+	margin-top: 20px;
 	border-top: 1px solid #dddddd;
 	height: 150px;
 	z-index: 999;
 }
 
-
-
-
-#servicehotline{
+#servicehotline {
 	height: 100px;
 	width: 400px;
 	float: left;
-	
 }
 
-#impressumlink{
-	text-align: middle;
+#impressumlink {
 	float: right;
 	font-size: 15px;
+	margin-top: 85px;
 }
 
-@font-face { 
+@font-face {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	
 }
-
 
 /* .payment-checkouts{ */
 /* 	position: relative; */
 /* 	display: block; */
 /* 	box-sizing: border-box; */
-	
-/* } */
 
-.to-cash{
+/* } */
+.to-cash {
 	cursor: pointer;
 	display: inline-block;
 	align-content: center;
-	background-color: rgb(0,0,0);
+	background-color: rgb(0, 0, 0);
 	color: #fff;
 	width: 100%;
-	
 }
 
-#beanie_cart{
+#beanie_cart {
 	border: 2px groove #999;
 	float: left;
 	margin: 50px;
 }
 
-#letzte_zeile{
+#letzte_zeile {
 	border-bottom: 2px groove #999;
-  background-color: lightgrey;
+	background-color: lightgrey;
 }
 
-tr.border_top td{
+tr.border_top td {
 	border-top: 2px groove #999;
 }
 
-#kreditsubmit{
+#kreditsubmit {
 	background-color: #424242;
 	color: white;
 }
@@ -433,7 +470,7 @@ table {
 }
 
 thead {
-	background-color: #424242;
+	background-color: #6E6E6E;
 }
 
 th {
@@ -441,5 +478,3 @@ th {
 	color: #fff;
 	padding: 5px;
 }
-
-

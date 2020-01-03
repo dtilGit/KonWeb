@@ -7,28 +7,26 @@
 <head>
     <base href="${pageContext.request.requestURI} "/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Impressum</title>
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 
 </head>
 <body>
 
-<%@ include file="/../jspf/header.jspf"%>
+<%@ include file="../jspf/header.jspf"%>
 
 <main class="flex-container">
     <section class="flex-item">
     
         <h1>Impressum</h1>
         <h2>Geschäftsführer</h2>
-		<br>
         <ul>
-            <li>Tilman Ansgar Dewes</li>
             <li>Veronika Tschemodanov</li>
             <li>David Häusler</li>
+             <li>Tilman Ansgar Dewes</li>
         </ul>
         <h2>Adresse</h2>
-        <br>
         <ul>
             <li>TOD's Best Caps</li>
             <li>Esplanade 10, 85049 Ingolstadt</li>
@@ -39,7 +37,7 @@
     </section>
 </main>
 <div id="footer">
-    <%@ include file="/../jspf/footer.jspf" %>
+    <%@ include file="../jspf/footer.jspf" %>
 </div>
 </body>
 </html>

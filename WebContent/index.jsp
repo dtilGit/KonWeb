@@ -1,6 +1,7 @@
 <%--David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%-- <%@ page errorPage="../fehlerausgabe.jsp"%> --%>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
-	<!-- David Häusler -->
+<!-- 	David Häusler -->
 	<header>
 		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 		<div id="mainlogo">
@@ -26,19 +27,19 @@
 		</div>
 
 
-		<div class="dropdown-navi men">
+		<div class="men">
 			<form action="KatArtLadenMen" method="get"
 				enctype="multipart/form-data">
 				<button id="nav" type="submit" class="dropbtn">Männer</button>
 			</form>
 
-			<!-- <button class="dropdown-content">Beanies</button> -->
-			<!-- 				<button>Caps</button> -->
+			<!-- 			<button class="dropdown-content">Beanies</button> -->
+			<!-- 							<button class="dropdown-content">Caps</button> -->
 		</div>
 
 
 
-		<div class="dropdown-navi woman">
+		<div class="woman">
 			<form action="KatArtLadenWomen" method="get"
 				enctype="multipart/form-data">
 				<button id="nav" type="submit" class="dropbtn">Frauen</button>
@@ -49,28 +50,6 @@
 			<!-- 			href="user/woman_caps.html">Caps</a> -->
 		</div>
 
-
-
-
-		<!-- 			<ul> -->
-		<!-- 				<li>Männer -->
-		<!-- 					<ul> -->
-		<!-- 						<li><a href="user/man_beanies.html">Beanies</a></li> -->
-		<!-- 						<li><a href="user/man_caps.html">Caps</a></li> -->
-		<!-- 					</ul> -->
-		<!-- 				</li> -->
-		<!-- 				<li>Frauen -->
-		<!-- 					<ul> -->
-		<!-- 						<li><a href="user/woman_beanies.html">Beanies</a></li> -->
-		<!-- 						<li><a href="user/woman_caps.html">Caps</a></li> -->
-		<!-- 					</ul> -->
-		<!-- 				</li> -->
-		<!-- 				<li>Hot Sales</li> -->
-		<!-- 			</ul> -->
-
-
-
-
 		<div id="suche">
 			<br> <label for="suchleiste"></label>
 			<form action="SucheServlet" method="get">
@@ -80,74 +59,94 @@
 		</div>
 
 
-
-		<div>
-			<a href="login.html"><img id="meinkonto" src="img/mein_konto.png"
-				alt="meinKontoLogo"></a>
-		</div>
-
-		<div>
-			<a href="warenkorb.html"><img id="warenkorb"
+		<div class="warenkorb">
+			<a href="user/warenkorb.jsp"><img id="icon"
 				src="img/warenkorb.png" alt="warenkorbLogo"></a>
 		</div>
 
+		<c:choose>
+			<c:when test="${empty sessionScope.login}">
+				<div class="dropdown-navi">
+<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
+						<!-- 				enctype="multipart/form-data"> -->
+						<button class="profil"><img id="icon"
+							src="img/mein_konto.png" alt="meinKontoLogo"></button>
+<!-- 					</form> -->
+					<div class="dropdown-content">
+						<a href=user/login.jsp>Login</a> 
+						<a href=user/registrierung.jsp>Registrierung</a>
+					</div>
+				</div>
+			</c:when>
+			<c:when test="${not empty sessionScope.login}">
+				<div class="dropdown-navi">
+					
+										
+						<button class="profil" ><img id="icon"
+							src="img/mein_konto.png" alt="meinKontoLogo"></button>
+				
+					<div class="dropdown-content">
+						<a href=user/profilansehen.jsp>Ihr Profil</a> 
+						<a href=user/logout.jsp>Logout</a>
+					</div>
+				</div>
+			</c:when>
+		</c:choose>
 
 	</header>
 
 
-    <div id="slider">
-        <figure>
+	<div id="slider">
+		<figure>
 
-            <img src="img/capbanner.jpg">
-            <img src="img/capbanner-2.jpg">
-            <img src="img/capbanner-3.jpg">
-            <img src="img/capbanner-4.jpg">
+			<img src="img/capbanner.jpg">
+			<img src="img/capbanner-2.jpg">
+			<img src="img/capbanner-3.jpg">
+			<img src="img/capbanner-4.jpg">
 
-        </figure>
-    </div>
-
-	
-	
-
-	
-<section>
-	
-	<div class="spalten">
-	
-	<h1>Das sind wir!</h1>
-		<div class="spalte-1">
-			Seit 20 Jahren gehen wir, die Geschäftsführer von TODsBestCaps, unserer Leidenschaft nach und vertreiben weltweit unsere Kopfbedeckungen
-		</div>		
-					
-		<div class="spalte-2">
-			Qualität und Service stehen bei uns an oberster Stelle! Aus diesem Grund sind wir auch seit 5 Jahren Marktführer im Cap Segment
-			Doch wir sind noch lange nicht satt! Jeden Tag suchen wir nach den neuesten Mützen Trends und geben sie hier für EUCH zum Besten.
-		</div>
-
-		<div class="spalte-3">
-			Noch nicht überzeugt? Dann überzeug dich selbst und durchstöber unsere Webpage, wir haben für Jedermann (und Frau :)) etwas im Angebot
-		</div>
+		</figure>
 	</div>
-	
-</section>
+
+	<section>
+
+		<div class="spalten">
+
+			<h1>Das sind wir!</h1>
+			<div class="spalte-1">Seit 20 Jahren gehen wir, die
+				Geschäftsführer von TODsBestCaps, unserer Leidenschaft nach und
+				vertreiben weltweit unsere Kopfbedeckungen!</div>
+
+			<div class="spalte-2">Qualität und Service stehen bei uns an
+				oberster Stelle! Aus diesem Grund sind wir auch seit 5 Jahren
+				Marktführer im Cap Segment. Doch wir sind noch lange nicht satt!
+				Jeden Tag suchen wir nach den neuesten Mützen Trends und geben sie
+				hier für EUCH zum Besten.</div>
+
+			<div class="spalte-3">Noch nicht überzeugt? Dann überzeug dich
+				selbst und durchstöber unseren Onlineshop, wir haben für Jedermann (und
+				Frau :)) etwas im Angebot!</div>
+		</div>
+
+	</section>
 
 
 
-		<aside>
-			<h1>Achtung</h1>
-			
-			<h3>Versandoptionen:</h3>
-			<div>Wir liefern unsere Pakete mit hermes und DHL.</div>
-						
-			<h3>Lieferbedingungen:</h3>
-			<div>Sie können ab einem Einkaufswert von 60€ Versankostenfrei bestellen.</div>
-			
-		</aside>
-	
-	
-	
-	
-	
+	<aside>
+		<h1>Achtung</h1>
+
+		<h3>Versandoptionen:</h3>
+		<div>Wir liefern unsere Pakete mit Hermes und DHL.</div>
+
+		<h3>Lieferbedingungen:</h3>
+		<div>Sie können ab einem Einkaufswert von 60€ Versankostenfrei
+			bestellen.</div>
+
+	</aside>
+
+
+
+
+
 	<div class="footer">
 		<footer>
 			<div id="servicehotline">
@@ -163,7 +162,7 @@
 			<div id="impressumlink">
 				<a href="user/impressum.jsp">Impressum</a>
 			</div>
-			</br>
+			<br/>
 
 		</footer>
 	</div>

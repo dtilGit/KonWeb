@@ -1,5 +1,5 @@
 <!--David Häusler-->
-<div class="footer">
+
 	<footer>
 		<div id="servicehotline">
 			
@@ -9,9 +9,8 @@
 		</div>
 
 		<div id="impressumlink">
-			<a href="impressum.jsp">Impressum</a>
+			<a href="../user/impressum.jsp">Impressum</a>
 		</div>
 		</br>
 
 	</footer>
-</div>

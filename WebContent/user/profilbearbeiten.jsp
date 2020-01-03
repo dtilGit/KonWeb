@@ -1,21 +1,28 @@
 <%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ page errorPage="fehlerausgabe.jsp"%>
+<%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-UTF-8)">
 
-<base href="${pageContext.request.requestURI}"/>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+
 
 <title>Profildaten bearbeiten</title>
 </head>
 
 <body>
+	<%@ include file="../jspf/header.jspf"%>
 	<h1>Profildaten bearbeiten</h1>
 	
+	<p>
 	<h2>Deine aktuellen Daten</h2>
+	</p>
 			<p>Geschlecht: ${login.geschlecht}</p>
 			<p>Titel: ${login.titel}</p>
 			<p>Nachname: ${login.nachname}</p>
@@ -27,7 +34,7 @@
 			<p>Ort: ${login.ort}</p>
 			<p>Land: ${login.land}</p>
 			
-	<p> Hier kannst du keine Änderungen eingeben:</p>
+	<h2> Hier kannst du deine Änderungen eingeben:</h2>
 	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post">
 		<div>
 			<p>
@@ -74,5 +81,6 @@
 				Speichern</button>
 		</p>
 	</form>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

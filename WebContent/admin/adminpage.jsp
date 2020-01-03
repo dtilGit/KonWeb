@@ -11,7 +11,7 @@
 </head>
 
 <body>
-	<%@ include file="/../jspf/header.jspf"%>
+	<%@ include file="../jspf/header.jspf"%>
 
 <section>
 <div class= "intro">
@@ -243,7 +243,7 @@ Kategorie löschen
 <aside>
 Aside
 </aside>-->
-	<%@ include file="/../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 
 </body>
 </html>
