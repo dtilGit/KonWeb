@@ -39,6 +39,8 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 			<p>Postleitzahl: ${login.postleitzahl}</p>
 			<p>Ort: ${login.ort}</p>
 			<p>Land: ${login.land}</p>
+			<p>Bild: <img src="../ProfilbildLaden?kunde_id=${login.id}" class="bild" alt="bild_laden" width="200" height="250"></p>
+			
 
 			<form style="display: inline" action="profilbearbeiten.jsp">
 				<button>Profil bearbeiten</button>
