@@ -104,7 +104,7 @@ public class LoginServlet extends HttpServlet {
 
 				} else if (!rs.next()) {
 					System.out.println("=== in else if rs.next ===");
-					loginuser.setStatus(rs.getInt(0));
+					//loginuser.setStatus(rs.getInt(0));
 					disp = request.getRequestDispatcher("user/login_RGFehler.jsp");
 					disp.forward(request, response);
 				}
