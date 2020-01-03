@@ -3,7 +3,6 @@ package servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -15,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 
-import beans.ArtikelBean;
 import beans.RegistrBean;
 
 /**
@@ -29,7 +27,7 @@ public class AccountLoeschen extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		System.out.println("==in post==");
 		request.setCharacterEncoding("UTF-8");
 
 		HttpSession session = request.getSession();
@@ -38,9 +36,10 @@ public class AccountLoeschen extends HttpServlet {
 		int kunden_id = kunde.getId();
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE * FROM thidb.kunde WHERE kunde_id = ?")) {
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ?")) {
 			pstmt.setInt(1, kunden_id);
 			pstmt.executeUpdate();
+			System.out.println("==in try löschen==");
 		}
 
 		catch (Exception ex) {
@@ -49,7 +48,7 @@ public class AccountLoeschen extends HttpServlet {
 
 		request.getSession().invalidate();
 		
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/artikel_geloescht.jsp");
+		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/account_geloescht.jsp");
 		dispatcher.forward(request, response);
 	}
 }

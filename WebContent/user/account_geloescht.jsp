@@ -14,7 +14,7 @@
 <body>
 <%@ include file="../jspf/header.jspf"%>
 
-<p> Ihr Account wurde erfogreich gelöscht. </p>
+<h1> Ihr Account wurde erfolgreich gelöscht! </h1>
 
 <%@ include file="../jspf/footer.jspf"%>
 </body>

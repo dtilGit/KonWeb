@@ -45,6 +45,10 @@ SPÄTER NOCHMAL ÜBERPRÜFEN, OB ÜBER DIE URL DER AUFRUF EINES NUTZERS MÖGLICH
 
 			</form>
 
+			<form style="display: inline" action="../AccountLoeschen" method="post">
+				<button>Account löschen</button>
+			</form>
+			
 			<form style="display: inline" action="../LogoutServlet">
 				<button>Logout</button>
 			</form>
