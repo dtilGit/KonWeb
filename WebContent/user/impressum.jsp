@@ -21,13 +21,13 @@
     
         <h1>Impressum</h1>
         <h2>Geschäftsführer</h2>
-        <ul>
+        <ul class="impinfos">
             <li>Veronika Tschemodanov</li>
             <li>David Häusler</li>
              <li>Tilman Ansgar Dewes</li>
         </ul>
         <h2>Adresse</h2>
-        <ul>
+        <ul class="impinfos">
             <li>TOD's Best Caps</li>
             <li>Esplanade 10, 85049 Ingolstadt</li>
             <li>Telefon: 09131/123987654</li>
