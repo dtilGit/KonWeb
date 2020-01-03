@@ -12,7 +12,6 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-
 <title>Profildaten bearbeiten</title>
 </head>
 

@@ -27,8 +27,9 @@
 		</div>
 
 
+
 		<div class="men">
-			<form action="KatArtLadenMen" method="get"
+			<form action="KatLadenMen" method="get"
 				enctype="multipart/form-data">
 				<button id="nav" type="submit" class="dropbtn">Männer</button>
 			</form>
@@ -39,8 +40,9 @@
 
 
 
+
 		<div class="woman">
-			<form action="KatArtLadenWomen" method="get"
+			<form action="KatLadenWomen" method="get"
 				enctype="multipart/form-data">
 				<button id="nav" type="submit" class="dropbtn">Frauen</button>
 			</form>

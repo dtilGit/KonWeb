@@ -8,11 +8,13 @@
 <html lang="de">
 
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 
 <title>Logout</title>
+
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>

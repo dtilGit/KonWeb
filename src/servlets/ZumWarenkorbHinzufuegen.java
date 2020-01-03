@@ -34,26 +34,24 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 		response.setContentType("UTF-8");
 		HttpSession session = request.getSession();
 
-		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorb");
+		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 
-		// warum funktioniert "valueOf" nicht?
-		BigDecimal preis = BigDecimal.valueOf(request.getParameter("preis"));
-		ArtikelBean artB = new ArtikelBean();
-		artB.setPreis(preis);
-		artB.setArtikel_id(Integer.valueOf(request.getParameter("artikel_id")));
-		String art_Anzahl = request.getParameter("art_Anzahl");
+		String artikelbezeichnung = request.getParameter("artikelbezeichnung");
+		Double preis = Double.valueOf(request.getParameter("preis"));
+		ArtikelBean artB = new ArtikelBean(artikelbezeichnung, preis);
 
-		if (warenkorbB != null) {
-			session.setAttribute("warenkorbB", warenkorbB);
+		artB.setArtikel_id(Integer.valueOf(request.getParameter("art_id")));
+		//String art_Anzahl = request.getParameter("art_Anzahl");
 
-		} else if (warenkorbB == null) {
+		if (warenkorbB == null) {
 			warenkorbB = new WarenkorbBean();
 			session.setAttribute("warenkorbB", warenkorbB);
 		}
 		// In der Bohne Korb erstellen --> ist eine Liste von den Artikeln
-		LinkedList<WarenkorbArtikel> wk_artikel = warenkorbB.getKorb();
+		session.setAttribute("warenkorbB", warenkorbB);
+		LinkedList<WarenkorbArtikel> wk_artikel = warenkorbB.getWarenkorbList();
 
-		boolean neu;
+		boolean neu = true;
 		for (int i = 0; i < wk_artikel.size(); i++) {
 			WarenkorbArtikel art_pruefen;
 			art_pruefen = wk_artikel.get(i);
@@ -61,41 +59,43 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 				neu = false;
 				Integer anzahl = art_pruefen.getWk_art_anzahl();
 				anzahl++;
-			} else {
-				neu = true;
-				Integer art_id = Integer.valueOf(request.getParameter("artikel_id"));
-				ArtikelBean artikel = artikelLaden(art_id);
-				
-				WarenkorbArtikel pruefen = new WarenkorbArtikel(artikel);
-				//Was passier hier??
-				pruefen.setWk_art_anzahl(1);
-				pruefen.setWk_size(art_Anzahl);
-				wk_artikel.add(pruefen);			
 			}
-		}request.setAttribute("ges_preis", warenkorbB.getGes_preis());
+		}
+		if (neu = true) {
+			Integer art_id = Integer.valueOf(request.getParameter("art_id"));
+			ArtikelBean artikel = artikelLaden(art_id);
+
+			WarenkorbArtikel pruefen = new WarenkorbArtikel(artikel);
+			// Anzahl wird auf 1 gesetzt, wenn noch kein Artikel im WK 
+			pruefen.setWk_art_anzahl(1);
+			//pruefen.setWk_size(art_Anzahl);
+			wk_artikel.add(pruefen);
+		}
+		request.setAttribute("ges_preis", warenkorbB.getGes_preis());
+
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
 
-	private ArtikelBean artikelLaden (Integer art_id) throws ServletException{
-			ArtikelBean artikel = new ArtikelBean ();
-			try ( Connection con = ds.getConnection();
-					PreparedStatement pstmt = con.prepareStatement("Select * from thidb.artikel where artikel_id=?")){
-				pstmt.setInt(1, art_id);
-				try (ResultSet rs = pstmt.executeQuery()){
-					while (rs.next()) {
-		
-						artikel.setArtikel_id(Integer.valueOf(rs.getInt("artikel_id")));
-						artikel.setArtikelbezeichnung(rs.getString("artikelbezeichnung"));
-						artikel.setPreis(rs.getBigDecimal("preis"));
-					}
+	private ArtikelBean artikelLaden(Integer art_id) throws ServletException {
+		ArtikelBean artikel = new ArtikelBean();
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("Select * from thidb.artikel where artikel_id=?")) {
+			pstmt.setInt(1, art_id);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				while (rs.next()) {
+
+					artikel.setArtikel_id(Integer.valueOf(rs.getInt("artikel_id")));
+					artikel.setArtikelbezeichnung(rs.getString("artikelbezeichnung"));
+					artikel.setPreis(rs.getDouble("preis"));
 				}
-				
-			}catch (Exception ex) {
-				throw new ServletException (ex.getMessage());
 			}
-			return artikel;
+
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
 		}
+		return artikel;
+	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

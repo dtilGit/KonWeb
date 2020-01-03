@@ -3,98 +3,62 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html lang="de">
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 
-<%@ include file="../jspf/header.jspf"%>
-
 <title>Männer Artikel</title>
 </head>
 <body>
+<%@ include file="../jspf/header.jspf"%>
 	<h1>Männer Artikel</h1>
-	<%--Zuerst die Kategorien anzeigen, dann die jeweilgien Artikel --%>
 
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
 
-		<!--  Änderung: Onklick funktioniert nur wenn IDs in button und table unterschiedlich sind!! -->
-		<button type="button" id="artikelAnzeigen_1"
-			onClick="document.getElementById('artikelAnzeigen').style.display='inline';">${kategorieMen.kategoriebezeichnung}</button>
 
-		<!-- 			onClick="document.getElementById('artikelAnzeigen').style.display='inline';"> -->
-		<!-- 		<table id="artikelAnzeigen" style="display: none"> -->
+		<form id="suche" action="../ArtikelLadenMen" method="POST">
+			<button type="submit" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
+			<input name="kategorie_id" type="hidden"
+				value="${kategorieMen.kategorie_id }"></input>
+		</form>
 
-		<table id="artikelAnzeigen" style="display: none">
-			<thead>
-				<tr>
-					<th>Artikel</th>
-					<th>Artikelbezeichnung</th>
-					<th>Preis(€)</th>
-					<th></th>
-					<!--<th>Bild</th> -->
-				</tr>
-			</thead>
 
-			<tbody>
-				<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
-					<c:choose>
-						<c:when
-							test="${artikelkategorie.kategorie_id == kategorieMen.kategorie_id}">
-							<tr>
-								<%-- 								<td>${artikelkategorie.kategorie_id}</td> --%>
-								<td><img class="bild"
-									src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}"
-									alt="bild_laden" width="200" height="250"></td>
-								<td>${artikelkategorie.artikelbezeichnung}</td>
-								<td>${artikelkategorie.preis}</td>
-								<td id="add-cart">
-									<form action="../ZumWarenkorbHinzufuegen" method="get">
-										<button name="warenkorbButton">zum Warenkorb
-											hinzufügen</button>
-										<input type="hidden" name="art_id"
-											value="${artikelkategorie.artikel_id}" />
-									</form>
-								</td>
-
-								<%-- 								<td><img src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}" alt="bild_laden" ></td> --%>
-
-							</tr>
-						</c:when>
-						<%-- 						<c:otherwise> Keine Artikel unter dieser Kategorie vorhanden! </c:otherwise> --%>
-					</c:choose>
-				</c:forEach>
-
-			</tbody>
-
-		</table>
 	</c:forEach>
 
+	<table>
+		<!-- 	id="artikelAnzeigen" -->
 
+		<tr>
+			<th>Artikelbezeichnung</th>
+			<th>Preis(€)</th>
+			<th>Bild</th>
+			<th>Button</th>
+		</tr>
 
+		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
+			<tr>
+				<td>${artikelkategorie.artikelbezeichnung}</td>
+				<td>${artikelkategorie.preis}</td>
+				<td><img
+					src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}"
+					class="bild" alt="bild_laden" width="200" height="250"></td>
+				<td id="add-cart">
+					<form action="../ZumWarenkorbHinzufuegen" method="get">
+						<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
+						<input type="hidden" name="art_id"
+							value="${artikelkategorie.artikel_id}" /> <input type="hidden"
+							name="artikelbezeichnung"
+							value="${artikelkategorie.artikelbezeichnung}" /> <input
+							type="hidden" name="preis" value="${artikelkategorie.preis}" />
+					</form>
+				</td>
+			</tr>
 
-	<%-- 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}"> --%>
+		</c:forEach>
+	</table>
 
-	<%-- 			<td>${artikelkategorie.artikelbezeichnung}</td> --%>
-	<%-- 			<td>${artikelkategorie.preis}€</td> --%>
-	<%-- 	</c:forEach> --%>
-
-
-	<%@ include file="../jspf/footer.jspf"%>
+<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
-
-
-<!-- <form action="/KategorienLadenMen" method="get">  -->
-<%-- 			<td> <button type="submit" >${kategorieMen.kategoriebezeichnung}</button></td>  --%>
-<%-- 			<c:forEach var="artikelkategorie" items="${anzeige.ArtikelKategorie }">   --%>
-<%-- 				<td>${artikelkategorie.artikelbezeichnung}</td>   --%>
-<%-- 				<td>${artikelkategorie.preis)Euro}</td> --%>
-<!-- 				<td><img  -->
-<%--  					src="../BildLaden?artikel_id=${kategorieMen.artikel_id}"  --%>
-<!--  					alt="Artikelbild"></td> -->
-<!--  				<td>  -->
-
-
-<%-- 	</c:forEach>  --%>

@@ -22,7 +22,7 @@
 
 			<div id="registr">
 				<fieldset>
-					
+
 					<p>
 						<label for="geschlecht">Herr</label> <input type="radio"
 							name="geschlecht" id="malereg" value="Herr" required> <label
@@ -31,7 +31,8 @@
 					</p>
 
 					<p>
-						<label for="titel">Titel:</label> <select name="titel" id="titelreg">
+						<label for="titel">Titel:</label> <select name="titel"
+							id="titelreg">
 							<option value="">Kein Titel</option>
 							<option value="Dr.">Dr.</option>
 							<option value="Prof.">Prof.</option>
@@ -51,14 +52,14 @@
 							placeholder="Max" required>
 					</p>
 					<p>
-						<label for="email">E-Mail: </label> <input type="email" id="emailreg"
-							name="email" size="25" maxlength="40"
+						<label for="email">E-Mail: </label> <input type="email"
+							id="emailreg" name="email" size="25" maxlength="40"
 							placeholder="max.mustermann@web.de" required>
 					</p>
 					<p>
 						<label for="passwort">Passwort: </label> <input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
-							placeholder= "10 Zeichen, Groß- und Kleinbuchstaben, Zahlen"
+							placeholder="10 Zeichen, Groß- und Kleinbuchstaben, Zahlen"
 							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(10,)" required>
 					</p>
 					<p>
@@ -85,6 +86,7 @@
 				</fieldset>
 			</div>
 
+
 			<div id="registr_button">
 				<!--  wozu braucht man die ID?  -->
 				<p>
@@ -97,6 +99,6 @@
 
 	</section>
 
-	<%@ include file="/../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

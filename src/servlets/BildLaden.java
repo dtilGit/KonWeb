@@ -39,16 +39,15 @@ private DataSource ds;
 
 public BildLaden() {
  super();
-
 }
 
 protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-	HttpSession session = request.getSession();
-	if(session.getAttribute("form") == null) {
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/login/login.jsp");
-	dispatcher.forward(request, response);
-	}
+//	HttpSession session = request.getSession();
+//	if(session.getAttribute("form") == null) {
+//	final RequestDispatcher dispatcher = request.getRequestDispatcher("jsp/login/login.jsp");
+//	dispatcher.forward(request, response);
+//	}
 	
 	request.setCharacterEncoding("UTF-8");	
 	Integer artikel_id = Integer.valueOf(request.getParameter("artikel_id"));

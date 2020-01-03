@@ -1,3 +1,4 @@
+//Veronika Tschemodanov
 package servlets;
 
 import java.io.IOException;
@@ -22,10 +23,10 @@ import beans.KategorieBean;
 import beans.AnzeigeBean;
 
 /**
- * Servlet implementation class Suche
+ * Servlet implementation class ArtikelLadenWomen
  */
-@WebServlet("/Suche")
-public class Suche extends HttpServlet {
+@WebServlet("/ArtikelLadenWomen")
+public class ArtikelLadenWomen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	DataSource ds;
@@ -37,7 +38,7 @@ public class Suche extends HttpServlet {
 
 		// Entgegennahme von Sucheingabe
 		Integer art_kategorie = Integer.parseInt(request.getParameter("kategorie_id"));
-		System.out.println(art_kategorie);
+		//System.out.println(art_kategorie);
 
 		List<ArtikelBean> artikel = loadArtikel(art_kategorie);
 		List<KategorieBean> kategorien = loadKategorien();
@@ -46,8 +47,8 @@ public class Suche extends HttpServlet {
 		anzeige.setArtikel(artikel);
 		anzeige.setKategorie(kategorien);
 		
-		System.out.println("arrrt" + art_kategorie);
-		artikel.forEach(e -> System.out.println(e.getArtikelbezeichnung()));
+		//System.out.println("arrrt" + art_kategorie);
+		//artikel.forEach(e -> System.out.println(e.getArtikelbezeichnung()));
 
 		request.setAttribute("anzeige", anzeige);
 
@@ -57,8 +58,7 @@ public class Suche extends HttpServlet {
 
 	// Fast eins zu eins aus dem JDBC-Script, S. 19 übernommen
 	private List<ArtikelBean> loadArtikel(Integer art_kategorie) throws ServletException {
-//		art_kategorie = (art_kategorie == null || art_kategorie == "") ? "%"
-//				: "%" + art_kategorie + "%";
+
 		List<ArtikelBean> artikel = new ArrayList<ArtikelBean>();
 
 		try (Connection con = ds.getConnection();
@@ -68,19 +68,16 @@ public class Suche extends HttpServlet {
 
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while (rs.next()) {
-					System.out.println("=== in if===");
+					//System.out.println("=== in if===");
 					ArtikelBean artikelbean = new ArtikelBean();
 
 					int id = Integer.valueOf(rs.getInt("artikel_id"));
 					artikelbean.setArtikel_id(id);
 
-					// Welche Daten werden bei Artikelanzeigen auf der Seite angezeigt?
-					// Auf Vollständigkeit prüfen
-					// artikel_id, artikelbezeichnung, preis, kategorie, bild
 					String artikelbez = rs.getString("artikelbezeichnung");
 					artikelbean.setArtikelbezeichnung(artikelbez);
 
-					BigDecimal preis = BigDecimal.valueOf(rs.getLong("preis"));
+					Double preis = Double.valueOf(rs.getLong("preis"));
 					artikelbean.setPreis(preis);
 
 					Integer kategorie = rs.getInt("kategorie");
@@ -91,21 +88,12 @@ public class Suche extends HttpServlet {
 
 					artikel.add(artikelbean);
 				}
-				// Die Überprüfung findet in artikelsuche.jsp statt, wo die entweder die
-				// richtigen Ergebnisse oder
-				// die Meldung, dass die Artikel nicht gefunden werden können
-
-				/*
-				 * else if (!rs.next()){ System.out.println("=== in else if===");
-				 * dispatcher=request.getRequestDispatcher("jsp/artikelsucheNegativ.jsp");
-				 * dispatcher.forward(request, response); }
-				 */
 			}
 
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
-		System.out.println(" sizeee " + artikel.size());
+		//System.out.println(" sizeee " + artikel.size());
 		return artikel;
 	}
 
@@ -115,11 +103,10 @@ public class Suche extends HttpServlet {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
 						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Weiblich'")) {
-			System.out.println("=== try  ===");
+			
 			try (ResultSet rs = pstmt.executeQuery()) {
 
 				while (rs.next()) {
-					System.out.println("=== try while  ===");
 					KategorieBean kat_bean = new KategorieBean();
 
 					Integer kat_id = rs.getInt("kategorie_id");

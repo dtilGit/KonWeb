@@ -5,9 +5,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="${pageContext.request.requestURI}"/> 
+
 <link rel="stylesheet" href="../../css/tabellen.css"/> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<base href="${pageContext.request.requestURI}"/> 
 <link rel="stylesheet" href="../../css/footer.css"
 media="screen and (min-width:960px)">
 <link rel="stylesheet" href="../../css/cookies.css"

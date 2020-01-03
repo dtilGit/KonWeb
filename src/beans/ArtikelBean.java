@@ -8,15 +8,19 @@ public class ArtikelBean {
 	
 	private Integer artikel_id; 
 	private String artikel_bezeichnung; 
-	private BigDecimal preis; 
+	private Double preis; 
 	private Integer kategorie_id; 
 	private Integer lagerbestand;
 	private byte[] bild; 
 	private String bildname; 
 	
+	//für "ZumWarenkorbHinzufuegen Z. 81
+	public ArtikelBean() {}
 
-	public ArtikelBean() {
-		// TODO Auto-generated constructor stub
+	//Constructor für "ZumWarenkorbHinzufuegen Z. 41
+	public ArtikelBean(String artikel_bezeichnung, double preis) {
+		this.artikel_bezeichnung=artikel_bezeichnung;
+		this.preis=preis;
 	}
 
 	public Integer getArtikel_id() {
@@ -36,10 +40,10 @@ public class ArtikelBean {
 		this.artikel_bezeichnung = artikel_bezeichnung;
 	}
 	
-	public BigDecimal getPreis() {
+	public Double getPreis() {
 		return preis;
 	}
-	public void setPreis(BigDecimal preis) {
+	public void setPreis(Double preis) {
 		this.preis = preis;
 	}
 	
