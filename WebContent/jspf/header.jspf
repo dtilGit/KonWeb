@@ -65,7 +65,7 @@
 				
 					<div class="dropdown-content">
 						<a href=../user/profilansehen.jsp>Ihr Profil</a> 
-						<a href=../user/logout.jsp>Logout</a>
+						<a href=../LogoutServlet>Logout</a>
 					</div>
 				</div>
 			</c:when>

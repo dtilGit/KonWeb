@@ -360,12 +360,12 @@ main {
 	height: auto;
 }
 
-.markenbereich {
-	border: 5px solid #dadada;
-	float: left;
-	height: 250px;
-	width: 800px;
-}
+/* .markenbereich { */
+/* 	border: 5px solid #dadada; */
+/* 	float: left; */
+/* 	height: 250px; */
+/* 	width: 800px; */
+/* } */
 
 .angebot {
 	float: right;
@@ -431,14 +431,6 @@ footer {
 /* 	box-sizing: border-box; */
 
 /* } */
-.to-cash {
-	cursor: pointer;
-	display: inline-block;
-	align-content: center;
-	background-color: rgb(0, 0, 0);
-	color: #fff;
-	width: 100%;
-}
 
 #beanie_cart {
 	border: 2px groove #999;
