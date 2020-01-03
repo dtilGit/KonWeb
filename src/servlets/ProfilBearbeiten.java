@@ -129,8 +129,8 @@ public class ProfilBearbeiten extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		request.setAttribute("login", profiledit);
+		//während der aktuellen Session wird das Profil abgeändert daher nicht request. 
+		session.setAttribute("login", profiledit);
 		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/profilansehen.jsp");
 		dispatcher.forward(request, response);
