@@ -62,10 +62,10 @@
 				<c:choose>
 
 					<c:when test="${empty sessionScope.login}">
-						<p>Login erforderlich!</p>
+						<h2>Um die Artikel letztendlich zu bestellen ist ein Login erforderlich!</h2>
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
-						<h2>Zur Kasse</h2>
+						
 						<form id="myForm" method="post" action="../BestellenServlet">
 							<button id="bestellenButton" type="submit">Bestellen</button>
 						</form>
