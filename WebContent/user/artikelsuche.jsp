@@ -46,8 +46,10 @@
 								<form action="../ZumWarenkorbHinzufuegen" method="get">
 									<button name="warenkorbButton">zum Warenkorb
 										hinzufügen</button>
-									<input type="hidden" name="art_id"
-										value="${artikelkategorie.artikel_id}" />
+									<input type="hidden" name="art_id" value="${suche.artikel_id}" />
+									<input type="hidden" name="artikelbezeichnung"
+										value="${suche.artikelbezeichnung}" /> <input
+										type="hidden" name="preis" value="${suche.preis}" />
 								</form>
 							</td>
 
@@ -56,11 +58,11 @@
 					<!-- 			Hier kommen die gefundenen Artikel -->
 					<%-- 		${art.artikelbezeichnung}  --%>
 					<%-- 		${art.preis} --%>
-					</tbody>
-	</table>
+				</tbody>
+			</table>
 		</c:otherwise>
 	</c:choose>
-	
+
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
