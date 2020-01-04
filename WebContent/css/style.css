@@ -18,13 +18,12 @@ h1 {
 h2 {
 	font-size: 20px;
 	text-decoration: none;
-
 }
 
 h2:after {
-            content: "\A";
-            white-space: pre;
-        }
+	content: "\A";
+	white-space: pre;
+}
 
 a {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -40,7 +39,7 @@ input {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
-ul.impinfos, li.impinfos{
+ul.impinfos, li.impinfos {
 	list-style: none;
 }
 
@@ -219,7 +218,6 @@ header {
 	font-size: 24px;
   	width: 20%;
 }*/
-
 #icon {
 	width: 50px;
 	height: 50px;
@@ -248,7 +246,6 @@ section {
 figcaption {
 	text-align: center;
 }
-
 
 main {
 	min-height: 100px;
@@ -322,28 +319,106 @@ main {
         left: -400%;
     }
 }
+/* @ */
+/* keyframes slider { 0% { */
+/* 	left: 0; */
+/* } */
+
+/* 20% */
+/* { */
+/* left */
+/* : */
+ 
+/* 0; */
+/* } */
+/* 25% */
+/* { */
+/* left */
+/* : */
+ 
+/* -100%; */
+/* } */
+/* 45% */
+/* { */
+/* left */
+/* : */
+ 
+/* -100%; */
+/* } */
+/* 50% */
+/* { */
+/* left */
+/* : */
+ 
+/* -200%; */
+/* } */
+/* 70% */
+/* { */
+/* left */
+/* : */
+ 
+/* -200%; */
+/* } */
+/* 75% */
+/* { */
+/* left */
+/* : */
+ 
+/* -300%; */
+/* } */
+/* 95% */
+/* { */
+/* left */
+/* : */
+ 
+/* -300%; */
+/* } */
+/* 100% */
+/* { */
+/* left */
+/* : */
+ 
+/* -400%; */
+/* } */
+/* } */
+/* #slider figure { */
+/* 	position: relative; */
+/* 	width: 500%; */
+/* 	margin: 0px; */
+/* 	left: 0; */
+/* 	text-align: left; */
+/* 	font-size: 0; */
+/* 	animation: 16s slider infinite; */
+/* } */
+
+/* #slider { */
+/* 	overflow: hidden; */
+/* } */
+
+/* #slider figure img { */
+/* 	width: 20%; */
+/* 	float: left; */
+/* } */
+
+#slider {
+    overflow: hidden;
+}
+
+ #slider figure img {
+    width: 20%;
+    float: left;
+}
 
 
-#slider figure {
+ #slider figure {
     position: relative;
     width: 500%;
-    margin: 0px;
+    margin: 0px 0px 0px 0px;
     left: 0;
     text-align: left;
     font-size: 0;
-    animation: 16s slider infinite;
+    animation: 20s slider infinite;
 }
-
-
-#slider {
-	overflow: hidden;
-}
-
-#slider figure img {
-	width: 20%;
-	float: left;
-}
-
 
 
 .bild {
@@ -357,7 +432,6 @@ main {
 /* 	height: 250px; */
 /* 	width: 800px; */
 /* } */
-
 .angebot {
 	float: right;
 	height: 200px;
@@ -406,7 +480,7 @@ footer {
 }
 
 .footer-left {
-	float:left;
+	float: left;
 	height: 100px;
 	width: 400px;
 }
@@ -414,7 +488,6 @@ footer {
 .footer-right {
 	float: right;
 }
-
 
 @font-face {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -426,7 +499,6 @@ footer {
 /* 	box-sizing: border-box; */
 
 /* } */
-
 #beanie_cart {
 	border: 2px groove #999;
 	float: left;
@@ -471,12 +543,9 @@ form#kategorie {
 	display: inline;
 }
 
-form#kategorie button{
+form#kategorie button {
 	margin-bottom: 10px;
 }
-
-
-
 
 .small-icon {
 	width: auto;

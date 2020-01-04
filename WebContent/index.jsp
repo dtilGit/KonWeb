@@ -1,7 +1,7 @@
 <%--David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%-- <%@ page errorPage="../fehlerausgabe.jsp"%> --%>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
-<!-- 	David Häusler -->
+	<!-- 	David Häusler -->
 	<header>
 		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 		<div id="mainlogo">
@@ -29,8 +29,7 @@
 
 
 		<div class="men">
-			<form action="KatLadenMen" method="get"
-				enctype="multipart/form-data">
+			<form action="KatLadenMen" method="get" enctype="multipart/form-data">
 				<button id="nav" type="submit" class="dropbtn">Männer</button>
 			</form>
 
@@ -69,27 +68,28 @@
 		<c:choose>
 			<c:when test="${empty sessionScope.login}">
 				<div class="dropdown-navi">
-<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
-						<!-- 				enctype="multipart/form-data"> -->
-						<button class="profil"><img id="icon"
-							src="img/mein_konto.png" alt="meinKontoLogo"></button>
-<!-- 					</form> -->
+					<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
+					<!-- 				enctype="multipart/form-data"> -->
+					<button class="profil">
+						<img id="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+					</button>
+					<!-- 					</form> -->
 					<div class="dropdown-content">
-						<a href=user/login.jsp>Login</a> 
-						<a href=user/registrierung.jsp>Registrierung</a>
+						<a href=user/login.jsp>Login</a> <a href=user/registrierung.jsp>Registrierung</a>
 					</div>
 				</div>
 			</c:when>
 			<c:when test="${not empty sessionScope.login}">
 				<div class="dropdown-navi">
-					
-										
-						<button class="profil" ><img id="icon"
-							src="img/mein_konto.png" alt="meinKontoLogo"></button>
-				
+
+
+					<button class="profil">
+						<img id="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+					</button>
+
 					<div class="dropdown-content">
-						<a href=user/profilansehen.jsp>Ihr Profil</a> 
-						<a href=user/logout.jsp>Logout</a>
+						<a href=user/profilansehen.jsp>Ihr Profil</a> <a
+							href=LogoutServlet>Logout</a>
 					</div>
 				</div>
 			</c:when>
@@ -124,9 +124,17 @@
 				Jeden Tag suchen wir nach den neuesten Mützen Trends und geben sie
 				hier für EUCH zum Besten.</div>
 
-			<div class="spalte-3">Noch nicht überzeugt? Dann überzeug dich
-				selbst und durchstöber unseren Onlineshop, wir haben für Jedermann (und
-				Frau :)) etwas im Angebot!</div>
+			<div class="spalte-3">
+				Noch nicht überzeugt? Dann überzeug dich selbst und durchstöber
+				unseren Onlineshop, wir haben für Jedermann (und Frau :)) etwas im
+				Angebot!
+				<p>
+					Schau doch mal auf die <a href="KatLadenMen">Artikel für Männer</a>!
+				</p>
+				<p>
+					Oder natürlich die <a href="KatLadenWomen">für Frauen</a> :)
+				</p>
+			</div>
 		</div>
 
 	</section>
@@ -152,28 +160,25 @@
 	<div class="footer">
 		<footer>
 			<div class="footer-left">
-			<h1>TOD's BestCap</h1>
-			<p>Unser Service 24/7:</p>
-		
-			<a href="tel:09131123987654">
-				<img class="small-icon" src="img/telefon.png"></img>
-				09131/123987654
-			</a>
-			
-			<br/>
-			<a href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
-				<img class="small-icon" src="img/mail.png"></img>
-				info@todsbestcaps.de
-			</a>
-		</div>
+				<h1>TOD's BestCap</h1>
+				<p>Unser Service 24/7:</p>
 
-
-		<div class="footer-right">
-			<div id="impressumlink">
-				<a href="user/impressum.jsp">Impressum</a>
+				<a href="tel:09131123987654"> <img class="small-icon"
+					src="img/telefon.png"></img> 09131/123987654
+				</a> <br /> <a
+					href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
+					<img class="small-icon" src="img/mail.png"></img>
+					info@todsbestcaps.de
+				</a>
 			</div>
-		
-		</div>
+
+
+			<div class="footer-right">
+				<div id="impressumlink">
+					<a href="user/impressum.jsp">Impressum</a>
+				</div>
+
+			</div>
 
 		</footer>
 	</div>

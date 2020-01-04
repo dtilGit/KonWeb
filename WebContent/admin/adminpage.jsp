@@ -4,10 +4,13 @@
 <!DOCTYPE html>
 <head>
 <meta charset="utf-8">
-<title>Adminpage</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<%--wieder raus war davor nicht drin --%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
-
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<%-- bis hier --%>
+<%-- <base href="${pageContext.request.requestURI}" /> --%>
+<title>Adminpage</title>
 </head>
 
 <body>

@@ -33,10 +33,9 @@
 
 		<c:when test="${login.admin == 1}">
 
-			<h2>Herzlich Willkommen Admin ${login.vorname} ${login.nachname}
-				!</h2>
+			<h2>Herzlich Willkommen ${login.vorname} ${login.nachname}! Du wurdest als Admin eingeloggt!</h2>
 			<br>
-			<b>Hier zur Adminverwaltung</b>
+			<b>Hier gelangst du zur Adminverwaltung:</b>
 
 			<form style="display: inline" action="../admin/adminpage.jsp">
 				<button>Zur Verwaltung der Webseiteninhalte</button>

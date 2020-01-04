@@ -18,7 +18,7 @@
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
 
 
-		<form id="suche" action="../ArtikelLadenMen" method="POST">
+		<form id="kategorie" action="../ArtikelLadenMen" method="POST">
 			<button type="submit" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
 			<input name="kategorie_id" type="hidden"
 				value="${kategorieMen.kategorie_id }"></input>
@@ -41,11 +41,11 @@
 		</tr>
 	</thead>
 			<tr>
-				<td>${artikelkategorie.artikelbezeichnung}</td>
-				<td>${artikelkategorie.preis}</td>
-				<td><img
+			<td><img
 					src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}"
 					class="bild" alt="bild_laden" width="200" height="250"></td>
+				<td>${artikelkategorie.artikelbezeichnung}</td>
+				<td>${artikelkategorie.preis}</td>
 				<td id="add-cart">
 					<form action="../ZumWarenkorbHinzufuegen" method="get">
 						<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
