@@ -1,8 +1,10 @@
 <%--David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%--lib für Session Unterscheidung --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%-- <%@ page errorPage="../fehlerausgabe.jsp"%> --%>
+<%@ page errorPage="errorpage.jsp"%>
+<%@ page isErrorPage="true"%>
 
 <!DOCTYPE html>
 <html lang="de">
