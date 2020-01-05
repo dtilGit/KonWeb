@@ -101,10 +101,10 @@
 	<div id="slider">
 		<figure>
 
-			<img src="img/capbanner.jpg">
-			<img src="img/capbanner-2.jpg">
-			<img src="img/capbanner-3.jpg">
-			<img src="img/capbanner-4.jpg">
+			<img alt="slidercap1" src="img/capbanner.jpg">
+			<img alt="slidercap2" src="img/capbanner-2.jpg">
+			<img alt="slidercap3" src="img/capbanner-3.jpg">
+			<img alt="slidercap4" src="img/capbanner-4.jpg">
 
 		</figure>
 	</div>
@@ -160,7 +160,7 @@
 	<div class="footer">
 		<footer>
 			<div class="footer-left">
-				<h1>TOD's BestCap</h1>
+				<h1>TOD's BestCaps</h1>
 				<p>Unser Service 24/7:</p>
 
 				<a href="tel:09131123987654"> <img class="small-icon" alt="telefon"

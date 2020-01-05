@@ -22,6 +22,10 @@
 	<p>
 	<h2>Deine aktuellen Daten</h2>
 	</p>
+	<p>
+				<img src="../ProfilbildLaden?kunde_id=${login.id}"
+					class="bild" alt="bild_laden" width="200" height="250">
+			</p>
 	<p>Geschlecht: ${login.geschlecht}</p>
 	<p>Titel: ${login.titel}</p>
 	<p>Nachname: ${login.nachname}</p>

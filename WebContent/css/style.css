@@ -525,7 +525,7 @@ tr.border_top td {
 	text-align: center;
 }
 
-tr#seperation td {
+tr.seperation td {
 	padding-bottom: 5px;
     padding-top: 5px;
 	border-bottom: 1px solid #dddddd;

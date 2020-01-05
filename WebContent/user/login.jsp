@@ -9,7 +9,7 @@
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}"/>
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <title>Login</title>
@@ -36,7 +36,7 @@
 				</fieldset>
 
 				<br>
-				<div id="anmelden">
+				<div>
 					<button type="submit" id="anmelden">Anmelden</button>
 				</div>
 
