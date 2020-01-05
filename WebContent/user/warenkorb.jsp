@@ -38,7 +38,7 @@
 						</tr>
 					</thead>
 					<c:forEach items="${warenkorbB.warenkorbList}" var="wk_List">
-						<tr>
+						<tr id="seperation">
 							<td><img
 								src="../BildLaden?artikel_id=${wk_List.wk_artikel.artikel_id}"
 								class="bild" width="200" height="200" alt="artikelBildWK"></td>

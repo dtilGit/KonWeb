@@ -43,8 +43,7 @@
 			</form>
 		</div>
 		<p>
-			Noch nicht registriert? Zur Registrierung <a href="registrierung.jsp">
-				hier</a>
+			Noch nicht registriert? Dann registriere dich doch <a href="registrierung.jsp">hier</a> :)
 		</p>
 
 	</section>

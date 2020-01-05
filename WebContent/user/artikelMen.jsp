@@ -44,6 +44,7 @@
 			<td><img
 					src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}"
 					class="bild" alt="bild_laden" width="200" height="250"></td>
+					<!-- artikelkategorie ist hier der name var aus foreach und .artikel_id die Variable aus der DB  -->
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>
 				<td id="add-cart">

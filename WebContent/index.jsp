@@ -30,7 +30,7 @@
 
 		<div class="men">
 			<form action="KatLadenMen" method="get" enctype="multipart/form-data">
-				<button id="nav" type="submit" class="dropbtn">Männer</button>
+				<button class="nav dropbtn" type="submit">Männer</button>
 			</form>
 
 			<!-- 			<button class="dropdown-content">Beanies</button> -->
@@ -43,7 +43,7 @@
 		<div class="woman">
 			<form action="KatLadenWomen" method="get"
 				enctype="multipart/form-data">
-				<button id="nav" type="submit" class="dropbtn">Frauen</button>
+				<button class="nav dropbtn" type="submit">Frauen</button>
 			</form>
 
 			<!-- 	<div class="dropdown-content"> -->
@@ -61,7 +61,7 @@
 
 
 		<div class="warenkorb">
-			<a href="user/warenkorb.jsp"><img id="icon"
+			<a href="user/warenkorb.jsp"><img class="icon"
 				src="img/warenkorb.png" alt="warenkorbLogo"></a>
 		</div>
 
@@ -71,7 +71,7 @@
 					<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
 					<!-- 				enctype="multipart/form-data"> -->
 					<button class="profil">
-						<img id="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+						<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
 					</button>
 					<!-- 					</form> -->
 					<div class="dropdown-content">
@@ -84,7 +84,7 @@
 
 
 					<button class="profil">
-						<img id="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+						<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
 					</button>
 
 					<div class="dropdown-content">
@@ -163,11 +163,11 @@
 				<h1>TOD's BestCap</h1>
 				<p>Unser Service 24/7:</p>
 
-				<a href="tel:09131123987654"> <img class="small-icon"
-					src="img/telefon.png"></img> 09131/123987654
+				<a href="tel:09131123987654"> <img class="small-icon" alt="telefon"
+					src="img/telefon.png"> 09131/123987654
 				</a> <br /> <a
 					href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
-					<img class="small-icon" src="img/mail.png"></img>
+					<img class="small-icon"  alt="mail" src="img/mail.png">
 					info@todsbestcaps.de
 				</a>
 			</div>

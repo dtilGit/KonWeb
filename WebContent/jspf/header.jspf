@@ -10,7 +10,7 @@
 		<div class="men">
 			<form action="../KatLadenMen" method="get"
 				enctype="multipart/form-data">
-				<button id="nav" type="submit" class="dropbtn">Männer</button>
+				<button class="nav dropbtn" type="submit">Männer</button>
 			</form>
 
 			<!-- 			<button class="dropdown-content">Beanies</button> -->
@@ -20,7 +20,7 @@
 		<div class="woman">
 			<form action="../KatLadenWomen" method="get"
 				enctype="multipart/form-data">
-				<button id="nav" type="submit" class="dropbtn">Frauen</button>
+				<button class="nav dropbtn" type="submit">Frauen</button>
 			</form>
 
 			<!-- 	<div class="dropdown-content"> -->
@@ -39,7 +39,7 @@
 
 
 		<div class="warenkorb">
-			<a href="../user/warenkorb.jsp"><img id="icon"
+			<a href="../user/warenkorb.jsp"><img class="icon"
 				src="../img/warenkorb.png" alt="warenkorbLogo"></a>
 		</div>
 
@@ -48,7 +48,7 @@
 				<div class="dropdown-navi">
 <!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
 						<!-- 				enctype="multipart/form-data"> -->
-						<button class="profil"><img id="icon"
+						<button class="profil"><img class="icon"
 							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
 <!-- 					</form> -->
 					<div class="dropdown-content">
@@ -61,7 +61,7 @@
 				<div class="dropdown-navi">
 					
 										
-						<button class="profil" ><img id="icon"
+						<button class="profil" ><img class="icon"
 							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
 				
 					<div class="dropdown-content">

@@ -36,7 +36,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="suche" items="${art}" varStatus="status">
-						<tr>
+						<tr id="seperation">
 							<td><img class="bild"
 								src="../BildLaden?artikel_id=${suche.artikel_id}"
 								alt="Artikelbild"></td>
@@ -55,9 +55,7 @@
 
 						</tr>
 					</c:forEach>
-					<!-- 			Hier kommen die gefundenen Artikel -->
-					<%-- 		${art.artikelbezeichnung}  --%>
-					<%-- 		${art.preis} --%>
+					
 				</tbody>
 			</table>
 		</c:otherwise>
