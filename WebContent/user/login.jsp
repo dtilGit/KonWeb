@@ -9,7 +9,7 @@
 
 <head>
 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8 ">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}"/>
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <script type="text/javascript" src="../js/passwort.js"></script>
@@ -37,15 +37,14 @@
 				</fieldset>
 
 				<br>
-				<div id="anmelden">
+				<div>
 					<button type="submit" id="anmelden">Anmelden</button>
 				</div>
 
 			</form>
 		</div>
 		<p>
-			Noch nicht registriert? Zur Registrierung <a href="registrierung.jsp">
-				hier</a>
+			Noch nicht registriert? Dann registriere dich doch <a href="registrierung.jsp">hier</a> :)
 		</p>
 
 	</section>

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page errorPage="fehlerausgabe.jsp"%>
+<%@ page errorPage="errorpage.jsp"%>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html lang="de">
@@ -38,7 +38,7 @@
 						</tr>
 					</thead>
 					<c:forEach items="${warenkorbB.warenkorbList}" var="wk_List">
-						<tr>
+						<tr class="seperation">
 							<td><img
 								src="../BildLaden?artikel_id=${wk_List.wk_artikel.artikel_id}"
 								class="bild" width="200" height="200" alt="artikelBildWK"></td>
@@ -62,10 +62,10 @@
 				<c:choose>
 
 					<c:when test="${empty sessionScope.login}">
-						<p>Login erforderlich!</p>
+						<h2>Um die Artikel letztendlich zu bestellen ist ein Login erforderlich!</h2>
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
-						<h2>Zur Kasse</h2>
+						
 						<form id="myForm" method="post" action="../BestellenServlet">
 							<button id="bestellenButton" type="submit">Bestellen</button>
 						</form>

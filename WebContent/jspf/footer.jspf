@@ -3,17 +3,17 @@
 	<footer>
 		
 		<div class="footer-left">
-			<h1>TOD's BestCap</h1>
+			<h1>TOD's BestCaps</h1>
 			<p>Unser Service 24/7:</p>
 		
 			<a href="tel:09131123987654">
-				<img class="small-icon" src="../img/telefon.png"></img>
+				<img class="small-icon"  alt="telefon" src="../img/telefon.png">
 				09131/123987654
 			</a>
 			
 			<br/>
-			<a href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
-				<img class="small-icon" src="../img/mail.png"></img>
+			<a href="mailto:info@todsbestcaps.de?subject=Eine%20Mail%20an%20Team%20TOD's%20BestCap">
+				<img class="small-icon"  alt="mail"  src="../img/mail.png">
 				info@todsbestcaps.de
 			</a>
 		</div>

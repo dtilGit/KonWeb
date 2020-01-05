@@ -52,11 +52,11 @@ button {
 	cursor: pointer;
 }
 
-button#nav:hover {
+button.nav:hover {
 	background-color: #6E6E6E;
 }
 
-button#nav {
+button.nav {
 	background-color: #424242;
 	color: white;
 	padding: 16px;
@@ -77,6 +77,8 @@ header {
 	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
 	border-bottom: 1px solid #424242;
 }
+
+
 
 #mainlogo {
 	height: 100px;
@@ -218,7 +220,7 @@ header {
 	font-size: 24px;
   	width: 20%;
 }*/
-#icon {
+.icon {
 	width: 50px;
 	height: 50px;
 	margin-top: 15px;
@@ -417,7 +419,7 @@ main {
     left: 0;
     text-align: left;
     font-size: 0;
-    animation: 20s slider infinite;
+    animation: 12s slider infinite;
 }
 
 
@@ -521,6 +523,12 @@ tr.border_top td {
 
 #add-cart {
 	text-align: center;
+}
+
+tr.seperation td {
+	padding-bottom: 5px;
+    padding-top: 5px;
+	border-bottom: 1px solid #dddddd;
 }
 
 /*Artikel in Tabelle geordnet anzeigen*/
