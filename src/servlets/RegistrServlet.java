@@ -54,7 +54,6 @@ public class RegistrServlet extends HttpServlet {
 		RequestDispatcher dispatcher;
 
 		HttpSession session = request.getSession();
-		session.setAttribute("regform", regform);
 
 		regform.setGeschlecht(request.getParameter("geschlecht"));
 		regform.setTitel(request.getParameter("titel"));
@@ -73,7 +72,8 @@ public class RegistrServlet extends HttpServlet {
 		Part filepart = request.getPart("profilBild");
 		String contenttype = filepart.getContentType();
 		regform.setBildname(filepart.getSubmittedFileName());
-
+		
+		session.setAttribute("regform", regform);
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); InputStream in = filepart.getInputStream()) {
 			int i = 0;
 			while ((i = in.read()) != -1) {
@@ -103,10 +103,9 @@ public class RegistrServlet extends HttpServlet {
 
 					System.out.println("=== in if 1 ==");
 
-					try (Connection con2 = ds.getConnection();
-							PreparedStatement pstmt2 = con2.prepareStatement(
+				PreparedStatement pstmt2 = con.prepareStatement(
 									"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin, bildname, bild ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-									generatedKeys)) {
+									generatedKeys); {
 
 						System.out.println("=== in try insert ==");
 
@@ -132,11 +131,11 @@ public class RegistrServlet extends HttpServlet {
 						dispatcher = request.getRequestDispatcher("../user/registrierung_antwort.jsp");
 						dispatcher.forward(request, response);
 
-						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
-							while (rs2.next()) {
-								regform.setId(rs.getInt(1));
-							}
-						}
+//						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
+//							while (rs2.next()) {
+//								regform.setId(rs.getInt(1));
+//							}
+//						}
 					}
 				} else if (rs.next()) {
 					System.out.println("=== in elseif ===");
