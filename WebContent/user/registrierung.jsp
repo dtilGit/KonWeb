@@ -11,18 +11,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-
+<!-- <script type="text/javascript" src="../js/profilbild.js"></script> -->
+<script type="text/javascript" src="../js/script.js"></script>
 <title>Registrierung</title>
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<section>
-		<form action="../RegistrServlet" id="registrierung" method="post" enctype="multipart/form-data">
+		<form action="../RegistrServlet" id="registrierung" method="post"
+			enctype="multipart/form-data">
 			<h1>Registrierung</h1>
 
 			<div id="registr">
 				<fieldset>
-
 					<p>
 						<label for="geschlecht">Herr</label> <input type="radio"
 							name="geschlecht" id="malereg" value="Herr" required> <label
@@ -39,8 +40,7 @@
 							<option value="Prof. Dr.">Prof. Dr.</option>
 						</select>
 					</p>
-
-
+					
 					<p>
 						<label for="nachname">Nachname: </label> <input type="text"
 							id="nachnamereg" name="nachname" size="25" maxlength="40"
@@ -64,28 +64,28 @@
 					</p>
 					<p>
 						<label for="strasse">Strasse:</label> <input type="text"
-							id="strassereg" name="strasse" size="30" maxlength="40">
+							id="strassereg" name="strasse" size="30" maxlength="40" required>
 					</p>
 					<p>
 						<label for="hausnummer"> Hausnummer:</label> <input type=text
-							id="hausnrreg" name="hausnummer" size="5" maxlength="10">
+							id="hausnrreg" name="hausnummer" size="5" maxlength="10" required>
 					</p>
 					<p>
 						<label for="postleitzahl">Postleitzahl:</label> <input type="text"
 							id="plzreg" size="5" minlength="5" maxlength="5"
-							name="postleitzahl">
+							name="postleitzahl" required>
 					</p>
 					<p>
 						<label for="ort">Ort:</label> <input type="text" id="ortreg"
-							name="ort" size="30" maxlength="40">
+							name="ort" size="30" maxlength="40" required>
 					</p>
 					<p>
 						<label for="land">Land:</label> <input type="text" id="landreg"
-							name="land" size="30" maxlength="40">
+							name="land" size="30" maxlength="40" required>
 					</p>
 					<p>
-						<label for="profilBild"> Profilbild hochladen</label>
-						<input type="file" name="profilBild" id="profilBild" accept="image/*">
+						<label for="profilBild"> Profilbild hochladen</label> <input
+							type="file" name="profilBild" id="profilBild" accept="image/*" required>
 						<label for="profilBild"></label>
 					</p>
 				</fieldset>

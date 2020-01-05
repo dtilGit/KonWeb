@@ -14,7 +14,7 @@
 <!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> muss glaube ich ins Stylesheet hab noch nicht ganz rausgefunden wie es die Schrift ändert  -->
 
 <!-- <script type="text/javascript" src="js/script.js"></script> -->
-
+<script type="text/javascript" src="js/cookies.js"></script>
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>

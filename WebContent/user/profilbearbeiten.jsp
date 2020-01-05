@@ -11,7 +11,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-
+<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/profilbild.js"></script>
 <title>Profildaten bearbeiten</title>
 </head>
 
@@ -55,7 +56,7 @@
 			<p>
 				<label for="nachname">Nachname</label> <input type="text"
 					id="nachname" name="nachname" size="25" maxlength="40"
-					placeholder="${login.nachname}" required>
+					placeholder="${login.nachname}" required> <label id="nachname2"> </label>
 			</p>
 			<p>
 				<label for="vorname">Vorname</label> <input type="text" id="vorname"
@@ -84,7 +85,7 @@
 			<p>
 				<label for="profilBild"> Profilbild hochladen</label> <input
 					type="file" name="profilBild" id="profilBild" accept="image/*">
-				<label for="profilBild"></label>
+				<label for="profilBild"></label> 
 			</p>
 		</div>
 		<p>
