@@ -17,20 +17,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import beans.KategorieBean;
+import beans.ArtikelBean;
+import beans.AnzeigeBean;
 
 /**
- * Servlet implementation class alleKategorien_laden
+ * Servlet implementation class PreloadAdminpage
  */
-@WebServlet("/AlleKategorienLaden")
-public class AlleKategorienLaden extends HttpServlet {
+@WebServlet("/PreloadAdminpage")
+public class PreloadAdminpage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
+     
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AlleKategorienLaden() {
+    public PreloadAdminpage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,10 +41,13 @@ public class AlleKategorienLaden extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		List<KategorieBean> alleKategorien = new ArrayList<KategorieBean>();
+		List<KategorieBean> kategorie = new ArrayList<KategorieBean>();
+		List<ArtikelBean> artikel = new ArrayList<ArtikelBean>();
+		AnzeigeBean preload = new AnzeigeBean();
 		
+		//Kategorie list mit kategorienbeans befüllen
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.kategorie")) {
 			
@@ -60,7 +66,7 @@ public class AlleKategorienLaden extends HttpServlet {
 							String kat_geschlecht = rs.getString("geschlecht");
 							kat_bean.setGeschlecht(kat_geschlecht);
 
-							alleKategorien.add(kat_bean);			
+							kategorie.add(kat_bean);			
 						} 
 						
 					}
@@ -69,12 +75,49 @@ public class AlleKategorienLaden extends HttpServlet {
 					throw new ServletException(ex.getMessage());
 				}
 		
-		request.setAttribute("alleKategorien", alleKategorien);
+		//Kategorie list mit kategorienbeans befüllen
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.artikel")) {
+
+			try (ResultSet rs = pstmt.executeQuery()) {
+
+				while (rs.next()) {
+
+					ArtikelBean art_bean = new ArtikelBean();
+
+					int art_id = rs.getInt("artikel_id");
+					art_bean.setArtikel_id(art_id);
+					String art_bez = rs.getString("artikelbezeichnung");
+					art_bean.setArtikelbezeichnung(art_bez);
+
+					Double preis = Double.valueOf(rs.getLong("preis"));
+					art_bean.setPreis(preis);
+
+					int art_kategorie = rs.getInt("kategorie");
+					art_bean.setKategorie_id(art_kategorie);
+
+					byte[] art_bild = rs.getBytes("bild");
+					art_bean.setBild(art_bild);
+
+					artikel.add(art_bean);
+				}
+
+			}
+		
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		
+		preload.setKategorie(kategorie);
+		preload.setArtikel(artikel);
+		
+		request.setAttribute("preload", preload);
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("../admin/adminpage.jsp");
 		dispatcher.forward(request, response);
 	}
-
-    /**
+	
+	
+	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

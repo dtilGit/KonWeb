@@ -37,9 +37,8 @@
 			<br>
 			<b>Hier gelangst du zur Adminverwaltung:</b>
 
-			<form style="display: inline" action="../admin/adminpage.jsp">
+			<form style="display: inline" action="../PreloadAdminpage" method="post" enctype="multipart/form-data">
 				<button>Zur Verwaltung der Webseiteninhalte</button>
-
 			</form>
 
 		</c:when>

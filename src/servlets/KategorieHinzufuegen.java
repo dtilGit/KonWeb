@@ -75,7 +75,7 @@ public class KategorieHinzufuegen extends HttpServlet {
 		throw new ServletException(ex.getMessage());
 		}
 	
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_sucess.jsp");
+	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);		
 	
 	//noch Fehlerabfangen: bezeichnung und geschelcht kombi existiert bereits

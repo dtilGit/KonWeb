@@ -9,21 +9,9 @@
 </head>
 <body>
 
-
-<a href="/test-war/testservlet2">Kategorien laden</a> 
-<form action="/test-war/testservlet3" method="get" enctype="multipart/form-data">
-<select name="alleKategorienLaden">
-    <c:forEach items="${alleKategorien}" var="kategorien">
-   		 <option value="${kategorien.kategorie_id}">
-   		 <c:out value="${kategorien.kategoriebezeichnung}"/>,
-   		 <c:out value="${kategorien.geschlecht}" />
-   		 </option>
-   		 </c:forEach>
-</select>
-<button type="submit" name="speichern">speichern</button>
-</form>
-    
-    
+<form action="../PreloadAdminpage" method="post" enctype="multipart/form-data">
+<button type="submit" id="artikel_laden">Alles laden</button>
+</form>  
 
 </body>
 </html>

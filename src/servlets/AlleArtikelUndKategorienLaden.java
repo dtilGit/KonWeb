@@ -40,6 +40,10 @@ public class AlleArtikelUndKategorienLaden extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	
+	/**
+	 NICHT VOLLSTÄNDIG
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
