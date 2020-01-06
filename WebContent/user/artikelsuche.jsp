@@ -36,7 +36,7 @@
 				</thead>
 				<tbody>
 					<c:forEach var="suche" items="${art}" varStatus="status">
-						<tr id="seperation">
+						<tr class="seperation">
 							<td><img class="bild"
 								src="../BildLaden?artikel_id=${suche.artikel_id}"
 								alt="Artikelbild"></td>

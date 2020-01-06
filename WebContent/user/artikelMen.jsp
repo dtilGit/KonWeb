@@ -12,7 +12,7 @@
 <title>Männer Artikel</title>
 </head>
 <body>
-<%@ include file="../jspf/header.jspf"%>
+	<%@ include file="../jspf/header.jspf"%>
 	<h1>Männer Artikel</h1>
 
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
@@ -29,22 +29,22 @@
 
 	<table>
 		<!-- 	id="artikelAnzeigen" -->
-	
-	
+
+
 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
-		<thead>
-		<tr>
-			<th>Artikelbezeichnung</th>
-			<th>Preis(€)</th>
-			<th>Bild</th>
-			<th></th>
-		</tr>
-	</thead>
+			<thead>
+				<tr>
+					<th>Bild</th>
+					<th>Artikelbezeichnung</th>
+					<th>Preis(€)</th>
+					<th></th>
+				</tr>
+			</thead>
 			<tr>
-			<td><img
+				<td><img
 					src="../BildLaden?artikel_id=${artikelkategorie.artikel_id}"
 					class="bild" alt="bild_laden" width="200" height="250"></td>
-					<!-- artikelkategorie ist hier der name var aus foreach und .artikel_id die Variable aus der DB  -->
+				<!-- artikelkategorie ist hier der name var aus foreach und .artikel_id die Variable aus der DB  -->
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>
 				<td id="add-cart">
@@ -62,6 +62,6 @@
 		</c:forEach>
 	</table>
 
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

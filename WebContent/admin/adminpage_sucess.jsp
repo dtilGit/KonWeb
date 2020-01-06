@@ -10,8 +10,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="${pageContext.request.requestURI}" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<title>adminpage_sucess</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<title>Aktion erfolgreich</title>
 </head>
 <body>
 <%@ include file="../jspf/header.jspf"%>

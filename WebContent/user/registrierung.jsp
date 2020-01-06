@@ -59,32 +59,32 @@
 					<p>
 						<label for="pwreg">Passwort: </label> <input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
-							placeholder="10 Zeichen, Groß- und Kleinbuchstaben, Zahlen"
+							placeholder="min. 10 Zeichen, Groß- und Kleinbuchstaben sowie Zahlen"
 							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(10,)" required>
 					</p>
 					<p>
 
 						<label for="strassereg">Strasse:</label> <input type="text"
-							id="strassereg" name="strasse" size="30" maxlength="40" required>
+							id="strassereg" name="strasse" size="30" maxlength="40" placeholder="Angabe ihres Straßennamens ohne Nummer" required>
 					</p>
 					<p>
 						<label for="hausnrreg"> Hausnummer:</label> <input type=text
-							id="hausnrreg" name="hausnummer" size="5" maxlength="10" required>
+							id="hausnrreg" name="hausnummer" size="5" maxlength="10"placeholder="lediglich ihre Hausnummer " required>
 
 					</p>
 					<p>
 						<label for="plzreg">Postleitzahl:</label> <input type="text"
 							id="plzreg" size="5" minlength="5" maxlength="5"
-							name="postleitzahl" required>
+							name="postleitzahl" placeholder="5-stellige PLZ" required>
 					</p>
 					<p>
 
 						<label for="ortreg">Ort:</label> <input type="text" id="ortreg"
-							name="ort" size="30" maxlength="40" required>
+							name="ort" size="30" maxlength="40" placeholder="Ihr Wohnort" required>
 					</p>
 					<p>
 						<label for="landreg">Land:</label> <input type="text" id="landreg"
-							name="land" size="30" maxlength="40" required>
+							name="land" size="30" maxlength="40" placeholder="Land ihres Wohnsitzes" required>
 
 					</p>
 					<p>
