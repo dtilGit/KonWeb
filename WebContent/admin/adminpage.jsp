@@ -6,7 +6,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
@@ -40,8 +39,8 @@
 		<br> <br>
 
 		<!--Artikelübersicht -->
-		<div id="Artikeluebersicht">
-			<table id="artikeluebersicht" style="display: none">
+		<div id="artikeluebersicht" style="display: none">
+			<table id="Artikeluebersicht">
 				<thead>
 					<tr>
 						<th>Artikel ID</th>
@@ -54,29 +53,28 @@
 
 				<tbody>
 					<c:forEach var="alleArt" items="${preload.artikel}">
-						<tr>
+					<tr>
 							<td>${alleArt.artikel_id}</td>
 							<td>${alleArt.artikelbezeichnung}</td>
 							<td>${alleArt.preis}</td>
 							<td><img
 					src="../BildLaden?artikel_id=${alleArt.artikel_id}"
 					class="bild" alt="bild_laden" width="200" height="250"></td>
-				<td>
-				<td>${alleArt.kategorie_id}</td>
-						</tr>
-					</c:forEach>
-
-					<td><button type="reset" name="abbrechen"
-							onClick="document.getElementById('artikeluebersicht').style.display='none';">abbrechen</button>
-					</td>
+					
+					<td>${alleArt.kategorie_id}</td>
 					</tr>
+					</c:forEach>
+					
 				</tbody>
 			</table>
+		<br>
+		<button type="reset" name="abbrechen"
+							onClick="document.getElementById('artikeluebersicht').style.display='none';">abbrechen</button>	
 		</div>
 
-		<div id="Kategorieuebersicht">
+		<div id="kategorieuebersicht" style="display: none">
 
-			<table id="kategorieuebersicht" style="display: none">
+			<table id="Kategorieuebersicht">
 				<thead>
 					<tr>
 						<th>Kategorie ID</th>
@@ -94,12 +92,10 @@
 							<td>${alleKat.geschlecht}</td>
 						</tr>
 					</c:forEach>
-					<td><button type="reset" name="abbrechen"
-							onClick="document.getElementById('kategorieuebersicht').style.display='none';">abbrechen</button>
-					</td>
-					</tr>
 				</tbody>
 			</table>
+			<button type="reset" name="abbrechen"
+							onClick="document.getElementById('kategorieuebersicht').style.display='none';">abbrechen</button>
 		</div>
 
 
@@ -112,10 +108,10 @@
 		<!--Artikel -->
 		<!--Artikel bearbeiten button -->
 		<h2>Artikel bearbeiten</h2>
-		<button type="button" id="neuer_artikel"
+		<button type="button" id="artikel_add"
 			onClick="document.getElementById('ArtikelHinzufuegen').style.display='inline';">
 			neuen Artikel hinzufügen</button>
-		<button type="button" id="neuer_artikel"
+		<button type="button" id="artikel_delete"
 			onClick="document.getElementById('ArtikelLoeschen').style.display='inline';">
 			Artikel löschen</button>
 		<br>
@@ -146,7 +142,7 @@
 
 						<td><select name="alleKategorienLaden" required>
 								<c:forEach var="kategorien" items="${preload.kategorie}">
-									<option name="kategorie_bez_geschlecht"
+									<option id="kategorie_bez_geschlecht2"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
 										<c:out value="${kategorien.geschlecht}" />
@@ -179,7 +175,7 @@
 					<tr>
 						<td><select name="alleArtikelLaden">
 								<c:forEach items="${preload.artikel}" var="artikel">
-									<option name="artikel_id_bez" value="${artikel.artikel_id}">
+									<option id="artikel_id_bez" value="${artikel.artikel_id}">
 										<c:out value="${artikel.artikel_id}" />,
 										<c:out value="${artikel.artikelbezeichnung}" />
 									</option>
@@ -222,12 +218,12 @@
 							maxlength="15" placeholder="Bezeichnung der Kategorie" required>
 						</td>
 
-						<td><label for="kategorie_geschlecht"> </label> <select
-							name="kategorie_geschlecht" required>
-								<option></option>
+						<td>
+						<select name="kategorie_geschlecht" required>
+								<option label="emptyoption"></option>
 								<option>Herren</option>
 								<option>Weiblich</option>
-						</select></td>
+						</select> </td>
 						<td>
 							<button type="submit" name="speichern">speichern</button>
 							<button type="reset" name="abbrechen"
@@ -252,7 +248,7 @@
 					<tr>
 						<td><select name="alleKategorienLaden">
 								<c:forEach items="${preload.kategorie}" var="kategorien">
-									<option name="kategorie_bez_geschlecht"
+									<option id="kategorie_bez_geschlecht1"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
 										<c:out value="${kategorien.geschlecht}" />
@@ -272,5 +268,5 @@
 		</section>
 		</body>
 
-		<%@ include file="../jspf/footer.jspf"%></
+		<%@ include file="../jspf/footer.jspf"%>
 </html>

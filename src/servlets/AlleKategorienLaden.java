@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 
 import beans.KategorieBean;
 
-/**
+/**Tilman Dewes
  * Servlet implementation class alleKategorien_laden
  */
 @WebServlet("/AlleKategorienLaden")
