@@ -77,9 +77,9 @@
 		</c:when>
 		<%-- 		<c:when test="${warenkorbB == NULL}"> --%>
 		<c:when test="${warenkorbB == null}">
-				<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
+			<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
 
-			</c:when>
+		</c:when>
 	</c:choose>
 
 
@@ -104,24 +104,45 @@
 				</tr>
 
 				<tr>
-					<td>Gesamtpreis</td>
+					<td>Zwischenbetrag</td>
 					<td>${warenkorbB.ges_preis}€</td>
 				</tr>
 
 				<tr>
-					<td>Lieferung</td>
-					<td>3,99€</td>
+					<c:choose>
+						<c:when test="${warenkorbB.ges_preis < 60}">
+							<tr>
+								<td>Lieferung</td>
+								<td>3,99€</td>
+							</tr>
+							<tr>
+								<td>Gesamtbetrag</td>
+								<td>${warenkorbB.preis}€</td>
+							</tr>
+						</c:when>
+
+						<c:when test="${warenkorbB.ges_preis >= 60}">
+							<tr>
+								<td>Lieferung</td>
+								<td>0,00€</td>
+							</tr>
+							<tr>
+								<td>Gesamtbetrag</td>
+								<td>${warenkorbB.ges_preis}€</td>
+							</tr>
+						</c:when>
+					</c:choose>
 				</tr>
 
 			</table>
 
 		</div>
-		<div>
-			<form>
-				<button type="submit" action="../BestellenServlet" method="get "
-					value="Zur Kasse">Zur Kasse</button>
-			</form>
-		</div>
+		<!-- 		<div> -->
+		<!-- 			<form> -->
+		<!-- 				<button type="submit" action="../BestellenServlet" method="get " -->
+		<!-- 					value="Zur Kasse">Zur Kasse</button> -->
+		<!-- 			</form> -->
+		<!-- 		</div> -->
 	</div>
 
 </aside>
