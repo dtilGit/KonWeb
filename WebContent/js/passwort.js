@@ -9,7 +9,7 @@ function init() {
 	passwort.addEventListener("submit", passwortChecker);
 }
 function passwortChecker() {
-	var pw = document.getElementById("passwor");
+	var pw = document.getElementById("passwort");
 
 	if (pw.length > 7) {
 		if (pw.match(/\d{1,}/) && pw.match(/[A-Za-z]{1,}/)) {

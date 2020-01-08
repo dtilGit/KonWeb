@@ -13,7 +13,10 @@ public class ArtikelBean {
 	private Integer lagerbestand;
 	private byte[] bild; 
 	private String bildname; 
+	private String kategoriebezeichnung; //für InnerJoin in Preloadadminpage
 	
+	
+
 	//für "ZumWarenkorbHinzufuegen Z. 81
 	public ArtikelBean() {}
 
@@ -75,6 +78,14 @@ public class ArtikelBean {
 
 	public void setBildname(String bildname) {
 		this.bildname = bildname;
+	}
+	
+	public String getKategoriebezeichnung() {
+		return kategoriebezeichnung;
+	}
+
+	public void setKategoriebzeichnung(String kategoriebezeichnung) {
+		this.kategoriebezeichnung = kategoriebezeichnung;
 	}
 	
 }

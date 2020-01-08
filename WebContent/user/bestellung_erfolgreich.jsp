@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -13,11 +14,20 @@
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 
 <title>Bestellung erfolgreich</title>
+
 </head>
 <body>
-	<%@ include file="../jspf/header.jspf"%>
-	<h1>Bestellung erfolgreich</h1>
-	<%@ include file="../jspf/footer.jspf"%>
+
+<%@ include file="../jspf/header.jspf"%>
+	<div id="artikelgeloescht">
+		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellmöglichst verschickt!</h2>
+
+		<form action="../index.jsp">
+			Dein Shoppinghunger ist immer noch nicht gestillt? hier:
+			<button id="zurueckzuindex">Weitershoppen</button>
+		</form>
+	</div>
+<%@ include file="../jspf/footer.jspf"%>
 
 </body>
 </html>

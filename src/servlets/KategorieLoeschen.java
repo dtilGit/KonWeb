@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.annotation.Resource;
 import javax.servlet.RequestDispatcher;
@@ -14,9 +15,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import beans.ArtikelBean;
 import beans.KategorieBean;
 
-/**
+/**Tilman Dewes
  * Servlet implementation class kategorie_loeschen
  */
 @WebServlet("/KategorieLoeschen")
@@ -40,15 +42,31 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		request.setCharacterEncoding("UTF-8");	
 		
-		KategorieBean form = new KategorieBean();
+		KategorieBean kat_bean = new KategorieBean();
 		int i = Integer.parseInt(request.getParameter("alleKategorienLaden"));
-		form.setKategorie_id(i); // parse Int
+		kat_bean.setKategorie_id(i); // parse Int
 		
+		//um jeweilige Artikel aus Kategorie mitzulöschen
+		ArtikelBean art_bean = new ArtikelBean();
+		art_bean.setKategorie_id(i);
 		
+		//Zuerst Artikel mit entsprechender KategorieID löschen
+		try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.artikel WHERE kategorie = ?")){
+			
+			pstmt.setInt(1, art_bean.getKategorie_id());
+			pstmt.executeUpdate();
+		
+		}
+		catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+			}
+		
+		//Jetzt gewünschte Kategorie löschen
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.kategorie WHERE kategorie_id = ?")){
 			
-			pstmt.setInt(1, form.getKategorie_id());
+			pstmt.setInt(1, kat_bean.getKategorie_id());
 			pstmt.executeUpdate();
 		
 		}
@@ -58,7 +76,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		}
 		
 	
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_sucess.jsp");
+	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);		
 }
 	/**

@@ -61,30 +61,31 @@
 				<label for="nachname">Nachname</label> <input type="text"
 					id="nachname" name="nachname" size="25" maxlength="40"
 					placeholder="${login.nachname}" required> <label id="nachname2"> </label>
+					<label for="nachname"></label> 
 			</p>
 			<p>
 				<label for="vorname">Vorname</label> <input type="text" id="vorname"
-					name="vorname" size="25" maxlength="40" placeholder="Max" required>
+					name="vorname" size="25" maxlength="40" placeholder="${login.vorname}" required>
 			</p>
 			<p>
 				<label for="strasse">Strasse</label> <input type="text" id="strasse"
-					name="strasse" size="30" maxlength="40">
+					name="strasse" size="30" maxlength="40" placeholder="${login.strasse}">
 			</p>
 			<p>
 				<label for="hausnummer"> Hausnummer</label> <input type=text
-					id="hausnummer" name="hausnummer" size="5" maxlength="10">
+					id="hausnummer" name="hausnummer" size="5" maxlength="10" placeholder="${login.hausnummer}">
 			</p>
 			<p>
 				<label for="postleitzahl">Postleitzahl</label> <input type="text"
-					id="postleitzahl" size="5" maxlength="40" name="postleitzahl">
+					id="postleitzahl" size="5" maxlength="40" name="postleitzahl" placeholder="${login.postleitzahl}">
 			</p>
 			<p>
 				<label for="ort">Ort</label> <input type="text" id="ort" name="ort"
-					size="30" maxlength="40">
+					size="30" maxlength="40" placeholder="${login.ort}">
 			</p>
 			<p>
 				<label for="land">Land</label> <input type="text" id="land"
-					name="land" size="30" maxlength="40">
+					name="land" size="30" maxlength="40" placeholder="${login.land}">
 			</p>
 			<p>
 				<label for="profilBild"> Profilbild hochladen</label> <input

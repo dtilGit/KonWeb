@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page errorPage="fehlerausgabe.jsp"%>
+<%@ page errorPage="errorpage.jsp"%>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
 <html lang="de">
@@ -37,9 +37,8 @@
 			<br>
 			<b>Hier gelangst du zur Adminverwaltung:</b>
 
-			<form style="display: inline" action="../admin/adminpage.jsp">
+			<form style="display: inline" action="../PreloadAdminpage" method="post" enctype="multipart/form-data">
 				<button>Zur Verwaltung der Webseiteninhalte</button>
-
 			</form>
 
 		</c:when>

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 
 import beans.ArtikelBean;
 
-/**
+/**Tilman Dewes
  * Servlet implementation class alleArtikel_laden
  */
 @WebServlet("/AlleArtikelLaden")
