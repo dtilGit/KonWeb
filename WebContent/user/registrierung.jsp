@@ -99,7 +99,7 @@
 			<div>
 				<!--  wozu braucht man die ID?  -->
 				<p>
-					<button type="submit" name="registr_button" id="registr_button">
+					<button type="submit" name="registr_button" id="registr_button" onclick="pruefereg()">
 						Registrierung abschliessen</button>
 				</p>
 				<!-- <p>	<button type="reset" id="registr_button_reset"> Zurücksetzen</button> </p>-->
