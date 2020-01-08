@@ -66,9 +66,20 @@
 							erforderlich!</h2>
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
-
+						<div id="lieferanten">
+							<fieldset>
+							<legend>Mit welchem Anbieter soll ihr Paket versendet werden:</legend>
+								<p> 
+									<label for="hermes">Hermes</label> <input type="radio"
+										name="lieferant" id="hermes" value="Hermes" required>
+									<label for="dhl">DHL</label> <input type="radio"
+										name="lieferant" id="dhl" value="DHL" required>
+								</p>
+							</fieldset>
+						</div>
 						<form id="myForm" method="get" action="../BestellenServlet">
-							<button id="bestellenButton" type="submit">Zur Kasse</button>
+							<button id="bestellenButton" type="submit">Verbindlich
+								bestellen!</button>
 						</form>
 					</c:when>
 				</c:choose>
@@ -113,7 +124,7 @@
 						<c:when test="${warenkorbB.ges_preis < 60}">
 							<tr>
 								<td>Lieferung</td>
-								<td>3,99€</td>
+								<td>3.99€</td>
 							</tr>
 							<tr>
 								<td>Gesamtbetrag</td>
@@ -124,7 +135,7 @@
 						<c:when test="${warenkorbB.ges_preis >= 60}">
 							<tr>
 								<td>Lieferung</td>
-								<td>0,00€</td>
+								<td>0.00€</td>
 							</tr>
 							<tr>
 								<td>Gesamtbetrag</td>

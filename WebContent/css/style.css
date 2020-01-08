@@ -258,18 +258,21 @@ main {
 	width: 30%;
 	margin-right: 10px;
 	float: left;
+/* 	text-align: justify; */
 }
 
 .spalte-2 {
 	width: 30%;
 	margin-right: 10px;
 	float: left;
+/* 	text-align: justify; */
 }
 
 .spalte-3 {
 	width: 30%;
 	margin-right: 10px;
 	float: left;
+/* 	text-align: justify; */
 }
 
 /* .flex-container { */
@@ -564,4 +567,8 @@ form#kategorie button {
 
 .hidden{
 	display: none;
+}
+
+div#lieferanten{
+	margin: 15px;
 }
