@@ -1,7 +1,7 @@
 <%--David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%--lib für Session Unterscheidung --%>
+<%--lib für Session Unterscheidung --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="errorpage.jsp"%>
 <%@ page isErrorPage="true"%>
@@ -84,17 +84,30 @@
 			<c:when test="${not empty sessionScope.login}">
 				<div class="dropdown-navi">
 
+					<c:if test="${login.admin == 0}">
 
-					<button class="profil">
-						<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
-					</button>
+						<button class="profil">
+							<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+						</button>
 
-					<div class="dropdown-content">
-						<a href=user/profilansehen.jsp>Ihr Profil</a> <a
-							href=LogoutServlet>Logout</a>
-					</div>
+						<div class="dropdown-content">
+							<a href=user/profilansehen.jsp>Ihr Profil</a> <a
+								href=LogoutServlet>Logout</a>
+						</div>
+					</c:if>
+					<c:if test="${login.admin == 1}">
+						<button class="profil">
+							<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
+						</button>
+
+						<div class="dropdown-content">
+							<a href=user/profilansehen.jsp>Ihr Profil</a> <a
+								href=LogoutServlet>Logout</a> <a href=admin/adminpage.jsp>Adminbereich</a>
+						</div>
+					</c:if>
 				</div>
 			</c:when>
+
 		</c:choose>
 
 	</header>
@@ -165,11 +178,11 @@
 				<h1>TOD's BestCaps</h1>
 				<p>Unser Service 24/7:</p>
 
-				<a href="tel:09131123987654"> <img class="small-icon" alt="telefon"
-					src="img/telefon.png"> 09131/123987654
+				<a href="tel:09131123987654"> <img class="small-icon"
+					alt="telefon" src="img/telefon.png"> 09131/123987654
 				</a> <br /> <a
 					href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
-					<img class="small-icon"  alt="mail" src="img/mail.png">
+					<img class="small-icon" alt="mail" src="img/mail.png">
 					info@todsbestcaps.de
 				</a>
 			</div>

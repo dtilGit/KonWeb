@@ -59,7 +59,7 @@
 			</c:when>
 			<c:when test="${not empty sessionScope.login}">
 				<div class="dropdown-navi">
-					
+					<c:if test="${login.admin == 0}"> 
 										
 						<button class="profil" ><img class="icon"
 							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
@@ -68,6 +68,17 @@
 						<a href=../user/profilansehen.jsp>Ihr Profil</a> 
 						<a href=../LogoutServlet>Logout</a>
 					</div>
+					</c:if>
+					<c:if test="${login.admin == 1}"> 
+								<button class="profil" ><img class="icon"
+							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
+				
+					<div class="dropdown-content">
+						<a href=../user/profilansehen.jsp>Ihr Profil</a> 
+						<a href=../LogoutServlet>Logout</a>
+						<a href=../admin/adminpage.jsp>Adminbereich</a>
+					</div>
+					</c:if>
 				</div>
 			</c:when>
 		</c:choose>
