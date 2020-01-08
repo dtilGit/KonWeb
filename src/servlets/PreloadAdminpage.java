@@ -20,7 +20,7 @@ import beans.KategorieBean;
 import beans.ArtikelBean;
 import beans.AnzeigeBean;
 
-/**
+/**Tilman Dewes
  * Servlet implementation class PreloadAdminpage
  */
 @WebServlet("/PreloadAdminpage")
@@ -77,8 +77,8 @@ public class PreloadAdminpage extends HttpServlet {
 		
 		//Kategorie list mit kategorienbeans befüllen
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.artikel")) {
-
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.artikel INNER JOIN kategorie ON artikel.kategorie = kategorie.kategorie_id")) {
+			
 			try (ResultSet rs = pstmt.executeQuery()) {
 
 				while (rs.next()) {
@@ -87,6 +87,7 @@ public class PreloadAdminpage extends HttpServlet {
 
 					int art_id = rs.getInt("artikel_id");
 					art_bean.setArtikel_id(art_id);
+					
 					String art_bez = rs.getString("artikelbezeichnung");
 					art_bean.setArtikelbezeichnung(art_bez);
 
@@ -96,6 +97,9 @@ public class PreloadAdminpage extends HttpServlet {
 					int art_kategorie = rs.getInt("kategorie");
 					art_bean.setKategorie_id(art_kategorie);
 
+					String kategoriebezeichnung = rs.getString("kategoriebezeichnung");
+					art_bean.setKategoriebzeichnung(kategoriebezeichnung);
+					
 					byte[] art_bild = rs.getBytes("bild");
 					art_bean.setBild(art_bild);
 

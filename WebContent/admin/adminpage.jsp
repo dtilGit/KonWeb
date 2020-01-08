@@ -34,7 +34,7 @@
 			Artikelübericht anzeigen</button>
 
 		<button type="button" id="kategorieuebersicht_anzeigen"
-			onClick="document.getElementById('kategorieuebersicht').style.display='inline';">
+			onClick="document.getElementById('kategorieuebersicht').style.display='inline';">  <!-- on Click Funktion auslagern? -->
 			Kategorieübericht anzeigen</button>
 		<br> <br>
 
@@ -61,7 +61,7 @@
 					src="../BildLaden?artikel_id=${alleArt.artikel_id}"
 					class="bild" alt="bild_laden" width="200" height="250"></td>
 					
-					<td>${alleArt.kategorie_id}</td>
+					<td>${alleArt.kategoriebezeichnung}</td>
 					</tr>
 					</c:forEach>
 					
@@ -71,7 +71,8 @@
 		<button type="reset" name="abbrechen"
 							onClick="document.getElementById('artikeluebersicht').style.display='none';">abbrechen</button>	
 		</div>
-
+		
+		<!--Kategorieübersicht -->
 		<div id="kategorieuebersicht" style="display: none">
 
 			<table id="Kategorieuebersicht">
@@ -220,7 +221,6 @@
 
 						<td>
 						<select name="kategorie_geschlecht" required>
-								<option label="emptyoption"></option>
 								<option>Herren</option>
 								<option>Weiblich</option>
 						</select> </td>

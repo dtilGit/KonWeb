@@ -1,18 +1,27 @@
-
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="fehlerausgabe.jsp"%>
-    <%@ taglib prefix= "c" uri= "http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
 <head>
 
-<link rel="stylesheet" href="../../css/tabellen.css"/> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<base href="${pageContext.request.requestURI}"/> 
-
+<base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
 <title>Bestellung erfolgreich</title>
+
 </head>
 <body>
+<%@ include file="../jspf/header.jspf"%>
+	<div id="artikelgeloescht">
+		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellmöglichst verschickt!</h2>
+
+		<form action="../index">
+			Dein Shoppinghunger ist immer noch nicht gestillt? hier:
+			<button id="zurueckzuindex">Weitershoppen</button>
+		</form>
+	</div>
+<%@ include file="../jspf/footer.jspf"%>
+
 
 </body>
 </html>
