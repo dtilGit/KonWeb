@@ -35,35 +35,43 @@ public class BestellenServlet extends HttpServlet {
 		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 		// Kunde-Session muss befüllt sein mit den Werten = Eingeloggt
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
+		
+		System.out.println("=== in Bestellung-Servlet ===");
+		
+//		Integer kunde_ID;
+//		kunde_ID = kunde.getId();
 
-		Integer kunde_ID;
-		kunde_ID = kunde.getId();
+//		Double gesamtWert;
+//		gesamtWert = warenkorbB.getGes_preis();
 
-		Double gesamtWert;
-		gesamtWert = warenkorbB.getGes_preis();
-
-		if (kunde == null || warenkorbB == null) {
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-			dispatcher.forward(request, response);
-		} else {
+		if (warenkorbB != null && kunde != null) {
 			String[] generatedKeys = new String[] { "bestell_id" };
+			System.out.println("=== in if1 ===");
 
 			try (Connection con = ds.getConnection();
 					PreparedStatement pstmt = con.prepareStatement(
-							"Insert INTO thidb.bestellung (kunden_id, ges_preis) Values (?,?)", generatedKeys)) {
-				pstmt.setInt(1, kunde_ID);
-				pstmt.setDouble(2, gesamtWert);
+							"INSERT INTO thidb.bestellung (kunde_id, ges_preis) Values (?,?)", generatedKeys)) {
+				pstmt.setInt(1, kunde.getId());
+				pstmt.setDouble(2, warenkorbB.getGes_preis());
 				pstmt.executeUpdate();
+				System.out.println("=== in try Insert ===");
 			} catch (Exception ex) {
-				throw new ServletException();
+				throw new ServletException(ex.getMessage());	
 			}
+
 			request.setAttribute("ges_preis", warenkorbB.getGes_preis());
 			request.setAttribute("login", kunde);
-			
-			//überprüfen, ob funktioniert
+
+			// überprüfen, ob funktioniert
 			warenkorbB.getWarenkorbList().clear();
+
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
+		} else if (warenkorbB == null || kunde == null) {
+			System.out.println("=== in if2 ===");
+			RequestDispatcher dispatcher2 = request.getRequestDispatcher("user/bestellen_login_fehler.jsp");
+			dispatcher2.forward(request, response);
+
 		}
 
 	}

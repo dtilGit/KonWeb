@@ -66,8 +66,8 @@
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
 						
-						<form id="myForm" method="post" action="../BestellenServlet">
-							<button id="bestellenButton" type="submit">Bestellen</button>
+						<form id="myForm" method="get" action="../BestellenServlet">
+							<button id="bestellenButton" type="submit">Zur Kasse</button>
 						</form>
 					</c:when>
 				</c:choose>
@@ -114,7 +114,7 @@
 		</div>
 		<div>
 			<form>
-				<button type="submit" value="Zur Kasse">Zur Kasse</button>
+				<button type="submit" action="../BestellenServlet"  method="get "value="Zur Kasse">Zur Kasse</button>
 			</form>
 		</div>
 	</div>

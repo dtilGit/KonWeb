@@ -12,15 +12,11 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-<title>Fehlermeldung</title>
+<title>´Bestellabwicklung Fehler</title>
 </head>
 <body>
-	<%@ include file="../jspf/header.jspf"%>
-	<p>
-		Login fehlgeschlagen. Passwort ist falsch! <b> Versuchen Sie es
-			erneut.</b> <a href="registrierung.jsp">Zur Registrierung</a> <a
-			href="login.jsp">Zur Loginseite</a>
-	</p>
-	<%@ include file="../jspf/footer.jspf"%>
+<%@ include file="../jspf/header.jspf"%>
+ <h1> Deine Bestellung kann nicht abgeschlossen werden. Füge deinem Warenkorb Artikel hinzu oder melde dich an.  </h1>
+ <%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

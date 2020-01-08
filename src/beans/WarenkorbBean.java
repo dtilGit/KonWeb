@@ -1,4 +1,3 @@
-//Veronika Tschemodanov
 package beans;
 
 import java.math.BigDecimal;
@@ -15,13 +14,12 @@ public class WarenkorbBean {
 		warenkorbList = new LinkedList<WarenkorbArtikel>();
 	}
 
-	// was ist die Shopping_ID??
-	public WarenkorbBean(Double ges_preis, Integer wk_groesse, Integer shopping_ID,
-			LinkedList<WarenkorbArtikel> warenkorb) {
+	public WarenkorbBean(Double ges_preis, Integer wk_groesse,
+			LinkedList<WarenkorbArtikel> warenkorbList2) {
 		super();
 		this.ges_preis = ges_preis;
 		this.wk_groesse = wk_groesse;
-		warenkorbList = warenkorbList;
+		warenkorbList = warenkorbList2;
 	}
 
 	public WarenkorbBean(LinkedList<WarenkorbArtikel> warenkorbList) {
@@ -52,7 +50,7 @@ public class WarenkorbBean {
 	public Integer getWk_groesse() {
 		wk_groesse = 0;
 		for (WarenkorbArtikel korbIter : warenkorbList) {
-			wk_groesse = wk_groesse + korbIter.getWk_art_anzahl();
+			wk_groesse = wk_groesse + korbIter.getMenge();
 		}
 		return wk_groesse;
 	}

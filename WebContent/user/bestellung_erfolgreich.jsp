@@ -1,18 +1,23 @@
-
+<%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" errorPage="fehlerausgabe.jsp"%>
-    <%@ taglib prefix= "c" uri= "http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page errorPage="errorpage.jsp"%>
+<%@ page isErrorPage="true"%>
 <!DOCTYPE html>
-<html>
-<head>
+<html lang="de">
 
-<link rel="stylesheet" href="../../css/tabellen.css"/> 
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<base href="${pageContext.request.requestURI}"/> 
+<base href="${pageContext.request.requestURI}" />
+<link rel="stylesheet" href="../css/style.css" type="text/css">
 
 <title>Bestellung erfolgreich</title>
 </head>
 <body>
+	<%@ include file="../jspf/header.jspf"%>
+	<h1>Bestellung erfolgreich</h1>
+	<%@ include file="../jspf/footer.jspf"%>
 
 </body>
 </html>

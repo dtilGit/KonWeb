@@ -1,10 +1,9 @@
 //Veronika Tschemodanov
 package beans;
 
-import java.math.BigDecimal;
 import java.io.Serializable;
 
-public class WarenkorbArtikel {
+public class WarenkorbArtikel implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -22,7 +21,6 @@ public class WarenkorbArtikel {
 		this.wk_art_anzahl=wk_art_anzahl;
 	}
 	
-	//wofuer? 
 	public WarenkorbArtikel (ArtikelBean wk_artikel) {
 		this.wk_artikel = wk_artikel;
 	}
@@ -35,12 +33,12 @@ public class WarenkorbArtikel {
 		return wk_art_anzahl;
 	}
 	public Double getWk_art_preis() {
-		this.wk_art_preis = getWk_art_anzahl() * wk_artikel.getPreis();
+		this.wk_art_preis = getMenge() * wk_artikel.getPreis();
 		return this.wk_art_preis;
 	}
 	
 	public void setWk_art_preis(Double wk_ges_preis) {
-		this.wk_art_preis=getWk_art_anzahl() * wk_artikel.getPreis();
+		this.wk_art_preis=getMenge() * wk_artikel.getPreis();
 	}
 	public String getWk_size() {
 		return wk_size;
@@ -48,6 +46,10 @@ public class WarenkorbArtikel {
 	
 	public void setWk_size(String wk_size) {
 		this.wk_size=wk_size;
+	}
+	
+	public void Wk_art_anzahl_erhoehen() {
+		wk_art_anzahl++;
 	}
 	
 }
