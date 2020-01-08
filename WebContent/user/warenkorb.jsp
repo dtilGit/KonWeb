@@ -62,21 +62,24 @@
 				<c:choose>
 
 					<c:when test="${empty sessionScope.login}">
-						<h2>Um die Artikel letztendlich zu bestellen ist ein Login erforderlich!</h2>
+						<h2>Um die Artikel letztendlich zu bestellen ist ein Login
+							erforderlich!</h2>
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
-						
+
 						<form id="myForm" method="get" action="../BestellenServlet">
 							<button id="bestellenButton" type="submit">Zur Kasse</button>
 						</form>
 					</c:when>
 				</c:choose>
-<%-- 				<p>Gesamtbetrag: ${warenkorbB.ges_preis}€</p> --%>
+				<%-- 				<p>Gesamtbetrag: ${warenkorbB.ges_preis}€</p> --%>
 			</div>
 		</c:when>
-		<c:when test="${warenkorbB == NULL}">
-			<p>Es befinden sich noch keine Artikel im Warenkorb.</p>
-		</c:when>
+		<%-- 		<c:when test="${warenkorbB == NULL}"> --%>
+		<c:when test="${warenkorbB == null}">
+				<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
+
+			</c:when>
 	</c:choose>
 
 
@@ -88,7 +91,7 @@
 <aside>
 
 	<div class="cart-actions">
-		
+
 		<div class="bestelluebersicht">
 			<h1>Bestellübersicht:</h1>
 
@@ -96,7 +99,7 @@
 			<table style="width: 100%">
 
 				<tr>
-					<td>Produkte </td>
+					<td>Produkte</td>
 					<td>${warenkorbB.wk_groesse}</td>
 				</tr>
 
@@ -115,7 +118,8 @@
 		</div>
 		<div>
 			<form>
-				<button type="submit" action="../BestellenServlet"  method="get "value="Zur Kasse">Zur Kasse</button>
+				<button type="submit" action="../BestellenServlet" method="get "
+					value="Zur Kasse">Zur Kasse</button>
 			</form>
 		</div>
 	</div>
