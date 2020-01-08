@@ -561,3 +561,7 @@ form#kategorie button {
 	vertical-align: middle;
 	margin-right: 5px;
 }
+
+.hidden{
+	display: none;
+}
