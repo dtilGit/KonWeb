@@ -74,7 +74,7 @@
 <%-- 				<p>Gesamtbetrag: ${warenkorbB.ges_preis}€</p> --%>
 			</div>
 		</c:when>
-		<c:when test="${warenkobB == NULL}">
+		<c:when test="${warenkorbB == NULL}">
 			<p>Es befinden sich noch keine Artikel im Warenkorb.</p>
 		</c:when>
 	</c:choose>
@@ -96,7 +96,8 @@
 			<table style="width: 100%">
 
 				<tr>
-					<td>Produkte (Anzahl der Produkte im Warenkorb)</td>
+					<td>Produkte </td>
+					<td>${warenkorbB.wk_groesse}</td>
 				</tr>
 
 				<tr>
