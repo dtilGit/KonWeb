@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 
 import beans.ArtikelBean;
 
-/**
+/**Tilman Dewes
  * Servlet implementation class kategorie_loeschen
  */
 @WebServlet("/ArtikelLoeschen")
@@ -58,7 +58,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		}
 		
 	
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/artikel_geloescht.jsp");
+	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);		
 }
 	/**

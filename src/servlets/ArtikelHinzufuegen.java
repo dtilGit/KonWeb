@@ -101,7 +101,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		throw new ServletException(ex.getMessage());
 		}
 	
-	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_sucess.jsp");
+	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);	
 }
 	/**
