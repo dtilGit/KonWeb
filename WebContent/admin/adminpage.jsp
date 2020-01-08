@@ -9,6 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
+<script type="text/javascript" src="../js/showAndHide.js"></script>
 <title>Adminpage</title>
 </head>
 <body>
@@ -30,16 +31,16 @@
 		<!--Übersichtsbutton -->
 
 		<button type="button" id="artikeluebersicht_anzeigen"
-			onClick="document.getElementById('artikeluebersicht').style.display='inline';">
-			Artikelübericht anzeigen</button>
+			onClick="showArtikeluebersicht()">
+			Artikelübersicht anzeigen</button>
 
 		<button type="button" id="kategorieuebersicht_anzeigen"
-			onClick="document.getElementById('kategorieuebersicht').style.display='inline';">  <!-- on Click Funktion auslagern? -->
-			Kategorieübericht anzeigen</button>
+			onClick="showKategorieuebersicht()">
+			Kategorieübersicht anzeigen</button>
 		<br> <br>
 
 		<!--Artikelübersicht -->
-		<div id="artikeluebersicht" style="display: none">
+		<div class="hidden" id="artikeluebersicht">
 			<table id="Artikeluebersicht">
 				<thead>
 					<tr>
@@ -69,12 +70,11 @@
 			</table>
 		<br>
 		<button type="reset" name="abbrechen"
-							onClick="document.getElementById('artikeluebersicht').style.display='none';">abbrechen</button>	
+							onClick="hideArtikeluebersicht()">abbrechen</button>	
 		</div>
 		
 		<!--Kategorieübersicht -->
-		<div id="kategorieuebersicht" style="display: none">
-
+		<div class="hidden" id="kategorieuebersicht">
 			<table id="Kategorieuebersicht">
 				<thead>
 					<tr>
@@ -96,7 +96,7 @@
 				</tbody>
 			</table>
 			<button type="reset" name="abbrechen"
-							onClick="document.getElementById('kategorieuebersicht').style.display='none';">abbrechen</button>
+							onClick="hideKategorieuebersicht()">abbrechen</button>
 		</div>
 
 
@@ -110,17 +110,18 @@
 		<!--Artikel bearbeiten button -->
 		<h2>Artikel bearbeiten</h2>
 		<button type="button" id="artikel_add"
-			onClick="document.getElementById('ArtikelHinzufuegen').style.display='inline';">
+			onClick="showAddArtikel()">
 			neuen Artikel hinzufügen</button>
 		<button type="button" id="artikel_delete"
-			onClick="document.getElementById('ArtikelLoeschen').style.display='inline';">
+			onClick="document.getElementById('artikelLoeschen').style.display='inline';">
 			Artikel löschen</button>
 		<br>
 		
 		<!--Artikel hinzufügen -->
+		<div class="hidden" id="artikelHinzufuegen">
 		<form method="post" enctype="multipart/form-data"
 			action="../ArtikelHinzufuegen">
-			<table id="ArtikelHinzufuegen" style="display: none">
+			<table id="ArtikelHinzufuegen">
 				<thead>
 					<tr>
 						<th>Artikelbezeichnung</th>
@@ -155,17 +156,19 @@
 						<td>
 							<button type="submit" name="speichern">speichern</button>
 							<button type="reset" name="abbrechen"
-								onClick="document.getElementById('ArtikelHinzufuegen').style.display='none';">abbrechen</button>
+								onClick="hideAddArtikel()">abbrechen</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
-
+		</div>
+		
 		<!--Artikel löschen -->
+		<div class="hidden" id="artikelLoeschen">
 		<form action="../ArtikelLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table id="ArtikelLoeschen" style="display: none">
+			<table id="ArtikelLoeschen">
 				<thead>
 					<tr>
 						<th>Artikel ID, Artikelbezeichnung</th>
@@ -185,32 +188,35 @@
 						<td>
 							<button type="submit" name="loeschen">löschen</button>
 							<button type="reset" name="abbrechen"
-								onClick="document.getElementById('ArtikelLoeschen').style.display='none';">abbrechen</button>
+								onClick="hideDeleteArtikel()">abbrechen</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
+		</div>
 
 		<!-- Kategorien -->
 		<h2>Kategorien bearbeiten</h2>
 		<!-- Kategorien bearbeiten button -->
 		<button type="button" id="neue_kategorie"
-			onClick="document.getElementById('KategorieHinzufuegen').style.display='inline';">
+			onClick="showAddKategorie()">
 			neue Kategorie hinzufügen</button>
 		<button type="button" id="kategorie_delete"
-			onClick="document.getElementById('KategorieLoeschen').style.display='inline';">
+			onClick="showDeleteKategorie()">
 			Kategorie (+Artikel) löschen</button>
 		<br>
 
 		<!-- Kategorie hinzufügen -->
+		<div class="hidden" id="kategorieHinzufuegen">
 		<form action="../KategorieHinzufuegen" method="get"
 			enctype="multipart/form-data">
-			<table id="KategorieHinzufuegen" style="display: none">
+			<table id="KategorieHinzufuegen">
 				<thead>
 					<tr>
 						<th>Kategorie-Bezeichnung</th>
 						<th>Geschlecht</th>
+						<th>Buttons</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -227,17 +233,19 @@
 						<td>
 							<button type="submit" name="speichern">speichern</button>
 							<button type="reset" name="abbrechen"
-								onClick="document.getElementById('KategorieHinzufuegen').style.display='none';">abbrechen</button>
+								onClick="hideAddKategorie()">abbrechen</button>
 						</td>
 					</tr>
 				<tbody>
 			</table>
 		</form>
+		</div>
 		
 		<!-- Kategorie löschen -->
+		<div class= "hidden" id="kategorieLoeschen">
 		<form action="../KategorieLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table id="KategorieLoeschen" style="display: none">
+			<table id="KategorieLoeschen">
 				<thead>
 					<tr>
 						<th>Kategorie</th>
@@ -259,12 +267,13 @@
 							<button type="submit" name="loeschen">löschen</button>
 
 							<button type="reset" name="abbrechen"
-								onClick="document.getElementById('KategorieLoeschen').style.display='none';">abbrechen</button>
+								onClick="hideDeleteKategorie()">abbrechen</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 		</form>
+		</div>
 		</section>
 		</body>
 
