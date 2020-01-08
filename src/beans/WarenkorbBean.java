@@ -8,7 +8,22 @@ public class WarenkorbBean {
 	private Double ges_preis;
 	private Integer wk_groesse;
 	private LinkedList<WarenkorbArtikel> warenkorbList;
+	private Double preis;
 
+	
+	public Double getPreis() {
+		ges_preis = 0.00;
+		for (WarenkorbArtikel korbIter : warenkorbList) {
+			ges_preis = ges_preis + korbIter.getWk_art_preis();
+		}
+		preis = ges_preis + 3.99;
+		return preis;
+	}
+	
+	public void setPreis(Double preis) {
+		this.preis=preis;
+	}
+	
 	// evtl. nicht notwendig
 	public WarenkorbBean() {
 		warenkorbList = new LinkedList<WarenkorbArtikel>();
@@ -36,10 +51,13 @@ public class WarenkorbBean {
 
 	// Iterieren über die Liste
 	public Double getGes_preis() {
-		ges_preis = 0.0;
+		ges_preis = 0.00;
 		for (WarenkorbArtikel korbIter : warenkorbList) {
 			ges_preis = ges_preis + korbIter.getWk_art_preis();
 		}
+//		if (ges_preis < 60) {
+//			ges_preis = 3.99 + ges_preis;
+//		}
 		return ges_preis;
 	}
 

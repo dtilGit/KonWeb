@@ -62,20 +62,23 @@
 				<c:choose>
 
 					<c:when test="${empty sessionScope.login}">
-						<h2>Um die Artikel letztendlich zu bestellen ist ein Login erforderlich!</h2>
+						<h2>Um die Artikel letztendlich zu bestellen ist ein Login
+							erforderlich!</h2>
 					</c:when>
 					<c:when test="${not empty sessionScope.login }">
-						
+
 						<form id="myForm" method="get" action="../BestellenServlet">
 							<button id="bestellenButton" type="submit">Zur Kasse</button>
 						</form>
 					</c:when>
 				</c:choose>
-<%-- 				<p>Gesamtbetrag: ${warenkorbB.ges_preis}€</p> --%>
+				<%-- 				<p>Gesamtbetrag: ${warenkorbB.ges_preis}€</p> --%>
 			</div>
 		</c:when>
-		<c:when test="${warenkorbB == NULL}">
-			<p>Es befinden sich noch keine Artikel im Warenkorb.</p>
+		<%-- 		<c:when test="${warenkorbB == NULL}"> --%>
+		<c:when test="${warenkorbB == null}">
+			<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
+
 		</c:when>
 	</c:choose>
 
@@ -88,7 +91,7 @@
 <aside>
 
 	<div class="cart-actions">
-		
+
 		<div class="bestelluebersicht">
 			<h1>Bestellübersicht:</h1>
 
@@ -96,28 +99,50 @@
 			<table style="width: 100%">
 
 				<tr>
-					<td>Produkte </td>
+					<td>Produkte</td>
 					<td>${warenkorbB.wk_groesse}</td>
 				</tr>
 
 				<tr>
-					<td>Gesamtpreis</td>
+					<td>Zwischenbetrag</td>
 					<td>${warenkorbB.ges_preis}€</td>
 				</tr>
 
 				<tr>
-					<td>Lieferung</td>
-					<td>3,99€</td>
+					<c:choose>
+						<c:when test="${warenkorbB.ges_preis < 60}">
+							<tr>
+								<td>Lieferung</td>
+								<td>3,99€</td>
+							</tr>
+							<tr>
+								<td>Gesamtbetrag</td>
+								<td>${warenkorbB.preis}€</td>
+							</tr>
+						</c:when>
+
+						<c:when test="${warenkorbB.ges_preis >= 60}">
+							<tr>
+								<td>Lieferung</td>
+								<td>0,00€</td>
+							</tr>
+							<tr>
+								<td>Gesamtbetrag</td>
+								<td>${warenkorbB.ges_preis}€</td>
+							</tr>
+						</c:when>
+					</c:choose>
 				</tr>
 
 			</table>
 
 		</div>
-		<div>
-			<form>
-				<button type="submit" action="../BestellenServlet"  method="get "value="Zur Kasse">Zur Kasse</button>
-			</form>
-		</div>
+		<!-- 		<div> -->
+		<!-- 			<form> -->
+		<!-- 				<button type="submit" action="../BestellenServlet" method="get " -->
+		<!-- 					value="Zur Kasse">Zur Kasse</button> -->
+		<!-- 			</form> -->
+		<!-- 		</div> -->
 	</div>
 
 </aside>
