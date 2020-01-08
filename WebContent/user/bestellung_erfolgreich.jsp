@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -20,7 +20,7 @@
 
 <%@ include file="../jspf/header.jspf"%>
 	<div id="artikelgeloescht">
-		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellmöglichst verschickt!</h2>
+		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellstmöglichst verschickt!</h2>
 
 		<form action="../index.jsp">
 			Dein Shoppinghunger ist immer noch nicht gestillt? hier:

@@ -50,7 +50,7 @@
 									<!--<input type="hidden" name="groesse" value="${wk_List.wk_size}">-->
 									<input type="number" min="0" max="15" name="menge"
 										value="${wk_List.wk_art_anzahl}">
-									<button type="submit">Menge ändern</button>
+									<button type="submit">Artikelmenge aktualisieren</button>
 								</form></td>
 							<td>${wk_List.wk_art_preis}€</td>
 						</tr>
