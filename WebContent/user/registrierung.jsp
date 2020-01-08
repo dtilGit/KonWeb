@@ -68,12 +68,12 @@
 							id="strassereg" name="strasse" size="30" maxlength="40" placeholder="Angabe ihres Straßennamens ohne Nummer" required>
 					</p>
 					<p>
-						<label for="hausnrreg"> Hausnummer:</label> <input type=text
+						<label for="hausnrreg"> Hausnummer:</label> <input type="text"
 							id="hausnrreg" name="hausnummer" size="5" maxlength="10"placeholder="lediglich ihre Hausnummer " required>
 
 					</p>
 					<p>
-						<label for="plzreg">Postleitzahl:</label> <input type="text"
+						<label for="plzreg">Postleitzahl:</label> <input type="number"
 							id="plzreg" size="5" minlength="5" maxlength="5"
 							name="postleitzahl" placeholder="5-stellige PLZ" required>
 					</p>
