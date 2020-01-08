@@ -64,8 +64,9 @@ public class BestellenServlet extends HttpServlet {
 
 			// überprüfen, ob funktioniert
 			warenkorbB.getWarenkorbList().clear();
+			session.removeAttribute("warenkobB");
 
-			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellUebersicht.jsp");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
 		} else if (warenkorbB == null || kunde == null) {
 			System.out.println("=== in if2 ===");
