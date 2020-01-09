@@ -32,7 +32,7 @@
 			<br> <label for="suchleiste"></label>
 			<form action="../SucheServlet" method="get">
 				<input type="search" name="artikelbezeichnung" id="suchleiste"
-					placeholder="Suche deinen Liebling...">
+					placeholder="Suche deinen Liebling...">			
 			</form>
 <!-- 			<img class="small-icon" src="../img/search.png"></img> -->
 		</div>
