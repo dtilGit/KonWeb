@@ -14,14 +14,14 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<section>
+
 		<div class="intro">
 			<h2>Adminpage:</h2>
 			Wenn auf diese Seite kommst, bist du bei uns als Admin hinterlegt.<br>
 			Hier kannst du unser Lager einsehen, unsere Artikel und Kategorien
-			bearbeiten und löschen <br> Tob dich aus! Aber pass auf deine
+			bearbeiten sowie auch löschen! <br> Tob dich aus! Aber pass auf, deine
 			Änderungen werden direkt in die Produktivdatenbank eingepflegt und
-			ist anschließend für alle User sichtbar!
+			sind anschließend für alle User sichtbar!
 		</div>
 
 		<!--Übersicht -->
@@ -99,8 +99,8 @@
 
 		<!--Bearbeiten -->
 		<h1>Bearbeiten</h1>
-		Hier kannst du Änderungen an unserer Datenbank vornehmen <br>
-		Vorsicht! Wenn du eine Kategorie löscht werden alle dazugehörigen
+		Hier kannst du Änderungen an unserer Datenbank vornehmen. <br>
+		Vorsicht! Wenn du eine Kategorie löschst, werden alle dazugehörigen
 		Artikel auch entfernt!<br>
 
 		<!--Artikel -->
@@ -265,7 +265,7 @@
 				</table>
 			</form>
 		</div>
-	</section>
+	
 </body>
 
 <%@ include file="../jspf/footer.jspf"%>

@@ -79,8 +79,8 @@ public class ProfilBearbeiten extends HttpServlet {
 		String land  = request.getParameter("land");
 		profiledit.setLand(land);
 		
-		int kunden_id = kunde.getId();
-		profiledit.setId(kunden_id);
+		int kunde_id = kunde.getId();
+		profiledit.setId(kunde_id);
 		
 		Part filepart = request.getPart("profilBild");
 		String contenttype = filepart.getContentType();

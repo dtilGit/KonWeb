@@ -22,10 +22,8 @@
 	<div id="artikelgeloescht">
 		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellstmöglichst verschickt!</h2>
 
-		<form action="../index.jsp">
-			Dein Shoppinghunger ist immer noch nicht gestillt? hier:
-			<button id="zurueckzuindex">Weitershoppen</button>
-		</form>
+			<p>Dein Shoppinghunger ist immer noch nicht gestillt? <a href="../index.jsp">Hier weitershoppen</a> :) </p>
+			
 	</div>
 <%@ include file="../jspf/footer.jspf"%>
 

@@ -24,9 +24,9 @@
 	<h2>Deine aktuellen Daten</h2>
 	</p>
 	<p>
-				<img src="../ProfilbildLaden?kunde_id=${login.id}"
-					class="bild" alt="bild_laden" width="200" height="250">
-			</p>
+		<img src="../ProfilbildLaden?kunde_id=${login.id}" class="bild"
+			alt="bild_laden" width="200" height="250">
+	</p>
 	<p>Geschlecht: ${login.geschlecht}</p>
 	<p>Titel: ${login.titel}</p>
 	<p>Nachname: ${login.nachname}</p>
@@ -39,63 +39,70 @@
 	<p>Land: ${login.land}</p>
 
 	<h2>Hier kannst du deine Änderungen eingeben:</h2>
-	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post" enctype="multipart/form-data">
+	<form action="../ProfilBearbeiten" id="profilbearbeiten" method="post"
+		enctype="multipart/form-data">
 		<div>
-			<p>
-				<label for="geschlecht"></label> <label for="geschlecht">Herr</label>
-				<input type="radio" name="geschlecht" id="Herr" value="Herr"
-					required> <label for="anrede">Frau</label> <input
-					type="radio" name="geschlecht" id="Frau" value="Frau" required>
-			</p>
+			<fieldset>
+				<p>
+					Herr
+					<input type="radio" name="geschlecht" id="Herr" value="Herr"
+						required> Frau <input
+						type="radio" name="geschlecht" id="Frau" value="Frau" required>
+				</p>
 
-			<p>
-				<label for="titel">Titel:</label> <select name="titel" id="titel">
-					<option value="">Kein Titel</option>
-					<option value="Dr.">Dr.</option>
-					<option value="Prof.">Prof.</option>
-					<option value="Prof. Dr.">Prof. Dr.</option>
-				</select>
-			</p>
+				<p>
+					<label for="titel">Titel:</label> <select name="titel" id="titel">
+						<option value="">Kein Titel</option>
+						<option value="Dr.">Dr.</option>
+						<option value="Prof.">Prof.</option>
+						<option value="Prof. Dr.">Prof. Dr.</option>
+					</select>
+				</p>
 
-			<p>
-				<label for="nachname">Nachname</label> <input type="text"
-					id="nachname" name="nachname" size="25" maxlength="40"
-					placeholder="${login.nachname}" required> <label id="nachname2"> </label>
-					<label for="nachname"></label> 
-			</p>
-			<p>
-				<label for="vorname">Vorname</label> <input type="text" id="vorname"
-					name="vorname" size="25" maxlength="40" placeholder="${login.vorname}" required>
-			</p>
-			<p>
-				<label for="strasse">Strasse</label> <input type="text" id="strasse"
-					name="strasse" size="30" maxlength="40" placeholder="${login.strasse}">
-			</p>
-			<p>
-				<label for="hausnummer"> Hausnummer</label> <input type=text
-					id="hausnummer" name="hausnummer" size="5" maxlength="10" placeholder="${login.hausnummer}">
-			</p>
-			<p>
-				<label for="postleitzahl">Postleitzahl</label> <input type="text"
-					id="postleitzahl" size="5" maxlength="40" name="postleitzahl" placeholder="${login.postleitzahl}">
-			</p>
-			<p>
-				<label for="ort">Ort</label> <input type="text" id="ort" name="ort"
-					size="30" maxlength="40" placeholder="${login.ort}">
-			</p>
-			<p>
-				<label for="land">Land</label> <input type="text" id="land"
-					name="land" size="30" maxlength="40" placeholder="${login.land}">
-			</p>
-			<p>
-				<label for="profilBild"> Profilbild hochladen</label> <input
-					type="file" name="profilBild" id="profilBild" accept="image/*">
-				<label for="profilBild"></label> 
-			</p>
+				<p>
+					<label for="nachname">Nachname</label> <input type="text"
+						id="nachname" name="nachname" size="25" maxlength="40"
+						value="${login.nachname}" required> <label id="nachname2">
+					</label> <label for="nachname"></label>
+				</p>
+				<p>
+					<label for="vorname">Vorname</label> <input type="text"
+						id="vorname" name="vorname" size="25" maxlength="40"
+						value="${login.vorname}" required>
+				</p>
+				<p>
+					<label for="strasse">Strasse</label> <input type="text"
+						id="strasse" name="strasse" size="30" maxlength="40"
+						value="${login.strasse}">
+				</p>
+				<p>
+					<label for="hausnummer"> Hausnummer</label> <input type=text
+						id="hausnummer" name="hausnummer" size="5" maxlength="10"
+						value="${login.hausnummer}">
+				</p>
+				<p>
+					<label for="postleitzahl">Postleitzahl</label> <input type="text"
+						id="postleitzahl" size="5" maxlength="40" name="postleitzahl"
+						value="${login.postleitzahl}">
+				</p>
+				<p>
+					<label for="ort">Ort</label> <input type="text" id="ort" name="ort"
+						size="30" maxlength="40" value="${login.ort}">
+				</p>
+				<p>
+					<label for="land">Land</label> <input type="text" id="land"
+						name="land" size="30" maxlength="40" value="${login.land}">
+				</p>
+				<p>
+					<label for="profilBild"> Profilbild hochladen</label> <input
+						type="file" name="profilBild" id="profilBild" accept="image/*">
+					<label for="profilBild"></label>
+				</p>
+			</fieldset>
 		</div>
 		<p>
-			<button type="submit" name="profiledit_submit" id="profiledit_submit">
-				Speichern</button>
+			<button type="submit" name="profiledit_submit" id="profiledit_submit"
+				onclick="pruefedaten()">Speichern</button>
 		</p>
 	</form>
 	<%@ include file="../jspf/footer.jspf"%>

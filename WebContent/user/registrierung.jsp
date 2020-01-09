@@ -17,7 +17,7 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<section>
+
 		<form action="../RegistrServlet" id="registrierung" method="post"
 			enctype="multipart/form-data">
 			<h1>Registrierung</h1>
@@ -25,10 +25,9 @@
 			<div id="registr">
 				<fieldset>
 					<p>
-						<label for="malereg">Herr</label> <input type="radio"
-							name="geschlecht" id="malereg" value="Herr" required> <label
-							for="femalereg">Frau</label> <input type="radio" name="geschlecht"
-							id="femalereg" value="Frau" required>
+						Herr <input type="radio" name="geschlecht" id="malereg"
+							value="Herr" required> Frau <input type="radio"
+							name="geschlecht" id="femalereg" value="Frau" required>
 					</p>
 
 					<p>
@@ -40,7 +39,7 @@
 							<option value="Prof. Dr.">Prof. Dr.</option>
 						</select>
 					</p>
-					
+
 					<p>
 						<label for="nachnamereg">Nachname: </label> <input type="text"
 							id="nachnamereg" name="nachname" size="25" maxlength="40"
@@ -65,11 +64,13 @@
 					<p>
 
 						<label for="strassereg">Strasse:</label> <input type="text"
-							id="strassereg" name="strasse" size="30" maxlength="40" placeholder="Angabe ihres Straßennamens ohne Nummer" required>
+							id="strassereg" name="strasse" size="30" maxlength="40"
+							placeholder="Angabe ihres Straßennamens ohne Nummer" required>
 					</p>
 					<p>
 						<label for="hausnrreg"> Hausnummer:</label> <input type="text"
-							id="hausnrreg" name="hausnummer" size="5" maxlength="10"placeholder="lediglich ihre Hausnummer " required>
+							id="hausnrreg" name="hausnummer" size="5" maxlength="10"
+							placeholder="lediglich ihre Hausnummer " required>
 
 					</p>
 					<p>
@@ -80,33 +81,32 @@
 					<p>
 
 						<label for="ortreg">Ort:</label> <input type="text" id="ortreg"
-							name="ort" size="30" maxlength="40" placeholder="Ihr Wohnort" required>
+							name="ort" size="30" maxlength="40" placeholder="Ihr Wohnort"
+							required>
 					</p>
 					<p>
 						<label for="landreg">Land:</label> <input type="text" id="landreg"
-							name="land" size="30" maxlength="40" placeholder="Land ihres Wohnsitzes" required>
+							name="land" size="30" maxlength="40"
+							placeholder="Land ihres Wohnsitzes" required>
 
 					</p>
 					<p>
-						<label for="profilBild"> Profilbild hochladen</label> <input
-							type="file" name="profilBild" id="profilBild" accept="image/*" required>
-						<label for="profilBild"></label>
+						<label for="profilBild"> Profilbild hochladen:</label> <input
+							type="file" name="profilBild" id="profilBild" accept="image/*"
+							required> <label for="profilBild"></label>
 					</p>
 				</fieldset>
 			</div>
 
 
 			<div>
-				<!--  wozu braucht man die ID?  -->
 				<p>
-					<button type="submit" name="registr_button" id="registr_button">
-						Registrierung abschliessen</button>
+					<button type="submit" name="registr_button" id="registr_button"
+						onclick="pruefereg()">Registrierung abschliessen</button>
 				</p>
 				<!-- <p>	<button type="reset" id="registr_button_reset"> Zurücksetzen</button> </p>-->
 			</div>
 		</form>
-
-	</section>
 
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
