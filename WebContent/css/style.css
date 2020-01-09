@@ -565,3 +565,7 @@ form#kategorie button {
 .hidden{
 	display: none;
 }
+
+.show{
+	display: inline;
+}

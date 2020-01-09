@@ -182,8 +182,7 @@
 							</select></td>
 							<td>
 								<button type="submit" name="loeschen">löschen</button>
-								<button type="reset" name="abbrechen"
-									onClick="hideDeleteArtikel()">abbrechen</button>
+								<button type="reset" name="abbrechen" onClick="hideDeleteArtikel()">abbrechen</button>
 							</td>
 						</tr>
 					</tbody>
