@@ -57,8 +57,12 @@
 			<br> <label for="suchleiste"></label>
 			<form action="SucheServlet" method="get">
 				<input type="search" name="artikelbezeichnung" id="suchleiste"
-					placeholder="Suche deinen Liebling...">
+					placeholder="Suche deinen Liebling..." >
 			</form>
+<!-- 			<div class="search-icon"> -->
+<!-- 			<img  src="img/search.png" alt="sucheLogo"> -->
+<!-- 			<a href=SucheServlet></a> -->
+<!-- 			</div> -->
 		</div>
 
 

@@ -18,11 +18,12 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 
-		<form action="../RegistrServlet" id="registrierung" method="post"
-			enctype="multipart/form-data">
-			<h1>Registrierung</h1>
+	<div id="">
+		<h1>Registrierung</h1>
 
-			<div id="registr">
+		<div id="registr">
+			<form action="../RegistrServlet" id="regform" method="post"
+				enctype="multipart/form-data">
 				<fieldset>
 					<p>
 						Herr <input type="radio" name="geschlecht" id="malereg"
@@ -43,7 +44,7 @@
 					<p>
 						<label for="nachnamereg">Nachname: </label> <input type="text"
 							id="nachnamereg" name="nachname" size="25" maxlength="40"
-							placeholder="Mustermann" required>
+							placeholder="Mustermann" required> <label id="pruefnn"></label>
 					</p>
 					<p>
 						<label for="vornamereg">Vorname: </label> <input type="text"
@@ -74,8 +75,8 @@
 
 					</p>
 					<p>
-						<label for="plzreg">Postleitzahl:</label> <input type="number"
-							id="plzreg" size="5" minlength="5" maxlength="5"
+						<label for="plzreg">Postleitzahl:</label> <input type="text"
+							id="plzreg" size="5" maxlength="5"
 							name="postleitzahl" placeholder="5-stellige PLZ" required>
 					</p>
 					<p>
@@ -96,17 +97,22 @@
 							required> <label for="profilBild"></label>
 					</p>
 				</fieldset>
-			</div>
+				<div>
+					<p>
+						<button type="submit" name="registr_button" id="registr_button">
+							<!-- 						onclick="pruefereg()" -->
+							Registrierung abschliessen
+						</button>
+					</p>
+					<!-- <p>	<button type="reset" id="registr_button_reset"> Zurücksetzen</button> </p>-->
+
+				</div>
+			</form>
+		</div>
 
 
-			<div>
-				<p>
-					<button type="submit" name="registr_button" id="registr_button"
-						onclick="pruefereg()">Registrierung abschliessen</button>
-				</p>
-				<!-- <p>	<button type="reset" id="registr_button_reset"> Zurücksetzen</button> </p>-->
-			</div>
-		</form>
+
+	</div>
 
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
