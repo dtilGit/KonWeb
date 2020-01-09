@@ -52,7 +52,7 @@
 							placeholder="Max" required>
 					</p>
 					<p>
-						<label for="emailreg">E-Mail: </label> <input type="email"
+						<label for="emailreg">E-Mail: </label> <input type="text" <%--eigentlich mail--%>
 							id="emailreg" name="email" size="25" maxlength="40"
 							placeholder="max.mustermann@web.de" required>
 					</p>
