@@ -18,8 +18,8 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
+
 	<h1>Login</h1>
-	<section>
 		<div id="logform">
 
 			<form action="../LoginServlet" method="post" id="login">
@@ -47,7 +47,6 @@
 			Noch nicht registriert? Dann registriere dich doch <a href="registrierung.jsp">hier</a> :)
 		</p>
 
-	</section>
 
 
 	<%@ include file="../jspf/footer.jspf"%>

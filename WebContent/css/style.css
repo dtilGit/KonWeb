@@ -7,6 +7,7 @@ body {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
+
 h1 {
 	color: #777;
 	text-decoration: none;
@@ -37,6 +38,10 @@ a:hover {
 
 input {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+label {
+	display:block;
 }
 
 ul.impinfos, li.impinfos {
@@ -177,26 +182,24 @@ header {
 	padding: 5px;
 }
 
-#email {
+#email, #passwort {
 	border: 2px solid #999;
 	border-radius: 0.5em;
-	margin-left: 40px;
-	margin-bottom: 5px;
+	margin: 5px 20px 5px 20px;
 	font-size: 12px;
-	width: 15em;
+	width: 30%;
 	transition: width 0.5s ease-in-out;
 	height: 30px;
 	padding: 5px;
 	padding-left: 10px;
 }
 
-#passwort {
+#titel, #nachname, #vorname, #strasse, #hausnummer, #postleitzahl, #ort, #land{
 	border: 2px solid #999;
 	border-radius: 0.5em;
-	margin-left: 20px;
-	margin-bottom: 5px;
+	margin: 5px 20px 5px 20px;
 	font-size: 12px;
-	width: 15em;
+	width: 50%;
 	transition: width 0.5s ease-in-out;
 	height: 30px;
 	padding: 5px;
@@ -204,13 +207,33 @@ header {
 }
 
 #titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #strassereg,
-	#hausnrreg, #plzreg, #ortreg, #landreg {
+	#hausnrreg, #plzreg, #ortreg, #landreg{
 	border: 2px solid #999;
 	border-radius: 0.5em;
-	margin-left: 20px;
-	margin-bottom: 5px;
+	margin: 5px 20px 5px 20px;
 	font-size: 12px;
-	width: 15em;
+	width: 50%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+input#profilBild {
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 30%;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+select#titelreg, #titel {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 10%;
 	transition: width 0.5s ease-in-out;
 	height: 30px;
 	padding: 5px;
@@ -241,7 +264,7 @@ header {
 section {
 	width: 800px;
 	float: left;
-	margin-top: 50px;
+	margin-top: 30px;
 	margin-bottom: 80px;
 }
 

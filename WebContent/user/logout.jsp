@@ -18,9 +18,9 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<p>Sie haben sich erfolgreich abgemeldet!</p>
+	<h2>Sie haben sich erfolgreich abgemeldet!</h2>
 	<p>
-		Hier geht's zur Anmeldung <a href="login.jsp">LOGIN</a>
+		<a href="login.jsp">Hier</a> geht's zur erneuten Anmeldung!
 	</p>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>

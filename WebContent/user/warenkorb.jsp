@@ -70,9 +70,9 @@
 							<fieldset>
 							<legend>Mit welchem Anbieter soll ihr Paket versendet werden:</legend>
 								<p> 
-									<label for="hermes">Hermes</label> <input type="radio"
+									Hermes <input type="radio"
 										name="lieferant" id="hermes" value="Hermes" required>
-									<label for="dhl">DHL</label> <input type="radio"
+									DHL <input type="radio"
 										name="lieferant" id="dhl" value="DHL" required>
 								</p>
 							</fieldset>
