@@ -118,7 +118,7 @@
 
 	<!--Artikel hinzufügen -->
 	<div class="hidden" id="artikelHinzufuegen">
-		<form method="post" enctype="multipart/form-data"
+		<form method="post" enctype=""multipart/form-data"
 			action="../ArtikelHinzufuegen">
 			<table class="admintable" id="ArtikelHinzufuegen">
 				<thead>
@@ -136,7 +136,7 @@
 
 
 						<td><input type="number" id="preis" name="preis" min="0.01"
-							max="1000.00" placeholder="z.B. 15,99" step="0.01" required>
+							max="1000.00" placeholder="z.B. 15.99" step="0.01" required>
 						</td>
 
 
