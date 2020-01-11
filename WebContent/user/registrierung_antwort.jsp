@@ -20,11 +20,11 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Registrierung ist erfolgt!</h1>
-	<h2>Hallo ${regform.vorname} ${regform.nachname} !!! Du hast dich erfolgreich bei Tods registriert. Viel
+	<h2>Hallo ${regform.vorname} ${regform.nachname}! Du hast dich erfolgreich bei Tods registriert. Viel
 		Spaß beim Shoppen!</h2>
 	<br>
 	<p>
-		Hier geht's zur Anmeldung >> <a href="login.jsp"> LOGIN </a>
+		<a href="login.jsp">Hier</a>geht's zur Anmeldung! 
 	</p>
 
 		<%@ include file="../jspf/footer.jspf"%>
