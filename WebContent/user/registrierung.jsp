@@ -12,7 +12,7 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
 <!-- <script type="text/javascript" src="../js/profilbild.js"></script> -->
-<script type="text/javascript" src="../js/script.js"></script>
+<script type="text/javascript" src="../js/script.js"></script> 
 <title>Registrierung</title>
 </head>
 <body>
@@ -52,15 +52,23 @@
 							placeholder="Max" required>
 					</p>
 					<p>
-						<label for="emailreg">E-Mail: </label> <input type="text" <%--eigentlich mail--%>
-							id="emailreg" name="email" size="25" maxlength="40"
-							placeholder="max.mustermann@web.de" required>
+						<label for="emailreg">E-Mail: </label> <input type="text"
+							<%--eigentlich mail--%>
+							id="emailreg" name="email"
+							size="25" maxlength="40" placeholder="max.mustermann@web.de"
+							required>
 					</p>
 					<p>
 						<label for="pwreg">Passwort: </label> <input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
-							placeholder="min. 10 Zeichen, Groß- und Kleinbuchstaben sowie Zahlen"
-							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(10,)" required>
+							placeholder="min. 6 Zeichen, Groß- und Kleinbuchstaben sowie Zahlen"
+							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required>
+					</p>
+					<p>
+						<label for="pwreg2">Passwort wiederholen:</label> <input type="password" 
+							name="passwort2" id="pwreg2" size="25" maxlength="40" 
+							placeholder="min. 6 Zeichen,  Groß- und Kleinbuchstaben sowie Zahlen"
+							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required>
 					</p>
 					<p>
 
@@ -75,9 +83,10 @@
 
 					</p>
 					<p>
+					<!--Bei Nummer min- und maxlenght, sowie size nicht erlaubt; haben diese irgendwelche Auswirkungen auf die Funktionalität von JS?? -->
 						<label for="plzreg">Postleitzahl:</label> <input type="text"
-							id="plzreg" size="5" maxlength="5"
-							name="postleitzahl" placeholder="5-stellige PLZ" required>
+							id="plzreg" size="5" maxlength="5" name="postleitzahl"
+							placeholder="5-stellige PLZ" required>
 					</p>
 					<p>
 

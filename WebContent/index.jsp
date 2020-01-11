@@ -97,7 +97,7 @@
 						<div class="dropdown-content">
 							<a href=user/profilansehen.jsp>Ihr Profil</a> <a
 								href=LogoutServlet>Logout</a>
-						</div>
+						</div> 
 					</c:if>
 					<c:if test="${login.admin == 1}">
 						<button class="profil">
