@@ -33,11 +33,11 @@ function hideAddArtikel() {
 }
 
 function showDeleteArtikel() {
-	document.getElementById('artikelLoeschen').className = "show";
+	document.getElementById('artikelEntfernen').className = "show";
 }
 
 function hideDeleteArtikel() {
-	document.getElementById('artikelLoeschen').className = "hidden";
+	document.getElementById('artikelEntfernen').className = "hidden";
 }
 
 function showAddKategorie() {

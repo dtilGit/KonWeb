@@ -603,6 +603,14 @@ form#kategorie button {
 	display: inline;
 }
 
+.adminShowButton{
+	width: 300px;
+}
+
+table.admintable{
+	width: 62%;
+}
+
 div#lieferanten{
 	margin: 15px;
 
