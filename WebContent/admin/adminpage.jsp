@@ -10,6 +10,7 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script type="text/javascript" src="../js/showAndHide.js"></script>
+<script type="text/javascript" src="../js/checkprice.js"></script>
 <title>Adminpage</title>
 </head>
 <body>
@@ -42,7 +43,7 @@
 
 	<!--Artikelübersicht -->
 	<div class="hidden" id="artikeluebersicht">
-		<table class="admintable" id="Artikeluebersicht">
+		<table id="Artikeluebersicht">
 			<thead>
 				<tr>
 					<th>Artikel-ID</th>
@@ -75,7 +76,7 @@
 
 	<!--Kategorieübersicht -->
 	<div class="hidden" id="kategorieuebersicht">
-		<table class="admintable" id="Kategorieuebersicht">
+		<table id="Kategorieuebersicht">
 			<thead>
 				<tr>
 					<th>Kategorie-ID</th>
@@ -118,9 +119,10 @@
 
 	<!--Artikel hinzufügen -->
 	<div class="hidden" id="artikelHinzufuegen">
-		<form method="post" enctype=""multipart/form-data"
+
+		<form method="post" id="addArticle" enctype="multipart/form-data"
 			action="../ArtikelHinzufuegen">
-			<table class="admintable" id="ArtikelHinzufuegen">
+			<table id="ArtikelHinzufuegen">
 				<thead>
 					<tr>
 						<th>Artikelbezeichnung</th>
@@ -163,7 +165,7 @@
 	<div class="hidden" id="artikelEntfernen">
 		<form action="../ArtikelLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="ArtikelLoeschen">
+			<table id="ArtikelLoeschen">
 				<thead>
 					<tr>
 						<th>Artikel-ID, Artikelbezeichnung</th>
@@ -187,8 +189,44 @@
 		</form>
 	</div>
 
+
+	<!-- 		<!--Artikel -->
+	<!-- 		<!--Artikel bearbeiten button -->
+	<!-- 		<h2>Artikel bearbeiten</h2> -->
+	<!-- 		<button type="button" id="artikel_add" onClick="showAddArtikel()"> -->
+	<!-- 			neuen Artikel hinzufügen</button> -->
+	<!-- 		<button type="button" id="artikel_delete" -->
+	<!-- 			onClick="document.getElementById('artikelLoeschen').style.display='inline';"> -->
+	<!-- 			Artikel löschen</button> -->
+	<!-- 		<br> -->
+
+	<!-- 		<!--Artikel hinzufügen -->
+	<!-- 		<div class="hidden" id="artikelHinzufuegen"> -->
+	<!-- 			<form method="post" id="addArticle" enctype="multipart/form-data" -->
+	<!-- 				action="../ArtikelHinzufuegen"> -->
+	<!-- 				<table id="ArtikelHinzufuegen"> -->
+	<!-- 					<thead> -->
+	<!-- 						<tr> -->
+	<!-- 							<th>Artikelbezeichnung</th> -->
+	<!-- 							<th>Preis(€)</th> -->
+	<!-- 							<th>Kategorie</th> -->
+	<!-- 							<th>Bild</th> -->
+	<!-- 							<th>Buttons</th> -->
+	<!-- 						</tr> -->
+	<!-- 					</thead> -->
+	<!-- 					<tbody> -->
+	<!-- 						<tr> -->
+	<!-- 							<td><input type="text" name="art_bez" maxlength="15" -->
+	<!-- 								placeholder="Bezeichnung des Artikels" required></td> -->
+
+
+	<!-- 							<td><input type="number" id="preis" name="preis" min="0.01" -->
+	<!-- 								max="1000.00" placeholder="z.B. 15,99" step="0.01" required> -->
+	<!-- 							</td> -->
+
 	<!-- Kategorien -->
 	<h2>Kategorien bearbeiten</h2>
+
 
 	<!-- Kategorien bearbeiten button -->
 	<button type="button" class="adminShowButton" id="neue_kategorie"
@@ -201,7 +239,7 @@
 	<div class="hidden" id="kategorieHinzufuegen">
 		<form action="../KategorieHinzufuegen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="KategorieHinzufuegen">
+			<table id="KategorieHinzufuegen">
 				<thead>
 					<tr>
 						<th>Kategoriebezeichnung</th>
@@ -230,7 +268,7 @@
 	<div class="hidden" id="kategorieLoeschen">
 		<form action="../KategorieLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="KategorieLoeschen">
+			<table id="KategorieLoeschen">
 				<thead>
 					<tr>
 						<th>Kategoriebezeichnung, Geschlecht</th>

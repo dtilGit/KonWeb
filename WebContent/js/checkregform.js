@@ -107,6 +107,7 @@ function checkemail(event){
 function checkpasswort(event){
 	var pw = document.getElementById("pwreg").value;
 	//var passwort = /(?=.*[a-z])(?=.*[A-Z]){6,10}/;
+	//Überprüfen wegen maxLänge
 	var passwort = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,10}/;
 	
 	if(pw.match(passwort)){
@@ -123,7 +124,7 @@ function formatPruefen(event){
 	//die Endung der Bildbezeichnung rauslesen 
 	var bild2 = bild1.substring(bild1.lastIndexOf("."), bild1.length);
 	
-	if(bild2 === "jpg" || bild2 === "png" || bild2 === "jpeg" || bild2 === "JPG" || bild2 === "JPEG" || bild2 === "PNG"){
+	if(bild2 === ".jpg" || bild2 === ".png" || bild2 === ".jpeg" || bild2 === ".JPG" || bild2 === ".JPEG" || bild2 === ".PNG"){
 	}
 	else{
 		alert("Es werden nur Bilder im Format: jpg, jpeg oder png unterstützt.");
