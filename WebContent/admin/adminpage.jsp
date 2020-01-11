@@ -42,7 +42,7 @@
 
 	<!--Artikelübersicht -->
 	<div class="hidden" id="artikeluebersicht">
-		<table class="admintable" id="Artikeluebersicht">
+		<table id="Artikeluebersicht">
 			<thead>
 				<tr>
 					<th>Artikel-ID</th>
@@ -75,7 +75,7 @@
 
 	<!--Kategorieübersicht -->
 	<div class="hidden" id="kategorieuebersicht">
-		<table class="admintable" id="Kategorieuebersicht">
+		<table id="Kategorieuebersicht">
 			<thead>
 				<tr>
 					<th>Kategorie-ID</th>
@@ -120,7 +120,7 @@
 	<div class="hidden" id="artikelHinzufuegen">
 		<form method="post" enctype="multipart/form-data"
 			action="../ArtikelHinzufuegen">
-			<table class="admintable" id="ArtikelHinzufuegen">
+			<table id="ArtikelHinzufuegen">
 				<thead>
 					<tr>
 						<th>Artikelbezeichnung</th>
@@ -163,7 +163,7 @@
 	<div class="hidden" id="artikelEntfernen">
 		<form action="../ArtikelLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="ArtikelLoeschen">
+			<table id="ArtikelLoeschen">
 				<thead>
 					<tr>
 						<th>Artikel-ID, Artikelbezeichnung</th>
@@ -201,7 +201,7 @@
 	<div class="hidden" id="kategorieHinzufuegen">
 		<form action="../KategorieHinzufuegen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="KategorieHinzufuegen">
+			<table id="KategorieHinzufuegen">
 				<thead>
 					<tr>
 						<th>Kategoriebezeichnung</th>
@@ -230,7 +230,7 @@
 	<div class="hidden" id="kategorieLoeschen">
 		<form action="../KategorieLoeschen" method="get"
 			enctype="multipart/form-data">
-			<table class="admintable" id="KategorieLoeschen">
+			<table id="KategorieLoeschen">
 				<thead>
 					<tr>
 						<th>Kategoriebezeichnung, Geschlecht</th>
