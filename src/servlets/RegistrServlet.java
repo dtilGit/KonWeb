@@ -35,16 +35,6 @@ public class RegistrServlet extends HttpServlet {
 	@Resource(lookup = "java:jboss/datasources/MySqlThidbDS")
 	DataSource ds;
 
-//	// Warum kommt ein Fehler "HTTP Status 405 - HTTP method GET is not supported by
-//	// this URL", wenn diese Methode fehlt?
-//	// trotzdem, dass die doPost-Methode verwendet werden soll
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//		System.out.println("=== in get ==");
-//		// this.doPost(request,response);}
-//		doPost(request, response);
-//	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -61,6 +51,7 @@ public class RegistrServlet extends HttpServlet {
 		regform.setVorname(request.getParameter("vorname"));
 		regform.setEmail(request.getParameter("email"));
 		regform.setPasswort(request.getParameter("passwort"));
+		regform.setPasswort2(request.getParameter("passwort2"));
 		regform.setStrasse(request.getParameter("strasse"));
 		regform.setHausnummer(request.getParameter("hausnummer"));
 		regform.setPostleitzahl(request.getParameter("postleitzahl"));
@@ -72,7 +63,7 @@ public class RegistrServlet extends HttpServlet {
 		Part filepart = request.getPart("profilBild");
 		String contenttype = filepart.getContentType();
 		regform.setBildname(filepart.getSubmittedFileName());
-		
+
 		session.setAttribute("regform", regform);
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); InputStream in = filepart.getInputStream()) {
 			int i = 0;
@@ -94,57 +85,53 @@ public class RegistrServlet extends HttpServlet {
 		try (Connection con = ds.getConnection();
 				PreparedStatement psmt = con.prepareStatement("SELECT * FROM thidb.kunde WHERE email = ?")) {
 			psmt.setString(1, regform.getEmail());
-			try (ResultSet rs = psmt.executeQuery();) {
-
-				System.out.println("=== in try select ==");
-
+			try (ResultSet rs = psmt.executeQuery();) {				
 				if (!rs.next()) {
-					String[] generatedKeys = new String[] { "id" };
-
-					System.out.println("=== in if 1 ==");
-
-				PreparedStatement pstmt2 = con.prepareStatement(
-									"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin, bildname, bild ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-									generatedKeys); {
-
-						System.out.println("=== in try insert ==");
-
-						// Zugriff über Klasse java.sql.PreparedStatement
-						pstmt2.setString(1, regform.getGeschlecht());
-						pstmt2.setString(2, regform.getTitel());
-						pstmt2.setString(3, regform.getNachname());
-						pstmt2.setString(4, regform.getVorname());
-						pstmt2.setString(5, regform.getEmail());
-						pstmt2.setString(6, regform.getPasswort());
-						pstmt2.setString(7, regform.getStrasse());
-						pstmt2.setString(8, regform.getHausnummer());
-						pstmt2.setString(9, regform.getPostleitzahl());
-						pstmt2.setString(10, regform.getOrt());
-						pstmt2.setString(11, regform.getLand());
-						pstmt2.setInt(12, regform.getAdmin());
-						pstmt2.setString(13, regform.getBildname());
-						pstmt2.setBytes(14, regform.getBild());
-						pstmt2.executeUpdate();
-
-						System.out.println("=== in try insert ==");
-
-						dispatcher = request.getRequestDispatcher("../user/registrierung_antwort.jsp");
+					if (!passwortPruefen(regform.getPasswort(), regform.getPasswort2())) {
+						regform.setEmail(null);
+						dispatcher = request.getRequestDispatcher("../user/fehlerPasswort.jsp");
 						dispatcher.forward(request, response);
+					} else {
+						String[] generatedKeys = new String[] { "id" };
 
-//						try (ResultSet rs2 = pstmt2.getGeneratedKeys()) {
-//							while (rs2.next()) {
-//								regform.setId(rs.getInt(1));
-//							}
-//						}
+						System.out.println("=== in if 1 ==");
+
+						PreparedStatement pstmt2 = con.prepareStatement(
+								"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin, bildname, bild ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+								generatedKeys);
+						{
+							System.out.println("=== in try insert ==");
+							pstmt2.setString(1, regform.getGeschlecht());
+							pstmt2.setString(2, regform.getTitel());
+							pstmt2.setString(3, regform.getNachname());
+							pstmt2.setString(4, regform.getVorname());
+							pstmt2.setString(5, regform.getEmail());
+							pstmt2.setString(6, regform.getPasswort());
+							pstmt2.setString(7, regform.getStrasse());
+							pstmt2.setString(8, regform.getHausnummer());
+							pstmt2.setString(9, regform.getPostleitzahl());
+							pstmt2.setString(10, regform.getOrt());
+							pstmt2.setString(11, regform.getLand());
+							pstmt2.setInt(12, regform.getAdmin());
+							pstmt2.setString(13, regform.getBildname());
+							pstmt2.setBytes(14, regform.getBild());
+							pstmt2.executeUpdate();
+
+							System.out.println("=== in try insert ==");
+
+							dispatcher = request.getRequestDispatcher("../user/registrierung_antwort.jsp");
+							dispatcher.forward(request, response);
+						}
 					}
-				} else if (rs.next()) {
+				} else {
+					 //if (rs.next())
 					System.out.println("=== in elseif ===");
 					regform.setEmail(null);
 					dispatcher = request.getRequestDispatcher("../user/fehlerEmail.jsp");
 					dispatcher.forward(request, response);
+
 				}
 			} catch (Exception ex) {
-				System.out.println("=== in exception ==");
 				throw new ServletException(ex.getMessage());
 			}
 
@@ -153,6 +140,14 @@ public class RegistrServlet extends HttpServlet {
 		} catch (Exception e) {
 			System.out.println("=== in exception stacktrace ==");
 			e.printStackTrace();
+		}
+	}
+
+	protected boolean passwortPruefen(String passwort, String passwort2) throws ServletException {
+		if (passwort.equals(passwort2)) {
+			return true;
+		} else {
+			return false;
 		}
 	}
 
