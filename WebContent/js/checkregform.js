@@ -117,7 +117,7 @@ function checkpasswort(event){
 	if(pw.match(passwort)){
 		alert("PW passt");
 	}else{
-		alert("Das Passwort muss min. eine Zahl und ein Sonderzeichen enthalten sowie aus min. 6 und max. 10 Zeichen bestehen.");
+		alert("Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen.");
 		event.preventDefault();
 		return;
 	}

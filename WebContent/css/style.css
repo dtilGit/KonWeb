@@ -243,6 +243,13 @@ select#titelreg, #titel {
 	font-size: 24px;
   	width: 20%;
 }*/
+
+#pwvorgabe{
+	font-size: 10px;
+	color: #6E6E6E;
+	margin-left: 20px;
+	
+}
 .icon {
 	width: 50px;
 	height: 50px;

@@ -62,10 +62,11 @@
 						<label for="pwreg">Passwort: </label> <input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
 							placeholder="min. 6 Zeichen, Groß- und Kleinbuchstaben sowie Zahlen"
-							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required>
+							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required><br>
+							
 					</p>
 					<p>
-						<label for="pwreg2">Passwort wiederholen:</label> <input type="password" 
+						<label for="pwreg2">Passwort wiederholen:</label><div id="pwvorgabe">Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Muss aus min. 6 und max. 10 Zeichen bestehen. </div> <input type="password" 
 							name="passwort2" id="pwreg2" size="25" maxlength="40" 
 							placeholder="min. 6 Zeichen,  Groß- und Kleinbuchstaben sowie Zahlen"
 							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required>

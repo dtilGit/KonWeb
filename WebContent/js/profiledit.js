@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", init);
 function init() {
 	var datenform = document.getElementById("profilbearbeiten");
 	datenform.addEventListener("submit", editprofil);
+	datenform.addEventListener("submit", formatPruefen);
 }
 
 // hier wird das Register Form auf Eingaben geprüft
@@ -20,7 +21,7 @@ function editprofil(event) {
 	var land = document.getElementById("land").value;
 	//var onlyletters = /^[A-Za-zß-ü\s]+$/;
 
-	var sonderzeichen = /\W+/;
+	var sonderzeichen =/[\W+]^[ÄäÖöÜüß+]/;
 	var zahlen = /\d/;
 	var keinebuchstaben = /\D/;
 	// Bedingung für Mail
@@ -85,4 +86,19 @@ function editprofil(event) {
 //		alert("Sie haben ihre Daten erfolgreich eingepflegt!");
 	}
 
+}
+
+function formatPruefen(event){
+	var bild1 = document.getElementById("profilBild").value;
+	//die Endung der Bildbezeichnung rauslesen 
+	var bild2 = bild1.substring(bild1.lastIndexOf("."), bild1.length);
+	
+	if(bild2 === ".jpg" || bild2 === ".png" || bild2 === ".jpeg" || bild2 === ".JPG" || bild2 === ".JPEG" || bild2 === ".PNG"){
+	}
+	else{
+		alert("Es werden nur Bilder im Format: jpg, jpeg oder png unterstützt.");
+		//zum Verhindern des Uploads
+		event.preventDefault();
+		return;
+	}
 }
