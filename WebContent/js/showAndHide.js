@@ -9,49 +9,49 @@
  * showArtikeluebersicht);
  */
 function showArtikeluebersicht() {
-	document.getElementById("artikeluebersicht").style.display = "inline";
+	document.getElementById("artikeluebersicht").className = "show";
 }
 
 function hideArtikeluebersicht() {
-	document.getElementById('artikeluebersicht').style.display = 'none';
+	document.getElementById('artikeluebersicht').className = "hidden";
 }
 
 function showKategorieuebersicht() {
-	document.getElementById('kategorieuebersicht').style.display = 'inline';
+	document.getElementById('kategorieuebersicht').className = "show";
 }
 
 function hideKategorieuebersicht() {
-	document.getElementById('kategorieuebersicht').style.display = 'none';
+	document.getElementById('kategorieuebersicht').className = "hidden";
 }
 
 function showAddArtikel() {
-	document.getElementById('artikelHinzufuegen').style.display = 'inline';
+	document.getElementById('artikelHinzufuegen').className = "show";
 }
 
 function hideAddArtikel() {
-	document.getElementById('artikelHinzufuegen').style.display = 'none';
+	document.getElementById('artikelHinzufuegen').className = "hidden";
 }
 
 function showDeleteArtikel() {
-	document.getElementById('artikelLoeschen').style.display = 'inline';
+	document.getElementById('artikelEntfernen').className = "show";
 }
 
 function hideDeleteArtikel() {
-	document.getElementById('artikelLoeschen').style.display = 'none';
+	document.getElementById('artikelEntfernen').className = "hidden";
 }
 
 function showAddKategorie() {
-	document.getElementById('kategorieHinzufuegen').style.display = 'inline';
+	document.getElementById('kategorieHinzufuegen').className = "show";
 }
 
 function hideAddKategorie() {
-	document.getElementById('kategorieHinzufuegen').style.display = 'none';
+	document.getElementById('kategorieHinzufuegen').className = "hidden";
 }
 
 function showDeleteKategorie() {
-	document.getElementById('kategorieLoeschen').style.display = 'inline';
+	document.getElementById('kategorieLoeschen').className = "show";
 }
 
 function hideDeleteKategorie() {
-	document.getElementById('kategorieLoeschen').style.display = 'none';
+	document.getElementById('kategorieLoeschen').className = "hidden";
 }

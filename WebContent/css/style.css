@@ -599,6 +599,15 @@ form#kategorie button {
 	display: none;
 }
 
+.show{
+	display: inline;
+}
+
+.adminShowButton{
+	width: 300px;
+}
+
 div#lieferanten{
 	margin: 15px;
+
 }
