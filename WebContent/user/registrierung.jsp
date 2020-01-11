@@ -11,7 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<!-- <script type="text/javascript" src="../js/profilbild.js"></script> -->
+<script type="text/javascript" src="../js/profilbild.js"></script> 
 <script type="text/javascript" src="../js/checkregform.js"></script> 
 <title>Registrierung</title>
 </head>
