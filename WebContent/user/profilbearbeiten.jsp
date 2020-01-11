@@ -11,8 +11,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/profilbild.js"></script>
+<script type="text/javascript" src="../js/profiledit.js"></script>
+
 <title>Profildaten bearbeiten</title>
 </head>
 
@@ -44,10 +45,9 @@
 		<div>
 			<fieldset>
 				<p>
-					Herr
-					<input type="radio" name="geschlecht" id="Herr" value="Herr"
-						required> Frau <input
-						type="radio" name="geschlecht" id="Frau" value="Frau" required>
+					Herr <input type="radio" name="geschlecht" id="Herr" value="Herr"
+						required> Frau <input type="radio" name="geschlecht"
+						id="Frau" value="Frau" required>
 				</p>
 
 				<p>
@@ -99,11 +99,14 @@
 					<label for="profilBild"></label>
 				</p>
 			</fieldset>
+			<div>
+				<p>
+					<button type="submit" name="profiledit_submit"
+						id="profiledit_submit">Speichern</button>
+				</p>
+			</div>
 		</div>
-		<p>
-			<button type="submit" name="profiledit_submit" id="profiledit_submit"
-				onclick="pruefedaten()">Speichern</button>
-		</p>
+
 	</form>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>

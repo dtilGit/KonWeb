@@ -12,6 +12,7 @@ public class RegistrBean implements Serializable {
 	private String vorname;
 	private String email;
 	private String passwort;
+	private String passwort2;
 	private String strasse;
 	private String hausnummer;
 	private String postleitzahl;
@@ -95,6 +96,13 @@ public class RegistrBean implements Serializable {
 		this.passwort = passwort;
 	}
 
+	public String getPasswort2() {
+		return this.passwort2;
+	}
+
+	public void setPasswort2(String passwort2) {
+		this.passwort2 = passwort2;
+	}
 	public String getStrasse() {
 		return this.strasse;
 	}

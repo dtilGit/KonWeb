@@ -206,7 +206,7 @@ header {
 	padding-left: 10px;
 }
 
-#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #strassereg,
+#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #pwreg2, #strassereg,
 	#hausnrreg, #plzreg, #ortreg, #landreg{
 	border: 2px solid #999;
 	border-radius: 0.5em;
