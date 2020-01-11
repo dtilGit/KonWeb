@@ -10,6 +10,7 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 <script type="text/javascript" src="../js/showAndHide.js"></script>
+<script type="text/javascript" src="../js/checkprice.js"></script>
 <title>Adminpage</title>
 </head>
 <body>
@@ -115,7 +116,7 @@
 
 		<!--Artikel hinzufügen -->
 		<div class="hidden" id="artikelHinzufuegen">
-			<form method="post" enctype="multipart/form-data"
+			<form method="post" id="addArticle" enctype="multipart/form-data"
 				action="../ArtikelHinzufuegen">
 				<table id="ArtikelHinzufuegen">
 					<thead>
