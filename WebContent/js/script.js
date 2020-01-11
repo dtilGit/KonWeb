@@ -1,3 +1,6 @@
+/**
+ *David Häusler
+ */
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
 
@@ -56,7 +59,7 @@ function pruefereg(event) {
 		return;
 	} else if (postleitzahl.match(keinebuchstaben)
 			|| postleitzahl.match(sonderzeichen)) {
-		alert("Die Postleitzahl darf nur Zahlen enthalten und davon 5, um eine vollständige PLZ zu erhalten!");
+		alert("Die Postleitzahl darf nur Zahlen enthalten und davon genau 5, um eine vollständige PLZ zu erhalten!");
 		event.preventDefault();
 		return;
 	} else if (postleitzahl.length !=5) {
@@ -95,7 +98,7 @@ function checkemail(event){
 	if(email.match(emailzeichen)){
 		alert("Sie haben ihre Daten erfolgreich eingepflegt!");
 	}else{
-		alert("Die Email hat kein korrektes Format. Vor dem @ darf kein Sonderzeichen außer . - + stehen! Genauso wie hinter dem @! Zusätzlich muss ein . in deinem Domäne Part existieren!");
+		alert("Die Email hat kein korrektes Format. Vor dem @ darf kein Sonderzeichen außer . - stehen! Genauso wie hinter dem @! Zusätzlich muss ein . in deinem Domäne Part existieren!");
 		event.preventDefault();
 		return;
 	}
