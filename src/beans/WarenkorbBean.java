@@ -17,6 +17,7 @@ public class WarenkorbBean {
 			ges_preis = ges_preis + korbIter.getWk_art_preis();
 		}
 		preis = ges_preis + 3.99;
+		preis = Math.round(100.0 * preis) / 100.0;
 		return preis;
 	}
 	
@@ -58,6 +59,7 @@ public class WarenkorbBean {
 //		if (ges_preis < 60) {
 //			ges_preis = 3.99 + ges_preis;
 //		}
+		ges_preis = Math.round(100.0 * ges_preis) / 100.0;
 		return ges_preis;
 	}
 
@@ -78,7 +80,7 @@ public class WarenkorbBean {
 	}
 	 
 	//Korb leeren
-	//public void WarenkorbLeeren () {
-	// 	warenkorbList.clear();
-	//}
+	public void WarenkorbLeeren () {
+	 	warenkorbList.clear();
+	}
 }

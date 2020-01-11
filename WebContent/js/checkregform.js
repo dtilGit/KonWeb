@@ -107,11 +107,15 @@ function checkemail(event){
 function checkpasswort(event){
 	var pw = document.getElementById("pwreg").value;
 	//var passwort = /(?=.*[a-z])(?=.*[A-Z]){6,10}/;
-	//Überprüfen wegen maxLänge
-	var passwort = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,10}/;
+	//var passwort = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{6,10}/;
+	///^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[\w{6,10}]/;
+	//(?=.[A-Z]+)(?=.[a-z]+)(?=.\d+)
+	
+	//	\w= (word) ein Buchstabe, eine Ziffer oder Unterstrich
+	var passwort = /^[A-Za-z]\w{6,10}/;
 	
 	if(pw.match(passwort)){
-		
+		alert("PW passt");
 	}else{
 		alert("Das Passwort muss min. eine Zahl und ein Sonderzeichen enthalten sowie aus min. 6 und max. 10 Zeichen bestehen.");
 		event.preventDefault();

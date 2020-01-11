@@ -27,7 +27,7 @@ public class WarenkorbGroesse extends HttpServlet {
 		response.setContentType("UTF-8");
 
 		HttpSession session = request.getSession();
-		WarenkorbBean warenkorb = (WarenkorbBean) session.getAttribute("warenkorbB");
+		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
 		// was kommt an der Stelle in die ""??
 		Integer artikel_ID = (Integer.valueOf(request.getParameter("art_id")));
@@ -35,27 +35,27 @@ public class WarenkorbGroesse extends HttpServlet {
 		artikel.setArtikel_id(artikel_ID);
 		//String groesse = request.getParameter("groesse");
 
-		for (int i = 0; i < warenkorb.getWarenkorbList().size(); i++) {
-			WarenkorbArtikel wk = warenkorb.getWarenkorbList().get(i);
+		for (int i = 0; i < warenkorbB.getWarenkorbList().size(); i++) {
+			WarenkorbArtikel wk = warenkorbB.getWarenkorbList().get(i);
 			if (wk.getWk_artikel().getArtikel_id() == artikel.getArtikel_id()) {
-				wk.setWk_art_anzahl(Integer.valueOf(request.getParameter("menge")));
+				Integer menge = Integer.valueOf(request.getParameter("menge"));
+				if (menge>0) {
+					wk.setWk_art_anzahl(menge);
+				}else if(menge==0) {
+					wk.setWk_art_anzahl(menge);
+					wk.setWk_artikel(null);
+				}
 			}
+		
 		}
-		session.setAttribute("warenkorbB", warenkorb);
+		session.setAttribute("warenkorbB", warenkorbB);
 		if(kunde !=null) {
-			kunde.setWarenkorb(warenkorb);
+			kunde.setWarenkorb(warenkorbB);
 			session.setAttribute("login", kunde);
 		}
 		
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
-	
-
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//			throws ServletException, IOException {
-//
-//		doGet(request, response);
-//	}
 
 }

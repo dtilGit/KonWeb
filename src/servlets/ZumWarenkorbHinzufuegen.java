@@ -86,6 +86,8 @@ public class ZumWarenkorbHinzufuegen extends HttpServlet {
 			pruefen.setWk_art_anzahl(1);
 			wkorb_artikel.add(pruefen);
 		}
+		
+		
 
 		request.setAttribute("ges_preis", warenkorbB.getGes_preis());
 
