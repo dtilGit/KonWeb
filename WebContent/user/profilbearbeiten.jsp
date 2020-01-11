@@ -11,7 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<script type="text/javascript" src="../js/script.js"></script>
 <script type="text/javascript" src="../js/profilbild.js"></script>
 <script type="text/javascript" src="../js/profiledit.js"></script>
 
