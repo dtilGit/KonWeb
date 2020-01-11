@@ -9,6 +9,7 @@ function init() {
 	datenform.addEventListener("submit", pruefereg);
 	datenform.addEventListener("submit", checkemail);
 	datenform.addEventListener("submit", checkpasswort);
+	datenform.addEventListener("submit", formatPruefen);
 }
 
 // hier wird das Register Form auf Eingaben geprüft
@@ -116,6 +117,22 @@ function checkpasswort(event){
 		return;
 	}
 }
+
+function formatPruefen(event){
+	var bild1 = document.getElementById("profilBild").value;
+	//die Endung der Bildbezeichnung rauslesen 
+	var bild2 = bild1.substring(bild1.lastIndexOf("."), bild1.length);
+	
+	if(bild2 === "jpg" || bild2 === "png" || bild2 === "jpeg" || bild2 === "JPG" || bild2 === "JPEG" || bild2 === "PNG"){
+	}
+	else{
+		alert("Es werden nur Bilder im Format: jpg, jpeg oder png unterstützt.");
+		//zum Verhindern des Uploads
+		event.preventDefault();
+		return;
+	}
+}
+
 
 // document.addEventListener("DOMContentLoaded", pruefedaten);
 //
