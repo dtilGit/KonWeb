@@ -119,7 +119,7 @@
 
 	<!--Artikel hinzufügen -->
 	<div class="hidden" id="artikelHinzufuegen">
-		<form method="post" enctype="multipart/form-data"
+		<form method="post" id="addArticle" enctype="multipart/form-data"
 			action="../ArtikelHinzufuegen">
 			<table id="ArtikelHinzufuegen">
 				<thead>
@@ -189,39 +189,39 @@
 	</div>
 
 
-		<!--Artikel -->
-		<!--Artikel bearbeiten button -->
-		<h2>Artikel bearbeiten</h2>
-		<button type="button" id="artikel_add" onClick="showAddArtikel()">
-			neuen Artikel hinzufügen</button>
-		<button type="button" id="artikel_delete"
-			onClick="document.getElementById('artikelLoeschen').style.display='inline';">
-			Artikel löschen</button>
-		<br>
+<!-- 		<!--Artikel --> 
+<!-- 		<!--Artikel bearbeiten button --> 
+<!-- 		<h2>Artikel bearbeiten</h2> -->
+<!-- 		<button type="button" id="artikel_add" onClick="showAddArtikel()"> -->
+<!-- 			neuen Artikel hinzufügen</button> -->
+<!-- 		<button type="button" id="artikel_delete" -->
+<!-- 			onClick="document.getElementById('artikelLoeschen').style.display='inline';"> -->
+<!-- 			Artikel löschen</button> -->
+<!-- 		<br> -->
 
-		<!--Artikel hinzufügen -->
-		<div class="hidden" id="artikelHinzufuegen">
-			<form method="post" id="addArticle" enctype="multipart/form-data"
-				action="../ArtikelHinzufuegen">
-				<table id="ArtikelHinzufuegen">
-					<thead>
-						<tr>
-							<th>Artikelbezeichnung</th>
-							<th>Preis(€)</th>
-							<th>Kategorie</th>
-							<th>Bild</th>
-							<th>Buttons</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" name="art_bez" maxlength="15"
-								placeholder="Bezeichnung des Artikels" required></td>
+<!-- 		<!--Artikel hinzufügen --> 
+<!-- 		<div class="hidden" id="artikelHinzufuegen"> -->
+<!-- 			<form method="post" id="addArticle" enctype="multipart/form-data" -->
+<!-- 				action="../ArtikelHinzufuegen"> -->
+<!-- 				<table id="ArtikelHinzufuegen"> -->
+<!-- 					<thead> -->
+<!-- 						<tr> -->
+<!-- 							<th>Artikelbezeichnung</th> -->
+<!-- 							<th>Preis(€)</th> -->
+<!-- 							<th>Kategorie</th> -->
+<!-- 							<th>Bild</th> -->
+<!-- 							<th>Buttons</th> -->
+<!-- 						</tr> -->
+<!-- 					</thead> -->
+<!-- 					<tbody> -->
+<!-- 						<tr> -->
+<!-- 							<td><input type="text" name="art_bez" maxlength="15" -->
+<!-- 								placeholder="Bezeichnung des Artikels" required></td> -->
 
 
-							<td><input type="number" id="preis" name="preis" min="0.01"
-								max="1000.00" placeholder="z.B. 15,99" step="0.01" required>
-							</td>
+<!-- 							<td><input type="number" id="preis" name="preis" min="0.01" -->
+<!-- 								max="1000.00" placeholder="z.B. 15,99" step="0.01" required> -->
+<!-- 							</td> -->
 
 	<!-- Kategorien -->
 	<h2>Kategorien bearbeiten</h2>
