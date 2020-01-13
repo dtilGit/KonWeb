@@ -59,6 +59,7 @@ public class WarenkorbBean {
 //		if (ges_preis < 60) {
 //			ges_preis = 3.99 + ges_preis;
 //		}
+		//die Aufrundrechnung entnommen: https://java.soeinding.de/content.php/Runden_Auf_Kommastellen
 		ges_preis = Math.round(100.0 * ges_preis) / 100.0;
 		return ges_preis;
 	}
