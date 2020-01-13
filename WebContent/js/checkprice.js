@@ -1,4 +1,6 @@
-//Veronika Tschemodanov
+/**
+ *Veronika Tschemodanov + David Häusler
+ */
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
 

@@ -1,5 +1,5 @@
 /**
- * Veronika Tschemodanov
+ * Veronika Tschemodanov + David Häusler
  */
 
 "use strict";

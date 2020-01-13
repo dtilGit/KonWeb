@@ -1,3 +1,4 @@
+/**Veronika Tschemodanov**/
 package servlets;
 
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class AccountLoeschen extends HttpServlet {
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ?")) {
 			pstmt.setInt(1, kunden_id);
 			pstmt.executeUpdate();
-			System.out.println("==in try löschen==");
+			System.out.println("==in try lï¿½schen==");
 		}
 
 		catch (Exception ex) {

@@ -19,6 +19,10 @@
 //function cookieButton() {
 //	document.getElementById("cookiebox").className = "hidden";
 //}
+
+/**
+ *alle
+ */
 "use strict";
 document.addEventListener("DOMContentLoaded", init);
 
