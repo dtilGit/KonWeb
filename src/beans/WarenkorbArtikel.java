@@ -14,6 +14,12 @@ public class WarenkorbArtikel implements Serializable {
 	private Double wk_art_preis; 
 	private LinkedList<WarenkorbArtikel> warenkorbList;
 	
+//	public WarenkorbArtikel(Double wk_art_preis, Integer wk_art_anzahl, Integer artikel_id) {
+//		super();
+//		this.wk_art_preis = wk_art_preis;
+//		this.wk_art_anzahl = wk_art_anzahl;
+//		artikel_id = wk_artikel.getArtikel_id();
+//	}
 	
 	public Integer getWk_art_anzahl() {
 		return wk_art_anzahl;
@@ -62,5 +68,8 @@ public class WarenkorbArtikel implements Serializable {
 	public void WarenkorbLeeren () {
 		 	warenkorbList.clear();
 		}
+	public void Leeren() {
+		warenkorbList = null;
+	}
 	
 }

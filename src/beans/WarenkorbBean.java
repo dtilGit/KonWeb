@@ -84,4 +84,10 @@ public class WarenkorbBean {
 	public void WarenkorbLeeren () {
 	 	warenkorbList.clear();
 	}
+	
+	public void Leeren() {
+		warenkorbList = null;
+	}
+	
+
 }

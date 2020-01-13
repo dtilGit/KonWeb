@@ -65,6 +65,7 @@ public class BestellenServlet extends HttpServlet {
 			// überprüfen, ob funktioniert
 			
 			warenkorbB.getWarenkorbList().clear();
+			session.removeAttribute("warenkorbB");
 //			warenkorbB.WarenkorbLeeren();
 //			session.removeAttribute("warenkobB");
 			//request.getSession().invalidate();

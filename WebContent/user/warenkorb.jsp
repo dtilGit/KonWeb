@@ -65,7 +65,7 @@
 						<h2>Um die Artikel letztendlich zu bestellen ist ein Login
 							erforderlich!</h2>
 					</c:when>
-					<c:when test="${not empty sessionScope.login }">
+					<c:when test="${not empty sessionScope.login && not empty sessionScope.warenkorbB}">
 						<div id="lieferanten">
 							<fieldset>
 							<legend>Mit welchem Anbieter soll ihr Paket versendet werden:</legend>
@@ -87,7 +87,7 @@
 			</div>
 		</c:when>
 		<%-- 		<c:when test="${warenkorbB == NULL}"> --%>
-		<c:when test="${warenkorbB == null}">
+		<c:when test="${empty sessionScope.warenkorbB }">
 			<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
 
 		</c:when>
