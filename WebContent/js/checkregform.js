@@ -106,12 +106,12 @@ function checkemail(event){
 
 function checkpasswort(event){
 	var pw = document.getElementById("pwreg").value;
-	var passwort = /^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])[\w!@#$%^&*]{6,10}$/;
+	var passwort = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[\w!$%^&@#*]{6,10}$/;
 	
 	if(pw.match(passwort)){
-		alert("PW passt");
+//		alert("PW passt");
 	}else{
-		alert("Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen.");
+		alert("Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt.");
 		event.preventDefault();
 		return;
 	}
