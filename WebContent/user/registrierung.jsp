@@ -1,6 +1,7 @@
 <%-- Veronika Tschemodanov --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+//Veronika Tschemodanov
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page errorPage="errorpage.jsp"%>
 <%@ page isErrorPage="true"%>
@@ -11,8 +12,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<script type="text/javascript" src="../js/profilbild.js"></script> 
-<script type="text/javascript" src="../js/checkregform.js"></script> 
+<script type="text/javascript" src="../js/profilbild.js"></script>
+<script type="text/javascript" src="../js/checkregform.js"></script>
 <title>Registrierung</title>
 </head>
 <body>
@@ -61,15 +62,19 @@
 					<p>
 						<label for="pwreg">Passwort: </label> <input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
-							placeholder="min. 6 Zeichen, Groß- und Kleinbuchstaben sowie Zahlen"
-							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required><br>
-							
+							placeholder="Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt."
+							pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[\w!$%^&@#*]{6,10}"
+							required><br>
+
 					</p>
 					<p>
-						<label for="pwreg2">Passwort wiederholen:</label><div id="pwvorgabe">Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Muss aus min. 6 und max. 10 Zeichen bestehen. </div> <input type="password" 
-							name="passwort2" id="pwreg2" size="25" maxlength="40" 
-							placeholder="min. 6 Zeichen,  Groß- und Kleinbuchstaben sowie Zahlen"
-							pattern="(?=.*\) (?=.*[a-z]) (?=.*[A-Z]).(6,)" required>
+						<label for="pwreg2">Passwort wiederholen:</label>
+					<div id="pwvorgabe"></div>
+					<input type="password" name="passwort2" id="pwreg2" size="25"
+						maxlength="40"
+						placeholder="Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt."
+						pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[\w!$%^&@#*]{6,10}"
+						required>
 					</p>
 					<p>
 
@@ -84,7 +89,7 @@
 
 					</p>
 					<p>
-					<!--Bei Nummer min- und maxlenght, sowie size nicht erlaubt; haben diese irgendwelche Auswirkungen auf die Funktionalität von JS?? -->
+						<!--Bei Nummer min- und maxlenght, sowie size nicht erlaubt; haben diese irgendwelche Auswirkungen auf die Funktionalität von JS?? -->
 						<label for="plzreg">Postleitzahl:</label> <input type="text"
 							id="plzreg" size="5" maxlength="5" name="postleitzahl"
 							placeholder="5-stellige PLZ" required>

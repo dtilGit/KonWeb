@@ -619,3 +619,27 @@ div#lieferanten{
 	margin: 15px;
 
 }
+/*Kontakt*/
+#knt_betreff, #knt_nachname, #knt_vorname, #knt_email, #knt_grund{
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 50%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+#knt_nachricht{
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 50%;
+	transition: width 0.5s ease-in-out;
+	height: 200px;
+	padding: 5px;
+	padding-left: 10px;
+}

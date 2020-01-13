@@ -103,7 +103,9 @@ function checkemail(event){
 		return;
 	}
 }
-
+/**
+ *Veronika Tschemodanov
+ */
 function checkpasswort(event){
 	var pw = document.getElementById("pwreg").value;
 	var passwort = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[\w!$%^&@#*]{6,10}$/;

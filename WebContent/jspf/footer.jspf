@@ -1,30 +1,29 @@
 <!--David Häusler-->
 
-	<footer>
-		
-		<div class="footer-left">
-			<h1>TOD's BestCaps</h1>
-			<p>Unser Service 24/7:</p>
-		
-			<a href="tel:09131123987654">
-				<img class="small-icon"  alt="telefon" src="../img/telefon.png">
-				09131/123987654
-			</a>
-			
-			<br/>
-			<a href="mailto:info@todsbestcaps.de?subject=Eine%20Mail%20an%20Team%20TOD's%20BestCap">
-				<img class="small-icon"  alt="mail"  src="../img/mail.png">
-				info@todsbestcaps.de
-			</a>
-		</div>
+<footer>
+
+	<div class="footer-left">
+		<h1>TOD's BestCaps</h1>
+		<p>Unser Service 24/7:</p>
+
+		<a href="tel:09131123987654"> <img class="small-icon"
+			alt="telefon" src="../img/telefon.png"> 09131/123987654
+		</a> <br /> <a
+			href="mailto:info@todsbestcaps.de?subject=Eine%20Mail%20an%20Team%20TOD's%20BestCap">
+			<img class="small-icon" alt="mail" src="../img/mail.png">
+			info@todsbestcaps.de
+		</a> <br /> <a href="../user/kontakt.jsp"> <img class="small-icon"
+			alt="kontakt" src="../img/kontakt.png">Kontakt
+		</a>
+	</div>
 
 
-		<div class="footer-right">
-			<div id="impressumlink">
-				<a href="../user/impressum.jsp">Impressum</a>
-			</div>
-		
+	<div class="footer-right">
+		<div id="impressumlink">
+			<a href="../user/impressum.jsp">Impressum</a>
 		</div>
-		
-		
-	</footer>
+
+	</div>
+
+
+</footer>

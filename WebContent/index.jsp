@@ -57,12 +57,12 @@
 			<br> <label for="suchleiste"></label>
 			<form action="SucheServlet" method="get">
 				<input type="search" name="artikelbezeichnung" id="suchleiste"
-					placeholder="Suche deinen Liebling..." >
+					placeholder="Suche deinen Liebling...">
 			</form>
-<!-- 			<div class="search-icon"> -->
-<!-- 			<img  src="img/search.png" alt="sucheLogo"> -->
-<!-- 			<a href=SucheServlet></a> -->
-<!-- 			</div> -->
+			<!-- 			<div class="search-icon"> -->
+			<!-- 			<img  src="img/search.png" alt="sucheLogo"> -->
+			<!-- 			<a href=SucheServlet></a> -->
+			<!-- 			</div> -->
 		</div>
 
 
@@ -97,7 +97,7 @@
 						<div class="dropdown-content">
 							<a href=user/profilansehen.jsp>Ihr Profil</a> <a
 								href=LogoutServlet>Logout</a>
-						</div> 
+						</div>
 					</c:if>
 					<c:if test="${login.admin == 1}">
 						<button class="profil">
@@ -188,6 +188,8 @@
 					href="mailto:info@todsbestcaps.de?subject=eine%20Mail%20an%20Team%20TOD's%20BestCap">
 					<img class="small-icon" alt="mail" src="img/mail.png">
 					info@todsbestcaps.de
+				</a> <br /> <a href="user/kontakt.jsp"> <img class="small-icon"
+					alt="kontakt" src="img/kontakt.png">Kontakt
 				</a>
 			</div>
 
