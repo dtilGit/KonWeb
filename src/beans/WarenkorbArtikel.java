@@ -67,9 +67,5 @@ public class WarenkorbArtikel implements Serializable {
 	}
 	public void WarenkorbLeeren () {
 		 	warenkorbList.clear();
-		}
-	public void Leeren() {
-		warenkorbList = null;
-	}
-	
+		}	
 }

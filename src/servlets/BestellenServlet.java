@@ -40,7 +40,6 @@ public class BestellenServlet extends HttpServlet {
 		
 //		Integer kunde_ID;
 //		kunde_ID = kunde.getId();
-
 //		Double gesamtWert;
 //		gesamtWert = warenkorbB.getGes_preis();
 
@@ -67,8 +66,7 @@ public class BestellenServlet extends HttpServlet {
 			warenkorbB.getWarenkorbList().clear();
 			session.removeAttribute("warenkorbB");
 //			warenkorbB.WarenkorbLeeren();
-//			session.removeAttribute("warenkobB");
-			//request.getSession().invalidate();
+//			request.getSession().invalidate();
 						
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
@@ -78,13 +76,5 @@ public class BestellenServlet extends HttpServlet {
 			dispatcher2.forward(request, response);
 
 		}
-
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

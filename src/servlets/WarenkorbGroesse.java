@@ -2,7 +2,6 @@ package servlets;
 
 import java.io.IOException;
 
-import javax.faces.context.FacesContext;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +33,6 @@ public class WarenkorbGroesse extends HttpServlet {
 		Integer artikel_ID = (Integer.valueOf(request.getParameter("art_id")));
 		ArtikelBean artikel = new ArtikelBean();
 		artikel.setArtikel_id(artikel_ID);
-		// String groesse = request.getParameter("groesse");
 
 		for (int i = 0; i < warenkorbB.getWarenkorbList().size(); i++) {
 			WarenkorbArtikel wk = warenkorbB.getWarenkorbList().get(i);
@@ -44,27 +42,26 @@ public class WarenkorbGroesse extends HttpServlet {
 					wk.setWk_art_anzahl(menge);
 				} else if (menge == 0) {
 					wk.setWk_art_anzahl(menge);
-					//wk.Leeren();
+									
+//					wk.Leeren();
 //					wk.getWk_artikel().setArtikel_id(null);
+//					wk.setWk_art_anzahl(null);
 //					wk.getWk_artikel().setArtikelbezeichnung(null);
 //					wk.getWk_artikel().setBild(null);
 //					wk.getWk_artikel().setBildname(null);
 //					wk.getWk_artikel().setPreis(null);
 //					wk.setWk_art_preis(null);
 //					wk.setWk_art_anzahl(null);
-
+//					session.removeAttribute("wk_artikel");
 				}
 			}
-
 		}
 		session.setAttribute("warenkorbB", warenkorbB);
 		if (kunde != null) {
 			kunde.setWarenkorb(warenkorbB);
 			session.setAttribute("login", kunde);
 		}
-
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("/user/warenkorb.jsp");
 		dispatcher.forward(request, response);
 	}
-
 }

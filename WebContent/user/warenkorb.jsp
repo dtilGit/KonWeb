@@ -23,7 +23,7 @@
 	<h1>Ihr Warenkorb</h1>
 	<c:choose>
 		<c:when test="${empty warenkorbB.wk_groesse}">
-			<p>Es befinden sich noch keine Artikel im Warenkorb!</p>
+			<p>Es befinden sich keine Artikel im Warenkorb!</p>
 		</c:when>
 		<c:when test="${not empty warenkorbB.wk_groesse}">
 			<div class="markenbereich">
@@ -38,22 +38,32 @@
 						</tr>
 					</thead>
 					<c:forEach items="${warenkorbB.warenkorbList}" var="wk_List">
+
 						<tr class="seperation">
-							<td><img
-								src="../BildLaden?artikel_id=${wk_List.wk_artikel.artikel_id}"
-								class="bild" width="200" height="200" alt="artikelBildWK"></td>
-							<td>${wk_List.wk_artikel.artikelbezeichnung}</td>
-							<td>${wk_List.wk_artikel.preis}€</td>
-							<td><form method="get" action="../WarenkorbGroesse">
-									<input type="hidden" name="art_id"
-										value="${wk_List.wk_artikel.artikel_id}">
-									<!--<input type="hidden" name="groesse" value="${wk_List.wk_size}">-->
-									<input type="number" min="0" max="15" name="menge"
-										value="${wk_List.wk_art_anzahl}">
-									<button type="submit">Artikelmenge aktualisieren</button>
-								</form></td>
-							<td>${wk_List.wk_art_preis}€</td>
+							<c:choose>
+								<c:when test="${wk_List.wk_art_anzahl == 0}">
+
+								</c:when>
+								<c:otherwise>
+
+									<td><img
+										src="../BildLaden?artikel_id=${wk_List.wk_artikel.artikel_id}"
+										class="bild" width="200" height="200" alt="artikelBildWK"></td>
+									<td>${wk_List.wk_artikel.artikelbezeichnung}</td>
+									<td>${wk_List.wk_artikel.preis}€</td>
+									<td><form method="get" action="../WarenkorbGroesse">
+											<input type="hidden" name="art_id"
+												value="${wk_List.wk_artikel.artikel_id}">
+											<!--<input type="hidden" name="groesse" value="${wk_List.wk_size}">-->
+											<input type="number" min="0" max="15" name="menge"
+												value="${wk_List.wk_art_anzahl}">
+											<button type="submit">Artikelmenge aktualisieren</button>
+										</form></td>
+									<td>${wk_List.wk_art_preis}€</td>
+								</c:otherwise>
+							</c:choose>
 						</tr>
+
 					</c:forEach>
 
 				</table>
@@ -65,14 +75,15 @@
 						<h2>Um die Artikel letztendlich zu bestellen ist ein Login
 							erforderlich!</h2>
 					</c:when>
-					<c:when test="${not empty sessionScope.login && not empty sessionScope.warenkorbB}">
+					<c:when
+						test="${not empty sessionScope.login && not empty sessionScope.warenkorbB}">
 						<div id="lieferanten">
 							<fieldset>
-							<legend>Mit welchem Anbieter soll ihr Paket versendet werden:</legend>
-								<p> 
-									Hermes <input type="radio"
-										name="lieferant" id="hermes" value="Hermes" required>
-									DHL <input type="radio"
+								<legend>Mit welchem Anbieter soll ihr Paket versendet
+									werden:</legend>
+								<p>
+									Hermes <input type="radio" name="lieferant" id="hermes"
+										value="Hermes" required> DHL <input type="radio"
 										name="lieferant" id="dhl" value="DHL" required>
 								</p>
 							</fieldset>
@@ -88,7 +99,7 @@
 		</c:when>
 		<%-- 		<c:when test="${warenkorbB == NULL}"> --%>
 		<c:when test="${empty sessionScope.warenkorbB }">
-			<p>Es befinden sich noch keine Artikel im Warenkorb. hier rein</p>
+			<p>Es befinden sich keine Artikel im Warenkorb.</p>
 
 		</c:when>
 	</c:choose>
