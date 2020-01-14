@@ -218,6 +218,7 @@
 						</td>
 
 						<td><select name="kategorie_geschlecht" required>
+								<option value="">Wähle das Geschlecht</option>
 								<option>Herren</option>
 								<option>Weiblich</option>
 						</select></td>
@@ -257,8 +258,7 @@
 			<button type="reset" name="abbrechen" onClick="hideDeleteKategorie()">abbrechen</button>
 		</form>
 	</div>
+<%@ include file="../jspf/footer.jspf"%>
 </body>
 
-
-<%@ include file="../jspf/footer.jspf"%>
 </html>
