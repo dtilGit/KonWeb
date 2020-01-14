@@ -1,4 +1,4 @@
-<%-- Veronika Tschemodanov --%>
+<%-- David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -18,8 +18,8 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Kontaktformular abgeschickt</h1>
-	<p>Vielen Dank für die Kontaktaufnahme! Du erhälst innerhalb der
-		nächsten 3 Tagen eine Rückmeldung von unserem Support-Team!</p>
+	<h2>Vielen Dank für die Kontaktaufnahme! Du erhältst innerhalb der
+		nächsten 3 Tagen eine Rückmeldung von unserem Support-Team!</h2>
 
 	<%@ include file="../jspf/footer.jspf"%>
 </body>

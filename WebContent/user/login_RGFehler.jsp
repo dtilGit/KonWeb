@@ -16,11 +16,11 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-
+	<h1>Fehlermeldung</h1>
+	<h2>Du hast dich noch nicht registriert!</h2>
 	<p>
-		Fehler: Sie sind noch nicht registriert! <a href="registrierung.jsp">Zur
-			Registrierung</a>
-	</p>
-	<%@ include file="../jspf/footer.jspf"%>
+		<a href="registrierung.jsp">Hier</a> zur Registrierung.
+
+		<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

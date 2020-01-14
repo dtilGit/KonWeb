@@ -94,13 +94,13 @@ public class RegistrServlet extends HttpServlet {
 					} else {
 						String[] generatedKeys = new String[] { "id" };
 
-						System.out.println("=== in if 1 ==");
+					//	System.out.println("=== in if 1 ==");
 
 						PreparedStatement pstmt2 = con.prepareStatement(
 								"INSERT INTO thidb.kunde (geschlecht, titel, nachname,vorname, email, passwort, strasse, hausnummer, postleitzahl, ort, land, admin, bildname, bild ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
 								generatedKeys);
 						{
-							System.out.println("=== in try insert ==");
+							//System.out.println("=== in try insert ==");
 							pstmt2.setString(1, regform.getGeschlecht());
 							pstmt2.setString(2, regform.getTitel());
 							pstmt2.setString(3, regform.getNachname());
@@ -117,7 +117,7 @@ public class RegistrServlet extends HttpServlet {
 							pstmt2.setBytes(14, regform.getBild());
 							pstmt2.executeUpdate();
 
-							System.out.println("=== in try insert ==");
+						//	System.out.println("=== in try insert ==");
 
 							dispatcher = request.getRequestDispatcher("../user/registrierung_antwort.jsp");
 							dispatcher.forward(request, response);
@@ -125,7 +125,7 @@ public class RegistrServlet extends HttpServlet {
 					}
 				} else {
 					 //if (rs.next())
-					System.out.println("=== in elseif ===");
+				//	System.out.println("=== in elseif ===");
 					regform.setEmail(null);
 					dispatcher = request.getRequestDispatcher("../user/fehlerEmail.jsp");
 					dispatcher.forward(request, response);
@@ -135,10 +135,10 @@ public class RegistrServlet extends HttpServlet {
 				throw new ServletException(ex.getMessage());
 			}
 
-			System.out.println("=== nach elseif ===");
+			//System.out.println("=== nach elseif ===");
 
 		} catch (Exception e) {
-			System.out.println("=== in exception stacktrace ==");
+		//	System.out.println("=== in exception stacktrace ==");
 			e.printStackTrace();
 		}
 	}

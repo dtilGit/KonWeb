@@ -52,7 +52,7 @@
 										class="bild" width="200" height="200" alt="artikelBildWK"></td>
 									<td>${wk_List.wk_artikel.artikelbezeichnung}</td>
 									<td>${wk_List.wk_artikel.preis}€</td>
-									<td><form method="get" action="../WarenkorbGroesse">
+									<td><form method="get" action="../WarenkorbArtikelAnzahl">
 											<input type="hidden" name="art_id"
 												value="${wk_List.wk_artikel.artikel_id}">
 											<!--<input type="hidden" name="groesse" value="${wk_List.wk_size}">-->
@@ -116,7 +116,7 @@
 	<div class="cart-actions">
 
 		<div class="bestelluebersicht">
-			<h1>Bestellübersicht:</h1>
+			<h2>Bestellübersicht:</h2>
 
 
 			<table style="width: 100%">
@@ -131,31 +131,29 @@
 					<td>${warenkorbB.ges_preis}€</td>
 				</tr>
 
-				<tr>
-					<c:choose>
-						<c:when test="${warenkorbB.ges_preis < 60}">
-							<tr>
-								<td>Lieferung</td>
-								<td>3.99€</td>
-							</tr>
-							<tr>
-								<td>Gesamtbetrag</td>
-								<td>${warenkorbB.preis}€</td>
-							</tr>
-						</c:when>
+				<c:choose>
+					<c:when test="${warenkorbB.ges_preis < 60}">
+						<tr>
+							<td>Lieferung</td>
+							<td>3.99€</td>
+						</tr>
+						<tr>
+							<td>Gesamtbetrag</td>
+							<td>${warenkorbB.preis}€</td>
+						</tr>
+					</c:when>
 
-						<c:when test="${warenkorbB.ges_preis >= 60}">
-							<tr>
-								<td>Lieferung</td>
-								<td>0.00€</td>
-							</tr>
-							<tr>
-								<td>Gesamtbetrag</td>
-								<td>${warenkorbB.ges_preis}€</td>
-							</tr>
-						</c:when>
-					</c:choose>
-				</tr>
+					<c:when test="${warenkorbB.ges_preis >= 60}">
+						<tr>
+							<td>Lieferung</td>
+							<td>0.00€</td>
+						</tr>
+						<tr>
+							<td>Gesamtbetrag</td>
+							<td>${warenkorbB.ges_preis}€</td>
+						</tr>
+					</c:when>
+				</c:choose>
 
 			</table>
 

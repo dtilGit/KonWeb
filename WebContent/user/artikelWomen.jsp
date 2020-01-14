@@ -1,4 +1,4 @@
-<%--Veronika Tschemodanov --%>
+<%--David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,9 +11,6 @@
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
 
-
-<script type="text/javascript" src="../js/script.js"></script>
-
 <title>Frauen Artikel</title>
 </head>
 <body>
@@ -23,24 +20,15 @@
 
 	<c:forEach var="kategorieWomen" items="${anzeige.kategorie}">
 
-		<form id="kategorie" action="../ArtikelLadenWomen" method="POST">
-			<button type="submit" id="artikelAnzeigen_1">${kategorieWomen.kategoriebezeichnung}</button>
+		<form class="kategorie" action="../ArtikelLadenWomen" method="POST">
+			<button type="submit">${kategorieWomen.kategoriebezeichnung}</button>
 			<input name="kategorie_id" type="hidden"
-				value="${kategorieWomen.kategorie_id }"></input>
+				value="${kategorieWomen.kategorie_id }">
 		</form>
 
 	</c:forEach>
 
 	<table>
-		<!-- 	id="artikelAnzeigen" -->
-		<!-- 		<thead> -->
-		<!-- 			<tr> -->
-		<!-- 				<th>Artikelbezeichnung</th> -->
-		<!-- 				<th>Preis(€)</th> -->
-		<!-- 				<th>Bild</th> -->
-		<!-- 				<th></th> -->
-		<!-- 			</tr> -->
-		<!-- 		</thead> -->
 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
 			<thead>
 				<tr>
@@ -57,7 +45,7 @@
 					class="bild" width="200" height="250" alt="bild_laden"></td>
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>
-				<td id="add-cart">
+				<td class="add-cart">
 					<form action="../ZumWarenkorbHinzufuegen" method="get">
 						<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 						<input type="hidden" name="art_id"

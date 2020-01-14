@@ -1,4 +1,4 @@
-//Veronika Tschemodanov
+//David Häusler
 package servlets;
 
 import java.io.ByteArrayOutputStream;
@@ -37,7 +37,7 @@ public class ProfilAnsehen extends HttpServlet {
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
 		int id = kunde.getId();
 		RegistrBean profillesen = new RegistrBean();
-		System.out.println("==== in do post prof-ansehen===");
+		//System.out.println("==== in do post prof-ansehen===");
 		
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("Select * From thidb.kunde where kunde_id=?")){
@@ -55,7 +55,7 @@ public class ProfilAnsehen extends HttpServlet {
 							profillesen.setLand(rs.getString("land"));
 							profillesen.setBildname(rs.getString("bildname"));
 							profillesen.setBild(rs.getBytes("bild"));
-							System.out.println("===in con Profil ansehen===");
+							//System.out.println("===in con Profil ansehen===");
 						}
 					}catch (Exception ex) {
 						throw new ServletException (ex.getMessage());

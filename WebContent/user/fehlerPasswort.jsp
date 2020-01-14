@@ -17,7 +17,8 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<h1>Es ist ein Fehler aufgetreten. Die eingegebenen Passwörter stimmen nicht überein!</h1>
+	<h1>Fehlermeldung</h1>
+	<h2>Es ist ein Fehler aufgetreten. Die eingegebenen Passwörter stimmen nicht überein!</h2>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

@@ -1,3 +1,4 @@
+//Veronika Tschemodanov
 package beans;
 
 import java.math.BigDecimal;

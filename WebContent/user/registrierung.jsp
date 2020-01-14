@@ -11,14 +11,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<script type="text/javascript" src="../js/profilbild.js"></script>
 <script type="text/javascript" src="../js/checkregform.js"></script>
 <title>Registrierung</title>
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 
-	<div id="">
 		<h1>Registrierung</h1>
 
 		<div id="registr">
@@ -59,16 +57,16 @@
 							required>
 					</p>
 					<p>
-						<label for="pwreg">Passwort: </label> <input type="password"
+						<label for="pwreg">Passwort*: </label> 
+						<input type="password"
 							name="passwort" id="pwreg" size="25" maxlength="40"
 							placeholder="Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt."
 							pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])[\w!$%^&@#*]{6,10}"
-							required><br>
+							required>
 
 					</p>
 					<p>
-						<label for="pwreg2">Passwort wiederholen:</label>
-					<div id="pwvorgabe"></div>
+						<label for="pwreg2">Passwort wiederholen*:</label>
 					<input type="password" name="passwort2" id="pwreg2" size="25"
 						maxlength="40"
 						placeholder="Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt."
@@ -110,6 +108,7 @@
 							type="file" name="profilBild" id="profilBild" accept="image/*"
 							required> <label for="profilBild"></label>
 					</p>
+					<div id="pwvorgabe"> * Das Passwort muss min. einen Groß- und Kleinbuchstaben enthalten sowie eine Zahl! Zudem soll es aus min. 6 und max. 10 Zeichen bestehen. Zeichen wie: _!$%^&@#* sind erlaubt.</div>
 				</fieldset>
 				<div>
 					<p>
@@ -123,10 +122,6 @@
 				</div>
 			</form>
 		</div>
-
-
-
-	</div>
 
 	<%@ include file="../jspf/footer.jspf"%>
 </body>

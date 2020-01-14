@@ -42,7 +42,7 @@
 								alt="Artikelbild"></td>
 							<td>${suche.artikelbezeichnung}</td>
 							<td>${suche.preis}€</td>
-							<td id="add-cart">
+							<td class="add-cart">
 								<form action="../ZumWarenkorbHinzufuegen" method="get">
 									<button name="warenkorbButton">zum Warenkorb
 										hinzufügen</button>

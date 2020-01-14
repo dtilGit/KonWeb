@@ -1,4 +1,4 @@
-<%-- Veronika Tschemodanov --%>
+<%-- Veronika Tschemodanov + David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -16,28 +16,30 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<%--CODE BEARBEITEN!!! WIE BEI T.!! --%>
 	<c:choose>
 		<c:when test="${login.admin == 0}">
-			<h2>
-				<p>Login war erfolgreich!</p><p> Hallo ${login.vorname} <%--änderung davor: profilansehen.jsp --%>
-					${login.nachname}!
-				</p>
-				
-				<form action="../ProfilAnsehen" method="post">
-					<button type="submit">Ihr Profil</button>
-				</form>
-				<%--a href="../ProfilAnsehen"> --%>
-			</h2>
+			<h1>Login war erfolgreich!</h1>
+			<p>
+				Hallo ${login.vorname}
+				<%--änderung davor: profilansehen.jsp --%>
+				${login.nachname}!
+			</p>
+
+			<form action="../ProfilAnsehen" method="post">
+				<button type="submit">Ihr Profil</button>
+			</form>
+			<%--a href="../ProfilAnsehen"> --%>
+
 		</c:when>
 
 		<c:when test="${login.admin == 1}">
-
-			<h2>Herzlich Willkommen ${login.vorname} ${login.nachname}! Du wurdest als Admin eingeloggt!</h2>
+			<h1>Login war erfolgreich!</h1>
+			<h2>Herzlich Willkommen ${login.vorname} ${login.nachname}! Du
+				wurdest als Admin eingeloggt!</h2>
 			<br>
-			<b>Hier gelangst du zur Adminverwaltung:</b>
 
-			<form style="display: inline" action="../PreloadAdminpage" method="post" enctype="multipart/form-data">
+			<form style="display: inline" action="../PreloadAdminpage"
+				method="post" enctype="multipart/form-data">
 				<button>Zur Verwaltung der Webseiteninhalte</button>
 			</form>
 
