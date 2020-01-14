@@ -39,14 +39,14 @@
 					name="knt_email" id="knt_email" size="25" maxlength="40" required>
 			</p>
 			<p>
-				<label for="knt_grund">Grund: <select name="knt_grund" id="knt_grund">
-						<option>Umtausch</option>
-						<option>Produktinformationen/-Support</option>
-						<option>Website-Informationen/-Support</option>
-						<option>Datenschutz-Anliegen</option>
-						<option>Sonstiges</option>
+				<label for="knt_grund">Grund: </label> <select name="knt_grund"
+					id="knt_grund">
+					<option>Umtausch</option>
+					<option>Produktinformationen/-Support</option>
+					<option>Website-Informationen/-Support</option>
+					<option>Datenschutz-Anliegen</option>
+					<option>Sonstiges</option>
 				</select>
-				</label>
 
 			</p>
 			<p>
@@ -54,11 +54,13 @@
 				<textarea name="knt_nachricht" id="knt_nachricht" rows="15"
 					maxlength="2500" required></textarea>
 			</p>
-			</fieldset>
+		</fieldset>
+		<div>
 			<p>
 				<button type="submit" name="knt_button" id="knt_submit">Senden</button>
 			</p>
-		
+		</div>
+
 	</form>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
