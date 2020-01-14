@@ -3,7 +3,7 @@
 
 body {
 	margin-left: 10%;
-	margin-right: 124px;
+	margin-right: 10%;
 	margin-top: 200px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
@@ -73,15 +73,16 @@ button.nav {
 }
 
 header {
-	padding: 10px;
 	height: 120px;
-	width: 80%;
-	background-color: #FFF;
-	position: fixed; /* Header bleibt beim scrollen stehen */
-	top: 0; /* Header fängt ganz oben an */
-	z-index: 999;
-	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
-	border-bottom: 1px solid #424242;
+    background-color: #FFF;
+    position: fixed;  /* Header bleibt beim scrollen stehen */
+    left: 0;
+    right: 0;
+    top: 0; /* Header fängt ganz oben an */
+    z-index: 999; 	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
+    border-bottom: 1px solid #424242;
+    margin: 0 10% 0 10%;
+
 }
 
 
@@ -258,15 +259,15 @@ select#titelreg, #titel {
 }
 
 .profil {
-	margin-left: 40px;
+	margin-right: 40px;
 	background-color: #fff;
 	border: none;
 	padding: 0px;
 }
 
 .warenkorb {
-	margin-left: 35%;
 	display: inline-block;
+	float: right;
 }
 
 section {
@@ -510,9 +511,13 @@ footer {
 	z-index: 999;
 }
 
+#datenschutzlink {
+	font-size: 15px;
+}
+
 #impressumlink {
 	font-size: 15px;
-	margin-top: 95px;
+	margin: 95px 0px 10px 0px;
 }
 
 .footer-left {
@@ -523,6 +528,7 @@ footer {
 
 .footer-right {
 	float: right;
+	text-align: right;
 }
 
 @font-face {
