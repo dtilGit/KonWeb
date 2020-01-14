@@ -17,7 +17,6 @@
 	<%@ include file="../jspf/header.jspf"%>
 
 	<div class="intro">
-		<h2>Adminpage:</h2>
 		Wenn auf diese Seite kommst, bist du bei uns als Admin hinterlegt.<br>
 		Hier kannst du unser Lager einsehen, unsere Artikel und Kategorien
 		bearbeiten sowie auch löschen! <br> Tob dich aus! Aber pass auf,
@@ -143,7 +142,7 @@
 
 
 						<td><select name="alleKategorienLaden" required>
-										<option value="">Wähle die Kategorie</option>
+								<option value="">Wähle die Kategorie</option>
 								<c:forEach var="kategorien" items="${preload.kategorie}">
 									<option class="kategorie_bez_geschlecht2"
 										value="${kategorien.kategorie_id}">
@@ -175,7 +174,7 @@
 				<tbody>
 					<tr>
 						<td><select name="alleArtikelLaden" required>
-						<option value="">Wähle den Artikel</option>
+								<option value="">Wähle den Artikel</option>
 								<c:forEach items="${preload.artikel}" var="artikel">
 									<option class="artikel_id_bez" value="${artikel.artikel_id}">
 										<c:out value="${artikel.artikel_id}" />,
@@ -246,7 +245,7 @@
 					<tr>
 						<td><select name="alleKategorienLaden" required>
 								<c:forEach items="${preload.kategorie}" var="kategorien">
-								<option value="">Wähle die Kategorie</option>
+									<option value="">Wähle die Kategorie</option>
 									<option class="kategorie_bez_geschlecht1"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
@@ -261,7 +260,7 @@
 			<button type="reset" name="abbrechen" onClick="hideDeleteKategorie()">abbrechen</button>
 		</form>
 	</div>
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 
 </html>
