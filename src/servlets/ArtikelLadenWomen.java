@@ -1,4 +1,4 @@
-//Veronika Tschemodanov
+//David Häusler
 package servlets;
 
 import java.io.IOException;

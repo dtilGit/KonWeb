@@ -1,3 +1,5 @@
+/**David Haäusler**/
+
 package servlets;
 
 import java.io.ByteArrayOutputStream;
@@ -42,10 +44,6 @@ public class ArtikelHinzufuegen extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
     
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");	

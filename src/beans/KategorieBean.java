@@ -1,3 +1,4 @@
+//David Häusler
 package beans;
 
 public class KategorieBean {

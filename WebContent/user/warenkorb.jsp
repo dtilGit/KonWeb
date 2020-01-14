@@ -52,7 +52,7 @@
 										class="bild" width="200" height="200" alt="artikelBildWK"></td>
 									<td>${wk_List.wk_artikel.artikelbezeichnung}</td>
 									<td>${wk_List.wk_artikel.preis}€</td>
-									<td><form method="get" action="../WarenkorbGroesse">
+									<td><form method="get" action="../WarenkorbArtikelAnzahl">
 											<input type="hidden" name="art_id"
 												value="${wk_List.wk_artikel.artikel_id}">
 											<!--<input type="hidden" name="groesse" value="${wk_List.wk_size}">-->

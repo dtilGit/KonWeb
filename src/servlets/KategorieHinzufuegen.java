@@ -1,4 +1,4 @@
-/* autor: Tilman*/
+/* autor: Tilman Dewes*/
 package servlets;
 
 import java.io.ByteArrayOutputStream;

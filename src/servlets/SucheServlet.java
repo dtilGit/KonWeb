@@ -59,7 +59,7 @@ public class SucheServlet extends HttpServlet {
 			
 			try (ResultSet rs = pstmt.executeQuery()) {
 				while (rs.next()) {
-					System.out.println("=== in if===");
+					//System.out.println("=== in if===");
 					ArtikelBean artikelbean = new ArtikelBean();
 
 					int id = Integer.valueOf(rs.getInt("artikel_id"));
