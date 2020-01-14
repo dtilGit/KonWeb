@@ -58,6 +58,10 @@ button {
 	cursor: pointer;
 }
 
+button#backtotrack{
+	margin-top: 22px;
+}
+
 button.nav:hover {
 	background-color: #6E6E6E;
 }
@@ -271,7 +275,7 @@ select#titelreg, #titel {
 }
 
 section {
-	width: 800px;
+	width: 69%;
 	float: left;
 	margin-top: 30px;
 	margin-bottom: 80px;
@@ -285,27 +289,21 @@ main {
 	min-height: 100px;
 }
 
+
+.spalten{
+	width: 100%;
+}
 /*Spalten auf der Startseite*/
-.spalte-1 {
-	width: 30%;
-	margin-right: 10px;
-	float: left;
-/* 	text-align: justify; */
-}
-
-.spalte-2 {
-	width: 30%;
-	margin-right: 10px;
-	float: left;
-/* 	text-align: justify; */
-}
-
+.spalte-1,
+.spalte-2,
 .spalte-3 {
 	width: 30%;
-	margin-right: 10px;
+	padding-right: 10px;
 	float: left;
 /* 	text-align: justify; */
 }
+
+.
 
 /* .flex-container { */
 /*     display: flex; */
@@ -356,89 +354,12 @@ main {
         left: -400%;
     }
 }
-/* @ */
-/* keyframes slider { 0% { */
-/* 	left: 0; */
-/* } */
 
-/* 20% */
-/* { */
-/* left */
-/* : */
- 
-/* 0; */
-/* } */
-/* 25% */
-/* { */
-/* left */
-/* : */
- 
-/* -100%; */
-/* } */
-/* 45% */
-/* { */
-/* left */
-/* : */
- 
-/* -100%; */
-/* } */
-/* 50% */
-/* { */
-/* left */
-/* : */
- 
-/* -200%; */
-/* } */
-/* 70% */
-/* { */
-/* left */
-/* : */
- 
-/* -200%; */
-/* } */
-/* 75% */
-/* { */
-/* left */
-/* : */
- 
-/* -300%; */
-/* } */
-/* 95% */
-/* { */
-/* left */
-/* : */
- 
-/* -300%; */
-/* } */
-/* 100% */
-/* { */
-/* left */
-/* : */
- 
-/* -400%; */
-/* } */
-/* } */
-/* #slider figure { */
-/* 	position: relative; */
-/* 	width: 500%; */
-/* 	margin: 0px; */
-/* 	left: 0; */
-/* 	text-align: left; */
-/* 	font-size: 0; */
-/* 	animation: 16s slider infinite; */
-/* } */
 
-/* #slider { */
-/* 	overflow: hidden; */
-/* } */
-
-/* #slider figure img { */
-/* 	width: 20%; */
-/* 	float: left; */
-/* } */
 
 #slider {
     overflow: hidden;
+    margin-top: -3%;
 }
 
  #slider figure img {
@@ -456,6 +377,8 @@ main {
     font-size: 0;
     animation: 12s slider infinite;
 }
+
+
 
 
 .bild {
@@ -495,20 +418,25 @@ main {
 
 aside {
 	float: right;
-	width: 25%;
+	width: 30%;
 	margin-top: 50px;
 	background-color: #dddddd;
 	padding: 0px 5px 30px 5px;
 }
 
 footer {
-	clear: both;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-top: 20px;
-	border-top: 1px solid #dddddd;
-	height: 200px;
-	z-index: 999;
+    clear: both;
+    padding-top: 20px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+    border-top: 1px solid #dddddd;
+    height: 200px;
+    z-index: 999;
+    bottom: 0;
+    /*position: absolute;*/
+    right: 0;
+    left: 0;
+    /*margin: 0 10% 0 10%; */
 }
 
 #datenschutzlink {
@@ -599,7 +527,7 @@ form.kategorie button {
 	width: auto;
 	height: 40px;
 	vertical-align: middle;
-	margin-right: 5px;
+	margin-right: 10px;
 }
 
 /* .search-icon { */
@@ -625,6 +553,8 @@ div#lieferanten{
 	margin: 15px;
 
 }
+
+
 /*Kontakt*/
 #knt_betreff, #knt_nachname, #knt_vorname, #knt_email, #knt_grund{
 	border: 2px solid #999;

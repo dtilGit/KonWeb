@@ -198,6 +198,9 @@
 				<div id="impressumlink">
 					<a href="user/impressum.jsp">Impressum</a>
 				</div>
+				<div id="datenschutzlink">
+					<a href="media/Datenschutzerklaerung" target="_blank">Datenschutz</a>
+				</div>
 
 			</div>
 

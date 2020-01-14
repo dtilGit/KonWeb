@@ -30,7 +30,7 @@
 	</div>
 
 	<form action="../index.jsp" method="get">
-		<button>Zurück zur Startseite</button>
+		<button id="backtotrack">Zurück zur Startseite</button>
 	</form>
 
 	<%@ include file="../jspf/footer.jspf"%>
