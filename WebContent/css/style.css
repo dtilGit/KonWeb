@@ -561,7 +561,7 @@ tr.border_top td {
 	color: white;
 }
 
-#add-cart {
+.add-cart {
 	text-align: center;
 }
 
@@ -587,11 +587,11 @@ th {
 }
 
 /*Kategorie Buttons im Design eines Registers*/
-form#kategorie {
+form.kategorie {
 	display: inline;
 }
 
-form#kategorie button {
+form.kategorie button {
 	margin-bottom: 10px;
 }
 

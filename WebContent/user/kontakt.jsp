@@ -40,7 +40,8 @@
 			</p>
 			<p>
 				<label for="knt_grund">Grund: </label> <select name="knt_grund"
-					id="knt_grund">
+					id="knt_grund" required>
+					<option value="">Grund wählen</option>
 					<option>Umtausch</option>
 					<option>Produktinformationen/-Support</option>
 					<option>Website-Informationen/-Support</option>

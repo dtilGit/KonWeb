@@ -5,7 +5,7 @@
 <%@ page errorPage="errorpage.jsp"%>
 <%@ page isErrorPage="true"%>
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
@@ -20,10 +20,10 @@
 	<c:forEach var="kategorieMen" items="${anzeige.kategorie}">
 
 
-		<form id="kategorie" action="../ArtikelLadenMen" method="POST">
+		<form class="kategorie" action="../ArtikelLadenMen" method="POST">
 			<button type="submit" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
 			<input name="kategorie_id" type="hidden"
-				value="${kategorieMen.kategorie_id }"></input>
+				value="${kategorieMen.kategorie_id }">
 		</form>
 
 
@@ -49,7 +49,7 @@
 				<!-- artikelkategorie ist hier der name var aus foreach und .artikel_id die Variable aus der DB  -->
 				<td>${artikelkategorie.artikelbezeichnung}</td>
 				<td>${artikelkategorie.preis}</td>
-				<td id="add-cart">
+				<td class="add-cart">
 					<form action="../ZumWarenkorbHinzufuegen" method="get">
 						<button name="warenkorbButton">zum Warenkorb hinzufügen</button>
 						<input type="hidden" name="art_id"

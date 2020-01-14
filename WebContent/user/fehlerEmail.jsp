@@ -17,8 +17,9 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
-	<h1>Es ist ein Fehler aufgetreten. Es ist bereits ein User mit
-		dieser E-Mail-Adresse registriert.</h1>
+	<h1>Fehlermeldung</h1>
+	<h2>Es ist ein Fehler aufgetreten. Es ist bereits ein User mit
+		dieser E-Mail-Adresse registriert.</h2>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
