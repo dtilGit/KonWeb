@@ -143,8 +143,9 @@
 
 
 						<td><select name="alleKategorienLaden" required>
+										<option value="">Wähle die Kategorie</option>
 								<c:forEach var="kategorien" items="${preload.kategorie}">
-									<option id="kategorie_bez_geschlecht2"
+									<option class="kategorie_bez_geschlecht2"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
 										<c:out value="${kategorien.geschlecht}" />
@@ -173,9 +174,10 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><select name="alleArtikelLaden">
+						<td><select name="alleArtikelLaden" required>
+						<option value="">Wähle den Artikel</option>
 								<c:forEach items="${preload.artikel}" var="artikel">
-									<option id="artikel_id_bez" value="${artikel.artikel_id}">
+									<option class="artikel_id_bez" value="${artikel.artikel_id}">
 										<c:out value="${artikel.artikel_id}" />,
 										<c:out value="${artikel.artikelbezeichnung}" />
 									</option>
@@ -218,6 +220,7 @@
 						</td>
 
 						<td><select name="kategorie_geschlecht" required>
+								<option value="">Wähle das Geschlecht</option>
 								<option>Herren</option>
 								<option>Weiblich</option>
 						</select></td>
@@ -241,9 +244,10 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><select name="alleKategorienLaden">
+						<td><select name="alleKategorienLaden" required>
 								<c:forEach items="${preload.kategorie}" var="kategorien">
-									<option id="kategorie_bez_geschlecht1"
+								<option value="">Wähle die Kategorie</option>
+									<option class="kategorie_bez_geschlecht1"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
 										<c:out value="${kategorien.geschlecht}" />
@@ -257,8 +261,7 @@
 			<button type="reset" name="abbrechen" onClick="hideDeleteKategorie()">abbrechen</button>
 		</form>
 	</div>
+<%@ include file="../jspf/footer.jspf"%>
 </body>
 
-
-<%@ include file="../jspf/footer.jspf"%>
 </html>
