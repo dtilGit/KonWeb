@@ -49,7 +49,7 @@
 					<th>Artikelbezeichnung</th>
 					<th>Preis(€)</th>
 					<th>Bild</th>
-					<th>Kategorie</th>
+					<th>Kategorie, Geschlecht</th>
 				</tr>
 			</thead>
 
@@ -62,7 +62,7 @@
 						<td><img src="../BildLaden?artikel_id=${alleArt.artikel_id}"
 							class="bild" alt="bild_laden" width="200" height="250"></td>
 
-						<td>${alleArt.kategoriebezeichnung}</td>
+						<td>${alleArt.kategoriebezeichnung}, ${alleArt.kategoriegeschlecht}</td>
 					</tr>
 				</c:forEach>
 
@@ -185,7 +185,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" name="speichern">speichern</button>
+			<button type="submit" name="speichern">löschen</button>
 			<button type="reset" name="abbrechen" onClick="hideDeleteArtikel()">abbrechen</button>
 		</form>
 	</div>
@@ -244,8 +244,8 @@
 				<tbody>
 					<tr>
 						<td><select name="alleKategorienLaden" required>
+								<option value="">Wähle die Kategorie</option>
 								<c:forEach items="${preload.kategorie}" var="kategorien">
-									<option value="">Wähle die Kategorie</option>
 									<option class="kategorie_bez_geschlecht1"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
