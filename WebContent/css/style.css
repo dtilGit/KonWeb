@@ -8,7 +8,6 @@ body {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 }
 
-
 h1 {
 	color: #777;
 	text-decoration: none;
@@ -42,7 +41,7 @@ input {
 }
 
 label {
-	display:block;
+	display: block;
 }
 
 ul.impinfos, li.impinfos {
@@ -58,7 +57,7 @@ button {
 	cursor: pointer;
 }
 
-button#backtotrack{
+button#backtotrack {
 	margin-top: 22px;
 }
 
@@ -78,18 +77,16 @@ button.nav {
 
 header {
 	height: 120px;
-    background-color: #FFF;
-    position: fixed;  /* Header bleibt beim scrollen stehen */
-    left: 0;
-    right: 0;
-    top: 0; /* Header fängt ganz oben an */
-    z-index: 999; 	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
-    border-bottom: 1px solid #424242;
-    margin: 0 10% 0 10%;
-
+	background-color: #FFF;
+	position: fixed; /* Header bleibt beim scrollen stehen */
+	left: 0;
+	right: 0;
+	top: 0; /* Header fängt ganz oben an */
+	z-index: 999;
+	/*  z-Index wird vergeben damit Header immer im Vordergrund angezeigt wird  */
+	border-bottom: 1px solid #424242;
+	margin: 0 10% 0 10%;
 }
-
-
 
 #mainlogo {
 	height: 100px;
@@ -200,7 +197,8 @@ header {
 	padding-left: 10px;
 }
 
-#titel, #nachname, #vorname, #strasse, #hausnummer, #postleitzahl, #ort, #land{
+#titel, #nachname, #vorname, #strasse, #hausnummer, #postleitzahl, #ort,
+	#land {
 	border: 2px solid #999;
 	border-radius: 0.5em;
 	margin: 5px 20px 5px 20px;
@@ -212,8 +210,8 @@ header {
 	padding-left: 10px;
 }
 
-#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #pwreg2, #strassereg,
-	#hausnrreg, #plzreg, #ortreg, #landreg{
+#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #pwreg2,
+	#strassereg, #hausnrreg, #plzreg, #ortreg, #landreg {
 	border: 2px solid #999;
 	border-radius: 0.5em;
 	margin: 5px 20px 5px 20px;
@@ -249,13 +247,12 @@ select#titelreg, #titel {
 	font-size: 24px;
   	width: 20%;
 }*/
-
-#pwvorgabe{
+#pwvorgabe {
 	font-size: 10px;
 	color: #6E6E6E;
 	margin-left: 20px;
-	
 }
+
 .icon {
 	width: 50px;
 	height: 50px;
@@ -289,18 +286,15 @@ main {
 	min-height: 100px;
 }
 
-
-.spalten{
+.spalten {
 	width: 100%;
 }
 /*Spalten auf der Startseite*/
-.spalte-1,
-.spalte-2,
-.spalte-3 {
+.spalte-1, .spalte-2, .spalte-3 {
 	width: 30%;
 	padding-right: 10px;
 	float: left;
-/* 	text-align: justify; */
+	/* 	text-align: justify; */
 }
 
 .
@@ -314,8 +308,8 @@ main {
 /*     margin: .5em; */
 /*     padding: .5em; */
 /* } */
-
 /*Slider*/
+
 @keyframes slider {
 
     0% {
@@ -357,9 +351,9 @@ main {
 
 
 
+
 #slider {
     overflow: hidden;
-    margin-top: -3%;
 }
 
  #slider figure img {
@@ -373,9 +367,7 @@ main {
     width: 500%;
     margin: 0px 0px 0px 0px;
     left: 0;
-    text-align: left;
-    font-size: 0;
-    animation: 12s slider infinite;
+    animation: 20s slider infinite;
 }
 
 
@@ -425,18 +417,18 @@ aside {
 }
 
 footer {
-    clear: both;
-    padding-top: 20px;
-    padding-bottom: 50px;
-    margin-top: 20px;
-    border-top: 1px solid #dddddd;
-    height: 200px;
-    z-index: 999;
-    bottom: 0;
-    /*position: absolute;*/
-    right: 0;
-    left: 0;
-    /*margin: 0 10% 0 10%; */
+	clear: both;
+	padding-top: 20px;
+	padding-bottom: 50px;
+	margin-top: 20px;
+	border-top: 1px solid #dddddd;
+	height: 200px;
+	z-index: 999;
+	bottom: 0;
+	/*position: absolute;*/
+	right: 0;
+	left: 0;
+	/*margin: 0 10% 0 10%; */
 }
 
 #datenschutzlink {
@@ -495,7 +487,7 @@ tr.border_top td {
 
 tr.seperation td {
 	padding-bottom: 5px;
-    padding-top: 5px;
+	padding-top: 5px;
 	border-bottom: 1px solid #dddddd;
 }
 
@@ -536,27 +528,24 @@ form#kategorie button {
 /* 	vertical-align: middle; */
 /* 	margin: 2.3% 1% 0% 1%; */
 /* } */
-
-.hidden{
+.hidden {
 	display: none;
 }
 
-.show{
+.show {
 	display: inline;
 }
 
-.adminShowButton{
+.adminShowButton {
 	width: 300px;
 }
 
-div#lieferanten{
+div#lieferanten {
 	margin: 15px;
-
 }
 
-
 /*Kontakt*/
-#knt_betreff, #knt_nachname, #knt_vorname, #knt_email, #knt_grund{
+#knt_betreff, #knt_nachname, #knt_vorname, #knt_email, #knt_grund {
 	border: 2px solid #999;
 	border-radius: 0.5em;
 	margin: 5px 20px 5px 20px;
@@ -568,7 +557,7 @@ div#lieferanten{
 	padding-left: 10px;
 }
 
-#knt_nachricht{
+#knt_nachricht {
 	border: 2px solid #999;
 	border-radius: 0.5em;
 	margin: 5px 20px 5px 20px;
@@ -579,6 +568,7 @@ div#lieferanten{
 	padding: 5px;
 	padding-left: 10px;
 }
+
 #knt_grund {
 	border: 2px solid #999;
 	border-radius: 0.5em;
@@ -590,5 +580,4 @@ div#lieferanten{
 	padding: 5px;
 	padding-left: 10px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	
 }
