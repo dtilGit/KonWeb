@@ -590,5 +590,11 @@ div#lieferanten{
 	padding: 5px;
 	padding-left: 10px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
-	
+}
+#js{
+	text-align: center;
+	background-color: #FF0000;
+	font-size: 12px;
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;	
+	font-weight: bold;
 }

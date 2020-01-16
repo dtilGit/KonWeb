@@ -17,6 +17,7 @@
 
 <!-- <script type="text/javascript" src="js/script.js"></script> -->
 <script type="text/javascript" src="js/cookies.js"></script>
+
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
