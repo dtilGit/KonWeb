@@ -1,3 +1,4 @@
+//Tilman Dewes
 package servlets;
 
 import java.io.IOException;
@@ -99,6 +100,9 @@ public class PreloadAdminpage extends HttpServlet {
 
 					String kategoriebezeichnung = rs.getString("kategoriebezeichnung");
 					art_bean.setKategoriebzeichnung(kategoriebezeichnung);
+					
+					String kategoriegeschlecht = rs.getString("geschlecht");
+					art_bean.setKategoriegeschlecht(kategoriegeschlecht);
 					
 					byte[] art_bild = rs.getBytes("bild");
 					art_bean.setBild(art_bild);

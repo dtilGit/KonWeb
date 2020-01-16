@@ -1,4 +1,4 @@
-//Veronika Tschemodanov
+////David Häusler
 package servlets;
 
 import java.io.ByteArrayOutputStream;
@@ -36,13 +36,13 @@ public class ProfilBearbeiten extends HttpServlet {
 	DataSource datasource;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException  {
-		System.out.println("===in deGet===");
+	//	System.out.println("===in deGet===");
 		doPost(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//die �nderungseingaben in "request" speichern
-		System.out.println("===in duPost===");
+	//	System.out.println("===in duPost===");
 		request.setCharacterEncoding("UTF-8");
 		
 		HttpSession session = request.getSession();
@@ -110,7 +110,7 @@ public class ProfilBearbeiten extends HttpServlet {
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=?, bildname=?, bild=? WHERE kunde_id=?")){
 			//PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht = COALESCE(NULLIF(?, ''), geschlecht), titel = COALESCE(NULLIF(?, ''),titel), nachname = COALESCE(NULLIF(?, ''), nachname),vorname = COALESCE(NULLIF(?, ''),vorname), strasse = COALESCE(NULLIF(?, ''), strasse), hausnummer = COALESCE(NULLIF(?, ''), hausnummer), postleitzahl = COALESCE(NULLIF(?, ''),postleitzahl), ort=COALESCE (NULLIF (?, ''), ort), land= COALESCE (NULLIF?, ''), land) WHERE id=?")){
-			System.out.println("===in Try===");	
+		//	System.out.println("===in Try===");	
 				pstmt.setString(1, profiledit.getGeschlecht());
 				pstmt.setString(2, profiledit.getTitel());
 				pstmt.setString(3, profiledit.getNachname());
@@ -124,7 +124,7 @@ public class ProfilBearbeiten extends HttpServlet {
 				pstmt.setBytes(11, profiledit.getBild());
 				pstmt.setInt(12, profiledit.getId());
 				pstmt.executeUpdate();
-				System.out.println("===in con===");
+				//System.out.println("===in con===");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

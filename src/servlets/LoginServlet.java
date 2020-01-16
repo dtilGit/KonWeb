@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// this.doPost(request,response);}
-		System.out.println("=== in Get ===");
+		//System.out.println("=== in Get ===");
 		doGet(request, response);
 	}
 
@@ -73,7 +73,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException {
 
 		RegistrBean loginuser = new RegistrBean();
-		System.out.println("=== in checkUser ===");
+		//System.out.println("=== in checkUser ===");
 		RequestDispatcher disp;
 		// �berpr�fung, ob bereits registriert
 		try (Connection con = datasource.getConnection();
@@ -81,9 +81,9 @@ public class LoginServlet extends HttpServlet {
 			pstm.setString(1, email);
 
 			try (ResultSet rs = pstm.executeQuery();) {
-				System.out.println("=== in try Select ===");
+				//System.out.println("=== in try Select ===");
 				if (rs.next()) {
-					System.out.println("=== in if re.next ===");
+					//System.out.println("=== in if re.next ===");
 					loginuser.setPasswort(rs.getString("passwort"));
 					loginuser.setAdmin(rs.getInt("admin"));
 					loginuser.setVorname(rs.getString("vorname"));
@@ -103,7 +103,7 @@ public class LoginServlet extends HttpServlet {
 //					loginuser.setStatus(rs.getInt(1));
 
 				} else if (!rs.next()) {
-					System.out.println("=== in else if rs.next ===");
+					//System.out.println("=== in else if rs.next ===");
 					//loginuser.setStatus(rs.getInt(0));
 					disp = request.getRequestDispatcher("user/login_RGFehler.jsp");
 					disp.forward(request, response);

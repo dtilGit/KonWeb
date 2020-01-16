@@ -37,18 +37,25 @@ public class AccountLoeschen extends HttpServlet {
 		int kunden_id = kunde.getId();
 
 		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ?")) {
+				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.bestellung WHERE kunde_id = ? ")) {
 			pstmt.setInt(1, kunden_id);
+			// pstmt.setInt(2, kunden_id);
 			pstmt.executeUpdate();
-			System.out.println("==in try l�schen==");
-		}
+			// System.out.println("==in try l�schen==");
 
-		catch (Exception ex) {
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		try (Connection con2 = ds.getConnection();
+				PreparedStatement pstmt = con2.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ? ")) {
+			pstmt.setInt(1, kunden_id);
+			pstmt.setInt(1, kunden_id);
+		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 
 		request.getSession().invalidate();
-		
+
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/account_geloescht.jsp");
 		dispatcher.forward(request, response);
 	}

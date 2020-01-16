@@ -17,10 +17,9 @@
 	<%@ include file="../jspf/header.jspf"%>
 
 	<div class="intro">
-		<h2>Adminpage:</h2>
 		Wenn auf diese Seite kommst, bist du bei uns als Admin hinterlegt.<br>
-		Hier kannst du unser Lager einsehen, unsere Artikel und Kategorien
-		bearbeiten sowie auch löschen! <br> Tob dich aus! Aber pass auf,
+		Hier kannst du unser Lager einsehen, Artikel und Kategorien
+		hinzufügen sowie löschen! <br> Tob dich aus! Aber pass auf,
 		deine Änderungen werden direkt in die Produktivdatenbank eingepflegt
 		und sind anschließend für alle User sichtbar!
 	</div>
@@ -50,7 +49,7 @@
 					<th>Artikelbezeichnung</th>
 					<th>Preis(€)</th>
 					<th>Bild</th>
-					<th>Kategorie</th>
+					<th>Kategorie, Geschlecht</th>
 				</tr>
 			</thead>
 
@@ -63,7 +62,7 @@
 						<td><img src="../BildLaden?artikel_id=${alleArt.artikel_id}"
 							class="bild" alt="bild_laden" width="200" height="250"></td>
 
-						<td>${alleArt.kategoriebezeichnung}</td>
+						<td>${alleArt.kategoriebezeichnung}, ${alleArt.kategoriegeschlecht}</td>
 					</tr>
 				</c:forEach>
 
@@ -143,7 +142,7 @@
 
 
 						<td><select name="alleKategorienLaden" required>
-										<option value="">Wähle die Kategorie</option>
+								<option value="">Wähle die Kategorie</option>
 								<c:forEach var="kategorien" items="${preload.kategorie}">
 									<option class="kategorie_bez_geschlecht2"
 										value="${kategorien.kategorie_id}">
@@ -175,7 +174,7 @@
 				<tbody>
 					<tr>
 						<td><select name="alleArtikelLaden" required>
-						<option value="">Wähle den Artikel</option>
+								<option value="">Wähle den Artikel</option>
 								<c:forEach items="${preload.artikel}" var="artikel">
 									<option class="artikel_id_bez" value="${artikel.artikel_id}">
 										<c:out value="${artikel.artikel_id}" />,
@@ -186,7 +185,7 @@
 					</tr>
 				</tbody>
 			</table>
-			<button type="submit" name="speichern">speichern</button>
+			<button type="submit" name="speichern">löschen</button>
 			<button type="reset" name="abbrechen" onClick="hideDeleteArtikel()">abbrechen</button>
 		</form>
 	</div>
@@ -245,8 +244,8 @@
 				<tbody>
 					<tr>
 						<td><select name="alleKategorienLaden" required>
-								<c:forEach items="${preload.kategorie}" var="kategorien">
 								<option value="">Wähle die Kategorie</option>
+								<c:forEach items="${preload.kategorie}" var="kategorien">
 									<option class="kategorie_bez_geschlecht1"
 										value="${kategorien.kategorie_id}">
 										<c:out value="${kategorien.kategoriebezeichnung}" />,
@@ -261,7 +260,7 @@
 			<button type="reset" name="abbrechen" onClick="hideDeleteKategorie()">abbrechen</button>
 		</form>
 	</div>
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 
 </html>

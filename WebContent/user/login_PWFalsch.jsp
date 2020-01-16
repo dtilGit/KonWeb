@@ -16,11 +16,12 @@
 </head>
 <body>
 	<%@ include file="../jspf/header.jspf"%>
+	<h1>Fehlermeldung</h1>
+	<h2>Login fehlgeschlagen. Ihr Passwort wurde falsch eingegeben!</h2>
 	<p>
-		Login fehlgeschlagen. Passwort ist falsch! <b> Versuchen Sie es
-			erneut.</b> <a href="registrierung.jsp">Zur Registrierung</a> <a
-			href="login.jsp">Zur Loginseite</a>
+		Versuchen Sie es erneut. <a href="login.jsp">Hier</a> zur Anmeldung.
 	</p>
+
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>

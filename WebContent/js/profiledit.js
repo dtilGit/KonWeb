@@ -1,5 +1,5 @@
 /**
- *David Häusler
+ *David Häusler + Veronika Tschemodanov
  */
 "use strict";
 document.addEventListener("DOMContentLoaded", init);

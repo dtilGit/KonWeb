@@ -1,4 +1,4 @@
-/* autor: Tilman*/
+/* Tilman Dewes*/
 package servlets;
 
 import java.io.ByteArrayOutputStream;
@@ -56,6 +56,12 @@ public class KategorieHinzufuegen extends HttpServlet {
 		
 		String[] generatedKeys = new String[] {"kategorie_id"};
 		
+		if (checkKategorie(kat_bean.getKategoriebezeichnung(),kat_bean.getGeschlecht())==false){
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_kategoriebez.jsp");
+			dispatcher.forward(request, response);
+		}
+		else {
+		
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("INSERT INTO thidb.kategorie (kategoriebezeichnung, geschlecht) VALUES (?, ?)", generatedKeys)){
 			
@@ -77,9 +83,29 @@ public class KategorieHinzufuegen extends HttpServlet {
 	
 	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);		
-	
+		}
 	//noch Fehlerabfangen: bezeichnung und geschelcht kombi existiert bereits
 }
+	private boolean checkKategorie(String kat_bez, String geschlecht) throws ServletException {
+		try (Connection con_ca = ds.getConnection();
+				PreparedStatement pstmt = con_ca
+						.prepareStatement("SELECT * FROM thidb.kategorie WHERE kategoriebezeichnung =? AND geschlecht=?")) {
+			pstmt.setString(1, kat_bez);
+			pstmt.setString(2, geschlecht);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				
+				if (rs.next()) {
+					return false;
+				}
+				else {
+					return true;
+				}
+			}
+
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

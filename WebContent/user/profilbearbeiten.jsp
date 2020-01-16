@@ -1,4 +1,4 @@
-<%-- Veronika Tschemodanov --%>
+<%-- David Häusler --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -11,7 +11,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" href="../css/style.css" type="text/css">
-<script type="text/javascript" src="../js/profilbild.js"></script>
 <script type="text/javascript" src="../js/profiledit.js"></script>
 
 <title>Profildaten bearbeiten</title>
@@ -21,9 +20,8 @@
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Profildaten bearbeiten</h1>
 
-	<p>
+
 	<h2>Deine aktuellen Daten</h2>
-	</p>
 	<p>
 		<img src="../ProfilbildLaden?kunde_id=${login.id}" class="bild"
 			alt="bild_laden" width="200" height="250">

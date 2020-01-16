@@ -1,3 +1,4 @@
+//Veronika Tschemodanov
 package servlets;
 
 import java.io.IOException;
@@ -36,7 +37,7 @@ public class BestellenServlet extends HttpServlet {
 		// Kunde-Session muss befüllt sein mit den Werten = Eingeloggt
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
 		
-		System.out.println("=== in Bestellung-Servlet ===");
+		//System.out.println("=== in Bestellung-Servlet ===");
 		
 //		Integer kunde_ID;
 //		kunde_ID = kunde.getId();
@@ -45,7 +46,7 @@ public class BestellenServlet extends HttpServlet {
 
 		if (warenkorbB != null && kunde != null) {
 			String[] generatedKeys = new String[] { "bestell_id" };
-			System.out.println("=== in if1 ===");
+			//System.out.println("=== in if1 ===");
 
 			try (Connection con = ds.getConnection();
 					PreparedStatement pstmt = con.prepareStatement(
@@ -53,7 +54,7 @@ public class BestellenServlet extends HttpServlet {
 				pstmt.setInt(1, kunde.getId());
 				pstmt.setDouble(2, warenkorbB.getGes_preis());
 				pstmt.executeUpdate();
-				System.out.println("=== in try Insert ===");
+				//System.out.println("=== in try Insert ===");
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());	
 			}
@@ -71,7 +72,7 @@ public class BestellenServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
 		} else if (warenkorbB == null || kunde == null) {
-			System.out.println("=== in if2 ===");
+			//System.out.println("=== in if2 ===");
 			RequestDispatcher dispatcher2 = request.getRequestDispatcher("user/bestellen_login_fehler.jsp");
 			dispatcher2.forward(request, response);
 

@@ -52,39 +52,10 @@ public class KatLadenMen extends HttpServlet {
 					String kat_bezeichnung = rs.getString("kategoriebezeichnung");
 					kat_bean.setKategoriebezeichnung(kat_bezeichnung);
 					
-//					try (Connection con2 = ds.getConnection();
-//							PreparedStatement pstmt2 = con2
-//										.prepareStatement("SELECT *  FROM artikel JOIN kategorie WHERE artikel.kategorie=? and kategorie.kategorie_id=?")) {
-//						pstmt2.setInt(1,kat_id);
-//						pstmt2.setInt(2, kat_id);
-//						//kat_bean.getKategorie_id()
-//					//	System.out.println("===bischt du da????===");
-//							try (ResultSet rs2 = pstmt2.executeQuery()) {
-//								while (rs2.next()) {
-//							//	System.out.println("===bischt du au wirklich da????===");
-//								ArtikelBean artikel = new ArtikelBean();
 //			
-//									String art_bezeichnung = rs2.getString("artikelbezeichnung");
-//									artikel.setArtikelbezeichnung(art_bezeichnung);
-//
-//									BigDecimal preis = BigDecimal.valueOf(rs2.getLong("preis"));
-//									artikel.setPreis(preis);
-//									
-//									Integer kategorie = rs2.getInt("kategorie");
-//									artikel.setKategorie_id(kategorie);
-//									
-//									Integer artikel_id = rs2.getInt("artikel_id");
-//									artikel.setArtikel_id(artikel_id);
-//
-//									ArtikeListe.add(artikel);
-//								}
-//							}
 //						}
 					KategorienMen.add(kat_bean);
-					
-				//	System.out.println("listenausgabe");
-				//	KategorienMen.forEach(e -> System.out.println(e.getKategoriebezeichnung()));
-					
+				
 				}
 			}
 

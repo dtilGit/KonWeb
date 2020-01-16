@@ -17,7 +17,7 @@
 	<%@ include file="../jspf/header.jspf"%>
 
 	<div>
-		<h1>Es ist ein Fehler aufgetreten!</h1>
+		<h1>Fehlermeldung</h1>
 		<h2>
 			Bitte melde dich bei uns oder verfasse eine kurze Mail an folgende
 			Mailadresse:

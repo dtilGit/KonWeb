@@ -1,89 +1,95 @@
 <!-- David Häusler -->
-	<header>
-		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
-		<div id="mainlogo">
-			<a href="../index.jsp"><img id="logo"
-				src="../img/tods_bestcaps_logo.jpg" alt="Logo"></a>
-		</div>
+<header>
+	<div id="js">
+		<noscript>
+			<p>Bitte Javascript aktivieren für die Nutzung unserer Seite!</p>
+		</noscript>
+	</div>
+	<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
+	<div id="mainlogo">
+		<a href="../index.jsp"><img id="logo"
+			src="../img/tods_bestcaps_logo.jpg" alt="Logo"></a>
+	</div>
 
 
-		<div class="men">
-			<form action="../KatLadenMen" method="get"
-				enctype="multipart/form-data">
-				<button class="nav dropbtn" type="submit">Männer</button>
-			</form>
+	<div class="men">
+		<form action="../KatLadenMen" method="get"
+			enctype="multipart/form-data">
+			<button class="nav dropbtn" type="submit">Männer</button>
+		</form>
 
-			<!-- 			<button class="dropdown-content">Beanies</button> -->
-			<!-- 							<button class="dropdown-content">Caps</button> -->
-		</div>
+		<!-- 			<button class="dropdown-content">Beanies</button> -->
+		<!-- 							<button class="dropdown-content">Caps</button> -->
+	</div>
 
-		<div class="woman">
-			<form action="../KatLadenWomen" method="get"
-				enctype="multipart/form-data">
-				<button class="nav dropbtn" type="submit">Frauen</button>
-			</form>
+	<div class="woman">
+		<form action="../KatLadenWomen" method="get"
+			enctype="multipart/form-data">
+			<button class="nav dropbtn" type="submit">Frauen</button>
+		</form>
 
-			<!-- 	<div class="dropdown-content"> -->
-			<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
-			<!-- 			href="user/woman_caps.html">Caps</a> -->
-		</div>
+		<!-- 	<div class="dropdown-content"> -->
+		<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
+		<!-- 			href="user/woman_caps.html">Caps</a> -->
+	</div>
 
-		<div id="suche">
-			<br> <label for="suchleiste"></label>
-			<form action="../SucheServlet" method="get">
-				<input type="search" name="artikelbezeichnung" id="suchleiste"
-					placeholder="Suche deinen Liebling...">			
-			</form>
-<!-- 			<img class="small-icon" src="../img/search.png"></img> -->
-		</div>
+	<div id="suche">
+		<br> <label for="suchleiste"></label>
+		<form action="../SucheServlet" method="get">
+			<input type="search" name="artikelbezeichnung" id="suchleiste"
+				placeholder="Suche deinen Liebling...">
+		</form>
+		<!-- 			<img class="small-icon" src="../img/search.png"></img> -->
+	</div>
 
 
-		<div class="warenkorb">
-			<a href="../user/warenkorb.jsp"><img class="icon"
-				src="../img/warenkorb.png" alt="warenkorbLogo"></a>
-		</div>
-
-		<c:choose>
-			<c:when test="${empty sessionScope.login}">
-				<div class="dropdown-navi">
-<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
-						<!-- 				enctype="multipart/form-data"> -->
-						<button class="profil"><img class="icon"
-							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
-<!-- 					</form> -->
-					<div class="dropdown-content">
-						<a href=../user/login.jsp>Login</a> 
-						<a href=../user/registrierung.jsp>Registrierung</a>
-					</div>
+	<div class="warenkorb">
+		<a href="../user/warenkorb.jsp"><img class="icon"
+			src="../img/warenkorb.png" alt="warenkorbLogo"></a>
+	</div>
+	<c:choose>
+		<c:when test="${empty sessionScope.login}">
+			<div class="dropdown-navi">
+				<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
+				<!-- 				enctype="multipart/form-data"> -->
+				<button class="profil">
+					<img class="icon" src="../img/mein_konto.png" alt="meinKontoLogo">
+				</button>
+				<!-- 					</form> -->
+				<div class="dropdown-content">
+					<a href=../user/login.jsp>Login</a> <a
+						href=../user/registrierung.jsp>Registrierung</a>
 				</div>
-			</c:when>
-			<c:when test="${not empty sessionScope.login}">
-				<div class="dropdown-navi">
-					<c:if test="${login.admin == 0}"> 
-										
-						<button class="profil" ><img class="icon"
-							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
-				
-					<div class="dropdown-content">
-						<a href=../user/profilansehen.jsp>Ihr Profil</a> 
-						<a href=../LogoutServlet>Logout</a>
-					</div>
-					</c:if>
-					<c:if test="${login.admin == 1}"> 
-								<button class="profil" ><img class="icon"
-							src="../img/mein_konto.png" alt="meinKontoLogo"></button>
-				
-					<div class="dropdown-content">
-						<a href=../user/profilansehen.jsp>Ihr Profil</a> 
-						<a href=../LogoutServlet>Logout</a>
-						<a href=../admin/adminpage.jsp>Adminbereich</a>
-					</div>
-					</c:if>
-				</div>
-			</c:when>
-		</c:choose>
+			</div>
+		</c:when>
+		<c:when test="${not empty sessionScope.login}">
+			<div class="dropdown-navi">
+				<c:if test="${login.admin == 0}">
 
-	</header>
+					<button class="profil">
+						<img class="icon" src="../img/mein_konto.png" alt="meinKontoLogo">
+					</button>
+
+					<div class="dropdown-content">
+						<a href=../user/profilansehen.jsp>Ihr Profil</a> <a
+							href=../LogoutServlet>Logout</a>
+					</div>
+				</c:if>
+				<c:if test="${login.admin == 1}">
+					<button class="profil">
+						<img class="icon" src="../img/mein_konto.png" alt="meinKontoLogo">
+					</button>
+
+					<div class="dropdown-content">
+						<a href=../user/profilansehen.jsp>Ihr Profil</a> <a
+							href=../LogoutServlet>Logout</a> <a href=../admin/adminpage.jsp>Adminbereich</a>
+					</div>
+				</c:if>
+			</div>
+		</c:when>
+	</c:choose>
 	
+</header>
+
 
 
