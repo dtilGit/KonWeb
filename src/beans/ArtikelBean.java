@@ -15,6 +15,7 @@ public class ArtikelBean {
 	private byte[] bild; 
 	private String bildname; 
 	private String kategoriebezeichnung; //für InnerJoin in Preloadadminpage
+	private String kategoriegeschlecht; //für InnerJoin in Preloadadminpage
 	
 	
 
@@ -87,6 +88,14 @@ public class ArtikelBean {
 
 	public void setKategoriebzeichnung(String kategoriebezeichnung) {
 		this.kategoriebezeichnung = kategoriebezeichnung;
+	}
+	
+	public String getKategoriegeschlecht() {
+		return kategoriegeschlecht;
+	}
+
+	public void setKategoriegeschlecht(String kategoriegeschlecht) {
+		this.kategoriegeschlecht = kategoriegeschlecht;
 	}
 	
 }
