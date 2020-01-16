@@ -1,4 +1,4 @@
-<%-- David Häusler/Tilman Dewes --%>
+<%-- Tilman Dewes --%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="../css/style.css" />
-<title>Fehler: Artikelname bereits vorhanden</title>
+<title>Fehler: Artikelbezeichnung bereits vorhanden</title>
 
 </head>
 <body>

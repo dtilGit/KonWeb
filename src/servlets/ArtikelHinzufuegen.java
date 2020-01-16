@@ -1,4 +1,4 @@
-/**Tilman Dewes/David Haäusler**/
+/**Tilman Dewes/David Häusler**/
 
 package servlets;
 
@@ -75,7 +75,7 @@ public class ArtikelHinzufuegen extends HttpServlet {
 		// checkArtikelname(art_bean.getArtikelbezeichnung(),
 		// art_bean.getKategorie_id());	
 		if (checkArtikel(art_bean.getArtikelbezeichnung(), art_bean.getKategorie_id()) == false) {
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/artikelname_vorhanden.jsp");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_artikelbez.jsp");
 			dispatcher.forward(request, response);
 		}
 		else {

@@ -1,4 +1,4 @@
-/* autor: Tilman Dewes*/
+/* Tilman Dewes*/
 package servlets;
 
 import java.io.ByteArrayOutputStream;
@@ -57,7 +57,7 @@ public class KategorieHinzufuegen extends HttpServlet {
 		String[] generatedKeys = new String[] {"kategorie_id"};
 		
 		if (checkKategorie(kat_bean.getKategoriebezeichnung(),kat_bean.getGeschlecht())==false){
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/kategorie_vorhanden.jsp");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_kategoriebez.jsp");
 			dispatcher.forward(request, response);
 		}
 		else {

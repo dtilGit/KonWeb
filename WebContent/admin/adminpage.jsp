@@ -18,8 +18,8 @@
 
 	<div class="intro">
 		Wenn auf diese Seite kommst, bist du bei uns als Admin hinterlegt.<br>
-		Hier kannst du unser Lager einsehen, unsere Artikel und Kategorien
-		bearbeiten sowie auch löschen! <br> Tob dich aus! Aber pass auf,
+		Hier kannst du unser Lager einsehen, Artikel und Kategorien
+		hinzufügen sowie löschen! <br> Tob dich aus! Aber pass auf,
 		deine Änderungen werden direkt in die Produktivdatenbank eingepflegt
 		und sind anschließend für alle User sichtbar!
 	</div>
