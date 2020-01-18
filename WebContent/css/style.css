@@ -1,5 +1,4 @@
-/*David Häusler/Tilman Dewes*/
-@CHARSET "UTF-8";
+/*David Häusler, Tilman Dewes*/
 
 body {
 	margin-left: 10%;
@@ -297,7 +296,6 @@ main {
 	/* 	text-align: justify; */
 }
 
-.
 
 /* .flex-container { */
 /*     display: flex; */
@@ -308,8 +306,10 @@ main {
 /*     margin: .5em; */
 /*     padding: .5em; */
 /* } */
-/*Slider*/
 
+
+
+/*Slider*/
 @keyframes slider {
 
     0% {
@@ -351,7 +351,6 @@ main {
 
 
 
-
 #slider {
     overflow: hidden;
 }
@@ -369,6 +368,7 @@ main {
     left: 0;
     animation: 20s slider infinite;
 }
+
 
 
 
@@ -402,11 +402,6 @@ main {
 	float: right;
 }
 
-#impressumpart {
-	width: 400px;
-	float: center;
-	margin-left: 50px;
-}
 
 aside {
 	float: right;
