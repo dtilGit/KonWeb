@@ -76,7 +76,7 @@ public class PreloadAdminpage extends HttpServlet {
 					throw new ServletException(ex.getMessage());
 				}
 		
-		//Kategorie list mit kategorienbeans befüllen
+		//Artikellist mit Artikelbeans befüllen
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM thidb.artikel INNER JOIN kategorie ON artikel.kategorie = kategorie.kategorie_id")) {
 			
@@ -116,6 +116,7 @@ public class PreloadAdminpage extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		
+		//Anzeige Bean mit den beiden Listen befüllen
 		preload.setKategorie(kategorie);
 		preload.setArtikel(artikel);
 		

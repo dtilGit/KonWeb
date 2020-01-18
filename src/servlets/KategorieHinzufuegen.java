@@ -46,15 +46,14 @@ public class KategorieHinzufuegen extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");	// In diesem Format erwartet das Servlet jetzt die Formulardaten
-		
-	//	HttpSession session = request.getSession();
+		request.setCharacterEncoding("UTF-8");	
 		
 		KategorieBean kat_bean = new KategorieBean();
 		kat_bean.setKategoriebezeichnung(request.getParameter("kategorie_bezeichnung"));
 		kat_bean.setGeschlecht(request.getParameter("kategorie_geschlecht"));
 		
 		String[] generatedKeys = new String[] {"kategorie_id"};
+		
 		
 		if (checkKategorie(kat_bean.getKategoriebezeichnung(),kat_bean.getGeschlecht())==false){
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_kategoriebez.jsp");
@@ -84,7 +83,6 @@ public class KategorieHinzufuegen extends HttpServlet {
 	final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
 	dispatcher.forward(request, response);		
 		}
-	//noch Fehlerabfangen: bezeichnung und geschelcht kombi existiert bereits
 }
 	private boolean checkKategorie(String kat_bez, String geschlecht) throws ServletException {
 		try (Connection con_ca = ds.getConnection();

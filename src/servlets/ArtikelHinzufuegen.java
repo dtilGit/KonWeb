@@ -71,7 +71,8 @@ public class ArtikelHinzufuegen extends HttpServlet {
 		if (checkArtikel(art_bean.getArtikelbezeichnung(), art_bean.getKategorie_id()) == false) {
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_artikelbez.jsp");
 			dispatcher.forward(request, response);
-		} else {
+		} 
+		else {
 
 			try (Connection con = ds.getConnection();
 					PreparedStatement pstmt = con.prepareStatement(
