@@ -25,7 +25,9 @@ function pruefereg(event) {
 	var land = document.getElementById("landreg").value;
 	//var onlyletters = /^[A-Za-zß-ü\s]+$/;
 
-	var sonderzeichen = /[\W+]^[ÄäÖöÜüß+]/;
+	//var sonderzeichen = /[\W]^[ÄäÖöÜüß+]/;
+	//var sonderzeichen = /^[\w!$%^&@#*];/
+	var sonderzeichen = /[/W]^[ÄäÖöÜüß+]/;
 	var zahlen = /\d/;
 	var keinebuchstaben = /\D/;
 
