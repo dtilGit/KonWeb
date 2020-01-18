@@ -56,7 +56,7 @@ public class ArtikelLadenWomen extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	// Fast eins zu eins aus dem JDBC-Script, S. 19 �bernommen
+	// Fast eins zu eins aus dem JDBC-Script, S. 19 uebernommen
 	private List<ArtikelBean> loadArtikel(Integer art_kategorie) throws ServletException {
 
 		List<ArtikelBean> artikel = new ArrayList<ArtikelBean>();

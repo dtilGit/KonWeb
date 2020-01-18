@@ -23,6 +23,11 @@
 <body>
 	<!-- 	David Häusler -->
 	<header>
+		<div id="js">
+			<noscript>
+				<p>Bitte Javascript aktivieren für die Nutzung unserer Seite!</p>
+			</noscript>
+		</div>
 		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
 		<div id="mainlogo">
 			<a href="index.jsp"><img id="logo"

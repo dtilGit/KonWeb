@@ -28,9 +28,6 @@ import javax.sql.DataSource;
 import beans.ArtikelBean;
 import beans.KategorieBean;
 
-/**
- * Servlet implementation class ArtikelHinzufuegen
- */
 @WebServlet("/ArtikelHinzufuegen")
 @MultipartConfig(maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5
 		* 5, location = "/tmp", fileSizeThreshold = 1024 * 1024)
@@ -53,7 +50,6 @@ public class ArtikelHinzufuegen extends HttpServlet {
 		int kat_id = Integer.parseInt(request.getParameter("alleKategorienLaden"));
 		art_bean.setKategorie_id(kat_id);
 
-		/* Hier anfangend mit Bild Upload - welchen Filename bekommt das Ganze */
 		Part filepart = request.getPart("bild");
 		art_bean.setBildname(filepart.getSubmittedFileName());
 
@@ -72,77 +68,58 @@ public class ArtikelHinzufuegen extends HttpServlet {
 
 		String[] generatedKeys = new String[] { "artikel_id" };
 
-		// checkArtikelname(art_bean.getArtikelbezeichnung(),
-		// art_bean.getKategorie_id());	
 		if (checkArtikel(art_bean.getArtikelbezeichnung(), art_bean.getKategorie_id()) == false) {
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_artikelbez.jsp");
 			dispatcher.forward(request, response);
+		} else {
+
+			try (Connection con = ds.getConnection();
+					PreparedStatement pstmt = con.prepareStatement(
+							"INSERT INTO thidb.artikel (artikelbezeichnung, preis, kategorie, bildname, bild) VALUES (?, ?, ?, ?, ?)",
+							generatedKeys)) {
+
+				pstmt.setString(1, art_bean.getArtikelbezeichnung());
+				pstmt.setDouble(2, art_bean.getPreis());
+				pstmt.setInt(3, art_bean.getKategorie_id());
+				pstmt.setString(4, art_bean.getBildname());
+				pstmt.setBytes(5, art_bean.getBild());
+				pstmt.executeUpdate();
+
+				try (ResultSet rs = pstmt.getGeneratedKeys()) {
+					while (rs.next()) {
+						art_bean.setArtikel_id(rs.getInt(1));
+					}
+				}
+
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
+			}
+
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
+			dispatcher.forward(request, response);
 		}
-		else {
-		
-		try (Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement(
-						"INSERT INTO thidb.artikel (artikelbezeichnung, preis, kategorie, bildname, bild) VALUES (?, ?, ?, ?, ?)",
-						generatedKeys)) {
+	}
 
-			pstmt.setString(1, art_bean.getArtikelbezeichnung());
-			pstmt.setDouble(2, art_bean.getPreis());
-			pstmt.setInt(3, art_bean.getKategorie_id());
-			pstmt.setString(4, art_bean.getBildname());
-			pstmt.setBytes(5, art_bean.getBild());
-			pstmt.executeUpdate();
+	public boolean checkArtikel(String art_bez, int kat_id) throws ServletException {
+		try (Connection con_ca = ds.getConnection();
+				PreparedStatement pstmt = con_ca
+						.prepareStatement("SELECT * FROM thidb.artikel WHERE artikelbezeichnung =? AND kategorie=?")) {
+			pstmt.setString(1, art_bez);
+			pstmt.setInt(2, kat_id);
+			try (ResultSet rs = pstmt.executeQuery()) {
 
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					art_bean.setArtikel_id(rs.getInt(1));
+				if (rs.next()) {
+					return false;
+				} else {
+					return true;
 				}
 			}
 
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
+	}
 
-		final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/adminpage_success.jsp");
-		dispatcher.forward(request, response);
-	}
-	}
-	
-	public boolean checkArtikel(String art_bez, int kat_id) throws ServletException{
-	try (Connection con_ca = ds.getConnection();
-			PreparedStatement pstmt = con_ca
-					.prepareStatement("SELECT * FROM thidb.artikel WHERE artikelbezeichnung =? AND kategorie=?")) {
-		pstmt.setString(1, art_bez);
-		pstmt.setInt(2, kat_id);
-		try (ResultSet rs = pstmt.executeQuery()) {
-			
-			if (rs.next()) {
-				return false;
-			}
-			else {
-				return true;
-			}
-		}
-
-	} catch (Exception ex) {
-		throw new ServletException(ex.getMessage());
-	}
-	}
-	
-	/*
-	 * private void checkArtikelname(String artikelbezeichnung, Integer
-	 * kategorie_id) throws ServletException { try (Connection con =
-	 * ds.getConnection(); PreparedStatement psmt =
-	 * con.prepareStatement("SELECT * FROM thidb.artikel")) { psmt.setString(1,
-	 * artikelbezeichnung); psmt.setInt(2, kategorie_id); try (ResultSet rs =
-	 * psmt.executeQuery();) { while (rs.next()==true) { if
-	 * (rs.getString(1)==artikelbezeichnung) { System.out.println("vorhanden"); }
-	 * else { System.out.println("NICHT vorhanden"); } } } } catch (Exception ex) {
-	 * throw new ServletException(ex.getMessage()); }
-	 */
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub

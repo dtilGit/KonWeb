@@ -61,16 +61,14 @@ public class BestellenServlet extends HttpServlet {
 
 			request.setAttribute("ges_preis", warenkorbB.getGes_preis());
 			request.setAttribute("login", kunde);
-
-			// überprüfen, ob funktioniert
 			
 			warenkorbB.getWarenkorbList().clear();
 			session.removeAttribute("warenkorbB");
-//			warenkorbB.WarenkorbLeeren();
 //			request.getSession().invalidate();
 						
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
+			
 		} else if (warenkorbB == null || kunde == null) {
 			//System.out.println("=== in if2 ===");
 			RequestDispatcher dispatcher2 = request.getRequestDispatcher("user/bestellen_login_fehler.jsp");

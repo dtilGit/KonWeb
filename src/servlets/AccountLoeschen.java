@@ -17,9 +17,6 @@ import javax.sql.DataSource;
 
 import beans.RegistrBean;
 
-/**
- * Servlet implementation class kategorie_loeschen
- */
 @WebServlet("/AccountLoeschen")
 public class AccountLoeschen extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -28,7 +25,7 @@ public class AccountLoeschen extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("==in post==");
+		//System.out.println("==in post==");
 		request.setCharacterEncoding("UTF-8");
 
 		HttpSession session = request.getSession();
@@ -39,9 +36,7 @@ public class AccountLoeschen extends HttpServlet {
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.bestellung WHERE kunde_id = ? ")) {
 			pstmt.setInt(1, kunden_id);
-			// pstmt.setInt(2, kunden_id);
 			pstmt.executeUpdate();
-			// System.out.println("==in try l�schen==");
 
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
