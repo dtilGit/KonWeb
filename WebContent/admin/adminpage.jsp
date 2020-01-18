@@ -221,7 +221,7 @@
 						<td><select name="kategorie_geschlecht" required>
 								<option value="">Wähle das Geschlecht</option>
 								<option>Herren</option>
-								<option>Weiblich</option>
+								<option>Frauen</option>
 						</select></td>
 					</tr>
 				<tbody>
