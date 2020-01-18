@@ -1,4 +1,7 @@
 /*David Häusler, Tilman Dewes*/
+@font-face {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
 
 body {
 	margin-left: 10%;
@@ -43,9 +46,6 @@ label {
 	display: block;
 }
 
-ul.impinfos, li.impinfos {
-	list-style: none;
-}
 
 button {
 	background-color: #424242;
@@ -56,9 +56,6 @@ button {
 	cursor: pointer;
 }
 
-button#backtotrack {
-	margin-top: 22px;
-}
 
 button.nav:hover {
 	background-color: #6E6E6E;
@@ -73,6 +70,11 @@ button.nav {
 	width: 100px;
 	cursor: pointer;
 }
+
+button#backtotrack {
+	margin-top: 22px;
+}
+
 
 header {
 	height: 120px;
@@ -121,7 +123,7 @@ header {
 	width: 100px
 }
 
-/* Positioniern */
+/* Positionieren */
 .dropdown-navi {
 	display: inline-block;
 	float: right;
@@ -166,11 +168,6 @@ header {
 	cursor: pointer;
 }
 
-#meinkonto:hover .dropdown-content {
-	display: block;
-	cursor: pointer;
-}
-
 #suchleiste {
 	float: left;
 	margin-left: 260px;
@@ -184,73 +181,10 @@ header {
 	padding: 5px;
 }
 
-#email, #passwort {
-	border: 2px solid #999;
-	border-radius: 0.5em;
-	margin: 5px 20px 5px 20px;
-	font-size: 12px;
-	width: 30%;
-	transition: width 0.5s ease-in-out;
-	height: 30px;
-	padding: 5px;
-	padding-left: 10px;
-}
-
-#titel, #nachname, #vorname, #strasse, #hausnummer, #postleitzahl, #ort,
-	#land {
-	border: 2px solid #999;
-	border-radius: 0.5em;
-	margin: 5px 20px 5px 20px;
-	font-size: 12px;
-	width: 50%;
-	transition: width 0.5s ease-in-out;
-	height: 30px;
-	padding: 5px;
-	padding-left: 10px;
-}
-
-#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #pwreg2,
-	#strassereg, #hausnrreg, #plzreg, #ortreg, #landreg {
-	border: 2px solid #999;
-	border-radius: 0.5em;
-	margin: 5px 20px 5px 20px;
-	font-size: 12px;
-	width: 50%;
-	transition: width 0.5s ease-in-out;
-	height: 30px;
-	padding: 5px;
-	padding-left: 10px;
-}
-
-input#profilBild {
-	margin: 5px 20px 5px 20px;
-	font-size: 12px;
-	width: 30%;
-	height: 30px;
-	padding: 5px;
-	padding-left: 10px;
-}
-
-select#titelreg, #titel {
-	border: 2px solid #999;
-	border-radius: 0.5em;
-	margin: 5px 20px 5px 20px;
-	font-size: 12px;
-	width: 10%;
-	transition: width 0.5s ease-in-out;
-	height: 30px;
-	padding: 5px;
-	padding-left: 10px;
-}
 /*#suchleiste:focus{
 	font-size: 24px;
   	width: 20%;
 }*/
-#pwvorgabe {
-	font-size: 10px;
-	color: #6E6E6E;
-	margin-left: 20px;
-}
 
 .icon {
 	width: 50px;
@@ -270,6 +204,11 @@ select#titelreg, #titel {
 	float: right;
 }
 
+#meinkonto:hover .dropdown-content {
+	display: block;
+	cursor: pointer;
+}
+
 section {
 	width: 69%;
 	float: left;
@@ -277,17 +216,10 @@ section {
 	margin-bottom: 80px;
 }
 
-figcaption {
-	text-align: center;
-}
-
-main {
-	min-height: 100px;
-}
-
 .spalten {
 	width: 100%;
 }
+
 /*Spalten auf der Startseite*/
 .spalte-1, .spalte-2, .spalte-3 {
 	width: 30%;
@@ -295,19 +227,6 @@ main {
 	float: left;
 	/* 	text-align: justify; */
 }
-
-
-/* .flex-container { */
-/*     display: flex; */
-/* } */
-
-/* .flex-item { */
-/*     flex: auto; */
-/*     margin: .5em; */
-/*     padding: .5em; */
-/* } */
-
-
 
 /*Slider*/
 @keyframes slider {
@@ -370,39 +289,6 @@ main {
 }
 
 
-
-
-
-.bild {
-	width: 200px;
-	height: auto;
-}
-
-/* .markenbereich { */
-/* 	border: 5px solid #dadada; */
-/* 	float: left; */
-/* 	height: 250px; */
-/* 	width: 800px; */
-/* } */
-.angebot {
-	float: right;
-	height: 200px;
-	width: 250px;
-}
-
-.halfsectionleft {
-	height: 900px;
-	width: 400px;
-	float: left;
-}
-
-.halfsectionright {
-	height: 900px;
-	width: 400px;
-	float: right;
-}
-
-
 aside {
 	float: right;
 	width: 30%;
@@ -426,15 +312,6 @@ footer {
 	/*margin: 0 10% 0 10%; */
 }
 
-#datenschutzlink {
-	font-size: 15px;
-}
-
-#impressumlink {
-	font-size: 15px;
-	margin: 95px 0px 10px 0px;
-}
-
 .footer-left {
 	float: left;
 	height: 100px;
@@ -446,38 +323,107 @@ footer {
 	text-align: right;
 }
 
-@font-face {
-	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+.small-icon {
+	width: auto;
+	height: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
 }
 
-/* .payment-checkouts{ */
-/* 	position: relative; */
-/* 	display: block; */
-/* 	box-sizing: border-box; */
-
-/* } */
-#beanie_cart {
-	border: 2px groove #999;
-	float: left;
-	margin: 50px;
+/*Impressum Stichpunkte*/
+ul.impinfos, li.impinfos {
+	list-style: none;
 }
 
-#letzte_zeile {
-	border-bottom: 2px groove #999;
-	background-color: lightgrey;
+
+#impressumlink {
+	font-size: 15px;
+	margin: 95px 0px 10px 0px;
 }
 
-tr.border_top td {
-	border-top: 2px groove #999;
+#datenschutzlink {
+	font-size: 15px;
 }
 
-#kreditsubmit {
-	background-color: #424242;
-	color: white;
+
+/*Loginmaske*/
+#email, #passwort {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 30%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
 }
 
-.add-cart {
-	text-align: center;
+/*Selectfeld Titel*/
+select#titelreg, #titel {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 10%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+/*Profilform*/
+#titel, #nachname, #vorname, #strasse, #hausnummer, #postleitzahl, #ort,
+	#land {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 50%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+/*Registrierungform*/
+#titelreg, #nachnamereg, #vornamereg, #emailreg, #pwreg, #pwreg2,
+	#strassereg, #hausnrreg, #plzreg, #ortreg, #landreg {
+	border: 2px solid #999;
+	border-radius: 0.5em;
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 50%;
+	transition: width 0.5s ease-in-out;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+/*Datei auswählen Button*/
+input#profilBild {
+	margin: 5px 20px 5px 20px;
+	font-size: 12px;
+	width: 30%;
+	height: 30px;
+	padding: 5px;
+	padding-left: 10px;
+}
+
+/*Passworthinweis*/
+#pwvorgabe {
+	font-size: 10px;
+	color: #6E6E6E;
+	margin-left: 20px;
+}
+
+/*Kategorie Buttons im Design eines Registers*/
+form.kategorie {
+	display: inline;
+}
+
+form.kategorie button {
+	margin-bottom: 10px;
 }
 
 tr.seperation td {
@@ -501,28 +447,21 @@ th {
 	padding: 5px;
 }
 
-/*Kategorie Buttons im Design eines Registers*/
-form.kategorie {
-	display: inline;
+.bild {
+	width: 200px;
+	height: auto;
 }
 
-form.kategorie button {
-	margin-bottom: 10px;
+.add-cart {
+	text-align: center;
 }
 
-.small-icon {
-	width: auto;
-	height: 40px;
-	vertical-align: middle;
-	margin-right: 10px;
+
+div#lieferanten {
+	margin: 15px;
 }
 
-/* .search-icon { */
-/* 	width: auto; */
-/* 	height: 20px; */
-/* 	vertical-align: middle; */
-/* 	margin: 2.3% 1% 0% 1%; */
-/* } */
+/*Tilman Dewes*/
 .hidden {
 	display: none;
 }
@@ -533,10 +472,6 @@ form.kategorie button {
 
 .adminShowButton {
 	width: 300px;
-}
-
-div#lieferanten {
-	margin: 15px;
 }
 
 /*Kontakt*/
@@ -577,11 +512,13 @@ div#lieferanten {
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;
 
 }
+/*javascript meldung*/
 #js{
 	text-align: center;
 	background-color: #FF0000;
 	font-size: 12px;
 	font-family: 'Trebuchet MS', Helvetica, sans-serif;	
 	font-weight: bold;
+	z-index: 999;
 
 }

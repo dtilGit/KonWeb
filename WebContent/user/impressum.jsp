@@ -16,8 +16,7 @@
 
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Impressum</h1>
-	<main class="flex-container">
-		<section class="flex-item">
+		<section>
 
 
 			<h2>Geschäftsführer</h2>
@@ -35,7 +34,6 @@
 			</ul>
 
 		</section>
-	</main>
 	<div id="footer">
 		<%@ include file="../jspf/footer.jspf"%>
 	</div>
