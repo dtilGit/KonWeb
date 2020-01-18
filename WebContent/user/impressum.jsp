@@ -16,24 +16,24 @@
 
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Impressum</h1>
-		<section>
+	<section>
 
 
-			<h2>Geschäftsführer</h2>
-			<ul class="impinfos">
-				<li>Veronika Tschemodanov</li>
-				<li>David Häusler</li>
-				<li>Tilman Ansgar Dewes</li>
-			</ul>
-			<h2>Adresse</h2>
-			<ul class="impinfos">
-				<li>TOD's Best Caps</li>
-				<li>Esplanade 10, 85049 Ingolstadt</li>
-				<li>Telefon: 09131/123987654</li>
-				<li>E-Mail: info@todsbestcaps.de</li>
-			</ul>
+		<h2>Geschäftsführer</h2>
+		<ul class="impinfos">
+			<li>Veronika Tschemodanov</li>
+			<li>David Häusler</li>
+			<li>Tilman Ansgar Dewes</li>
+		</ul>
+		<h2>Adresse</h2>
+		<ul class="impinfos">
+			<li>TOD's Best Caps</li>
+			<li>Esplanade 10, 85049 Ingolstadt</li>
+			<li>Telefon: 09131/123987654</li>
+			<li>E-Mail: info@todsbestcaps.de</li>
+		</ul>
 
-		</section>
+	</section>
 	<div id="footer">
 		<%@ include file="../jspf/footer.jspf"%>
 	</div>

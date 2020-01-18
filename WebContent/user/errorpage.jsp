@@ -18,15 +18,13 @@
 
 	<div>
 		<h1>Fehlermeldung</h1>
-		<h2>
-			Bitte melde dich bei uns oder verfasse eine kurze Mail an folgende
-			Mailadresse:
-		</h2>
+		<h2>Bitte melde dich bei uns oder verfasse eine kurze Mail an
+			folgende Mailadresse:</h2>
 		<a
-				href="mailto:info@todsbestcaps.de?subject=Eine%20Mail%20an%20Team%20TOD's%20BestCap">
-				<img class="small-icon" alt="mail" src="../img/mail.png">
-				info@todsbestcaps.de
-			</a>
+			href="mailto:info@todsbestcaps.de?subject=Eine%20Mail%20an%20Team%20TOD's%20BestCap">
+			<img class="small-icon" alt="mail" src="../img/mail.png">
+			info@todsbestcaps.de
+		</a>
 	</div>
 
 	<form action="../index.jsp" method="get">

@@ -18,15 +18,19 @@
 </head>
 <body>
 
-<%@ include file="../jspf/header.jspf"%>
+	<%@ include file="../jspf/header.jspf"%>
 	<div id="artikelgeloescht">
 		<h1>Bestellung erfolgreich abgeschlossen!</h1>
-		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden schnellstmöglichst verschickt!</h2>
+		<h2>Vielen Dank für deine Bestellung! Deine Artikel werden
+			schnellstmöglichst verschickt!</h2>
 
-			<p>Dein Shoppinghunger ist immer noch nicht gestillt? <a href="../index.jsp">Hier weitershoppen</a> :) </p>
-			
+		<p>
+			Dein Shoppinghunger ist immer noch nicht gestillt? <a
+				href="../index.jsp">Hier weitershoppen</a> :)
+		</p>
+
 	</div>
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 
 </body>
 </html>
