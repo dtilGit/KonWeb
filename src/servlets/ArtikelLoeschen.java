@@ -17,7 +17,7 @@ import javax.sql.DataSource;
 
 import beans.ArtikelBean;
 
-/**Tilman Dewes
+/**
  * Servlet implementation class kategorie_loeschen
  */
 @WebServlet("/ArtikelLoeschen")
@@ -43,7 +43,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		ArtikelBean art_bean = new ArtikelBean();
 		int i = Integer.parseInt(request.getParameter("alleArtikelLaden"));
-		art_bean.setArtikel_id(i); // parse Int
+		art_bean.setArtikel_id(i); 
 		
 		
 		try (Connection con = ds.getConnection();

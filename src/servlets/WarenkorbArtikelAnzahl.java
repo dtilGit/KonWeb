@@ -30,7 +30,6 @@ public class WarenkorbArtikelAnzahl extends HttpServlet {
 		HttpSession session = request.getSession();
 		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
-		// was kommt an der Stelle in die ""??
 		Integer artikel_ID = (Integer.valueOf(request.getParameter("art_id")));
 		ArtikelBean artikel = new ArtikelBean();
 		artikel.setArtikel_id(artikel_ID);
@@ -39,22 +38,7 @@ public class WarenkorbArtikelAnzahl extends HttpServlet {
 			WarenkorbArtikel wk = warenkorbB.getWarenkorbList().get(i);
 			if (wk.getWk_artikel().getArtikel_id() == artikel.getArtikel_id()) {
 				Integer menge = Integer.valueOf(request.getParameter("menge"));
-//				if (menge > 0) {
 					wk.setWk_art_anzahl(menge);
-//				} else if (menge == 0) {
-//					wk.setWk_art_anzahl(menge);
-//									
-////					wk.Leeren();
-////					wk.getWk_artikel().setArtikel_id(null);
-////					wk.setWk_art_anzahl(null);
-////					wk.getWk_artikel().setArtikelbezeichnung(null);
-////					wk.getWk_artikel().setBild(null);
-////					wk.getWk_artikel().setBildname(null);
-////					wk.getWk_artikel().setPreis(null);
-////					wk.setWk_art_preis(null);
-////					wk.setWk_art_anzahl(null);
-////					session.removeAttribute("wk_artikel");
-//				}
 			}
 		}
 		session.setAttribute("warenkorbB", warenkorbB);

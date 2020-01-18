@@ -32,7 +32,6 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// this.doPost(request,response);}
 		//System.out.println("=== in Get ===");
 		doGet(request, response);
 	}
@@ -49,10 +48,9 @@ public class LoginServlet extends HttpServlet {
 		RequestDispatcher disp;
 		RegistrBean login = checkUser(email, request, response);
 
-		// Passwort�berpr�fung
+		// Passwortueberpruefung
 		if (passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in if ===");
-			//login.setStatus(1);
 			session.setAttribute("login", login);
 			// System.out.println(login.getNachname());
 			disp = request.getRequestDispatcher("user/login_weiterleitung.jsp");
@@ -60,14 +58,12 @@ public class LoginServlet extends HttpServlet {
 
 		} else if (!passwort.equals(login.getPasswort())) {
 			//System.out.println("=== in else if ===");
-			//login.setStatus(0);
-			// login.setFehlermeldung("Passwort ist nicht korrekt");
 			disp = request.getRequestDispatcher("user/login_PWFalsch.jsp");
 			disp.forward(request, response);
 		}
 	}
 
-	// �berpr�fung, der login-Daten auf "Bereits registriert ja/nein?
+	// Ueberpruefung, der login-Daten auf "Bereits registriert ja/nein?
 	// Und ggf. Speicherung der Daten in die loginbean --> loginuser
 	private RegistrBean checkUser(String email, HttpServletRequest request, HttpServletResponse response)
 			throws ServletException {
@@ -75,7 +71,7 @@ public class LoginServlet extends HttpServlet {
 		RegistrBean loginuser = new RegistrBean();
 		//System.out.println("=== in checkUser ===");
 		RequestDispatcher disp;
-		// �berpr�fung, ob bereits registriert
+		// Ueberpruefung, ob bereits registriert
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstm = con.prepareStatement("Select * FROM thidb.kunde WHERE email = ?")) {
 			pstm.setString(1, email);
@@ -99,12 +95,9 @@ public class LoginServlet extends HttpServlet {
 					loginuser.setId(rs.getInt("kunde_id"));
 					loginuser.setBildname(rs.getString("bildname"));
 					loginuser.setBild(rs.getBytes("bild"));
-					// Status==1 bedeutet, dass der Kunde eingeloggt ist.
-//					loginuser.setStatus(rs.getInt(1));
 
 				} else if (!rs.next()) {
 					//System.out.println("=== in else if rs.next ===");
-					//loginuser.setStatus(rs.getInt(0));
 					disp = request.getRequestDispatcher("user/login_RGFehler.jsp");
 					disp.forward(request, response);
 				}

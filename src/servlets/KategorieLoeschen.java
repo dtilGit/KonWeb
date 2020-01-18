@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 import beans.ArtikelBean;
 import beans.KategorieBean;
 
-/**Tilman Dewes
+/**
  * Servlet implementation class kategorie_loeschen
  */
 @WebServlet("/KategorieLoeschen")
@@ -45,7 +45,7 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 		
 		KategorieBean kat_bean = new KategorieBean();
 		int i = Integer.parseInt(request.getParameter("alleKategorienLaden"));
-		kat_bean.setKategorie_id(i); // parse Int
+		kat_bean.setKategorie_id(i); 
 		
 		//um jeweilige Artikel aus Kategorie mitzulöschen
 		ArtikelBean art_bean = new ArtikelBean();

@@ -46,7 +46,7 @@ public class SucheServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
-	// Fast eins zu eins aus dem JDBC-Script, S. 19 �bernommen
+	// Fast eins zu eins aus dem JDBC-Script, S. 19 Uebernommen
 	private List<ArtikelBean> suchen(String artikelbezeichnung) throws ServletException {
 			artikelbezeichnung = (artikelbezeichnung == null || artikelbezeichnung == "") ? "%"
 				: "%" + artikelbezeichnung + "%";
@@ -65,9 +65,6 @@ public class SucheServlet extends HttpServlet {
 					int id = Integer.valueOf(rs.getInt("artikel_id"));
 					artikelbean.setArtikel_id(id);
 
-					// Welche Daten werden bei Artikelanzeigen auf der Seite angezeigt?
-					// Auf Vollst�ndigkeit pr�fen
-					// artikel_id, artikelbezeichnung, preis, kategorie, bild
 					String artikelbez = rs.getString("artikelbezeichnung");
 					artikelbean.setArtikelbezeichnung(artikelbez);
 

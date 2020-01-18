@@ -19,11 +19,11 @@
 	<c:choose>
 		<c:when test="${login.admin == 0}">
 			<h1>Login war erfolgreich!</h1>
-			<p>
+			<h2>
 				Hallo ${login.vorname}
 				<%--änderung davor: profilansehen.jsp --%>
 				${login.nachname}!
-			</p>
+			</h2>
 
 			<form action="../ProfilAnsehen" method="post">
 				<button type="submit">Ihr Profil</button>
