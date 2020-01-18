@@ -38,7 +38,7 @@ public class KatLadenWomen extends HttpServlet {
 		//Ausgeben der Kategorien
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
-						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Weiblich'")) {
+						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Frauen'")) {
 			
 			try (ResultSet rs = pstmt.executeQuery()) {
 				

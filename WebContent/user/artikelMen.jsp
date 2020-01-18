@@ -21,7 +21,7 @@
 
 
 		<form class="kategorie" action="../ArtikelLadenMen" method="POST">
-			<button type="submit" id="artikelAnzeigen_1">${kategorieMen.kategoriebezeichnung}</button>
+			<button type="submit">${kategorieMen.kategoriebezeichnung}</button>
 			<input name="kategorie_id" type="hidden"
 				value="${kategorieMen.kategorie_id }">
 		</form>
@@ -30,8 +30,6 @@
 	</c:forEach>
 
 	<table>
-		<!-- 	id="artikelAnzeigen" -->
-
 
 		<c:forEach var="artikelkategorie" items="${anzeige.artikel}">
 			<thead>

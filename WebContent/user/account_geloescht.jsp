@@ -14,10 +14,10 @@
 <title>Account gelöscht</title>
 </head>
 <body>
-<%@ include file="../jspf/header.jspf"%>
+	<%@ include file="../jspf/header.jspf"%>
 
-<h1> Ihr Account wurde erfolgreich gelöscht! </h1>
+	<h1>Ihr Account wurde erfolgreich gelöscht!</h1>
 
-<%@ include file="../jspf/footer.jspf"%>
+	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
