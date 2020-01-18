@@ -5,7 +5,7 @@
 			<p>Bitte Javascript aktivieren für die Nutzung unserer Seite!</p>
 		</noscript>
 	</div>
-	<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
+	<!--header durch jspf auf jeder Seite eingebunden-->
 	<div id="mainlogo">
 		<a href="../index.jsp"><img id="logo"
 			src="../img/tods_bestcaps_logo.jpg" alt="Logo"></a>
@@ -18,8 +18,6 @@
 			<button class="nav dropbtn" type="submit">Männer</button>
 		</form>
 
-		<!-- 			<button class="dropdown-content">Beanies</button> -->
-		<!-- 							<button class="dropdown-content">Caps</button> -->
 	</div>
 
 	<div class="woman">
@@ -28,9 +26,6 @@
 			<button class="nav dropbtn" type="submit">Frauen</button>
 		</form>
 
-		<!-- 	<div class="dropdown-content"> -->
-		<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
-		<!-- 			href="user/woman_caps.html">Caps</a> -->
 	</div>
 
 	<div id="suche">
@@ -39,7 +34,7 @@
 			<input type="search" name="artikelbezeichnung" id="suchleiste"
 				placeholder="Suche deinen Liebling...">
 		</form>
-		<!-- 			<img class="small-icon" src="../img/search.png"></img> -->
+		
 	</div>
 
 
@@ -50,12 +45,9 @@
 	<c:choose>
 		<c:when test="${empty sessionScope.login}">
 			<div class="dropdown-navi">
-				<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
-				<!-- 				enctype="multipart/form-data"> -->
 				<button class="profil">
 					<img class="icon" src="../img/mein_konto.png" alt="meinKontoLogo">
 				</button>
-				<!-- 					</form> -->
 				<div class="dropdown-content">
 					<a href=../user/login.jsp>Login</a> <a
 						href=../user/registrierung.jsp>Registrierung</a>

@@ -13,17 +13,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <base href="${pageContext.request.requestURI}" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
-<!-- <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'> muss glaube ich ins Stylesheet hab noch nicht ganz rausgefunden wie es die Schrift ändert  -->
-
-<!-- <script type="text/javascript" src="js/script.js"></script> -->
 <script type="text/javascript" src="js/cookies.js"></script>
 
 <title>TOD's Best Caps in Town</title>
 </head>
 <body>
-	<!-- 	David Häusler -->
+
 	<header>
-		<!--header in jeder Seite gleich: Herren / Damen / Hot Sales /Suchfkt-->
+		<!--header nur in Index statisch-->
 		<div id="mainlogo">
 			<a href="index.jsp"><img id="logo"
 				src="img/tods_bestcaps_logo.jpg" alt="Logo"></a>
@@ -36,8 +33,6 @@
 				<button class="nav dropbtn" type="submit">Männer</button>
 			</form>
 
-			<!-- 			<button class="dropdown-content">Beanies</button> -->
-			<!-- 							<button class="dropdown-content">Caps</button> -->
 		</div>
 
 
@@ -49,9 +44,6 @@
 				<button class="nav dropbtn" type="submit">Frauen</button>
 			</form>
 
-			<!-- 	<div class="dropdown-content"> -->
-			<!-- 		<a href="user/woman_beanies.html">Beanies</a> <a -->
-			<!-- 			href="user/woman_caps.html">Caps</a> -->
 		</div>
 
 		<div id="suche">
@@ -60,10 +52,6 @@
 				<input type="search" name="artikelbezeichnung" id="suchleiste"
 					placeholder="Suche deinen Liebling...">
 			</form>
-			<!-- 			<div class="search-icon"> -->
-			<!-- 			<img  src="img/search.png" alt="sucheLogo"> -->
-			<!-- 			<a href=SucheServlet></a> -->
-			<!-- 			</div> -->
 		</div>
 
 
@@ -71,16 +59,13 @@
 			<a href="user/warenkorb.jsp"><img class="icon"
 				src="img/warenkorb.png" alt="warenkorbLogo"></a>
 		</div>
-
+		
 		<c:choose>
 			<c:when test="${empty sessionScope.login}">
 				<div class="dropdown-navi">
-					<!-- 					<form style="display: inline" action="login.jsp" method="get"> -->
-					<!-- 				enctype="multipart/form-data"> -->
 					<button class="profil">
 						<img class="icon" src="img/mein_konto.png" alt="meinKontoLogo">
 					</button>
-					<!-- 					</form> -->
 					<div class="dropdown-content">
 						<a href=user/login.jsp>Login</a> <a href=user/registrierung.jsp>Registrierung</a>
 					</div>
@@ -176,9 +161,10 @@
 
 
 
-
+	
 	<div class="footer">
 		<footer>
+		<!--footer nur in Index statisch-->
 			<div class="footer-left">
 				<h1>TOD's BestCaps</h1>
 				<p>Unser Service 24/7:</p>
