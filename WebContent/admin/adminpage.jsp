@@ -168,7 +168,7 @@
 			<table id="ArtikelLoeschen">
 				<thead>
 					<tr>
-						<th>Artikel-ID, Artikelbezeichnung</th>
+						<th>Artikel-ID, Artikelbezeichnung, Geschlecht</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -178,7 +178,8 @@
 								<c:forEach items="${preload.artikel}" var="artikel">
 									<option class="artikel_id_bez" value="${artikel.artikel_id}">
 										<c:out value="${artikel.artikel_id}" />,
-										<c:out value="${artikel.artikelbezeichnung}" />
+										<c:out value="${artikel.artikelbezeichnung}" />,
+										<c:out value="${artikel.kategoriegeschlecht}" />
 									</option>
 								</c:forEach>
 						</select></td>
