@@ -54,7 +54,7 @@ public class KategorieHinzufuegen extends HttpServlet {
 		
 		String[] generatedKeys = new String[] {"kategorie_id"};
 		
-		
+		//Abfrage ob Kategoriebez mit diesem Geschlecht schon vorhanden
 		if (checkKategorie(kat_bean.getKategoriebezeichnung(),kat_bean.getGeschlecht())==false){
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_kategoriebez.jsp");
 			dispatcher.forward(request, response);

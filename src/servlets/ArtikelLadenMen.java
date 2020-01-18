@@ -36,7 +36,7 @@ public class ArtikelLadenMen extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 
-		// Entgegennahme von Sucheingabe
+		// Entgegennahme der gewaehlten Kategorie
 		Integer art_kategorie = Integer.parseInt(request.getParameter("kategorie_id"));
 		//System.out.println(art_kategorie);
 
@@ -47,7 +47,7 @@ public class ArtikelLadenMen extends HttpServlet {
 		anzeige.setArtikel(artikel);
 		anzeige.setKategorie(kategorien);
 		
-		//System.out.println("arrrt" + art_kategorie);
+		//System.out.println("art" + art_kategorie);
 		//artikel.forEach(e -> System.out.println(e.getArtikelbezeichnung()));
 
 		request.setAttribute("anzeige", anzeige);
