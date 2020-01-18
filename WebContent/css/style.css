@@ -345,7 +345,20 @@ ul.impinfos, li.impinfos {
 	font-size: 15px;
 }
 
+/*Tilman Dewes*/
+.hidden {
+	display: none;
+}
 
+.show {
+	display: inline;
+}
+
+.adminShowButton {
+	width: 300px;
+}
+
+/*Veronika Tschemodanov*/
 /*Loginmaske*/
 #email, #passwort {
 	border: 2px solid #999;
@@ -459,19 +472,6 @@ th {
 
 div#lieferanten {
 	margin: 15px;
-}
-
-/*Tilman Dewes*/
-.hidden {
-	display: none;
-}
-
-.show {
-	display: inline;
-}
-
-.adminShowButton {
-	width: 300px;
 }
 
 /*Kontakt*/
