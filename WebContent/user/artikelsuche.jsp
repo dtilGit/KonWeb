@@ -48,14 +48,14 @@
 										hinzufügen</button>
 									<input type="hidden" name="art_id" value="${suche.artikel_id}" />
 									<input type="hidden" name="artikelbezeichnung"
-										value="${suche.artikelbezeichnung}" /> <input
-										type="hidden" name="preis" value="${suche.preis}" />
+										value="${suche.artikelbezeichnung}" /> <input type="hidden"
+										name="preis" value="${suche.preis}" />
 								</form>
 							</td>
 
 						</tr>
 					</c:forEach>
-					
+
 				</tbody>
 			</table>
 		</c:otherwise>

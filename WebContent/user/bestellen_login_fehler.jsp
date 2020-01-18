@@ -17,8 +17,11 @@
 <body>
 	<%@ include file="../jspf/header.jspf"%>
 	<h1>Fehlermeldung</h1>
-	<h2>Deine Bestellung kann nicht abgeschlossen werden. Füge deinem
-		Warenkorb Artikel hinzu oder melde dich an. <a href="user/login.jsp">Hier</a> zur Anmeldung!</h2>
+	<h2>
+		Deine Bestellung kann nicht abgeschlossen werden. Füge deinem
+		Warenkorb Artikel hinzu oder melde dich an. <a href="user/login.jsp">Hier</a>
+		zur Anmeldung!
+	</h2>
 	<%@ include file="../jspf/footer.jspf"%>
 </body>
 </html>
