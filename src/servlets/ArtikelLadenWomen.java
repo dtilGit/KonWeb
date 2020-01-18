@@ -102,7 +102,7 @@ public class ArtikelLadenWomen extends HttpServlet {
 		List<KategorieBean> womenKategorien = new ArrayList<>();
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con
-						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Weiblich'")) {
+						.prepareStatement("SELECT * FROM thidb.kategorie WHERE geschlecht='Frauen'")) {
 			
 			try (ResultSet rs = pstmt.executeQuery()) {
 
