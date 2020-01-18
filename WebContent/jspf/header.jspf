@@ -74,7 +74,7 @@
 
 					<div class="dropdown-content">
 						<a href=../user/profilansehen.jsp>Ihr Profil</a> <a
-							href=../LogoutServlet>Logout</a> <a href=../admin/adminpage.jsp>Adminbereich</a>
+							href=../LogoutServlet>Logout</a> <a href=../PreloadAdminpage>Adminbereich</a>
 					</div>
 				</c:if>
 			</div>
