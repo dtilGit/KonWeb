@@ -105,8 +105,6 @@ public class ProfilBearbeiten extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		
-		//Status-Ueberpruefung -> Eingelogt oder nicht ??? Notwendig oder nicht?
-		
 		try (Connection con = datasource.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("UPDATE thidb.kunde SET geschlecht=?, titel=?, nachname=?, vorname=?, strasse=?, hausnummer=?, postleitzahl=?, ort=?, land=?, bildname=?, bild=? WHERE kunde_id=?")){
 				pstmt.setString(1, profiledit.getGeschlecht());

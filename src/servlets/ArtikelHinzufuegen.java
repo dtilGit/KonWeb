@@ -53,7 +53,7 @@ public class ArtikelHinzufuegen extends HttpServlet {
 		Part filepart = request.getPart("bild");
 		art_bean.setBildname(filepart.getSubmittedFileName());
 
-		// Bilduebertragung
+		// Bilduebertragung FRAGE
 		try (ByteArrayOutputStream baos = new ByteArrayOutputStream(); InputStream in = filepart.getInputStream()) {
 			int i = 0;
 			while ((i = in.read()) != -1) {
@@ -67,7 +67,8 @@ public class ArtikelHinzufuegen extends HttpServlet {
 		/* Ende Bildubertrgaung */
 
 		String[] generatedKeys = new String[] { "artikel_id" };
-
+		
+		//Pruefe ob Artikelname in Kategorie enthalten
 		if (checkArtikel(art_bean.getArtikelbezeichnung(), art_bean.getKategorie_id()) == false) {
 			final RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/fehler_artikelbez.jsp");
 			dispatcher.forward(request, response);

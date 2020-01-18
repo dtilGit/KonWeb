@@ -21,7 +21,7 @@ import beans.KategorieBean;
 import beans.ArtikelBean;
 import beans.AnzeigeBean;
 
-/**Tilman Dewes
+/**
  * Servlet implementation class PreloadAdminpage
  */
 @WebServlet("/PreloadAdminpage")

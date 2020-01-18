@@ -32,7 +32,8 @@ public class AccountLoeschen extends HttpServlet {
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
 
 		int kunden_id = kunde.getId();
-
+		
+		//Kunde aus Bestellung table loeschen
 		try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM thidb.bestellung WHERE kunde_id = ? ")) {
 			pstmt.setInt(1, kunden_id);
@@ -41,6 +42,8 @@ public class AccountLoeschen extends HttpServlet {
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
+		
+		//Kunde aus Kunden table loeschen
 		try (Connection con2 = ds.getConnection();
 				PreparedStatement pstmt = con2.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ? ")) {
 			pstmt.setInt(1, kunden_id);
@@ -48,7 +51,8 @@ public class AccountLoeschen extends HttpServlet {
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
-
+		
+		//Loeschen der Session
 		request.getSession().invalidate();
 
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("user/account_geloescht.jsp");
