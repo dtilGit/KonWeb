@@ -51,9 +51,7 @@ public class KatLadenMen extends HttpServlet {
 
 					String kat_bezeichnung = rs.getString("kategoriebezeichnung");
 					kat_bean.setKategoriebezeichnung(kat_bezeichnung);
-					
-//			
-//						}
+											
 					KategorienMen.add(kat_bean);
 				
 				}

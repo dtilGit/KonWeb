@@ -36,13 +36,6 @@ public class BestellenServlet extends HttpServlet {
 		WarenkorbBean warenkorbB = (WarenkorbBean) session.getAttribute("warenkorbB");
 		// Kunde-Session muss befüllt sein mit den Werten = Eingeloggt
 		RegistrBean kunde = (RegistrBean) session.getAttribute("login");
-		
-		//System.out.println("=== in Bestellung-Servlet ===");
-		
-//		Integer kunde_ID;
-//		kunde_ID = kunde.getId();
-//		Double gesamtWert;
-//		gesamtWert = warenkorbB.getGes_preis();
 
 		if (warenkorbB != null && kunde != null) {
 			String[] generatedKeys = new String[] { "bestell_id" };
@@ -69,11 +62,6 @@ public class BestellenServlet extends HttpServlet {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("user/bestellung_erfolgreich.jsp");
 			dispatcher.forward(request, response);
 			
-		} else if (warenkorbB == null || kunde == null) {
-			//System.out.println("=== in if2 ===");
-			RequestDispatcher dispatcher2 = request.getRequestDispatcher("user/bestellen_login_fehler.jsp");
-			dispatcher2.forward(request, response);
-
-		}
+		} 
 	}
 }
