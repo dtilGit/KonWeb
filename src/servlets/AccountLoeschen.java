@@ -47,7 +47,7 @@ public class AccountLoeschen extends HttpServlet {
 		try (Connection con2 = ds.getConnection();
 				PreparedStatement pstmt = con2.prepareStatement("DELETE FROM thidb.kunde WHERE kunde_id = ? ")) {
 			pstmt.setInt(1, kunden_id);
-			pstmt.setInt(1, kunden_id);
+			pstmt.executeUpdate();
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
