@@ -17,8 +17,8 @@ function checkkntform(event) {
 	var vorname = document.getElementById("knt_vorname").value;
 	
 	//var onlyletters = /[\W]^[A-Za-z0-9_äÄöÖüÜß]/;
-	var onlyletters = /^\w+([^a-zA-Z0-9öäüßÖÄÜ. '-]+)$/;
-	//var sonderzeichen = /[\W+]^[ÄäÖöÜüß+]/;
+	//var onlyletters = /^\w+([^a-zA-Z0-9öäüßÖÄÜ. '-]+)$/;
+	var sonderzeichen = /[\W+]^[ÄäÖöÜüß+]/;
 	var zahlen = /\d/;
 	var keinebuchstaben = /\D/;
 
@@ -27,7 +27,7 @@ function checkkntform(event) {
 		alert("Der Nachname darf keine Zahlen enthalten.");
 		event.preventDefault();
 		return;
-	} else if (nachname.match(onlyletters)) {
+	} else if (nachname.match(sonderzeichen)) {
 		alert("Der Nachname darf keine Sonderzeichen enthalten.");
 		event.preventDefault();
 		return;
